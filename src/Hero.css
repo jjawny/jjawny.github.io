@@ -10,7 +10,7 @@
 }
 
 .hero-content {
-    padding: 10% 0% 10% 0%; /* show more of bg image */
+    padding: 10.5% 0% 10.5% 0%; /* show more of bg image */
     margin: auto; /* align horizontally */
     width: 100%;
     /* debugging 
@@ -27,21 +27,22 @@
     color: #fff;
     font-family: 'Mrs Sheppards', cursive;
     margin: 0 0 0 0;
-    font-size: 50px;
+    font-size: 4vw;
     padding-left: 25px;
     text-align: left;
 }
   
-@media only screen and (max-width: 800px) {
+@media (max-width: 800px) {
     .hero-content {
-        padding: 2.5% 0% 5% 0%;
-        width: 500px;
+        padding: 40% 0% 40% 0%;
+    }
+
+    .hero-content h1 {
+        font-size: 23vw;
     }
 
 
-
     .hero-content h2 {
-        padding-left: 0px;
-        text-align: center;
+        display: none;
     }
 }
