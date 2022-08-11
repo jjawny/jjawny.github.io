@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <HeaderNav fixed="top" expand="md" color="dark"/>
+        <HeaderNav color="light" fixed="top" expand="md"/>
         <Hero/>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
