@@ -1,13 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import Hero from './Hero';
-import Nav from './Nav';
+import HeaderNav from './HeaderNav';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Nav/>
+        <HeaderNav fixed="top" expand="md" color="light"/>
         <Hero/>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -21,6 +21,12 @@ function App() {
         >
           Learn React
         </a>
+        <img src={logo} className="App-logo" alt="logo" /><br/>
+        <img src={logo} className="App-logo" alt="logo" /><br/>
+        <img src={logo} className="App-logo" alt="logo" /><br/>
+        <img src={logo} className="App-logo" alt="logo" /><br/>
+        <img src={logo} className="App-logo" alt="logo" /><br/>
+
       </header>
     </div>
   );

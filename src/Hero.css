@@ -7,10 +7,11 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    margin-top: 62px; /* allow space for nav */
 }
 
 .hero-content {
-    padding: 10.5% 0% 10.5% 0%; /* show more of bg image */
+    padding: 12% 0% 12% 0%; /* show more of bg image */
     margin: auto; /* align horizontally */
     width: 100%;
     /* debugging 
@@ -20,19 +21,18 @@
 .hero-content h1 {
     color: #fff; font-family: 'Helvetica Neue', sans-serif; font-size: 275px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
     font-size: 13vw;
-    margin: 0 0 0 0;
 }
 
 .hero-content h2 {
     color: #fff;
     font-family: 'Mrs Sheppards', cursive;
-    margin: 0 0 0 0;
+    margin: 0;
     font-size: 4vw;
-    padding-left: 25px;
+    padding-left: 2.5%;
     text-align: left;
 }
   
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     .hero-content {
         padding: 40% 0% 40% 0%;
     }
