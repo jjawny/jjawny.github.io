@@ -22,13 +22,12 @@
     color: #fff; font-family: 'Helvetica Neue', sans-serif; font-size: 275px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
     font-size: 13vw;
 
-    transform: translateY(40px);
     animation: slideUp ease .9s forwards;
 }
 
 @keyframes slideUp {
-    0% {transform: translateY(0);}
-    100% {transform: translateY(-40px); opacity: 1;}
+    0% {transform: translateY(40px);}
+    100% {transform: translateY(0px); opacity: 1;}
 }
 
 .hero-content h2 {
@@ -37,8 +36,14 @@
     margin: 0;
     font-size: 4vw;
     padding-left: 2.5%;
-    padding-bottom: 20px;
     text-align: left;
+
+    animation: slideDown ease .9s forwards;
+}
+
+@keyframes slideDown {
+    0% {transform: translateY(-40px);}
+    100% {transform: translateY(0px); opacity: 1;}
 }
   
 @media (max-width: 900px) {
