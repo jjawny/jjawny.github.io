@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mrs+Sheppards&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mrs+Sheppards&display=swap'); /* cursive */
 
 .hero {
     background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("./hero.jpg");
@@ -7,7 +7,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    margin-top: 62px; /* allow space for nav */
+    margin-top: 56px; /* allow space for nav */
 }
 
 .hero-content {
@@ -40,7 +40,6 @@
     .hero-content h1 {
         font-size: 23vw;
     }
-
 
     .hero-content h2 {
         display: none;
