@@ -1,0 +1,35 @@
+.project-name-container button {
+    display: block;
+    color: #000; font-family: 'Helvetica Neue', sans-serif; font-size: 4vw; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
+
+    transition: transform 1s;
+    white-space: nowrap;
+
+    /* text only button */
+    background: none;
+    border: none;
+}
+
+.project-name-container {
+    margin: 40px 0px 40px 40px;
+
+
+
+}
+
+.project-name-container button:hover {
+    transform: scale(1.05);
+    transition: transform .5s;
+}
+
+.flex-container {
+    display: flex;
+
+
+}
+
+.project-info-container {
+    margin: auto; /* centre item */
+
+
+}
