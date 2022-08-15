@@ -1,0 +1,72 @@
+.project-container {
+  display: flex;
+  overflow: hidden; /* prevent scrolling horizontally when sides are off screen */
+}
+
+
+.box {
+  /* debugging  
+  background: rgba(255, 192, 203, 0.413) !important;
+  outline: solid #f00 1px !important;
+  */
+
+  min-width: 10%; /* CRUCIAL */ 
+  /* since all elements (img, paragraph, text, is dynamic ensure there is a minimum size to keep the content from becoming too narrow */
+
+
+  transition-duration: .5s;
+  transition-property: transform, opacity;
+}
+
+.box button {
+    display: block;
+    color: #000; font-family: 'Helvetica Neue', sans-serif; font-size: 5vw; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
+
+    transition: transform 1s;
+    white-space: nowrap; /* prevent titles from wrapping to new lines */
+
+    /* text only button */
+    background: none;
+    border: none;
+}
+
+.box button:hover {
+    transform: scale(1.05);
+    transition: transform .5s;
+}
+
+.boxA {
+  margin: 5%;
+}
+.boxB {
+    /* auto padding to stay vertically in-lign with box A (projects) as box A is taller */
+    margin: auto 5% auto 5%;
+    
+}
+
+.box p { color: #685206; font-family: 'Helvetica Neue', sans-serif; font-size: 14px; line-height: 24px; margin: 0 0 24px; text-align: justify; text-justify: inter-word; 
+    text-align: left;
+}
+
+
+
+.box img {
+    max-width: 100%;
+
+}
+
+.box h1 {
+    color: #000; font-family: 'Helvetica Neue', sans-serif; font-size: 5vw; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
+}
+
+
+.slideLeft {
+  transform: translate(-500%, 0);
+  opacity: 0;
+
+}
+
+.slideRight {
+  transform: translate(500%, 0);
+  opacity: 0;
+}

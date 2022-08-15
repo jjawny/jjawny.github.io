@@ -28,7 +28,7 @@
 },
 {
     "banner": "./img/banner-v1.gif",
-    "title": "PORTFOLIO V1",
+    "title": "PORTFOLIO V2",
     "desc": "A culmination of my university projects. What you are seeing is version 2, built with React.js and Material UI. To view version 1 which utilises THREE.js, click the link in the footer (best viewed on desktops as the GLTF model will follow your mouse).",
     "link": "https://github.com/johnnymadigan/johnnymadigan.github.io",
     "badge": "./img/badges/react.png"
@@ -60,6 +60,13 @@
     "desc": "Game of Life is a famous zero-player, cellular automaton game. The entire game is a console app where users can configure custom settings to change how the app simulates 'life'. The project demonstrates my understanding of the Object-Oriented-Programming paradigm.",
     "link": "https://github.com/johnnymadigan/game-of-life",
     "badge": "./img/badges/csharp-vs.png"
+},
+{
+    "banner": "./img/banner-v1.gif",
+    "title": "PORTFOLIO V1",
+    "desc": "A culmination of my university projects. What you are seeing is version 2, built with React.js and Material UI. To view version 1 which utilises THREE.js, click the link in the footer (best viewed on desktops as the GLTF model will follow your mouse).",
+    "link": "https://github.com/johnnymadigan/johnnymadigan.github.io",
+    "badge": "./img/badges/react.png"
 },
 {
     "banner": "./img/banner-doggy.jpg",

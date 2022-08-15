@@ -5,7 +5,7 @@ import Hero from './Hero';
 import HeaderNav from './HeaderNav';
 import Bio from './Bio';
 import Accessability from './Accessability';
-import Project from './Project';
+import Slide from './Slide';
 
 
 function App() {
@@ -35,7 +35,7 @@ function App() {
   const [data, setData] = useState([]); // default is empty array
   
    const getData = () => {
-    fetch('project-data.json', {
+    fetch('projects.json', {
       headers: {
         /* headers to let client know that we
         are accessing JSON from a server */
@@ -68,7 +68,7 @@ function App() {
         <HeaderNav color="light" fixed="top" expand="md"/>
         <Hero/>
         <Bio/>
-        <Project data={data}/>
+        <Slide data={data}/>
         <Accessability/>
       </header>
     </div>
