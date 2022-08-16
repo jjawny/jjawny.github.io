@@ -1,7 +1,7 @@
 import './Hero.css';
 
 function Hero() {
-    // noselect class is defined in index.css and prevents text selection
+    // noselect class is defined in App.css and prevents text selection
     // image that looks great horizontally AND vertically
     return (
         <div className='hero'>

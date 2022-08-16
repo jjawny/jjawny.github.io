@@ -1,0 +1,76 @@
+.projects-container {
+  display: flex; /* flexbox */
+  overflow: hidden; /* fallback to hide by defualt and prevent scrolling horizontally when sides are off screen */
+  /* see linked component on how overflow is toggled back to visible for right-side only...
+  as the sticky property does not work when overflow is hidden */
+}
+
+/* ===BOTH SIDES=== */
+.both-sides {
+  min-width: 1%; /* CRUCIAL since all elements (img, p, etc) are dynamic, ensure there is a min width to prevent content becoming too narrow */
+  
+  transition-duration: .5s;
+  transition-property: transform, opacity;
+}
+
+/* slide effect for when state changes, class is applied to element and therefore animates */
+.slideLeft {
+  transform: translate(-500%, 0);
+  opacity: 0;
+}
+
+.slideRight {
+  transform: translate(500%, 0);
+  opacity: 0;
+}
+
+/* ===LEFT SIDE=== + right side's back button */
+.both-sides button {
+    display: block;
+    color: #000; font-family: 'Helvetica Neue', sans-serif; font-size: 5vw; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
+    transition: transform 1s;
+    white-space: nowrap; /* prevent project titles/buttons from wrapping to new lines */
+
+    /* text only button */
+    background: none;
+    border: none;
+}
+
+.both-sides button:hover {
+  transform: scale(1.05);
+  transition: transform .5s;
+}
+
+.left-side { margin: 10% auto 10% 5%; } /* whitespace */
+
+/* ===RIGHT SIDE=== */
+.right-side {
+    /* auto padding to stay vertically in-lign with box A (projects) as box A is taller */
+    /* top right bottom left */
+    margin-right: 5%;
+    margin-bottom: auto; /* dynamic allows sticky to work*/
+
+    /* top right bottom left */
+
+    /* padding instead of margin so sticky hits, and the extra space for nav bar to overlap over */
+    /* bottom padding for white space */
+    padding: 56px 0px 56px 0px;
+
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.back-button { height: 50px; }
+.shield { padding: 0px 5px 5px 5px; } /* whitespace in between shields */
+.box p { color: #4e4e4e; font-family: 'Helvetica Neue', sans-serif; font-size: 14px; line-height: 24px; margin: 0 0 24px; text-align: justify; text-justify: inter-word; }
+
+.banner {
+  max-width: 100%; /* dynamic, keep shrinking to match the width of its containing div */
+  border-radius: 10px;
+}
+
+.box h1 {
+  margin-top: 30px;
+  color: #000; font-family: 'Helvetica Neue', sans-serif; font-size: 5vw; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
+}

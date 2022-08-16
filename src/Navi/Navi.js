@@ -13,7 +13,7 @@ function Navi(props) {
   const toggle = () => setIsOpen(!isOpen);
 
   // a reactstrap component: https://reactstrap.github.io/?path=/docs/components-navbar--navbar
-  // noselect class is defined in index.css and prevents text selection
+  // noselect class is defined in App.css and prevents text selection
   // h1 is animated in linked css
   // "navi" instead of "nav" as name already taken from reactstrap
   return (
