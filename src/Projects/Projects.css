@@ -29,24 +29,29 @@
   opacity: 0;
 }
 
-/* ===LEFT SIDE=== + right side's back button */
 .both-sides button {
-    display: block;
-    color: #000; font-family: 'Helvetica Neue', sans-serif; font-size: 5vw; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
-    transition: transform 1s;
-    white-space: nowrap; /* prevent project titles/buttons from wrapping to new lines */
+  display: block;
+  color: #000; font-family: 'Helvetica Neue', sans-serif; font-size: 5vw; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
+  transition: transform 1s;
+  white-space: nowrap; /* prevent project titles/buttons from wrapping to new lines */
 
-    /* text only button */
-    background: none;
-    border: none;
+  /* text only button */
+  background: none;
+  border: none;
 }
 
 .both-sides button:hover {
-  transform: scale(1.05);
-  transition: transform .5s;
+transform: scale(1.05);
+transition: transform .5s;
 }
 
+/* ===LEFT SIDE=== + right side's back button */
 .left-side { margin: 10% auto 10% 5%; } /* whitespace */
+
+
+@media (max-width: 900px) {
+  .left-side button { margin: 10px 0px 10px 0px; } /* more space between buttons on left-side for better accessability */
+}
 
 /* ===RIGHT SIDE=== */
 .right-side {
