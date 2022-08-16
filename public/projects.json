@@ -5,8 +5,8 @@
     "link": "",
     "shields": [
         "https://img.shields.io/badge/Year-2022-lightgrey?style=plastic", 
-        "https://img.shields.io/badge/Author-Johnny%20Madigan-yellow?style=plastic",
-        "https://img.shields.io/badge/React-blue?style=plastic&logo=React"
+        "https://img.shields.io/badge/Author-Team%20Jolivada-yellow?style=plastic",
+        "https://img.shields.io/badge/Figma-ff69b4?style=plastic&logo=Figma"
     ]
 },
 {
@@ -15,9 +15,12 @@
     "desc": "A .NET console app that organises movies for community libraries. The app uses various algorithms that have undergone theoretical and empirical analyses.",
     "link": "https://github.com/johnnymadigan/community-library-phase-3",
     "shields": [
-        "https://img.shields.io/badge/Year-2022-lightgrey?style=plastic", 
-        "https://img.shields.io/badge/Author-Johnny%20Madigan-yellow?style=plastic",
-        "https://img.shields.io/badge/React-blue?style=plastic&logo=React"
+        "https://img.shields.io/badge/Unit-Algorithms%20and%20Complexity-yellowgreen?style=plastic",
+        "https://img.shields.io/badge/Authors-Johnny%20+%20Jamie-yellow?style=plastic",
+        "https://img.shields.io/badge/Year-2022-lightgrey?style=plastic",
+        "https://img.shields.io/badge/Language-C%20Sharp-informational?style=plastic&logo=C%20Sharp",
+        "https://img.shields.io/badge/Framework-.NET-informational?style=plastic&logo=.NET",
+        "https://img.shields.io/badge/IDE-Visual%20Studio-blueviolet?style=plastic&logo=visual%20studio"
     ]
 },
 {
@@ -26,9 +29,10 @@
     "desc": "A safety-critical system. Demonstrating my skills in multi-threading, inter-process communication, designing solutions to complex data flows, and handling race conditions and deadlocks. The project consists of 3 separate programs working together to simulate, automate, and protect a car park.",
     "link": "https://github.com/johnnymadigan/carpark-simulator",
     "shields": [
-        "https://img.shields.io/badge/Year-2022-lightgrey?style=plastic", 
+        "https://img.shields.io/badge/Unit-Systems%20Programming-ff69b4?style=plastic",
         "https://img.shields.io/badge/Author-Johnny%20Madigan-yellow?style=plastic",
-        "https://img.shields.io/badge/React-blue?style=plastic&logo=React"
+        "https://img.shields.io/badge/Year-2021-lightgrey?style=plastic",
+        "https://img.shields.io/badge/Lang-informational?style=plastic&logo=C"
     ]
 },
 {
@@ -37,18 +41,18 @@
     "desc": "A network analysis project, requiring us to analyse a server's capture file (Wireshark), identify the attack (SYN flood DoS) and provide mitigation strategies (SYN Cookies and increasing the server backlog). This project allowed my teammate and I to demonstrate our understanding of the OSI Model and protocol vulnerabilities.",
     "link": "",
     "shields": [
-        "https://img.shields.io/badge/Year-2022-lightgrey?style=plastic", 
+        "https://img.shields.io/badge/Year-2021-lightgrey?style=plastic", 
         "https://img.shields.io/badge/Author-Johnny%20Madigan-yellow?style=plastic",
-        "https://img.shields.io/badge/React-blue?style=plastic&logo=React"
+        "https://img.shields.io/badge/Wireshark-blue?style=plastic&logo=Wireshark"
     ]
 },
 {
-    "banner": "./img/banner-v1.gif",
+    "banner": "./img/banner-v2.jpg",
     "title": "PORTFOLIO V2",
-    "desc": "A culmination of my university projects. What you are seeing is version 2, built with React.js and Material UI. To view version 1 which utilises THREE.js, click the link in the footer (best viewed on desktops as the GLTF model will follow your mouse).",
-    "link": "https://github.com/johnnymadigan/johnnymadigan.github.io",
+    "desc": "Version 2 of my website - a culmination of all my past projects. Built with React.js and Material UI to let components breathe, creating a better user experience.",
+    "link": "https://github.com/johnnymadigan/johnnymadigan.github.io/v2",
     "shields": [
-        "https://img.shields.io/badge/Year-2022-lightgrey?style=plastic", 
+        "https://img.shields.io/badge/Year-2021-lightgrey?style=plastic", 
         "https://img.shields.io/badge/Author-Johnny%20Madigan-yellow?style=plastic",
         "https://img.shields.io/badge/React-blue?style=plastic&logo=React"
     ]
@@ -59,9 +63,14 @@
     "desc": "A client-server system for electronic trading of virtual assets. Our team achieved this using an Agile approach with an emphasis on Test-Driven-Development. I primarily focused on user accounts, implementing both front-end and back-end features (Java Swing GUI and SQLite database). For a solo extension on the project, I added a dynamic graph, README to document the app, and a build script for continuous integration and deployment.",
     "link": "https://github.com/johnnymadigan/stonk-machine",
     "shields": [
-        "https://img.shields.io/badge/Year-2022-lightgrey?style=plastic", 
+        "https://img.shields.io/badge/Unit-Software%20Development-ff69b4?style=plastic",
         "https://img.shields.io/badge/Author-Johnny%20Madigan-yellow?style=plastic",
-        "https://img.shields.io/badge/React-blue?style=plastic&logo=React"
+        "https://img.shields.io/badge/Year-2021-lightgrey?style=plastic",
+        "https://img.shields.io/badge/IntelliJ-Community-blueviolet?style=plastic&logo=IntelliJ%20IDEA",
+        "https://img.shields.io/badge/Java%20SDK-Amazon%20Correto%2015-orange?style=plastic&logo=Java",
+        "https://img.shields.io/badge/JUnit5-5.7.0-green?style=plastic&logo=JUnit5",
+        "https://img.shields.io/badge/SQLite%20JDBC-3.34.0-blue?style=plastic&logo=SQLite",
+        "https://img.shields.io/badge/Apache%20Ant-critical?style=plastic&logo=Apache%20Ant"
     ]
 },
 {
@@ -70,9 +79,10 @@
     "desc": "A Graph Theory project, demonstrating my skills in using math/logic to solve real-world problems. The chosen problem is that Rubik's cubes are often solved in the shortest amount of time, not the least amount of moves. This Python script first generates a Cayley Graph, then uses distance classes and a Breadth-First Search algorithm to find the shortest path between any scrambled cube and the solved state.",
     "link": "https://github.com/johnnymadigan/cube-solver",
     "shields": [
-        "https://img.shields.io/badge/Year-2022-lightgrey?style=plastic", 
+        "https://img.shields.io/badge/Unit-Discrete%20Structures-ff69b4?style=plastic",
         "https://img.shields.io/badge/Author-Johnny%20Madigan-yellow?style=plastic",
-        "https://img.shields.io/badge/React-blue?style=plastic&logo=React"
+        "https://img.shields.io/badge/Year-2021-lightgrey?style=plastic",
+        "https://img.shields.io/badge/Python%20version-2.7%20%7C%203.8%20|%203.9-informational?style=plastic&logo=python"
     ]
 },
 {
@@ -81,9 +91,11 @@
     "desc": "Undertale Musicbox is an Arduino device I created to help those relax. We were given the task to 'invent, design, implement, document, and demonstrate a prototype of a microcontroller-based product'.",
     "link": "https://github.com/johnnymadigan/undertale-musicbox",
     "shields": [
-        "https://img.shields.io/badge/Year-2022-lightgrey?style=plastic", 
+        "https://img.shields.io/badge/Unit-Microprocessors%20and%20Digital%20Systems-ff69b4?style=plastic",
         "https://img.shields.io/badge/Author-Johnny%20Madigan-yellow?style=plastic",
-        "https://img.shields.io/badge/React-blue?style=plastic&logo=React"
+        "https://img.shields.io/badge/Year-2020-lightgrey?style=plastic",
+        "https://img.shields.io/badge/Arduino-C/C++-informational?style=plastic&logo=arduino",
+        "https://img.shields.io/badge/Autodesk-Tinkercad-informational?style=plastic&logo=autodesk"
     ]
 },
 {
@@ -92,20 +104,23 @@
     "desc": "Game of Life is a famous zero-player, cellular automaton game. The entire game is a console app where users can configure custom settings to change how the app simulates 'life'. The project demonstrates my understanding of the Object-Oriented-Programming paradigm.",
     "link": "https://github.com/johnnymadigan/game-of-life",
     "shields": [
-        "https://img.shields.io/badge/Year-2022-lightgrey?style=plastic", 
+        "https://img.shields.io/badge/Unit-Programming%20Principles-ff69b4?style=plastic",
         "https://img.shields.io/badge/Author-Johnny%20Madigan-yellow?style=plastic",
-        "https://img.shields.io/badge/React-blue?style=plastic&logo=React"
+        "https://img.shields.io/badge/Year-2020-lightgrey?style=plastic",
+        "https://img.shields.io/badge/Language-C%20Sharp-informational?style=plastic&logo=C%20Sharp",
+        "https://img.shields.io/badge/Framework-.NET-informational?style=plastic&logo=.NET",
+        "https://img.shields.io/badge/IDE-Visual%20Studio-blueviolet?style=plastic&logo=visual%20studio"
     ]
 },
 {
     "banner": "./img/banner-v1.gif",
     "title": "PORTFOLIO V1",
-    "desc": "A culmination of my university projects. What you are seeing is version 2, built with React.js and Material UI. To view version 1 which utilises THREE.js, click the link in the footer (best viewed on desktops as the GLTF model will follow your mouse).",
-    "link": "https://github.com/johnnymadigan/johnnymadigan.github.io",
+    "desc": "Version 1 of my website - a culmination of all my past projects. Utilising the power of THREE.js and vanilla JS, you can experience my chaotic yet humble beginning into web development. The site is best viewed on desktops as the GLTF model will follow your mouse.",
+    "link": "https://github.com/johnnymadigan/johnnymadigan.github.io/v1",
     "shields": [
-        "https://img.shields.io/badge/Year-2022-lightgrey?style=plastic", 
+        "https://img.shields.io/badge/Year-2020-lightgrey?style=plastic", 
         "https://img.shields.io/badge/Author-Johnny%20Madigan-yellow?style=plastic",
-        "https://img.shields.io/badge/React-blue?style=plastic&logo=React"
+        "https://img.shields.io/badge/THREE.js-green?style=plastic&logo=Three.js"
     ]
 },
 {
@@ -114,9 +129,9 @@
     "desc": "Doggy Detector is a security camera system I built to keep an eye on my boy George while I was away at work. The project utilises a Raspberry Pi and a USB camera as its hardware, with motionEyeOS as the software. When motion is detected, the system takes snapshots and alerts me via email/uploading images to Dropbox.",
     "link": "",
     "shields": [
-        "https://img.shields.io/badge/Year-2022-lightgrey?style=plastic", 
+        "https://img.shields.io/badge/Year-2019-lightgrey?style=plastic", 
         "https://img.shields.io/badge/Author-Johnny%20Madigan-yellow?style=plastic",
-        "https://img.shields.io/badge/React-blue?style=plastic&logo=React"
+        "https://img.shields.io/badge/Raspberri%20Pi-red?style=plastic&logo=Raspberry%20Pi"
     ]
 },
 {
@@ -125,9 +140,10 @@
     "desc": "The Gotham Times news aggregator allows users to create and export custom news feeds by mixing different sources into a single stream. The project pulls data from 2 local static feeds and 2 live feeds via web scraping.",
     "link": "https://github.com/johnnymadigan/news-aggregator",
     "shields": [
-        "https://img.shields.io/badge/Year-2022-lightgrey?style=plastic", 
+        "https://img.shields.io/badge/Unit-Building%20IT%20Systems-ff69b4?style=plastic",
         "https://img.shields.io/badge/Author-Johnny%20Madigan-yellow?style=plastic",
-        "https://img.shields.io/badge/React-blue?style=plastic&logo=React"
+        "https://img.shields.io/badge/Year-2019-lightgrey?style=plastic",
+        "https://img.shields.io/badge/Python%20version-3-informational?style=plastic&logo=python"
     ]
 },
 {
@@ -136,8 +152,9 @@
     "desc": "Given an API for generating random patterns, the app can read these instructions and populate the grid with specific tiles. Tiles are unique complex visuals designed using Turtle Graphics.",
     "link": "https://github.com/johnnymadigan/disney-project",
     "shields": [
-        "https://img.shields.io/badge/Year-2022-lightgrey?style=plastic", 
+        "https://img.shields.io/badge/Unit-Building%20IT%20Systems-ff69b4?style=plastic",
         "https://img.shields.io/badge/Author-Johnny%20Madigan-yellow?style=plastic",
-        "https://img.shields.io/badge/React-blue?style=plastic&logo=React"
+        "https://img.shields.io/badge/Year-2019-lightgrey?style=plastic",
+        "https://img.shields.io/badge/Python%20version-3-informational?style=plastic&logo=python"
     ]
 }]

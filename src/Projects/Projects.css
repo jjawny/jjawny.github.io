@@ -13,6 +13,11 @@
   transition-property: transform, opacity;
 }
 
+.both-sides h1 {
+  margin-top: 30px;
+  color: #000; font-family: 'Helvetica Neue', sans-serif; font-size: 5vw; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
+}
+
 /* slide effect for when state changes, class is applied to element and therefore animates */
 .slideLeft {
   transform: translate(-500%, 0);
@@ -70,7 +75,4 @@
   border-radius: 10px;
 }
 
-.box h1 {
-  margin-top: 30px;
-  color: #000; font-family: 'Helvetica Neue', sans-serif; font-size: 5vw; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
-}
+
