@@ -1,0 +1,49 @@
+/* landing (hero image as div's background) */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("./hero.jpg");
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-top: 56px; /* allow space for nav (which is 56px tall) */
+}
+
+.hero-inner {
+    padding: 15% 0% 15% 0%; /* show more of bg image */
+    margin: auto; /* fall back to ensure content remains centered (XY-axis) */
+    width: 100%; /* fallback to ensure content remains full width of parent */
+}
+
+/* headings and their animations */
+.hero-inner h1 {
+    color: #fff; font-family: 'Helvetica Neue', sans-serif; font-size: 13vw; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
+    animation: slideUp ease .9s forwards;
+}
+
+.hero-inner h2 {    
+    color: #fff; font-family: 'Mrs Sheppards', cursive; font-size: 4vw; margin: 0% 0% 0% 2.5%; text-align: left;
+    animation: slideDown ease .9s forwards;
+}
+
+@keyframes slideUp {
+    0% {transform: translateY(40px); opacity: 0;}
+    100% {transform: translateY(0px); opacity: 1;}
+}
+
+@keyframes slideDown {
+    0% {transform: translateY(-40px); opacity: 0;}
+    100% {transform: translateY(0px); opacity: 1;}
+}
+
+/* matches media query in Bio component */
+@media (max-width: 900px) {
+    .hero-inner { padding: 35% 0% 35% 0%; } /* show even more of image vertically (taller) */
+
+    .hero-inner h1 { font-size: 23vw; } /* adjust text size to stay large on small screens */
+
+    .hero-inner h2 {
+        font-size: 8vw; /* adjust text size to stay large on small screens */
+        text-align: center;
+    }
+}
