@@ -1,0 +1,21 @@
+/* whitespace for better a UX */
+.footer {
+    background-color: #000;
+    margin: 30vh 0 0 0;
+    padding: 100px;
+}
+
+.footer p { color: #fff; font-family: 'Helvetica Neue', sans-serif; font-size: 10px; line-height: 24px; margin: 0 0 24px; text-align: center; text-justify: inter-word; }
+
+/* link colours */
+.footer a:link { color: #fff; }
+.footer a:visited { color: rgb(182, 86, 144); }
+.footer a:hover { color: rgb(209, 137, 180); }
+
+/* logo */
+.footer img { transition: transform 1s; }
+
+.footer img:hover {
+    transform: scale(1.5);
+    transition: transform .5s;
+}
