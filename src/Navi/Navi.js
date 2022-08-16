@@ -1,22 +1,26 @@
 import React, { useState } from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
-import './HeaderNav.css';
+import './Navi.css';
 
-import iGitHub from './icon-github.png';
-import iLinkedIn from './icon-linkedin.gif';
-import iEmail from './icon-email.png';
+import iGitHub from './iGithub.png';
+import iLinkedIn from './iLinkedin.gif';
+import iEmail from './iEmail.png';
 
-function HeaderNav(props) {
-  const [isOpen, setIsOpen] = useState(false);
+function Navi(props) {
+  const [isOpen, setIsOpen] = useState(false); // remember to stay collapsed/expanded
 
   const toggle = () => setIsOpen(!isOpen);
 
+  // a reactstrap component: https://reactstrap.github.io/?path=/docs/components-navbar--navbar
+  // noselect class is defined in index.css and prevents text selection
+  // h1 is animated in linked css
+  // "navi" instead of "nav" as name already taken from reactstrap
   return (
     <div>
-      <Navbar {...props} >
-        <NavbarBrand href="/" ><h1>~$ johnny madigan</h1></NavbarBrand>
-        <NavbarToggler onClick={toggle} />
+      <Navbar {...props} className='noselect'>
+        <NavbarBrand href="/"><h1>~$ johnny madigan</h1></NavbarBrand>
+        <NavbarToggler onClick={toggle}/>
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ms-auto" navbar>
             <NavItem>
@@ -41,4 +45,4 @@ function HeaderNav(props) {
   );
 }
 
-export default HeaderNav;
+export default Navi;

@@ -1,6 +1,8 @@
 import './Hero.css';
 
 function Hero() {
+    // noselect class is defined in index.css and prevents text selection
+    // image that looks great horizontally AND vertically
     return (
         <div className='hero'>
             <div className='hero-inner noselect'>
