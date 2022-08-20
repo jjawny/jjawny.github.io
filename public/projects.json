@@ -33,7 +33,7 @@
 },
 {
     "banner": "./img/banner-networks.gif",
-    "title": "NETWORK SEC ANALYSIS",
+    "title": "NETSEC ANALYSIS",
     "desc": "A network analysis project, requiring us to analyse a server's capture file (Wireshark), identify the attack (SYN flood DoS) and provide mitigation strategies (SYN Cookies and increasing the server backlog). This project allowed my teammate and I to demonstrate our understanding of the OSI Model and protocol vulnerabilities.",
     "shields": [
         "https://img.shields.io/badge/Year-2021-lightgrey?style=plastic", 
