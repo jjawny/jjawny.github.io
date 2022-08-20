@@ -14,7 +14,11 @@ function Projects(props) {
     // called when user selects a project to view (button)...
     // switching sides and showing the currently highlighted project
     const selectHighlight = (project) => {
-        setHighlight(project);
+        // only update highlight if there was a change to save resources/loading time
+        if (highlight !== project) {
+            setHighlight(project);
+            console.log("Changed highlight");
+        }
         setSide(currentSide => !currentSide);
     };
 
@@ -35,7 +39,7 @@ function Projects(props) {
                 {props.projects.map((p) => (<button key={p.title} onClick={() => selectHighlight(p)}>{p.title}</button>))}
             </div>
             <div className={`both-sides right-side ${!side? 'slideRight' : ''}`}>
-                <button style={{width: "100%", textAlign: "right"}} onClick={() => selectHighlight({})}><img src={iBack} alt='Go back' className='back-button'/></button>
+                <button style={{width: "100%", textAlign: "right"}} onClick={() => selectHighlight(highlight)}><img src={iBack} alt='Go back' className='back-button'/></button>
                 <img className='banner' src={highlight.banner} alt="Project banner"/>
                 <h1>{highlight.title}</h1>
                 {(highlight.shields !== undefined)? highlight.shields.map((s) => <img key={s} className='shield' src={s} alt="badge from shields.io"/>) : <></>}
