@@ -50,34 +50,37 @@ transition: transform .5s;
 
 
 @media (max-width: 900px) {
-  .left-side button { margin: 10px 0px 10px 0px; } /* more space between buttons on left-side for better accessability */
+  .left-side button { margin: 15px 0px 15px 0px; } /* more space between buttons on left-side for better accessability */
 }
 
 /* ===RIGHT SIDE=== */
 .right-side {
-    /* auto padding to stay vertically in-lign with box A (projects) as box A is taller */
-    /* top right bottom left */
-    margin-right: 5%;
-    margin-bottom: auto; /* dynamic allows sticky to work*/
+  /* auto padding to stay vertically in-lign with box A (projects) as box A is taller */
+  /* top right bottom left */
+  margin-right: 5%;
+  margin-bottom: auto; /* dynamic allows sticky to work*/
 
-    /* top right bottom left */
+  /* top right bottom left */
 
-    /* padding instead of margin so sticky hits, and the extra space for nav bar to overlap over */
-    /* bottom padding for white space */
-    padding: 56px 0px 56px 0px;
+  /* padding instead of margin so sticky hits, and the extra space for nav bar to overlap over */
+  /* bottom padding for white space */
+  padding: 56px 0px 56px 0px;
 
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 .back-button { height: 50px; }
 .shield { padding: 0px 5px 5px 5px; } /* whitespace in between shields */
-.box p { color: #4e4e4e; font-family: 'Helvetica Neue', sans-serif; font-size: 14px; line-height: 24px; margin: 0 0 24px; text-align: justify; text-justify: inter-word; }
+.both-sides p { color: #4e4e4e; font-family: 'Helvetica Neue', sans-serif; font-size: 14px; line-height: 24px; margin: 0 0 24px; text-align: justify; text-justify: inter-word; }
 
 .banner {
   max-width: 100%; /* dynamic, keep shrinking to match the width of its containing div */
   border-radius: 10px;
 }
 
-
+/* link colours */
+.both-sides a:link { color: #4e4e4e; }
+.both-sides a:visited { color: rgb(182, 86, 144); }
+.both-sides a:hover { color: rgb(209, 137, 180); }
