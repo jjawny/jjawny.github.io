@@ -27,8 +27,10 @@ function App() {
 
   const [data, setData] = useState([]); // default is empty array
   
+  const url = 'projects.json';
+
   const getData = () => {
-    fetch('projects.json', {
+    fetch(url, {
       headers: {
         /* headers to let client know that we
         are accessing JSON from a server */
@@ -36,8 +38,8 @@ function App() {
         'Accept': 'application/json'
       }
     })
-    .then((response) => (response.json())) /* promise to get response as JSON */
-    .then((myJSON) => (setData(myJSON))) /* promise to update STATE with the JSON data */
+    .then((res) => (res.json())) /* promise to get response as JSON */
+    .then((resAsJSON) => (setData(resAsJSON))) /* promise to update STATE with the JSON data */
     .then(() => (console.log("Finished fetching data")));
   }
 
