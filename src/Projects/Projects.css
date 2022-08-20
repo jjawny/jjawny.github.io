@@ -13,22 +13,6 @@
   transition-property: transform, opacity;
 }
 
-.both-sides h1 {
-  margin-top: 30px;
-  color: #000; font-family: 'Helvetica Neue', sans-serif; font-size: 5vw; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
-}
-
-/* slide effect for when state changes, class is applied to element and therefore animates */
-.slideLeft {
-  transform: translate(-500%, 0);
-  opacity: 0;
-}
-
-.slideRight {
-  transform: translate(500%, 0);
-  opacity: 0;
-}
-
 .both-sides button {
   display: block;
   color: #000; font-family: 'Helvetica Neue', sans-serif; font-size: 5vw; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
@@ -45,9 +29,19 @@
   transition: transform .5s;
 }
 
-/* ===LEFT SIDE=== + right side's back button */
-.left-side { margin: 10% auto 10% 5%; } /* whitespace */
+/* slide effect for when state changes, class is applied to element and therefore animates */
+.slideLeft {
+  transform: translate(-500%, 0);
+  opacity: 0;
+}
 
+.slideRight {
+  transform: translate(500%, 0);
+  opacity: 0;
+}
+
+/* ===LEFT SIDE=== */
+.left-side { margin: 10% auto 10% 5%; } /* whitespace */
 
 @media (max-width: 900px) {
   .left-side button { margin: 10vw 0 10vw 0; } /* more space between buttons on left-side for better accessability */
@@ -60,8 +54,6 @@
   margin-right: 5%;
   margin-bottom: auto; /* dynamic allows sticky to work*/
 
-  /* top right bottom left */
-
   /* padding instead of margin so sticky hits, and the extra space for nav bar to overlap over */
   /* bottom padding for white space */
   padding: 56px 0px 56px 0px;
@@ -72,15 +64,3 @@
 }
 
 .back-button { height: 50px; }
-.shield { padding: 0px 5px 5px 5px; } /* whitespace in between shields */
-.both-sides p { color: #4e4e4e; font-family: 'Helvetica Neue', sans-serif; font-size: 14px; line-height: 24px; margin: 0 0 24px; text-align: justify; text-justify: inter-word; }
-
-.banner {
-  max-width: 100%; /* dynamic, keep shrinking to match the width of its containing div */
-  border-radius: 10px;
-}
-
-/* link colours */
-.both-sides a:link { color: #4e4e4e; }
-.both-sides a:visited { color: rgb(182, 86, 144); }
-.both-sides a:hover { color: rgb(209, 137, 180); }

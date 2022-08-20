@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import iBack from './iBack.png';
+import Project from './Project';
 
 import './Projects.css';
 
@@ -40,13 +41,7 @@ function Projects(props) {
             </div>
             <div className={`both-sides right-side ${!side? 'slideRight' : ''}`}>
                 <button style={{width: "100%", textAlign: "right"}} onClick={() => selectHighlight(highlight)}><img src={iBack} alt='Go back' className='back-button'/></button>
-                <img className='banner' src={highlight.banner} alt="Project banner"/>
-                <h1>{highlight.title}</h1>
-                {(highlight.shields !== undefined)? highlight.shields.map((s) => <img key={s} className='shield' src={s} alt="badge from shields.io"/>) : <></>}
-                <p>
-                    {highlight.desc}
-                    {(highlight.link !== undefined)? (<>&nbsp;Link to repo <a href={highlight.link}>here</a>.</>) : <></>}
-                </p>
+                <Project {...highlight} />
             </div>
         </div>
     );

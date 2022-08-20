@@ -1,0 +1,16 @@
+.banner {
+    max-width: 100%; /* dynamic, keep shrinking to match the width of its containing div */
+    border-radius: 10px;
+}
+
+.project-title {
+    margin-top: 30px;
+    color: #000; font-family: 'Helvetica Neue', sans-serif; font-size: 5vw; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
+}
+.shield { padding: 0px 5px 5px 5px; } /* whitespace in between shields */
+.project-text { color: #4e4e4e; font-family: 'Helvetica Neue', sans-serif; font-size: 14px; line-height: 24px; margin: 0 0 24px; text-align: justify; text-justify: inter-word; }
+
+/* link colours */
+.project-text a:link { color: #4e4e4e; }
+.project-text a:visited { color: rgb(182, 86, 144); }
+.project-text a:hover { color: rgb(209, 137, 180); }
