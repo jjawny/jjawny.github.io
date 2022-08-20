@@ -41,8 +41,8 @@
 }
 
 .both-sides button:hover {
-transform: scale(1.05);
-transition: transform .5s;
+  transform: scale(1.05);
+  transition: transform .5s;
 }
 
 /* ===LEFT SIDE=== + right side's back button */
@@ -50,7 +50,7 @@ transition: transform .5s;
 
 
 @media (max-width: 900px) {
-  .left-side button { margin: 22px 0px 22px 0px; } /* more space between buttons on left-side for better accessability */
+  .left-side button { margin: 10vw 0 10vw 0; } /* more space between buttons on left-side for better accessability */
 }
 
 /* ===RIGHT SIDE=== */
