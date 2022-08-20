@@ -41,9 +41,10 @@ function App() {
   }
 
   /* perform once upon first render */
+  /* useEffect fires twice because of strict-mode (see index.js) */
   useEffect(() => {
-    console.log("Hook used ∴ most up-to-date JSON has been retrieved");
     getData();
+    console.log("Hook used ∴ most up-to-date JSON has been retrieved");
   }, []);
 
   return (
