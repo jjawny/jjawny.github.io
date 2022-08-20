@@ -37,7 +37,7 @@
     "desc": "A network analysis project, requiring us to analyse a server's capture file (Wireshark), identify the attack (SYN flood DoS) and provide mitigation strategies (SYN Cookies and increasing the server backlog). This project allowed my teammate and I to demonstrate our understanding of the OSI Model and protocol vulnerabilities.",
     "shields": [
         "https://img.shields.io/badge/Year-2021-lightgrey?style=plastic", 
-        "https://img.shields.io/badge/Author-Johnny,%20Daniel-yellow?style=plastic",
+        "https://img.shields.io/badge/Authors-Johnny,%20Daniel-yellow?style=plastic",
         "https://img.shields.io/badge/Wireshark-blue?style=plastic&logo=Wireshark"
     ]
 },
@@ -59,7 +59,7 @@
     "link": "https://github.com/johnnymadigan/stonk-machine",
     "shields": [
         "https://img.shields.io/badge/Year-2021-lightgrey?style=plastic",
-        "https://img.shields.io/badge/Author-Johnny,%20Scott,%20Alistair-yellow?style=plastic",
+        "https://img.shields.io/badge/Authors-Johnny,%20Scott,%20Alistair-yellow?style=plastic",
         "https://img.shields.io/badge/IntelliJ-blueviolet?style=plastic&logo=IntelliJ%20IDEA",
         "https://img.shields.io/badge/Amazon%20Correto%2015%20(Java%20SDK)-orange?style=plastic&logo=Java",
         "https://img.shields.io/badge/JUnit5-green?style=plastic&logo=JUnit5",
