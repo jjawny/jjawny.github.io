@@ -1,11 +1,11 @@
 /* whitespace for better a UX */
 .footer {
     background-color: #000;
-    margin: 30vh 0 0 0;
-    padding: 100px;
+    margin-top: 30vh;
+    padding: 100px 0;
 }
 
-.footer p { color: #fff; font-family: 'Helvetica Neue', sans-serif; font-size: 10px; line-height: 24px; margin: 0 0 24px; text-align: center; text-justify: inter-word; }
+.footer p { color: #fff; font-family: 'Helvetica Neue', sans-serif; font-size: 10px; line-height: 24px; margin: 0; text-align: center; text-justify: inter-word; }
 
 /* link colours */
 .footer a:link { color: #fff; }

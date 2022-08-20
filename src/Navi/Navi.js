@@ -19,7 +19,7 @@ function Navi(props) {
   return (
     <div>
       <Navbar {...props} className='noselect'>
-        <NavbarBrand href="/"><h1>~$ johnny madigan</h1></NavbarBrand>
+        <NavbarBrand href="/"><h1>johnny madigan</h1></NavbarBrand>
         <NavbarToggler onClick={toggle}/>
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ms-auto" navbar>
