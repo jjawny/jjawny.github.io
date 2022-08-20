@@ -37,14 +37,15 @@ function App() {
       }
     })
     .then((response) => (response.json())) /* promise to get response as JSON */
-    .then((myJSON) => (setData(myJSON))); /* promise to update STATE with the JSON data */
+    .then((myJSON) => (setData(myJSON))) /* promise to update STATE with the JSON data */
+    .then(() => (console.log("Finished fetching data")));
   }
 
   /* perform once upon first render */
   /* useEffect fires twice because of strict-mode (see index.js) */
   useEffect(() => {
     getData();
-    console.log("Hook used ∴ most up-to-date JSON has been retrieved");
+    console.log("Side effect fired ∴ fetching data...");
   }, []);
 
   return (
