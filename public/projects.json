@@ -1,4 +1,14 @@
 [{
+    "banner": "./img/banner-v3.png",
+    "title": "PORTFOLIO V3",
+    "desc": "Version 3 of my website - a culmination of all my past projects. Re-built using React.js and Chakra UI, version 3 is more accessible, responsive, and aesthetically pleasing compared to versions 1 & 2.",
+    "shields": [
+        "https://img.shields.io/badge/Year-2022-lightgrey?style=plastic", 
+        "https://img.shields.io/badge/Author-Johnny%20Madigan-yellow?style=plastic",
+        "https://img.shields.io/badge/React-blue?style=plastic&logo=React"
+    ]
+},
+{
     "banner": "./img/banner-capstone.png",
     "title": "CAPSTONE",
     "desc": "Capstone on rapidly prototyping a gamified health care app using Figma. The high-fidelity prototype will gather critical feedback from key stakeholders before development. The design focused on improving patient engagement with treatment plans and communication. Due to confidentiality, the client cannot be named.",
@@ -45,7 +55,7 @@
     "banner": "./img/banner-v2.gif",
     "title": "PORTFOLIO V2",
     "desc": "Version 2 of my website - a culmination of all my past projects. Recreated using React.js and Material UI, version 2 is more responsive and spread out, creating a better UX compared to version 1.",
-    "link": "https://github.com/johnnymadigan/johnnymadigan.github.io/v2",
+    "link": "https://johnnymadigan.github.io/v2",
     "shields": [
         "https://img.shields.io/badge/Year-2021-lightgrey?style=plastic", 
         "https://img.shields.io/badge/Author-Johnny%20Madigan-yellow?style=plastic",
@@ -106,7 +116,7 @@
     "banner": "./img/banner-v1.gif",
     "title": "PORTFOLIO V1",
     "desc": "Version 1 of my website - a culmination of all my past projects. Using the power of THREE.js on top of vanilla JS/CSS/HTML, you can experience my humble beginning into web development. The site is best viewed on desktops as the GLTF model will follow your mouse.",
-    "link": "https://github.com/johnnymadigan/johnnymadigan.github.io/v1",
+    "link": "https://johnnymadigan.github.io/v1",
     "shields": [
         "https://img.shields.io/badge/Year-2020-lightgrey?style=plastic", 
         "https://img.shields.io/badge/Author-Johnny%20Madigan-yellow?style=plastic",
