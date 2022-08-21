@@ -41,7 +41,7 @@ function Projects(props) {
             </div>
             <div className={`both-sides right-side ${!side? 'slideRight' : ''}`}>
                 <button style={{width: "100%", textAlign: "right"}} onClick={() => selectHighlight(highlight)}><img src={iBack} alt='Go back' className='back-button'/></button>
-                <Project {...highlight} />
+                <Project {...highlight} loaded={false}/>
             </div>
         </div>
     );
