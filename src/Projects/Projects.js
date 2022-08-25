@@ -12,14 +12,19 @@ function Projects(props) {
     // last selected project to highlight
     const [ highlight, setHighlight ] = useState({});
 
-    // called when user selects a project to view (button)...
-    // switching sides and showing the currently highlighted project
-    const selectHighlight = (project) => {
-        // only update highlight if there was a change to save resources/loading time
-        if (highlight !== project) {
-            setHighlight(project);
-            console.log("Changed highlight");
+    // banner images loading state passed to 'Project' child component (individual) 
+    const [ loaded, setLoaded ] = useState(false);
+
+    // called when user selects a project to view (buttons) or back button...
+    const selectHighlight = (selectedProject) => {
+        
+        // update highlight only if different project is selected to save resources/loading time
+        // if updating the highlight, reset the image load status to ensure spinner is shown
+        if (selectedProject !== highlight) {
+            setLoaded(false);
+            setHighlight(selectedProject);
         }
+
         setSide(currentSide => !currentSide);
     };
 
@@ -32,7 +37,7 @@ function Projects(props) {
             </div>
             <div className={`both-sides right-side ${!side? 'slideRight' : ''}`}>
                 <button style={{width: "100%", textAlign: "right"}} onClick={() => selectHighlight(highlight)}><img src={iBack} alt='Go back' className='back-button'/></button>
-                <Project {...highlight}/>
+                <Project {...highlight} loaded={loaded} setLoaded={setLoaded}/>
             </div>
         </div>
     );

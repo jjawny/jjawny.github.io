@@ -4,19 +4,21 @@ import { Spinner } from 'reactstrap';
 import './LazyImage.css';
 
 function LazyImage(props) {
-    const [ loaded, setLoaded ] = useState(false);
     
     // Inspired by https://stackoverflow.com/a/59396181
+    // Uses state passed down from Projects > Project > LazyImage
+    // State determines when image has loaded
     return (
         <>
-            {loaded ? null : <Spinner animation="border" role="status"/>}
+            {props.loaded ? null : <Spinner animation="border" role="status"/>}
             <img 
                 className='banner' 
-                style={loaded ? {} : { display: 'none' }}
+                style={props.loaded ? {} : { display: 'none' }}
                 src={props.src}
-                onLoad={() => setLoaded(true)}
-                alt="Project banner"
+                onLoad={() => props.setLoaded(true)}
+                alt="Project preview"
             />
+            
         </>
     );
 }
