@@ -1,8 +1,6 @@
 .projects-container {
   display: flex; /* flexbox */
-  overflow: hidden; /* fallback to hide by defualt and prevent scrolling horizontally when sides are off screen */
-  /* see linked component on how overflow is toggled back to visible for right-side only...
-  as the sticky property does not work when overflow is hidden */
+  contain: paint; /* prevents overflow (like overflow: hidden) while also allowing sticky div to function */
 }
 
 /* ===BOTH SIDES=== */
