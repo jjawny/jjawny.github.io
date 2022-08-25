@@ -1,0 +1,4 @@
+.banner {
+    max-width: 100%; /* dynamic, keep shrinking to match the width of its containing div */
+    border-radius: 10px;
+}

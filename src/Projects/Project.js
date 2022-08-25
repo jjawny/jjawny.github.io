@@ -1,12 +1,13 @@
 import React from 'react';
 
 import './Project.css';
+import LazyImage from './LazyImage';
 
 function Project(props) {
    /* return an individual project */
    return (
     <> 
-        <img className='banner' src={props.banner} alt="Project banner"/>
+        <LazyImage src={props.banner} />
         <h1 className='project-title'>{props.title}</h1>
         {(props.shields !== undefined)? props.shields.map((s) => <img key={s} className='shield' src={s} alt="badge from shields.io"/>) : <></>}
         <p className='project-text'>
