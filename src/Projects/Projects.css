@@ -1,6 +1,5 @@
 .projects-container {
   display: flex; /* flexbox */
-  contain: paint; /* prevents overflow (like overflow: hidden) while also allowing sticky div to function */
 }
 
 /* ===BOTH SIDES=== */
