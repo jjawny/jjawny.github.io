@@ -1,7 +1,7 @@
 [{
     "banner": "./img/banner-v3.png",
     "title": "PORTFOLIO V3",
-    "desc": "Version 3 of my website - a culmination of all my past projects. Re-built using React.js and reactstrap, version 3 is more accessible, responsive, and aesthetically pleasing compared to versions 1 & 2.",
+    "desc": "Version 3 of my website - Re-built using React.js and reactstrap, version 3 is more accessible, responsive, and aesthetically pleasing compared to versions 1 & 2.",
     "shields": [
         "https://img.shields.io/badge/Year-2022-lightgrey?style=plastic", 
         "https://img.shields.io/badge/Author-Johnny%20Madigan-yellow?style=plastic",
@@ -33,7 +33,7 @@
 {
     "banner": "./img/banner-carpark.gif",
     "title": "CAR PARK SIMULATOR",
-    "desc": "A safety-critical system. Demonstrating my skills in multi-threading, inter-process communication, designing solutions to complex data flows, and handling race conditions and deadlocks. The project consists of 3 separate programs working together to simulate, automate, and protect a car park.",
+    "desc": "A safety-critical system demonstrating my skills in multi-threading, inter-process communication, designing solutions to complex data flows, and handling race conditions and deadlocks. The project consists of 3 separate programs (processes) working together to simulate, automate, and protect a car park.",
     "link": "https://github.com/johnnymadigan/carpark-simulator",
     "shields": [
         "https://img.shields.io/badge/Year-2021-lightgrey?style=plastic",
@@ -44,7 +44,7 @@
 {
     "banner": "./img/banner-networks.gif",
     "title": "NETSEC ANALYSIS",
-    "desc": "A network analysis project, requiring us to analyse a server's capture file (Wireshark), identify the attack (SYN flood DoS) and provide mitigation strategies (SYN Cookies and increasing the server backlog). This project allowed my teammate and I to demonstrate our understanding of the OSI Model and protocol vulnerabilities.",
+    "desc": "A network analysis project, requiring us to analyse a server's capture file in Wireshark, identify the attack (SYN flood DoS) and provide mitigation strategies (SYN Cookies and increasing the server backlog). This project allowed my teammate and I to demonstrate our understanding of the OSI Model and protocol vulnerabilities.",
     "shields": [
         "https://img.shields.io/badge/Year-2021-lightgrey?style=plastic", 
         "https://img.shields.io/badge/Authors-Johnny,%20Daniel-yellow?style=plastic",
@@ -54,7 +54,7 @@
 {
     "banner": "./img/banner-v2.gif",
     "title": "PORTFOLIO V2",
-    "desc": "Version 2 of my website - a culmination of all my past projects. Recreated using React.js and Material UI, version 2 is more responsive and spread out, creating a better UX compared to version 1.",
+    "desc": "Version 2 of my website - Recreated using React.js and Material UI, version 2 is more responsive and spread out, creating a better UX compared to version 1.",
     "link": "https://johnnymadigan.github.io/v2",
     "shields": [
         "https://img.shields.io/badge/Year-2021-lightgrey?style=plastic", 
@@ -115,7 +115,7 @@
 {
     "banner": "./img/banner-v1.gif",
     "title": "PORTFOLIO V1",
-    "desc": "Version 1 of my website - a culmination of all my past projects. Using the power of THREE.js on top of vanilla JS/CSS/HTML, you can experience my humble beginning into web development. The site is best viewed on desktops as the GLTF model will follow your mouse.",
+    "desc": "Version 1 of my website - Using the power of THREE.js on top of vanilla JS/CSS/HTML, you can experience my humble beginning into web development. The site is best viewed on desktops as the GLTF model will follow your mouse.",
     "link": "https://johnnymadigan.github.io/v1",
     "shields": [
         "https://img.shields.io/badge/Year-2020-lightgrey?style=plastic", 
@@ -126,7 +126,7 @@
 {
     "banner": "./img/banner-doggy.jpg",
     "title": "DOGGY DETECTOR",
-    "desc": "Doggy Detector is a security camera system I built to keep an eye on my boy George while I was away at work. Built using a Raspberry Pi and a USB camera (the hardware) and motionEyeOS (the software). When motion is detected, the system immediately takes snapshots and alerts users via email/uploading images to Dropbox.",
+    "desc": "A security camera system I built to keep an eye on my boy George while I was away at work. Built using a Raspberry Pi and a USB camera (the hardware) and motionEyeOS (the software). When motion is detected, the system immediately takes snapshots and alerts users via email/uploading images to Dropbox.",
     "shields": [
         "https://img.shields.io/badge/Year-2019-lightgrey?style=plastic", 
         "https://img.shields.io/badge/Author-Johnny%20Madigan-yellow?style=plastic",
