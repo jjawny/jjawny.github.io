@@ -7,7 +7,6 @@ import Bio from './Bio/Bio';
 import Projects from './Projects/Projects';
 import Footer from './Footer/Footer';
 
-
 function App() {
 
   /**
