@@ -5,18 +5,26 @@ import Project from './Project';
 
 import './Projects.css';
 
-function Projects(props) {
+import { ISingleProject, IAllProjects } from '../common-interfaces';
+
+function Projects(props: IAllProjects) {
     // side in view: false = LEFT, true = RIGHT
     const [ side , setSide ] = useState(false);
 
     // last selected project to highlight
-    const [ highlight, setHighlight ] = useState({});
+    const [ highlight, setHighlight ] = useState<ISingleProject>({
+        banner: undefined,
+        title: undefined,
+        desc: undefined,
+        link: undefined,
+        shields: undefined
+    });
 
     // banner images loading state passed to 'Project' child component (individual) 
     const [ loaded, setLoaded ] = useState(false);
 
     // called when user selects a project to view (buttons) or back button...
-    const selectHighlight = (selectedProject) => {
+    const selectHighlight = (selectedProject: ISingleProject) => {
         
         // update highlight only if different project is selected to save resources/loading time
         // if updating the highlight, reset the image load status to ensure spinner is shown
@@ -37,7 +45,7 @@ function Projects(props) {
     return (
         <div className="projects-container" style={side ? {overflow: ''} : {overflow: 'hidden'}}>
             <div className={`both-sides left-side ${side ? 'slideLeft' : ''}`}>
-                {props.projects.map((p) => (<button key={p.title} onClick={() => selectHighlight(p)}>{p.title}</button>))}
+                {props.projects.map((p: ISingleProject) => (<button key={p.title} onClick={() => selectHighlight(p)}>{p.title}</button>))}
             </div>
             <div className={`both-sides right-side ${!side ? 'slideRight' : ''}`}>
                 <button style={{width: "100%", textAlign: "right"}} onClick={() => selectHighlight(highlight)}><img src={iBack} alt='Go back' className='back-button'/></button>

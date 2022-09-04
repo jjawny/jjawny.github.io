@@ -3,7 +3,13 @@ import { Spinner } from 'reactstrap';
 
 import './LazyImage.css';
 
-function LazyImage(props) {
+import { ILoadedState } from '../common-interfaces';
+
+interface IImage extends ILoadedState {
+    src: string | undefined
+}
+
+function LazyImage(props: IImage) {
     
     // Inspired by https://stackoverflow.com/a/59396181
     // Uses state passed down from Projects > Project > LazyImage
@@ -18,7 +24,6 @@ function LazyImage(props) {
                 onLoad={() => props.setLoaded(true)}
                 alt="Project preview"
             />
-            
         </>
     );
 }

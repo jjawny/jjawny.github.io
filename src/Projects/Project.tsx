@@ -3,7 +3,9 @@ import React from 'react';
 import './Project.css';
 import LazyImage from './LazyImage';
 
-function Project(props) {
+import { ILoadedState, ISingleProject } from '../common-interfaces';
+
+function Project(props: ISingleProject & ILoadedState) {
    /* return an individual project */
    return (
     <> 
