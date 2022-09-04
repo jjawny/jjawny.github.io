@@ -1,11 +1,14 @@
 [{
     "banner": "./img/banner-v3.png",
     "title": "PORTFOLIO V3",
-    "desc": "Version 3 of my website - Re-built using React.js and reactstrap, version 3 is more accessible, responsive, and aesthetically pleasing compared to versions 1 & 2.",
+    "desc": "Version 3 of my website - Re-built using TypeScript, ReactJS, and reactstrap, version 3 is more accessible, responsive, and aesthetically pleasing compared to versions 1 & 2.",
     "shields": [
         "https://img.shields.io/badge/Year-2022-lightgrey?style=plastic", 
         "https://img.shields.io/badge/Author-Johnny%20Madigan-yellow?style=plastic",
-        "https://img.shields.io/badge/React-blue?style=plastic&logo=React"
+        "https://img.shields.io/badge/React-blue?style=plastic&logo=React",
+        "https://img.shields.io/badge/TypeScript-white?style=plastic&logo=TypeScript",
+        "https://img.shields.io/badge/CSS-ff69b4?style=plastic&logo=CSS3",
+        "https://img.shields.io/badge/HTML-white?style=plastic&logo=HTML5"
     ]
 },
 {
@@ -54,12 +57,15 @@
 {
     "banner": "./img/banner-v2.gif",
     "title": "PORTFOLIO V2",
-    "desc": "Version 2 of my website - Recreated using React.js and Material UI, version 2 is more responsive and spread out, creating a better UX compared to version 1.",
+    "desc": "Version 2 of my website - Recreated using ReactJS and Material UI, version 2 is more responsive and spread out, creating a better UX compared to version 1.",
     "link": "https://johnnymadigan.github.io/v2",
     "shields": [
         "https://img.shields.io/badge/Year-2021-lightgrey?style=plastic", 
         "https://img.shields.io/badge/Author-Johnny%20Madigan-yellow?style=plastic",
-        "https://img.shields.io/badge/React-blue?style=plastic&logo=React"
+        "https://img.shields.io/badge/React-blue?style=plastic&logo=React",
+        "https://img.shields.io/badge/JavaScript-yellow?style=plastic&logo=JavaScript",
+        "https://img.shields.io/badge/CSS-ff69b4?style=plastic&logo=CSS3",
+        "https://img.shields.io/badge/HTML-white?style=plastic&logo=HTML5"
     ]
 },
 {
@@ -120,7 +126,10 @@
     "shields": [
         "https://img.shields.io/badge/Year-2020-lightgrey?style=plastic", 
         "https://img.shields.io/badge/Author-Johnny%20Madigan-yellow?style=plastic",
-        "https://img.shields.io/badge/THREE.js-green?style=plastic&logo=Three.js"
+        "https://img.shields.io/badge/THREE.js-green?style=plastic&logo=Three.js",
+        "https://img.shields.io/badge/JavaScript-yellow?style=plastic&logo=JavaScript",
+        "https://img.shields.io/badge/CSS-ff69b4?style=plastic&logo=CSS3",
+        "https://img.shields.io/badge/HTML-white?style=plastic&logo=HTML5"
     ]
 },
 {
