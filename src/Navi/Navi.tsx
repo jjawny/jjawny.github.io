@@ -7,7 +7,9 @@ import iGitHub from './iGithub.png';
 import iLinkedIn from './iLinkedin.gif';
 import iEmail from './iEmail.png';
 
-function Navi(props) {
+
+
+function Navi(props: any) {
   const [isOpen, setIsOpen] = useState(false); // remember to stay collapsed/expanded
 
   const toggle = () => setIsOpen(!isOpen);
