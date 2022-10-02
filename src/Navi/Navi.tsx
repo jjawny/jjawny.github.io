@@ -36,7 +36,7 @@ function Navi(props: any) {
                 </NavLink>
             </NavItem>
             <NavItem>
-                <NavLink href="mailto:johnny.madigan@icloud.com">
+                <NavLink href="mailto:jjjmadigan@gmail.com">
                     <img src={iEmail} alt='Email me' className='link-icon'/><span className='link-text'>Email</span>
                 </NavLink>
             </NavItem>
