@@ -13,19 +13,19 @@ function App() {
    * {{{{{ GET PROJECT DATA (JSON) }}}}}
    * @author johnnymadigan
    * @brief Fetch API method to consume external JSON data.
-   * 
-   * This data is a local repo file that comprises of project info from 
+   *
+   * This data is a local repo file that comprises of project info from
    * pure strings for descriptions etc, to file paths for images.
-   * 
-   * This function will be called as a side-effect upon rendering/mounting 
+   *
+   * This function will be called as a side-effect upon rendering/mounting
    * to the DOM for the first time using the 'useEffect' hook.
-   * 
+   *
    * The 'useState' hook will remember/store this data and render it to the DOM
    * within components.
    */
 
   const [data, setData] = useState([]); // default is empty array
-  
+
   const url = 'projects.json';
 
   const getData = () => {

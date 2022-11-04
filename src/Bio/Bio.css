@@ -7,3 +7,35 @@
 @media (max-width: 900px) {
     .bio-container h2 { font-size: 8vw; } /* adjust text size to stay large on small screens */
 }
+
+/* Bio glitch-style heading */
+
+.logoTopMidWrapper {
+    display: flex; flex-flow: column;
+    height: 500px;
+}
+
+.logoTopWrapper {
+    position: sticky;
+    top: 1px;
+    padding-top: 100px;
+    background-color: white;
+}
+
+.logoTopBio {
+    background: url(./whoami.png) 50% 0 no-repeat;
+    position: relative;
+    height: 48px;
+}
+
+.logoMidBio {
+    background: url(./whoamiGlitched.png) ;
+    background-position: 50% 0;
+    background-repeat: repeat-y;
+    flex: 1;
+}
+
+.logoBottomBio {
+    background: url(./whoami.png) 50% -48px no-repeat;;
+    height: 48px;
+}

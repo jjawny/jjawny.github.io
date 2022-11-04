@@ -5,7 +5,6 @@
 /* ===BOTH SIDES=== */
 .both-sides {
   min-width: 1%; /* CRUCIAL since all elements (img, p, etc) are dynamic, ensure there is a min width to prevent content becoming too narrow */
-  
   transition-duration: .5s;
   transition-property: transform, opacity;
 }
@@ -46,7 +45,7 @@
 
 /* ===RIGHT SIDE=== */
 .right-side {
-  /* auto padding to stay vertically in-lign with box A (projects) as box A is taller */
+  /* auto padding to stay vertically inline with box A (projects) as box A is taller */
   /* top right bottom left */
   margin-right: 5%;
   margin-bottom: auto; /* dynamic allows sticky to work*/
@@ -61,3 +60,35 @@
 }
 
 .back-button { height: 50px; }
+
+/* Project glitch-style heading */
+
+.logoTopMidWrapper {
+  display: flex; flex-flow: column;
+  height: 500px;
+}
+
+.logoTopWrapper {
+  position: sticky;
+  top: 1px;
+  padding-top: 100px;
+  background-color: white;
+}
+
+.logoTopProjects {
+  background: url(./projects.png) 50% 0 no-repeat;
+  position: relative;
+  height: 54px;
+}
+
+.logoMidProjects {
+  background: url(./projectsGlitched.png);
+  background-position: 50% 0;
+  background-repeat: repeat-y;
+  flex: 1;
+}
+
+.logoBottomProjects {
+  background: url(./projects.png) 50% -54px no-repeat;;
+  height: 54px;
+}

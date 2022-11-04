@@ -20,12 +20,12 @@ function Projects(props: IAllProjects) {
         shields: undefined
     });
 
-    // banner images loading state passed to 'Project' child component (individual) 
+    // banner images loading state passed to 'Project' child component (individual)
     const [ loaded, setLoaded ] = useState(false);
 
     // called when user selects a project to view (buttons) or back button...
     const selectHighlight = (selectedProject: ISingleProject) => {
-        
+
         // update highlight only if different project is selected to save resources/loading time
         // if updating the highlight, reset the image load status to ensure spinner is shown
         if (selectedProject !== highlight) {
@@ -43,6 +43,15 @@ function Projects(props: IAllProjects) {
     Set to hidden only when R-side off-screen to remove extra margin...
     Set to nothing to allow sticky to work when L-side off-screen */
     return (
+        <>
+        <div className='logoTopMidWrapper'>
+            <div className='logoTopWrapper'>
+                <div className='logoTopProjects'></div>
+            </div>
+            <div className='logoMidProjects'></div>
+        </div>
+        <div className='logoBottomProjects'></div>
+
         <div className="projects-container" style={side ? {overflow: ''} : {overflow: 'hidden'}}>
             <div className={`both-sides left-side ${side ? 'slideLeft' : ''}`}>
                 {props.projects.map((p: ISingleProject) => (<button key={p.title} onClick={() => selectHighlight(p)}>{p.title}</button>))}
@@ -52,6 +61,7 @@ function Projects(props: IAllProjects) {
                 <Project {...highlight} loaded={loaded} setLoaded={setLoaded}/>
             </div>
         </div>
+        </>
     );
 }
 
