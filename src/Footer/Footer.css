@@ -1,21 +1,41 @@
 /* whitespace for better a UX */
 .footer {
-    background-color: #000;
-    margin-top: 30vh;
-    padding: 100px 0;
+    padding: 40vh 0;
 }
 
-.footer p { color: #fff; font-family: 'Helvetica Neue', sans-serif; font-size: 10px; line-height: 24px; margin: 0; text-align: center; text-justify: inter-word; }
+.footer p { color: black; font-family: 'Helvetica Neue', sans-serif; font-size: 10px; line-height: 24px; margin: 0; text-align: center; text-justify: inter-word; }
 
 /* link colours */
-.footer a:link { color: #fff; }
+.footer a:link { color: rgb(100, 100, 100); }
 .footer a:visited { color: rgb(182, 86, 144); }
 .footer a:hover { color: rgb(209, 137, 180); }
 
-/* logo */
-.footer img { transition: transform 1s; }
+/* Name glitch-style heading */
 
-.footer img:hover {
-    transform: scale(1.5);
-    transition: transform .5s;
+.logoTopMidWrapperName {
+    display: flex; flex-flow: column;
+    height: 500px;
+}
+
+.logoTopWrapperName {
+    position: sticky;
+    top: 100px;
+    padding-top: 230px; /* larger takes 210px */
+    background-color: white; /* set to pink for debugging */
+}
+
+.logoTopName {
+    background: url(./name.jpeg) 50% 0 no-repeat;
+    position: relative;
+    height: 22px; /* larger takes 44px */
+}
+
+.logoMidName {
+    background: url(./nameGlitched.jpeg) 50% 0 repeat-y;
+    flex: 1;
+}
+
+.logoBottomName {
+    background: url(./name.jpeg) 50% -22px no-repeat; /* larger takes -44px */
+    height: 22px; /* larger takes 44px */
 }

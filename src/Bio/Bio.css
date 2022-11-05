@@ -29,9 +29,7 @@
 }
 
 .logoMidBio {
-    background: url(./whoamiGlitched.png) ;
-    background-position: 50% 0;
-    background-repeat: repeat-y;
+    background: url(./whoamiGlitched.png) 50% 0 repeat-y;
     flex: 1;
 }
 

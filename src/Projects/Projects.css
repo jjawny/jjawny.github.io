@@ -82,9 +82,7 @@
 }
 
 .logoMidProjects {
-  background: url(./projectsGlitched.png);
-  background-position: 50% 0;
-  background-repeat: repeat-y;
+  background: url(./projectsGlitched.png) 50% 0 repeat-y;
   flex: 1;
 }
 
