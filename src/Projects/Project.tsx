@@ -1,9 +1,7 @@
 import React from 'react';
-
-import './Project.css';
+import './Project.scss';
 import LazyImage from './LazyImage';
-
-import { ILoadedState, ISingleProject } from '../common-interfaces';
+import { ILoadedState, ISingleProject } from '../Shared/typescript-interfaces';
 
 function Project(props: ISingleProject & ILoadedState) {
    /* return an individual project */

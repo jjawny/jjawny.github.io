@@ -1,9 +1,9 @@
 import React from 'react';
 import { Spinner } from 'reactstrap';
 
-import './LazyImage.css';
+import './LazyImage.scss';
 
-import { ILoadedState } from '../common-interfaces';
+import { ILoadedState } from '../Shared/typescript-interfaces';
 
 interface IImage extends ILoadedState {
     src: string | undefined

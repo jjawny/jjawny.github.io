@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
-
-import iBack from './iBack.png';
 import Project from './Project';
-
-import './Projects.css';
-
-import { ISingleProject, IAllProjects } from '../common-interfaces';
+import './Projects.scss';
+import iBack from './iBack.png';
+import { ISingleProject, IAllProjects } from '../Shared/typescript-interfaces';
 
 function Projects(props: IAllProjects) {
     // side in view: false = LEFT, true = RIGHT
@@ -44,14 +41,6 @@ function Projects(props: IAllProjects) {
     Set to nothing to allow sticky to work when L-side off-screen */
     return (
         <>
-        <div className='logoTopMidWrapper'>
-            <div className='logoTopWrapper'>
-                <div className='logoTopProjects'></div>
-            </div>
-            <div className='logoMidProjects'></div>
-        </div>
-        <div className='logoBottomProjects'></div>
-
         <div className="projects-container" style={side ? {overflow: ''} : {overflow: 'hidden'}}>
             <div className={`both-sides left-side ${side ? 'slideLeft' : ''}`}>
                 {props.projects.map((p: ISingleProject) => (<button key={p.title} onClick={() => selectHighlight(p)}>{p.title}</button>))}

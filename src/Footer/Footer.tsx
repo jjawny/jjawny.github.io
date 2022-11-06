@@ -1,22 +1,30 @@
-import React from 'react';
-import './Footer.css'
+import React, { useRef } from 'react';
+import { useOnScreen } from '../Hooks/useOnScreen';
+import './Footer.scss'
 
 function Footer() {
+    const footerRef = useRef<HTMLDivElement>(null); // DOM element to trigger useOnScreen hook
+    const isOnScreen = useOnScreen(footerRef);
+
     return (
-        <div className='footer'>
-            <div className='logoTopMidWrapperName'>
-            <div className='logoTopWrapperName'>
-                <div className='logoTopName'></div>
+        <>
+        <div className={`footer ${isOnScreen ? "fadeInOnView" : ''}`}>
+            <div className='elasticTopMidWrapperName'>
+                <div className='elasticTopWrapperName'>
+                    <div ref={footerRef} className='elasticTopName' />
+                </div>
+                <div className='elasticMidName' />
             </div>
-            <div className='logoMidName'></div>
-        </div>
-        <div className='logoBottomName'></div>
+            <div className='elasticBottomName' />
             <p>
-                Copyright &copy; Johnny Madigan. All rights reserved.<br/>
-                <a href="https://johnnymadigan.github.io/v1">V1</a>&nbsp;
-                <a href="https://johnnymadigan.github.io/v2">V2</a><br/><br/>
+                &copy; Johnny Madigan
+                <br/>
+                <a href="https://johnnymadigan.github.io/v1">V1</a>
+                &nbsp;
+                <a href="https://johnnymadigan.github.io/v2">V2</a>
             </p>
         </div>
+        </>
     );
 }
 

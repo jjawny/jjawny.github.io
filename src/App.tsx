@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import './App.scss';
+import './Shared/Shared.scss';
 
 import Nav from './Navi/Navi';
 import Hero from './Hero/Hero';

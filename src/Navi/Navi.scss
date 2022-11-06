@@ -16,13 +16,13 @@
 .link-text { color:rgb(30, 30, 30) ; font-family: 'Helvetica Neue', sans-serif; font-size: 10px; line-height: 24px; margin: 0 0 24px; text-align: center; text-justify: inter-word; }
 .link-icon {
     height: 20px; /* set image size */
-    padding-right: 10px; /* space between icon and text */ 
+    padding-right: 10px; /* space between icon and text */
     transition: transform 1s;
 }
 
-.link-icon:hover {
-    transform: scale(1.5);
-    transition: transform .5s;
+.nav-item:hover .link-icon{
+  transform: scale(1.25);
+  transition: transform .5s;
 }
 
 /* branding with typewriter effect */
@@ -30,7 +30,7 @@
 
 .navbar-brand h1 {
   overflow: hidden; /* ensures content is not revealed until animation progresses */
-  border-right: .15em solid rgb(0, 0, 0); /* typwriter cursor */
+  border-right: .15em solid rgb(0, 0, 0); /* typewriter cursor */
   white-space: nowrap; /* keeps content on a single line */
   margin: 0 auto; /* give scrolling effect as the typing happens */
   letter-spacing: .30em;

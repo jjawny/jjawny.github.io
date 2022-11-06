@@ -1,22 +1,22 @@
-import React from 'react';
-import './Bio.css';
+import React, { useRef } from 'react';
+import { useOnScreen } from '../Hooks/useOnScreen';
+import './Bio.scss';
 
 function Bio() {
+    const bioRef = useRef<HTMLParagraphElement>(null); // DOM element to trigger useOnScreen hook
+    const isOnScreen = useOnScreen(bioRef);
+
     return (
+        <>
         <div className="bio-container">
-            <div className='logoTopMidWrapper'>
-                <div className='logoTopWrapper'>
-                    <div className='logoTopBio'></div>
-                </div>
-                <div className='logoMidBio'></div>
-            </div>
-            <div className='logoBottomBio'></div>
-            <p>
+            <h2>who am i?</h2>
+            <p ref={bioRef} className={isOnScreen ? "fadeInOnView" : ''}>
                 I’m a Software Engineer with a bachelor’s degree in Computer Science, currently working at eHealth Queensland on a variety of enterprise apps.
                 <br/><br/>
                 With my creative problem-solving skills and continuous learning-attitude, I believe I can bring value to any team.
             </p>
         </div>
+        </>
     );
 }
 

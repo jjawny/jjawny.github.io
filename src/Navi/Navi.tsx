@@ -1,21 +1,16 @@
 import React, { useState } from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
-import './Navi.css';
+import './Navi.scss';
 
 import iGitHub from './iGithub.png';
 import iLinkedIn from './iLinkedin.gif';
 import iEmail from './iEmail.png';
 
 function Navi(props: any) {
-  const [isOpen, setIsOpen] = useState(false); // remember to stay collapsed/expanded
-
+  const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
-  // a reactstrap component: https://reactstrap.github.io/?path=/docs/components-navbar--navbar
-  // noselect class is defined in App.css and prevents text selection
-  // h1 is animated in linked css
-  // "navi" instead of "nav" as name already taken from reactstrap
   return (
     <div>
       <Navbar {...props} className='noselect'>

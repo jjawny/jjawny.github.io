@@ -1,0 +1,39 @@
+@import "../Shared/Shared.scss";
+
+$name-height: 22px;
+$elastic-height: 500px;
+$elastic-hide-padding: $elastic-height * 0.46; // hides elastic when overflows above
+
+.footer { padding: 42vh 0; }
+.footer p { color: black; font-family: 'Helvetica Neue', sans-serif; font-size: 10px; line-height: 24px; margin: 0; text-align: center; text-justify: inter-word; }
+.footer a:link { color: $link-unvisted; }
+.footer a:visited { color: $link-visited; }
+.footer a:hover { color: $link-hover; }
+
+.elasticTopMidWrapperName {
+    display: flex; flex-flow: column;
+    height: $elastic-height;
+}
+
+.elasticTopWrapperName {
+    position: sticky;
+    top: 100px;
+    padding-top: $elastic-hide-padding; /* larger takes 210px */
+    background-color: white; /* set to pink for debugging */
+}
+
+.elasticTopName {
+    background: url(./name.jpeg) 50% 0 no-repeat;
+    position: relative;
+    height: $name-height;
+}
+
+.elasticMidName {
+    background: url(./nameElastic.jpeg) 50% 0 repeat-y;
+    flex: 1;
+}
+
+.elasticBottomName {
+    background: url(./name.jpeg) 50% ($name-height * -1) no-repeat;
+    height: $name-height;
+}

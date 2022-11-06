@@ -1,0 +1,21 @@
+$media-query-mobile: 900px;
+
+$link-unvisted: rgb(100, 100, 100);
+$link-visited: rgb(182, 86, 144);
+$link-hover: rgb(229, 151, 198);
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.fadeInOnView { animation: fadeInAnimation ease 1s; }
+
+@keyframes fadeInAnimation {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
