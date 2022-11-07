@@ -8,7 +8,7 @@ function Footer() {
 
     return (
         <>
-        <div className={`footer ${isOnScreen ? "fadeInOnView" : ''}`}>
+        <div className={`footer ${isOnScreen ? "fadeInOnView" : 'hide'}`}>
             <div className='elasticTopMidWrapperName'>
                 <div className='elasticTopWrapperName'>
                     <div ref={footerRef} className='elasticTopName' />

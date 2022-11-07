@@ -13,6 +13,8 @@ $link-hover: rgb(229, 151, 198);
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
+.hide { display: none; }
+
 .fadeInOnView { animation: fadeInAnimation ease 1s; }
 
 @keyframes fadeInAnimation {
