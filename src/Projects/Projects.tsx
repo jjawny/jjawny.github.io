@@ -33,9 +33,6 @@ function Projects(props: IAllProjects) {
         setSide(currentSide => !currentSide);
     };
 
-    /* Projects titles are mapped as a list of buttons (LEFT), with a event listener that changes the current highlighted project.
-    The project that is currently highlighted is displayed (RIGHT), with another inner map for each shield/badge. */
-
     /* Project-container overflows on R-side (only when R-side off-screen)...
     Set to hidden only when R-side off-screen to remove extra margin...
     Set to nothing to allow sticky to work when L-side off-screen */
@@ -43,10 +40,14 @@ function Projects(props: IAllProjects) {
         <>
         <div className="projects-container" style={side ? {overflow: ''} : {overflow: 'hidden'}}>
             <div className={`both-sides left-side ${side ? 'slideLeft' : ''}`}>
+                {/* LEFT-SIDE: list of project titles as buttons */}
                 {props.projects.map((p: ISingleProject) => (<button key={p.title} onClick={() => selectHighlight(p)}>{p.title}</button>))}
             </div>
             <div className={`both-sides right-side ${!side ? 'slideRight' : ''}`}>
-                <button style={{width: "100%", textAlign: "right"}} onClick={() => selectHighlight(highlight)}><img src={iBack} alt='Go back' className='back-button'/></button>
+                {/* RIGHT-SIDE: the current project selected */}
+                <button className='back-button' style={{width: "100%", textAlign: "right"}} onClick={() => selectHighlight(highlight)}>
+                    <img src={iBack} alt='Go back'/>
+                </button>
                 <Project {...highlight} loaded={loaded} setLoaded={setLoaded}/>
             </div>
         </div>

@@ -2,8 +2,6 @@ import React from 'react';
 import './Hero.scss';
 
 function Hero() {
-    // noselect class is defined in App.css and prevents text selection
-    // image that looks great horizontally AND vertically
     return (
         <>
         <div className='hero'>
