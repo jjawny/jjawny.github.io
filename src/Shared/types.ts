@@ -1,5 +1,5 @@
 /* an individual project can have some or none of the properties */
-export interface ISingleProject {
+export interface SingleProject {
     banner: string | undefined,
     title: string | undefined,
     desc: string | undefined,
@@ -7,11 +7,11 @@ export interface ISingleProject {
     shields: string[] | undefined
 }
 
-export interface IAllProjects {
-    projects: ISingleProject[]
+export interface AllProjects {
+    projects: SingleProject[]
 }
 
-export interface ILoadedState {
+export interface LoadedState {
     loaded: boolean,
     setLoaded: React.Dispatch<React.SetStateAction<boolean>>
 }

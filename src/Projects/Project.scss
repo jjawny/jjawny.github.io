@@ -4,9 +4,13 @@
     margin-top: 30px;
     color: #000; font-family: 'Helvetica Neue', sans-serif; font-size: 5vw; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
 }
-.project-text { color: #4e4e4e; font-family: 'Helvetica Neue', sans-serif; font-size: 14px; line-height: 24px; margin: 0 0 24px; text-align: justify; text-justify: inter-word; }
-.project-text a:link { color: $link-unvisted; }
-.project-text a:visited { color: $link-visited; }
-.project-text a:hover { color: $link-hover; }
+
+.project-text {
+    color: #4e4e4e; font-family: 'Helvetica Neue', sans-serif; font-size: 14px; line-height: 24px; margin: 0 0 24px; text-align: justify; text-justify: inter-word;
+
+    a:link { color: $link-unvisted; }
+    a:visited { color: $link-visited; }
+    a:hover { color: $link-hover; }
+}
 
 .shield { padding: 0px 5px 5px 5px; } /* whitespace in between shields */

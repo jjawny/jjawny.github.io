@@ -1,6 +1,6 @@
 import { useEffect, useState, RefObject } from 'react';
 
-export function useOnScreen(ref: RefObject<HTMLElement>) {
+export const useOnScreen = (ref: RefObject<HTMLElement>) => {
     const [ inView, setInView ] = useState(false);
 
     useEffect(() => {
