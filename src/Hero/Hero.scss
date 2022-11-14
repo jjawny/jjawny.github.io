@@ -1,6 +1,5 @@
 @import "../Shared/Shared.scss";
 
-/* landing (hero image as div's background) */
 .hero {
     background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("./hero.jpg");
     height: 50%;
@@ -9,21 +8,21 @@
     background-size: cover;
     position: relative;
     margin-top: 56px; /* allow space for nav (which is 56px tall) */
-}
 
-.hero-inner {
-    padding: 15% 0% 15% 0%; /* show more of bg image */
-    margin: auto; /* fall back to ensure content remains centered (XY-axis) */
-    width: 100%; /* fallback to ensure content remains full width of parent */
+    .hero-inner {
+        padding: 15% 0% 15% 0%; /* show more of bg image */
+        margin: auto; /* fall back to ensure content remains centered (XY-axis) */
+        width: 100%; /* fallback to ensure content remains full width of parent */
 
-    h1 {
-        color: #fff; font-family: 'Helvetica Neue', sans-serif; font-size: 13vw; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
-        animation: slideUp ease .9s forwards;
-    }
+        h1 {
+            color: #fff; font-family: 'Helvetica Neue', sans-serif; font-size: 13vw; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
+            animation: slideUp ease .9s forwards;
+        }
 
-    h2 {
-        color: #fff; font-family: 'Mrs Sheppards', cursive; font-size: 4vw; margin: 0% 0% 0% 2.5%; text-align: left;
-        animation: slideDown ease .9s forwards;
+        h2 {
+            color: #fff; font-family: 'Mrs Sheppards', cursive; font-size: 4vw; margin: 0% 0% 0% 2.5%; text-align: left;
+            animation: slideDown ease .9s forwards;
+        }
     }
 }
 
