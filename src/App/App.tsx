@@ -30,7 +30,7 @@ function App() {
         <Nav color="light" fixed="top" expand="md"/>
         <Hero/>
         <Bio/>
-        <Projects projects={data}/>
+        {/* <Projects projects={data}/> */}
         <Footer/>
       </header>
     </div>
