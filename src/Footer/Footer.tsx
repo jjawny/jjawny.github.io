@@ -8,7 +8,7 @@ function Footer() {
 
     return (
         <>
-        <div className={`footer ${isOnScreen ? "fadeInOnView" : 'hide'}`}>
+        <div className={`footer noselect ${isOnScreen ? "fadeInOnView" : 'hide'}`}>
             <div className='elasticTopMidWrapperName'>
                 <div className='elasticTopWrapperName'>
                     <div ref={footerRef} className='elasticTopName' />
@@ -18,10 +18,6 @@ function Footer() {
             <div className='elasticBottomName' />
             <p>
                 &copy; Johnny Madigan
-                <br/>
-                <a href="https://johnnymadigan.github.io/v1">V1</a>
-                &nbsp;
-                <a href="https://johnnymadigan.github.io/v2">V2</a>
             </p>
         </div>
         </>

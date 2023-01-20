@@ -15,7 +15,7 @@ $link-hover: rgb(229, 151, 198);
 
 .hide { opacity: 0 }
 
-.fadeInOnView { animation: fadeInAnimation ease 1s; }
+.fadeInOnView { animation: fadeInAnimation ease 1.5s; }
 
 @keyframes fadeInAnimation {
     0% { opacity: 0; }
