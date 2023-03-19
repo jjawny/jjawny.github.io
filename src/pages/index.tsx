@@ -14,7 +14,8 @@ const Home: NextPage = (props) => {
         <meta name="johnnymadigan" content="an introduction" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="min-h-[100vh] bg-gradient-to-r from-[#BFC8DB] to-[#96AAC5]">
+
+      <main className="min-h-[100vh] bg-gradient-to-br from-[#BFC8DB] via-[#acbace] to-[#d38ba3]">
         <div className="grid h-full w-screen select-none place-items-center">
           <div className="flex w-screen flex-col pt-20">
             <div className="h-screen">
