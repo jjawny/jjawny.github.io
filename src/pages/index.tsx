@@ -32,7 +32,7 @@ const Home: NextPage = (props) => {
                     <Lighting />
                     <Model />
                     <Html center>
-                      <h1 className="w-screen self-center text-center text-6xl font-extrabold tracking-tighter text-white sm:text-[20vw]">
+                      <h1 className="w-screen self-center text-center text-7xl font-extrabold tracking-tighter text-white sm:text-[20vw]">
                         johnny madigan
                       </h1>
                     </Html>
