@@ -77,7 +77,7 @@ const Socials = () => (
 );
 
 const About = () => {
-  const KeyWords = ({ words }: { words: string }) => (
+  const Highlight = ({ words }: { words: string }) => (
     <span className="whitespace-nowrap rounded-full bg-gray-800 px-2 py-1 font-bold text-amber-400">
       {words}
     </span>
@@ -89,14 +89,14 @@ const About = () => {
         who am i ?
       </h1>
       <p className="text-md mt-5 max-w-4xl self-center px-10 text-center text-gray-400">
-        I'm a <KeyWords words="full stack software developer" /> (.NET, React)
+        I'm a <Highlight words="full stack software developer" /> (.NET, React)
         currently working at Queensland Health on a portfolio of enterprise
         apps.
         <br />
         <br />
-        As someone who <KeyWords words="thrives" /> on continously mastering
-        their stack, creating solutions to complex problems, and sharing
-        knowledge, I believe I can bring <KeyWords words="value" /> to any team.
+        As someone who <Highlight words="thrives" /> on mastering their stack,
+        creating solutions to complex problems, and sharing knowledge, I believe
+        I can bring <Highlight words="value" /> to any team.
       </p>
     </>
   );
