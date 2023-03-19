@@ -1,3 +1,4 @@
+import { Html, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Model } from "~/components/model";
 import { type NextPage } from "next";
@@ -14,50 +15,54 @@ const Home: NextPage = (props) => {
         <meta name="johnnymadigan" content="an introduction" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main className="min-h-[100vh] bg-gradient-to-br from-[#BFC8DB] via-[#acbace] to-[#d38ba3]">
+      <main className="min-h-[100vh] bg-[url('/bg.gif')] bg-cover">
         <div className="grid h-full w-screen select-none place-items-center">
-          <div className="flex w-screen flex-col pt-20">
-            <div className="h-screen">
-              <h1 className="self-center text-center text-8xl font-extrabold tracking-tighter text-white sm:text-[13vw]">
-                johnny madigan
-              </h1>
-              <div className="h-60">
-                <Canvas camera={{ position: [0, 0, 0] }}>
+          <div className="flex w-screen flex-col">
+            <div className="h-screen w-screen">
+              <div className="h-screen w-screen">
+                <Canvas camera={{ position: [0, 0, 20] }}>
                   <Suspense fallback={null}>
                     <Lighting />
                     <Model />
+                    <Html center>
+                      <h1 className="w-screen self-center text-center text-6xl font-extrabold tracking-tighter text-white sm:text-[20vw]">
+                        johnny madigan
+                      </h1>
+                    </Html>
+                    {/* <OrbitControls /> */}
                   </Suspense>
                 </Canvas>
               </div>
-              <div className="flex flex-row justify-center">
-                <Link href={"https://github.com/johnnymadigan"}>
-                  <Image
-                    src={"/github.png"}
-                    alt="github"
-                    height={50}
-                    width={50}
-                    className="duration-700 hover:scale-110"
-                  />
-                </Link>
-                <Link href={"https://www.linkedin.com/in/johnnymadigan/"}>
-                  <Image
-                    src={"/linkedin.png"}
-                    alt="linkedin"
-                    height={50}
-                    width={50}
-                    className="duration-700 hover:scale-110"
-                  />
-                </Link>
-              </div>
             </div>
-            <h1 className="text-center text-5xl font-extrabold tracking-tighter text-white">
+            {/* socials */}
+            <div className="mb-60 flex flex-row justify-center">
+              <Link href={"https://github.com/johnnymadigan"}>
+                <Image
+                  src={"/github.png"}
+                  alt="github"
+                  height={50}
+                  width={50}
+                  className="duration-700 hover:scale-110"
+                />
+              </Link>
+              <Link href={"https://www.linkedin.com/in/johnnymadigan/"}>
+                <Image
+                  src={"/linkedin.png"}
+                  alt="linkedin"
+                  height={50}
+                  width={50}
+                  className="duration-700 hover:scale-110"
+                />
+              </Link>
+            </div>
+            {/* about */}
+            <h1 className="text-center text-5xl font-extrabold tracking-tight text-white">
               who am i?
             </h1>
-            <p className="text-md max-w-4xl self-center px-10 text-center text-white">
+            <p className="text-md max-w-4xl self-center px-10 text-center text-gray-800">
               <br />
               I'm a{" "}
-              <span className="font-semibold text-amber-300">
+              <span className="rounded-full bg-white px-2 font-bold text-amber-300">
                 Full Stack Software Developer
               </span>{" "}
               currently working at Queensland Health on a portfolio of
@@ -65,14 +70,29 @@ const Home: NextPage = (props) => {
               <br />
               <br />
               As someone who{" "}
-              <span className="font-semibold text-amber-300">thrives</span> on
-              learning, building, and finding solutions to complex problems, I
-              believe I can bring value to any team.
+              <span className="rounded-full bg-white px-2 font-semibold text-amber-300">
+                thrives
+              </span>{" "}
+              on learning, building, and finding solutions to complex problems,
+              I believe I can bring{" "}
+              <span className="rounded-full bg-white px-2 font-semibold text-amber-300">
+                value
+              </span>{" "}
+              to any team.
             </p>
+            {/* credits */}
             <div className="mt-20 h-40 w-full bg-black py-10">
               <div className="w-full text-center text-xs text-gray-500">
-                <a href="https://skfb.ly/6FWRT">"Hello my friends"</a> by Urpo
-                (CC-BY-NC-4.0)
+                <a href="https://skfb.ly/DXqI">
+                  "Hotline Miami 2: Wrong number - Tony mask"
+                </a>{" "}
+                by down_limit (CC-BY-NC-4.0)
+                <br />
+                <br />
+                <a href="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTZhNGFlZDliZWYyY2I4NzFjYzA4MDJkOWM2ODBjOTZjMzhkMjhkNiZjdD1n/aCCleAr6W1njtygxHC/giphy.gif">
+                  Pink Glow
+                </a>{" "}
+                by Erica Anderson
                 <br />
                 <br />© Johnny Madigan
               </div>
@@ -86,8 +106,8 @@ const Home: NextPage = (props) => {
 
 const Lighting = () => (
   <>
-    <directionalLight position={[-1, 1, 1]} />
-    <ambientLight />
+    <directionalLight position={[0, -5, -1]} />
+    <ambientLight intensity={0.7} />
   </>
 );
 
