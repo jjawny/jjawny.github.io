@@ -69,8 +69,8 @@ const Home: NextPage = (props) => {
             <p className="text-md max-w-4xl self-center px-10 text-center text-gray-800">
               <br />
               I'm a{" "}
-              <span className="rounded-full bg-white px-2 font-bold text-amber-300">
-                Full Stack Software Developer
+              <span className="whitespace-nowrap rounded-full bg-white px-2 font-bold text-amber-300">
+                full stack software developer
               </span>{" "}
               currently working at Queensland Health on a portfolio of
               enterprise apps.
@@ -93,7 +93,7 @@ const Home: NextPage = (props) => {
                 <a href="https://skfb.ly/DXqI">
                   "Hotline Miami 2: Wrong number - Tony mask"
                 </a>{" "}
-                by down_limit (CC-BY-NC-4.0)
+                by down_limit
                 <br />
                 <br />
                 <a href="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTZhNGFlZDliZWYyY2I4NzFjYzA4MDJkOWM2ODBjOTZjMzhkMjhkNiZjdD1n/aCCleAr6W1njtygxHC/giphy.gif">
