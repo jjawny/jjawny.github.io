@@ -78,7 +78,7 @@ const Socials = () => (
 
 const About = () => {
   const KeyWords = ({ words }: { words: string }) => (
-    <span className="whitespace-nowrap rounded-full bg-white px-2 font-bold text-amber-400">
+    <span className="whitespace-nowrap rounded-full bg-gray-800 px-2 py-1 font-bold text-amber-400">
       {words}
     </span>
   );
@@ -86,23 +86,24 @@ const About = () => {
   return (
     <>
       <h1 className="text-center text-5xl font-extrabold tracking-tight text-white">
-        who am i?
+        who am i ?
       </h1>
-      <p className="text-md mt-5 max-w-4xl self-center px-10 text-center text-gray-800">
-        I'm a <KeyWords words="full stack software developer" /> currently
-        working at Queensland Health on a portfolio of enterprise apps.
+      <p className="text-md mt-5 max-w-4xl self-center px-10 text-center text-gray-400">
+        I'm a <KeyWords words="full stack software developer" /> (.NET, React)
+        currently working at Queensland Health on a portfolio of enterprise
+        apps.
         <br />
         <br />
-        <KeyWords words="thrives" /> on learning, building, and finding
-        solutions to complex problems, I believe I can bring{" "}
-        <KeyWords words="value" /> to any team.
+        As someone who <KeyWords words="thrives" /> on continously mastering
+        their stack, creating solutions to complex problems, and sharing
+        knowledge, I believe I can bring <KeyWords words="value" /> to any team.
       </p>
     </>
   );
 };
 
 const Credits = () => (
-  <div className="mt-80 flex h-80 items-center justify-center bg-black text-center text-xs text-gray-600">
+  <div className="mt-80 flex h-80 items-center justify-center text-center text-xs text-gray-500">
     <div>
       <a href="https://skfb.ly/DXqI">
         "Hotline Miami 2: Wrong number - Tony mask"
@@ -110,8 +111,8 @@ const Credits = () => (
       by down_limit
       <br />
       <br />
-      <a href="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTZhNGFlZDliZWYyY2I4NzFjYzA4MDJkOWM2ODBjOTZjMzhkMjhkNiZjdD1n/aCCleAr6W1njtygxHC/giphy.gif">
-        "Pink Glow"
+      <a href="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzc5MmVlNDNiMTc4Y2NmNjhmNzczNDFlMTRhNjQ5MmJiNmVhZGZiYiZjdD1n/g0gAJDvoNJBSwx8wP0/giphy.gif">
+        "Glow Black And White"
       </a>{" "}
       by Erica Anderson
       <br />
