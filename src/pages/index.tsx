@@ -12,8 +12,12 @@ const Home: NextPage = (props) => {
     <>
       <Head>
         <title>johnnymadigan</title>
-        <meta name="johnnymadigan" content="an introduction" />
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="an introduction" />
+        <meta property="og:title" content="johnnymadigan" />
+        <meta property="og:description" content="an introduction" />
+        <meta property="og:image" content="/favicon.ico" />
+        <meta property="og:image:alt" content="j" />
       </Head>
       <main className="min-h-[100vh] bg-[url('/bg.gif')] bg-cover">
         <div className="grid h-full w-screen select-none place-items-center">
