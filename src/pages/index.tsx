@@ -42,7 +42,7 @@ const Home: NextPage = (props) => {
               </div>
             </div>
             {/* socials */}
-            <div className="mb-60 flex flex-row justify-center">
+            <div className="mb-60 flex flex-row justify-center space-x-5">
               <Link href={"https://github.com/johnnymadigan"}>
                 <Image
                   src={"/github.png"}
