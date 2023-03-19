@@ -88,7 +88,7 @@ const Home: NextPage = (props) => {
               to any team.
             </p>
             {/* credits */}
-            <div className="mt-20 h-40 w-full bg-black py-10">
+            <div className="mt-80 h-40 w-full bg-black py-10">
               <div className="w-full text-center text-xs text-gray-500">
                 <a href="https://skfb.ly/DXqI">
                   "Hotline Miami 2: Wrong number - Tony mask"
