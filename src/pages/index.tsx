@@ -20,7 +20,10 @@ const Home: NextPage = (props) => {
           <div className="flex w-screen flex-col">
             <div className="h-screen w-screen">
               <div className="h-screen w-screen">
-                <Canvas camera={{ position: [0, 0, 20] }}>
+                <Canvas
+                  camera={{ position: [0, 0, 20] }}
+                  resize={{ debounce: 50 }}
+                >
                   <Suspense fallback={null}>
                     <Lighting />
                     <Model />
