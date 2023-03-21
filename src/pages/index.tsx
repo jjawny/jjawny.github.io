@@ -42,7 +42,9 @@ const ThreeScene = () => (
           <ambientLight intensity={0.7} />
           <Model />
           <Html center>
-            <h1 className="w-screen self-center text-center text-7xl font-extrabold tracking-tighter text-white sm:text-[20vw]">
+            {/* to keep model movement smooth, avoid cursor position changing when mousing over by setting element to full-screen */}
+            {/* to center text w/o another inner element, use a flexbox and center x and y */}
+            <h1 className="flex h-screen w-screen cursor-default items-center justify-center justify-items-center text-center text-[24vw] font-extrabold tracking-tighter text-white md:text-[14vw]">
               johnny madigan
             </h1>
           </Html>
@@ -95,7 +97,7 @@ const About = () => {
         <br />
         <br />
         As someone who <Highlight words="thrives" /> on mastering their stack,
-        creating solutions to complex problems, and sharing knowledge, I believe
+        finding solutions to complex problems, and sharing knowledge, I believe
         I can bring <Highlight words="value" /> to any team.
       </p>
     </>
@@ -105,14 +107,17 @@ const About = () => {
 const Credits = () => (
   <div className="mt-80 flex h-80 items-center justify-center text-center text-xs text-gray-500">
     <div>
-      <a href="https://skfb.ly/DXqI">
-        "Hotline Miami 2: Wrong number - Tony mask"
+      <a className="italic" href="https://skfb.ly/DXqI">
+        Hotline Miami 2: Wrong Number - Tony mask
       </a>{" "}
       by down_limit
       <br />
       <br />
-      <a href="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzc5MmVlNDNiMTc4Y2NmNjhmNzczNDFlMTRhNjQ5MmJiNmVhZGZiYiZjdD1n/g0gAJDvoNJBSwx8wP0/giphy.gif">
-        "Glow Black And White"
+      <a
+        className="italic"
+        href="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzc5MmVlNDNiMTc4Y2NmNjhmNzczNDFlMTRhNjQ5MmJiNmVhZGZiYiZjdD1n/g0gAJDvoNJBSwx8wP0/giphy.gif"
+      >
+        Glow Black And White
       </a>{" "}
       by Erica Anderson
       <br />
