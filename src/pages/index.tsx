@@ -58,7 +58,7 @@ const ThreeScene = () => (
 const Socials = () => {
   return (
     // parent must be relative for positioning and z index max to keep on top
-    <div className="fixed z-50 flex select-none flex-row space-x-2 p-4">
+    <div className="fixed z-50 flex w-full select-none flex-row space-x-2 bg-black p-4">
       <h1 className="font-anton text-4xl font-extrabold tracking-tight text-white">
         JM
       </h1>
@@ -127,7 +127,7 @@ const Credits = () => {
   return (
     <div
       ref={elementRef}
-      className={`content center flex h-80 flex-col space-y-3 text-center text-xs text-gray-700 ${
+      className={`content center flex h-80 flex-col space-y-3 text-center text-xs text-gray-600 ${
         elementIsInView ? "animate-fadeIn" : "invisible"
       }`}
     >
