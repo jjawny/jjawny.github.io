@@ -2,7 +2,7 @@ import { useIsInView } from "~/hooks/useIsInView";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useRef } from "react";
 import { Html } from "@react-three/drei";
-import Model from "~/components/model";
+import Model from "~/components/Model";
 import { type NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
