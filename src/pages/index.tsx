@@ -44,8 +44,8 @@ const ThreeScene = () => (
           <Html center>
             {/* to keep model movement smooth, avoid cursor position changing when mousing over by setting element to full-screen */}
             {/* to center text w/o another inner element, use a flexbox and center x and y */}
-            <h1 className="flex h-screen w-screen cursor-default items-center justify-center justify-items-center text-center text-[24vw] font-extrabold tracking-tighter text-white md:text-[14vw]">
-              johnny madigan
+            <h1 className="flex h-screen w-screen cursor-default items-center justify-center justify-items-center text-center font-anton text-[24vw] font-extrabold tracking-tighter text-white md:text-[11vw]">
+              JOHNNY MADIGAN
             </h1>
           </Html>
           {/* <OrbitControls /> */}
@@ -87,7 +87,7 @@ const About = () => {
 
   return (
     <>
-      <h1 className="text-center text-5xl font-extrabold tracking-tight text-white">
+      <h1 className="text-center font-anton text-5xl font-extrabold tracking-tight text-white">
         who am i ?
       </h1>
       <p className="text-md mt-5 max-w-4xl self-center px-10 text-center text-gray-400">
@@ -106,22 +106,23 @@ const About = () => {
 
 const Credits = () => (
   <div className="mt-80 flex h-80 items-center justify-center text-center text-xs text-gray-500">
-    <div>
-      <a className="italic" href="https://skfb.ly/DXqI">
-        Hotline Miami 2: Wrong Number - Tony mask
-      </a>{" "}
-      by down_limit
-      <br />
-      <br />
-      <a
-        className="italic"
-        href="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzc5MmVlNDNiMTc4Y2NmNjhmNzczNDFlMTRhNjQ5MmJiNmVhZGZiYiZjdD1n/g0gAJDvoNJBSwx8wP0/giphy.gif"
-      >
-        Glow Black And White
-      </a>{" "}
-      by Erica Anderson
-      <br />
-      <br />© Johnny Madigan
+    <div className="flex flex-col space-y-3">
+      <p>
+        <a className="italic" href="https://skfb.ly/DXqI">
+          Hotline Miami 2: Wrong Number - Tony mask
+        </a>{" "}
+        by down_limit
+      </p>
+      <p>
+        <a
+          className="italic"
+          href="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzc5MmVlNDNiMTc4Y2NmNjhmNzczNDFlMTRhNjQ5MmJiNmVhZGZiYiZjdD1n/g0gAJDvoNJBSwx8wP0/giphy.gif"
+        >
+          Glow Black And White
+        </a>{" "}
+        by Erica Anderson
+      </p>
+      <p>© Johnny Madigan</p>
     </div>
   </div>
 );
