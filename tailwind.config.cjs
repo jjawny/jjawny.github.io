@@ -11,12 +11,17 @@ const config = {
         anton: ["Anton", ...defaultTheme.fontFamily.sans],
       },
       animation: {
-        fadeIn: "fadeIn 2s ease-in forwards",
+        fadeIn: "fadeIn 1s ease-in forwards",
+        zoomIn: "zoomIn 0.3s ease-in forwards",
       },
       keyframes: {
         fadeIn: {
           "0%": { opacity: 0 },
           "100%": { opacity: 1 },
+        },
+        zoomIn: {
+          "0%": { transform: "scale(0)" },
+          "100%": { transform: "scale(1)" },
         },
       },
     },
