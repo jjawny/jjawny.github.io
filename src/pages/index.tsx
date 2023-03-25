@@ -1,11 +1,12 @@
 import { Html, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { Model } from "~/components/model";
+import Model from "~/components/model";
 import { type NextPage } from "next";
-import { Suspense } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
+import { useIsInView } from "~/hooks/useIsInView";
 
 const Home: NextPage = (props) => {
   return (
@@ -24,7 +25,7 @@ const Home: NextPage = (props) => {
           <div className="flex w-screen flex-col">
             <ThreeScene />
             <Socials />
-            <About />
+            <WhoAmI />
             <Credits />
           </div>
         </div>
@@ -43,7 +44,6 @@ const ThreeScene = () => (
           <Model />
           <Html center>
             {/* to keep model movement smooth, avoid cursor position changing when mousing over by setting element to full-screen */}
-            {/* to center text w/o another inner element, use a flexbox and center x and y */}
             <h1 className="flex h-screen w-screen cursor-default items-center justify-center justify-items-center text-center font-anton text-[24vw] font-extrabold tracking-tighter text-white md:text-[11vw]">
               JOHNNY MADIGAN
             </h1>
@@ -56,7 +56,7 @@ const ThreeScene = () => (
 );
 
 const Socials = () => (
-  <div className="mb-80 flex flex-row justify-center space-x-5">
+  <div className="flex flex-row justify-center space-x-5">
     <Link href={"https://github.com/johnnymadigan"}>
       <Image
         src={"/github.png"}
@@ -78,7 +78,10 @@ const Socials = () => (
   </div>
 );
 
-const About = () => {
+const WhoAmI = () => {
+  const whoAmIRef = useRef<HTMLSpanElement>(null);
+  const isInView = useIsInView(whoAmIRef);
+
   const Highlight = ({ words }: { words: string }) => (
     <span className="whitespace-nowrap rounded-full bg-gray-800 px-2 py-1 font-bold text-amber-400">
       {words}
@@ -86,11 +89,16 @@ const About = () => {
   );
 
   return (
-    <>
-      <h1 className="text-center font-anton text-5xl font-extrabold tracking-tight text-white">
+    <span
+      ref={whoAmIRef}
+      className={`my-80 flex flex-col content-center text-center ${
+        isInView ? "animate-fadeIn" : "invisible"
+      }`}
+    >
+      <h1 className="font-anton text-5xl font-extrabold tracking-tight text-white">
         who am i ?
       </h1>
-      <p className="text-md mt-5 max-w-4xl self-center px-10 text-center text-gray-400">
+      <p className="text-md mt-5 max-w-4xl self-center px-10 text-gray-400">
         I'm a <Highlight words="full stack software developer" /> (.NET, React)
         currently working at Queensland Health on a portfolio of enterprise
         apps.
@@ -100,13 +108,13 @@ const About = () => {
         finding solutions to complex problems, and sharing knowledge, I believe
         I can bring <Highlight words="value" /> to any team.
       </p>
-    </>
+    </span>
   );
 };
 
 const Credits = () => (
-  <div className="mt-80 flex h-80 items-center justify-center text-center text-xs text-gray-500">
-    <div className="flex flex-col space-y-3">
+  <div className="">
+    <div className="content center flex h-80 flex-col space-y-3 text-center text-xs text-gray-700">
       <p>
         <a className="italic" href="https://skfb.ly/DXqI">
           Hotline Miami 2: Wrong Number - Tony mask
