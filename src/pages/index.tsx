@@ -21,13 +21,12 @@ const Home: NextPage = (props) => {
         <meta property="og:image:alt" content="j" />
       </Head>
       <main className="min-h-[100vh] bg-[url('/bg.gif')] bg-cover">
-        <div className="grid h-full w-screen select-none place-items-center">
-          <div className="flex w-screen flex-col">
-            <ThreeScene />
-            <Socials />
-            <WhoAmI />
-            <Credits />
-          </div>
+        {/* relative for socials */}
+        <div className="relative flex w-screen flex-col">
+          <Socials />
+          <ThreeScene />
+          <WhoAmI />
+          <Credits />
         </div>
       </main>
     </>
@@ -35,7 +34,8 @@ const Home: NextPage = (props) => {
 };
 
 const ThreeScene = () => (
-  <div className="h-screen w-screen">
+  // specify z index so socials can be positioned on top
+  <div className="-z-0 h-screen w-screen select-none">
     <div className="h-screen w-screen">
       <Canvas camera={{ position: [0, 0, 20] }} resize={{ debounce: 50 }}>
         <Suspense fallback={null}>
@@ -43,7 +43,7 @@ const ThreeScene = () => (
           <ambientLight intensity={0.7} />
           <Model />
           <Html center>
-            {/* to keep model movement smooth, avoid cursor position changing when mousing over by setting element to full-screen */}
+            {/* for smooth model movement, avoid cursor position jumping when mousing in/out element by making element full-screen */}
             <h1 className="flex h-screen w-screen animate-zoomIn cursor-default items-center justify-center justify-items-center text-center font-anton text-[24vw] font-extrabold tracking-tighter text-white md:text-[11vw]">
               JOHNNY MADIGAN
             </h1>
@@ -56,22 +56,18 @@ const ThreeScene = () => (
 );
 
 const Socials = () => {
-  const elementRef = useRef<HTMLDivElement>(null);
-  const elementIsInView = useIsInView(elementRef);
-
   return (
-    <div
-      ref={elementRef}
-      className={`flex flex-row justify-center space-x-5 ${
-        elementIsInView ? "animate-fadeIn" : "invisible"
-      }`}
-    >
+    // parent must be relative for positioning and z index max to keep on top
+    <div className="fixed z-50 flex select-none flex-row space-x-2 p-4">
+      <h1 className="font-anton text-4xl font-extrabold tracking-tight text-white">
+        JM
+      </h1>
       <Link href={"https://github.com/johnnymadigan"}>
         <Image
           src={"/github.png"}
           alt="github"
-          height={40}
-          width={40}
+          height={37}
+          width={37}
           className="duration-700 hover:scale-110"
         />
       </Link>
@@ -79,8 +75,8 @@ const Socials = () => {
         <Image
           src={"/linkedin.png"}
           alt="linkedin"
-          height={40}
-          width={40}
+          height={37}
+          width={37}
           className="duration-700 hover:scale-110"
         />
       </Link>
