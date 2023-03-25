@@ -1,12 +1,12 @@
-import { Html, OrbitControls } from "@react-three/drei";
+import { useIsInView } from "~/hooks/useIsInView";
 import { Canvas } from "@react-three/fiber";
+import { Suspense, useRef } from "react";
+import { Html } from "@react-three/drei";
 import Model from "~/components/model";
 import { type NextPage } from "next";
-import { Suspense, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
-import { useIsInView } from "~/hooks/useIsInView";
 
 const Home: NextPage = (props) => {
   return (
@@ -44,7 +44,7 @@ const ThreeScene = () => (
           <Model />
           <Html center>
             {/* to keep model movement smooth, avoid cursor position changing when mousing over by setting element to full-screen */}
-            <h1 className="flex h-screen w-screen cursor-default items-center justify-center justify-items-center text-center font-anton text-[24vw] font-extrabold tracking-tighter text-white md:text-[11vw]">
+            <h1 className="flex h-screen w-screen animate-zoomIn cursor-default items-center justify-center justify-items-center text-center font-anton text-[24vw] font-extrabold tracking-tighter text-white md:text-[11vw]">
               JOHNNY MADIGAN
             </h1>
           </Html>
@@ -55,32 +55,42 @@ const ThreeScene = () => (
   </div>
 );
 
-const Socials = () => (
-  <div className="flex flex-row justify-center space-x-5">
-    <Link href={"https://github.com/johnnymadigan"}>
-      <Image
-        src={"/github.png"}
-        alt="github"
-        height={40}
-        width={40}
-        className="duration-700 hover:scale-110"
-      />
-    </Link>
-    <Link href={"https://www.linkedin.com/in/johnnymadigan/"}>
-      <Image
-        src={"/linkedin.png"}
-        alt="linkedin"
-        height={40}
-        width={40}
-        className="duration-700 hover:scale-110"
-      />
-    </Link>
-  </div>
-);
+const Socials = () => {
+  const elementRef = useRef<HTMLDivElement>(null);
+  const elementIsInView = useIsInView(elementRef);
+
+  return (
+    <div
+      ref={elementRef}
+      className={`flex flex-row justify-center space-x-5 ${
+        elementIsInView ? "animate-fadeIn" : "invisible"
+      }`}
+    >
+      <Link href={"https://github.com/johnnymadigan"}>
+        <Image
+          src={"/github.png"}
+          alt="github"
+          height={40}
+          width={40}
+          className="duration-700 hover:scale-110"
+        />
+      </Link>
+      <Link href={"https://www.linkedin.com/in/johnnymadigan/"}>
+        <Image
+          src={"/linkedin.png"}
+          alt="linkedin"
+          height={40}
+          width={40}
+          className="duration-700 hover:scale-110"
+        />
+      </Link>
+    </div>
+  );
+};
 
 const WhoAmI = () => {
-  const whoAmIRef = useRef<HTMLSpanElement>(null);
-  const isInView = useIsInView(whoAmIRef);
+  const elementRef = useRef<HTMLSpanElement>(null);
+  const elementIsInView = useIsInView(elementRef);
 
   const Highlight = ({ words }: { words: string }) => (
     <span className="whitespace-nowrap rounded-full bg-gray-800 px-2 py-1 font-bold text-amber-400">
@@ -90,31 +100,41 @@ const WhoAmI = () => {
 
   return (
     <span
-      ref={whoAmIRef}
+      ref={elementRef}
       className={`my-80 flex flex-col content-center text-center ${
-        isInView ? "animate-fadeIn" : "invisible"
+        elementIsInView ? "animate-fadeIn" : "invisible"
       }`}
     >
       <h1 className="font-anton text-5xl font-extrabold tracking-tight text-white">
         who am i ?
       </h1>
-      <p className="text-md mt-5 max-w-4xl self-center px-10 text-gray-400">
-        I'm a <Highlight words="full stack software developer" /> (.NET, React)
-        currently working at Queensland Health on a portfolio of enterprise
-        apps.
-        <br />
-        <br />
-        As someone who <Highlight words="thrives" /> on mastering their stack,
-        finding solutions to complex problems, and sharing knowledge, I believe
-        I can bring <Highlight words="value" /> to any team.
-      </p>
+      <span className="text-md mt-5 max-w-4xl space-y-5 self-center px-10 text-gray-400">
+        <p>
+          I'm a <Highlight words="full stack software developer" /> (.NET,
+          React) currently working at Queensland Health on a portfolio of
+          enterprise apps.
+        </p>
+        <p>
+          As someone who <Highlight words="thrives" /> on mastering their stack,
+          finding solutions to complex problems, and sharing knowledge, I
+          believe I can bring <Highlight words="value" /> to any team.
+        </p>
+      </span>
     </span>
   );
 };
 
-const Credits = () => (
-  <div className="">
-    <div className="content center flex h-80 flex-col space-y-3 text-center text-xs text-gray-700">
+const Credits = () => {
+  const elementRef = useRef<HTMLDivElement>(null);
+  const elementIsInView = useIsInView(elementRef);
+
+  return (
+    <div
+      ref={elementRef}
+      className={`content center flex h-80 flex-col space-y-3 text-center text-xs text-gray-700 ${
+        elementIsInView ? "animate-fadeIn" : "invisible"
+      }`}
+    >
       <p>
         <a className="italic" href="https://skfb.ly/DXqI">
           Hotline Miami 2: Wrong Number - Tony mask
@@ -132,7 +152,7 @@ const Credits = () => (
       </p>
       <p>© Johnny Madigan</p>
     </div>
-  </div>
-);
+  );
+};
 
 export default Home;

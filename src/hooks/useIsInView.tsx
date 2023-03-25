@@ -1,7 +1,7 @@
 import { RefObject, useEffect, useState } from "react";
 
 export const useIsInView = (ref: RefObject<Element>) => {
-  const [isInView, setIsInView] = useState<boolean>(false);
+  const [isInView, setIsInView] = useState<boolean>(true);
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry) {
