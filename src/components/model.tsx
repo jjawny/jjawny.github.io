@@ -6,7 +6,7 @@ import React, { useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
-import * as THREE from "three";
+import { Object3D } from "three";
 import { easing } from "maath";
 import { Mesh } from "three";
 
@@ -20,13 +20,13 @@ type GLTFResult = GLTF & {
   };
 };
 
-export function Model(props: JSX.IntrinsicElements["group"]) {
+export default function Model(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF("/hotline-miami.glb") as GLTFResult;
 
   // follow mouse technique
   // inspo: https://codesandbox.io/s/look-at-camera-with-vertex-shader-forked-ng6ozq?file=/src/App.js:299-351
   const modelRef = useRef<Mesh | null>(null);
-  const [dummy] = useState(() => new THREE.Object3D());
+  const [dummy] = useState(() => new Object3D());
 
   useFrame((state, dt) => {
     let x = (state.pointer.x * -1) / 2.5;
