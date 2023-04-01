@@ -44,7 +44,7 @@ const ThreeScene = () => (
           <Model />
           <Html center>
             {/* for smooth model movement, avoid cursor position jumping when mousing in/out element by making element full-screen */}
-            <h1 className="flex h-screen w-screen animate-zoomIn cursor-default items-center justify-center justify-items-center text-center font-anton text-[24vw] font-extrabold tracking-tight text-white md:text-[11vw]">
+            <h1 className="flex h-screen w-screen animate-zoomIn cursor-default items-center justify-center justify-items-center text-center font-anton text-[24vw] font-extrabold text-white md:text-[11vw]">
               JOHNNY MADIGAN
             </h1>
           </Html>
@@ -101,7 +101,7 @@ const WhoAmI = () => {
         elementIsInView ? "animate-fadeIn" : "invisible"
       }`}
     >
-      <h1 className="font-anton text-5xl font-extrabold tracking-tight text-white">
+      <h1 className="font-anton text-5xl font-extrabold text-white">
         who am i ?
       </h1>
       <span className="text-md mt-5 max-w-4xl space-y-5 self-center px-10 text-gray-400">
