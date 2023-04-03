@@ -42,7 +42,7 @@ const ThreeScene = () => (
           <Model />
           <Html center>
             {/* for smooth model movement, avoid cursor position jumping when mousing in/out element by making element full-screen */}
-            <h1 className="flex h-screen w-screen animate-zoomIn cursor-default items-center justify-center justify-items-center text-center font-anton text-[24vw] font-extrabold text-white md:text-[11vw]">
+            <h1 className="flex h-screen w-screen animate-zoomIn cursor-default items-center justify-center justify-items-center text-center font-anton text-[24vw] font-extrabold tracking-tight text-white md:text-[11vw]">
               JOHNNY MADIGAN
             </h1>
           </Html>
@@ -99,10 +99,10 @@ const WhoAmI = () => {
         elementIsInView ? "animate-fadeIn" : "invisible"
       }`}
     >
-      <h1 className="font-anton text-5xl font-extrabold text-white">
+      <h1 className="font-anton text-5xl font-extrabold tracking-tight text-white">
         who am i ?
       </h1>
-      <span className="mt-5 max-w-4xl space-y-5 self-center text-lg text-gray-400 sm:px-10">
+      <span className="mt-5 max-w-4xl space-y-5 self-center px-2 text-lg text-gray-400 sm:px-10">
         <p>
           I&apos;m a <Highlight words="full stack software developer" /> (.NET,
           React) currently working at Queensland Health on a portfolio of
