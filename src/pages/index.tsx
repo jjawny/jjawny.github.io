@@ -8,7 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 
-const Home: NextPage = (props) => {
+const Home: NextPage = () => {
   return (
     <>
       <Head>
@@ -20,15 +20,13 @@ const Home: NextPage = (props) => {
         <meta property="og:image" content="/favicon.ico" />
         <meta property="og:image:alt" content="j" />
       </Head>
-      <main className="min-h-[100vh] bg-[url('/bg.gif')] bg-cover">
-        {/* relative for socials */}
-        <div className="relative flex w-screen flex-col">
-          <Socials />
-          <ThreeScene />
-          <WhoAmI />
-          <Credits />
-        </div>
-      </main>
+      {/* relative for socials */}
+      <div className="relative flex w-screen flex-col">
+        <Socials />
+        <ThreeScene />
+        <WhoAmI />
+        <Credits />
+      </div>
     </>
   );
 };
@@ -66,8 +64,8 @@ const Socials = () => {
         <Image
           src={"/github.png"}
           alt="github"
-          height={37}
-          width={37}
+          height={36}
+          width={36}
           className="duration-700 hover:scale-110"
         />
       </Link>
@@ -75,8 +73,8 @@ const Socials = () => {
         <Image
           src={"/linkedin.png"}
           alt="linkedin"
-          height={37}
-          width={37}
+          height={36}
+          width={36}
           className="duration-700 hover:scale-110"
         />
       </Link>
@@ -85,7 +83,7 @@ const Socials = () => {
 };
 
 const WhoAmI = () => {
-  const elementRef = useRef<HTMLSpanElement>(null);
+  const elementRef = useRef<HTMLElement>(null);
   const elementIsInView = useIsInView(elementRef);
 
   const Highlight = ({ words }: { words: string }) => (
@@ -95,7 +93,7 @@ const WhoAmI = () => {
   );
 
   return (
-    <span
+    <main
       ref={elementRef}
       className={`my-80 flex flex-col content-center text-center ${
         elementIsInView ? "animate-fadeIn" : "invisible"
@@ -104,9 +102,9 @@ const WhoAmI = () => {
       <h1 className="font-anton text-5xl font-extrabold text-white">
         who am i ?
       </h1>
-      <span className="text-md mt-5 max-w-4xl space-y-5 self-center px-10 text-gray-400">
+      <span className="mt-5 max-w-4xl space-y-5 self-center text-lg text-gray-400 sm:px-10">
         <p>
-          I'm a <Highlight words="full stack software developer" /> (.NET,
+          I&apos;m a <Highlight words="full stack software developer" /> (.NET,
           React) currently working at Queensland Health on a portfolio of
           enterprise apps.
         </p>
@@ -116,7 +114,7 @@ const WhoAmI = () => {
           believe I can bring <Highlight words="value" /> to any team.
         </p>
       </span>
-    </span>
+    </main>
   );
 };
 
@@ -127,7 +125,7 @@ const Credits = () => {
   return (
     <div
       ref={elementRef}
-      className={`content center flex h-80 flex-col space-y-3 text-center text-xs text-gray-600 ${
+      className={`content center flex h-40 flex-col space-y-3 text-center text-xs text-gray-600 ${
         elementIsInView ? "animate-fadeIn" : "invisible"
       }`}
     >
@@ -146,7 +144,12 @@ const Credits = () => {
         </a>{" "}
         by Erica Anderson
       </p>
-      <p>© Johnny Madigan</p>
+      <p>
+        ©{" "}
+        <a className="italic" href="https:linkedin.com/in/johnnymadigan">
+          Johnny Madigan
+        </a>
+      </p>
     </div>
   );
 };
