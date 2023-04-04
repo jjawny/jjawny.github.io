@@ -11,7 +11,7 @@ const config = {
         anton: ["Anton", ...defaultTheme.fontFamily.sans],
       },
       animation: {
-        fadeIn: "fadeIn 1s ease-in forwards",
+        fadeIn: "fadeIn 0.8s ease-in forwards",
         zoomIn: "zoomIn 0.3s ease-in forwards",
       },
       keyframes: {
