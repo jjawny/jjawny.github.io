@@ -1,3 +1,4 @@
+import { useElementWidth } from "~/hooks/use-is-mobile";
 import { useIsInView } from "~/hooks/use-is-in-view";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useRef } from "react";
@@ -83,29 +84,40 @@ const Socials = () => {
 };
 
 const WhoAmI = () => {
-  const elementRef = useRef<HTMLElement>(null);
-  const elementIsInView = useIsInView(elementRef);
+  const sectionRef = useRef<HTMLElement>(null);
+  const sectionIsInView = useIsInView(sectionRef);
+  const isMobile = useElementWidth();
 
-  const Highlight = ({ words }: { words: string }) => (
-    <span className="whitespace-nowrap rounded-full bg-gray-800 px-2 py-1 font-bold text-amber-400">
-      {words}
-    </span>
-  );
+  const Highlight = ({ words }: { words: string }) => {
+    return (
+      <span className="whitespace-nowrap rounded-full bg-gray-800 px-2 py-1 font-bold text-amber-400">
+        {words}
+      </span>
+    );
+  };
 
   return (
     <main
-      ref={elementRef}
+      ref={sectionRef}
       className={`my-80 flex flex-col content-center text-center ${
-        elementIsInView ? "animate-fadeIn" : "invisible"
+        sectionIsInView ? "animate-fadeIn" : "invisible"
       }`}
     >
-      <h1 className="font-anton text-5xl font-extrabold tracking-tight text-white">
+      <h1 className="font-anton text-5xl font-extrabold tracking-tight text-white sm:text-7xl">
         who am i ?
       </h1>
       <span className="mt-5 max-w-4xl space-y-5 self-center px-2 text-lg text-gray-400 sm:px-10">
         <p>
-          I&apos;m a <Highlight words="full stack software developer" /> (.NET,
-          React) currently working at Queensland Health on a portfolio of
+          I&apos;m a{" "}
+          {isMobile ? (
+            <Highlight words="full stack software developer" />
+          ) : (
+            <>
+              <Highlight words="full stack" />{" "}
+              <Highlight words="software developer" />
+            </>
+          )}{" "}
+          (.NET, React) currently working at Queensland Health on a portfolio of
           enterprise apps.
         </p>
         <p>
@@ -125,9 +137,7 @@ const Credits = () => {
   return (
     <div
       ref={elementRef}
-      className={`content center flex h-40 flex-col space-y-3 text-center text-xs text-gray-600 ${
-        elementIsInView ? "animate-fadeIn" : "invisible"
-      }`}
+      className="content center flex h-40 flex-col space-y-3 text-center text-xs text-gray-600"
     >
       <p>
         <a className="italic" href="https://skfb.ly/DXqI">
