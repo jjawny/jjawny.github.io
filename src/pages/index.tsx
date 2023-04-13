@@ -132,7 +132,6 @@ const WhoAmI = () => {
 
 const Credits = () => {
   const elementRef = useRef<HTMLDivElement>(null);
-  const elementIsInView = useIsInView(elementRef);
 
   return (
     <div
@@ -156,7 +155,7 @@ const Credits = () => {
       </p>
       <p>
         ©{" "}
-        <a className="italic" href="https:linkedin.com/in/johnnymadigan">
+        <a className="italic" href="https://www.linkedin.com/in/johnnymadigan">
           Johnny Madigan
         </a>
       </p>
