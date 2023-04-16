@@ -11,16 +11,26 @@ const config = {
         anton: ["Anton", ...defaultTheme.fontFamily.sans],
       },
       animation: {
-        fadeIn: "fadeIn 0.8s ease-in forwards",
+        fadeIn: "fadeIn 0.5s ease-in forwards",
+        fadeInLeft: "fadeInLeft 0.5s ease-in forwards",
+        fadeInRight: "fadeInRight 0.5s ease-in forwards",
         zoomIn: "zoomIn 0.3s ease-in forwards",
       },
       keyframes: {
         fadeIn: {
-          "0%": { opacity: 0 },
-          "100%": { opacity: 1 },
+          "0%": { opacity: 0, transform: "translateY(25%)" },
+          "100%": { opacity: 1, transform: "translateY(0rem)" },
+        },
+        fadeInLeft: {
+          "0%": { opacity: 0, transform: "translateX(-5%)" },
+          "100%": { opacity: 1, transform: "translateX(0rem)" },
+        },
+        fadeInRight: {
+          "0%": { opacity: 0, transform: "translateX(5%)" },
+          "100%": { opacity: 1, transform: "translateX(0rem)" },
         },
         zoomIn: {
-          "0%": { transform: "scale(0)" },
+          "0%": { transform: "scale(0) " },
           "100%": { transform: "scale(1)" },
         },
       },
