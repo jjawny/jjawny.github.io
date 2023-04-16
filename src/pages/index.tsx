@@ -26,9 +26,39 @@ const Home: NextPage = () => {
         <Socials />
         <ThreeScene />
         <WhoAmI />
+        <Projects />
         <Credits />
       </div>
     </>
+  );
+};
+
+const Socials = () => {
+  return (
+    // parent must be relative for positioning and z index max to keep on top
+    <div className="fixed z-50 flex w-full select-none flex-row space-x-2 bg-black p-4">
+      <h1 className="font-anton text-4xl font-extrabold tracking-tight text-white duration-200 hover:scale-110">
+        JM
+      </h1>
+      <Link href={"https://github.com/johnnymadigan"}>
+        <Image
+          src={"/github.png"}
+          alt="github"
+          height={36}
+          width={36}
+          className="duration-200 hover:scale-110"
+        />
+      </Link>
+      <Link href={"https://www.linkedin.com/in/johnnymadigan/"}>
+        <Image
+          src={"/linkedin.png"}
+          alt="linkedin"
+          height={36}
+          width={36}
+          className="duration-200 hover:scale-110"
+        />
+      </Link>
+    </div>
   );
 };
 
@@ -53,35 +83,6 @@ const ThreeScene = () => (
     </div>
   </div>
 );
-
-const Socials = () => {
-  return (
-    // parent must be relative for positioning and z index max to keep on top
-    <div className="fixed z-50 flex w-full select-none flex-row space-x-2 bg-black p-4">
-      <h1 className="font-anton text-4xl font-extrabold tracking-tight text-white">
-        JM
-      </h1>
-      <Link href={"https://github.com/johnnymadigan"}>
-        <Image
-          src={"/github.png"}
-          alt="github"
-          height={36}
-          width={36}
-          className="duration-700 hover:scale-110"
-        />
-      </Link>
-      <Link href={"https://www.linkedin.com/in/johnnymadigan/"}>
-        <Image
-          src={"/linkedin.png"}
-          alt="linkedin"
-          height={36}
-          width={36}
-          className="duration-700 hover:scale-110"
-        />
-      </Link>
-    </div>
-  );
-};
 
 const WhoAmI = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -130,6 +131,10 @@ const WhoAmI = () => {
   );
 };
 
+const Projects = () => {
+  return <div>projects go here</div>;
+};
+
 const Credits = () => {
   const elementRef = useRef<HTMLDivElement>(null);
 
@@ -138,13 +143,13 @@ const Credits = () => {
       ref={elementRef}
       className="content center flex h-40 flex-col space-y-3 text-center text-xs text-gray-600"
     >
-      <p>
+      <p className="w-fit self-center">
         <a className="italic" href="https://skfb.ly/DXqI">
           Hotline Miami 2: Wrong Number - Tony mask
         </a>{" "}
         by down_limit
       </p>
-      <p>
+      <p className="w-fit self-center">
         <a
           className="italic"
           href="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzc5MmVlNDNiMTc4Y2NmNjhmNzczNDFlMTRhNjQ5MmJiNmVhZGZiYiZjdD1n/g0gAJDvoNJBSwx8wP0/giphy.gif"
@@ -153,7 +158,7 @@ const Credits = () => {
         </a>{" "}
         by Erica Anderson
       </p>
-      <p>
+      <p className="w-fit self-center">
         ©{" "}
         <a className="italic" href="https://www.linkedin.com/in/johnnymadigan">
           Johnny Madigan
