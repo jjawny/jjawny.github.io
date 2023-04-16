@@ -20,7 +20,7 @@ type GLTFResult = GLTF & {
   };
 };
 
-export default function Model(props: JSX.IntrinsicElements["group"]) {
+const Model = (props: JSX.IntrinsicElements["group"]) => {
   const { nodes, materials } = useGLTF("/hotline-miami.glb") as GLTFResult;
 
   // follow mouse technique
@@ -31,7 +31,9 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
   useFrame((state, dt) => {
     let x = (state.pointer.x * -1) / 2.5;
     let y = state.pointer.y / 2.5;
+
     dummy.lookAt(x, y, 1);
+
     if (modelRef && modelRef.current) {
       easing.dampQ(modelRef.current.quaternion, dummy.quaternion, 0.15, dt);
     }
@@ -56,6 +58,8 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
       </group>
     </group>
   );
-}
+};
 
 useGLTF.preload("/hotline-miami.glb");
+
+export default Model;

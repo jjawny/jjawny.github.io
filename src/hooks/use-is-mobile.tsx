@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const useElementWidth = () => {
+export const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
