@@ -14,7 +14,7 @@ const config = {
         fadeIn: "fadeIn 0.5s ease-in forwards",
         fadeInLeft: "fadeInLeft 0.5s ease-in forwards",
         fadeInRight: "fadeInRight 0.5s ease-in forwards",
-        zoomIn: "zoomIn 0.3s ease-in forwards",
+        zoomIn: "zoomIn 1.0s ease-in forwards",
       },
       keyframes: {
         fadeIn: {
