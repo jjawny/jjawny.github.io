@@ -1,9 +1,5 @@
-import Projects from "~/components/projects";
-import Credits from "~/components/credits";
-import Socials from "~/components/socials";
-import WhoAmI from "~/components/whoami";
+import Scene from "~/components/Scene";
 import { type NextPage } from "next";
-import Hero from "~/components/hero";
 import Head from "next/head";
 
 const Home: NextPage = () => {
@@ -18,14 +14,7 @@ const Home: NextPage = () => {
         <meta property="og:image" content="/favicon.ico" />
         <meta property="og:image:alt" content="j" />
       </Head>
-      {/* relative for socials */}
-      <div className="relative flex w-screen flex-col">
-        <Socials />
-        <Hero />
-        <WhoAmI />
-        <Projects />
-        <Credits />
-      </div>
+      <Scene />
     </>
   );
 };
