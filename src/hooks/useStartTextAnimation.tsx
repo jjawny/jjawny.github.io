@@ -1,30 +1,30 @@
 import { useEffect, useRef, useState } from "react";
 
 export const useStartTextAnimation = (
-  word: string,
+  text: string,
   speed: number = 0.3,
   isPlayOnRender: boolean = false
 ) => {
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const frameRef = useRef<number | null>(null);
-  const [currentWord, setCurrentWord] = useState(word);
+  const [currentWord, setCurrentWord] = useState(text);
 
   let iteration = 0;
 
   const startAnimation = () => {
     if (frameRef.current) {
       cancelAnimationFrame(frameRef.current);
-      setCurrentWord(word);
+      setCurrentWord(text);
     }
 
     iteration = 0;
 
     const animate = () => {
-      const newWord = word
+      const newWord = text
         .split("")
         .map((letter, index) => {
           // return the original letters as we iterate
-          if (index < iteration) return word[index];
+          if (index < iteration) return text[index];
 
           // always return space when there is a space
           if (letter.trim() === "") return " ";
@@ -36,7 +36,7 @@ export const useStartTextAnimation = (
 
       setCurrentWord(newWord);
 
-      if (iteration < word.length) {
+      if (iteration < text.length) {
         iteration += speed;
         frameRef.current = requestAnimationFrame(animate);
       }
