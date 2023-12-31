@@ -31,25 +31,25 @@ const Projects = ({
         >
           <Project
             name="JJ's DELIVERY SERVICE"
-            backgroundColor="#004e56"
+            backgroundColor="#5c1138"
             changeBackgroundCallback={changeBackgroundCallback}
             changeLaptopScreenCallback={changeLaptopScreenCallback}
           />
           <Project
             name="CUBE SOLVER"
-            backgroundColor="#402d55"
+            backgroundColor="#4b0f2e"
             changeBackgroundCallback={changeBackgroundCallback}
             changeLaptopScreenCallback={changeLaptopScreenCallback}
           />
           <Project
             name="GAME OF LIFE"
-            backgroundColor="#552d49"
+            backgroundColor="#400c27"
             changeBackgroundCallback={changeBackgroundCallback}
             changeLaptopScreenCallback={changeLaptopScreenCallback}
           />
           <Project
             name="CAR PARK SIMULATOR"
-            backgroundColor="#1f3847"
+            backgroundColor="#34071e"
             changeBackgroundCallback={changeBackgroundCallback}
             changeLaptopScreenCallback={changeLaptopScreenCallback}
           />

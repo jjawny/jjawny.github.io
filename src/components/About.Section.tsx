@@ -32,7 +32,7 @@ const About = ({
     }
 
     if (isDrawerOpen || isHovered) {
-      changeBackgroundCallback("#004556");
+      changeBackgroundCallback("#670e3c");
       changeLaptopScreenCallback("jjds.mp4");
     } else {
       changeBackgroundCallback("");
