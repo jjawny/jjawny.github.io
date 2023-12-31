@@ -9,6 +9,8 @@ const config = {
     extend: {
       fontFamily: {
         anton: ["Anton", ...defaultTheme.fontFamily.sans],
+        rubik: ["Rubik Mono One", ...defaultTheme.fontFamily.sans],
+        yagiza: ["YAGIZA", ...defaultTheme.fontFamily.sans],
       },
       animation: {
         fadeIn: "fadeIn 0.5s ease-in forwards",
