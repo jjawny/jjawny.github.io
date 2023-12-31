@@ -1,5 +1,5 @@
 import { useStartTextAnimation } from "~/hooks/useStartTextAnimation";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Html } from "@react-three/drei";
 import {
   Drawer,
@@ -26,28 +26,30 @@ const Projects = ({
         ref={sectionRef}
         className="mb-40 grid h-screen w-screen items-center"
       >
-        <div className="flex flex-col items-start justify-center justify-items-center pl-20">
+        <div
+          className={`flex flex-col  items-center justify-center justify-items-center space-y-3 px-[5vw] sm:items-start`}
+        >
           <Project
             name="JJ's DELIVERY SERVICE"
-            backgroundColor="slategray"
+            backgroundColor="#004e56"
             changeBackgroundCallback={changeBackgroundCallback}
             changeLaptopScreenCallback={changeLaptopScreenCallback}
           />
           <Project
             name="CUBE SOLVER"
-            backgroundColor="#647484"
+            backgroundColor="#402d55"
             changeBackgroundCallback={changeBackgroundCallback}
             changeLaptopScreenCallback={changeLaptopScreenCallback}
           />
           <Project
             name="GAME OF LIFE"
-            backgroundColor="gray"
+            backgroundColor="#552d49"
             changeBackgroundCallback={changeBackgroundCallback}
             changeLaptopScreenCallback={changeLaptopScreenCallback}
           />
           <Project
             name="CAR PARK SIMULATOR"
-            backgroundColor="dimgray"
+            backgroundColor="#1f3847"
             changeBackgroundCallback={changeBackgroundCallback}
             changeLaptopScreenCallback={changeLaptopScreenCallback}
           />
@@ -68,36 +70,56 @@ const Project = ({
   changeBackgroundCallback: (newColor: string) => void;
   changeLaptopScreenCallback: (videoUrl: string) => void;
 }) => {
-  const [isHovered, setIsHovered] = useState<boolean>(false);
   const { currentWord, startAnimation } = useStartTextAnimation(name, 1);
+  const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (!isDrawerOpen && isHovered) {
+      startAnimation();
+    }
+
+    if (isDrawerOpen || isHovered) {
+      changeBackgroundCallback(backgroundColor);
+      changeLaptopScreenCallback("jjds.mp4");
+    } else {
+      changeBackgroundCallback("");
+      changeLaptopScreenCallback("");
+    }
+  }, [isDrawerOpen, isHovered]);
 
   return (
-    <Drawer>
+    <Drawer onOpenChange={(isOpen) => setIsDrawerOpen(isOpen)}>
       <DrawerTrigger>
         <h1
-          style={{ fontFamily: "monospace" }}
-          className={`z-10 cursor-default rounded-sm px-3  text-center text-[8vw] font-extrabold sm:text-[6vw] ${
-            isHovered ? "bg-white text-slate-900" : "text-white"
+          className={` rounded-md px-[1vw] font-rubik text-[4vw] font-extrabold tracking-tight
+          ${
+            isHovered || isDrawerOpen
+              ? "bg-white text-slate-900"
+              : "bg-black text-white"
           }`}
-          onMouseEnter={() => {
-            startAnimation();
-            changeLaptopScreenCallback("jjds.mp4");
-            changeBackgroundCallback(backgroundColor);
-            setIsHovered(true);
-          }}
-          onMouseLeave={() => {
-            changeLaptopScreenCallback("");
-            changeBackgroundCallback("");
-            setIsHovered(false);
-          }}
+          style={{ textWrap: "nowrap" }}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
         >
           {currentWord}
         </h1>
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
-          <DrawerTitle>ABOUT ME</DrawerTitle>
-          <DrawerDescription>kasdjalksjdalksd</DrawerDescription>
+          <DrawerTitle className="font-rubik text-white">{name}</DrawerTitle>
+          <DrawerDescription className=" py-10 text-white">
+            I&apos;m a{" "}
+            <span className="font-bold">full stack software developer</span>
+            (.NET, React) currently working at Queensland Health on a portfolio
+            of enterprise apps.
+            <br />
+            <br />
+            As someone who <span className="font-bold">thrives</span> on
+            mastering their stack, finding solutions to complex problems, and
+            sharing knowledge, I believe I can bring{" "}
+            <span className="font-bold">value</span> to any team.
+          </DrawerDescription>
         </DrawerHeader>
         <DrawerFooter></DrawerFooter>
       </DrawerContent>
