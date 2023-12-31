@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const SocialsBar = () => {
   return (
-    <div className="flex w-full select-none flex-row justify-between space-x-5 px-80">
+    <div className="flex w-full select-none flex-row justify-between space-x-5 px-[8vw]">
       <Link href={"https://github.com/johnnymadigan"}>
         <Image
           src={"/github.png"}
