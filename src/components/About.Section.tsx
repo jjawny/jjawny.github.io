@@ -58,22 +58,26 @@ const About = ({
               {currentWord}
             </h1>
           </DrawerTrigger>
-          <DrawerContent>
+          <DrawerContent className="px-2">
             <DrawerHeader>
-              <DrawerTitle className="font-rubik text-white">
+              <DrawerTitle className="font-rubik text-2xl text-white">
                 ABOUT ME
               </DrawerTitle>
-              <DrawerDescription className=" py-10 text-white">
+              <DrawerDescription className=" py-5 text-lg text-white">
                 I&apos;m a{" "}
-                <span className="font-bold">full stack software developer</span>
+                <span className="font-extrabold">
+                  full stack software developer
+                </span>
                 (.NET, React) currently working at Queensland Health on a
                 portfolio of enterprise apps.
                 <br />
                 <br />
-                As someone who <span className="font-bold">thrives</span> on
-                mastering their stack, finding solutions to complex problems,
+                As someone who <span className="font-extrabold">
+                  thrives
+                </span>{" "}
+                on mastering their stack, finding solutions to complex problems,
                 and sharing knowledge, I believe I can bring{" "}
-                <span className="font-bold">value</span> to any team.
+                <span className="font-extrabold">value</span> to any team.
               </DrawerDescription>
             </DrawerHeader>
             <DrawerFooter></DrawerFooter>
