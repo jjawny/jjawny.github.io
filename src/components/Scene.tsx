@@ -17,7 +17,7 @@ import Hero from "./Hero.Section";
 import DotsCircle from "./Dots";
 import Cursor from "./Cursor";
 
-const DEBOUNCED_DELAY_MS = 15;
+const DEBOUNCED_DELAY_MS = 25;
 const DEFAULT_VIDEO_SOURCE = "default.mp4";
 const DEFAULT_BACKGROUND_COLOR = "#111111";
 
