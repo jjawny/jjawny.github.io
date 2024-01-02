@@ -17,7 +17,7 @@ import Hero from "./Hero.Section";
 import DotsCircle from "./Dots";
 import Cursor from "./Cursor";
 
-const DEBOUNCED_DELAY_MS = 25;
+const DEBOUNCED_DELAY_MS = 10;
 const DEFAULT_VIDEO_SOURCE = "default.mp4";
 const DEFAULT_BACKGROUND_COLOR = "#111111";
 
@@ -28,11 +28,14 @@ const Scene = () => {
     `/videos/${DEFAULT_VIDEO_SOURCE}`
   );
 
-  const changeBackgroundCallback = _debounce((newColor: string | null) => {
-    document.body.style.backgroundColor = newColor
-      ? newColor
-      : DEFAULT_BACKGROUND_COLOR;
-  }, DEBOUNCED_DELAY_MS);
+  const changeBackgroundCallback = useCallback(
+    _debounce((newColor: string | null) => {
+      document.body.style.backgroundColor = newColor
+        ? newColor
+        : DEFAULT_BACKGROUND_COLOR;
+    }, DEBOUNCED_DELAY_MS),
+    []
+  );
 
   const changeLaptopScreenCallback = useCallback(
     _debounce((videoSource: string | null) => {
