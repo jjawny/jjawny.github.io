@@ -1,20 +1,17 @@
 import { useStartTextAnimation } from "~/hooks/useStartTextAnimation";
 import { useEffect, useRef, useState } from "react";
 import { useIsInView } from "~/hooks/useIsInView";
-import { Html } from "@react-three/drei";
 
 const Credits = ({}: {}) => {
   return (
-    <Html fullscreen style={{ marginTop: "300vh" }}>
-      <div className={`grid h-screen w-screen items-center justify-center`}>
-        <div
-          className={`flex flex-col items-center justify-center justify-items-center px-[5vw]`}
-        >
-          <CreditsText />
-          <CreditsSubtext />
-        </div>
+    <div className={`grid h-screen w-screen items-center justify-center`}>
+      <div
+        className={`flex flex-col items-center justify-center justify-items-center px-[5vw]`}
+      >
+        <CreditsText />
+        <CreditsSubtext />
       </div>
-    </Html>
+    </div>
   );
 };
 

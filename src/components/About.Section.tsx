@@ -1,7 +1,6 @@
 import { useStartTextAnimation } from "~/hooks/useStartTextAnimation";
 import { useEffect, useRef, useState } from "react";
 import { useIsInView } from "~/hooks/useIsInView";
-import { Html } from "@react-three/drei";
 import {
   Drawer,
   DrawerContent,
@@ -20,14 +19,12 @@ const About = ({
   changeLaptopScreenCallback: (videoSource: string | null) => void;
 }) => {
   return (
-    <Html fullscreen style={{ marginTop: "100vh" }}>
-      <div className={`grid h-screen w-screen items-center justify-center`}>
-        <AboutText
-          changeBackgroundCallback={changeBackgroundCallback}
-          changeLaptopScreenCallback={changeLaptopScreenCallback}
-        />
-      </div>
-    </Html>
+    <div className={`grid h-screen w-screen items-center justify-center`}>
+      <AboutText
+        changeBackgroundCallback={changeBackgroundCallback}
+        changeLaptopScreenCallback={changeLaptopScreenCallback}
+      />
+    </div>
   );
 };
 

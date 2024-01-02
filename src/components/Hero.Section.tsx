@@ -1,18 +1,15 @@
 import { useStartTextAnimation } from "~/hooks/useStartTextAnimation";
-import { Html } from "@react-three/drei";
 import Socials from "./SocialBar";
 
 const Hero = () => {
   return (
-    <Html fullscreen>
-      <main className="grid h-screen w-screen items-center justify-center">
-        <div className="flex animate-zoomIn flex-col items-center justify-center justify-items-center">
-          <HeroText text="JOHNNY" />
-          <HeroText text="MADIGAN" />
-          <Socials />
-        </div>
-      </main>
-    </Html>
+    <main className="grid h-screen w-screen items-center justify-center">
+      <div className="flex animate-zoomIn flex-col items-center justify-center justify-items-center">
+        <HeroText text="JOHNNY" />
+        <HeroText text="MADIGAN" />
+        <Socials />
+      </div>
+    </main>
   );
 };
 

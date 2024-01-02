@@ -1,7 +1,6 @@
 import { useStartTextAnimation } from "~/hooks/useStartTextAnimation";
 import { useEffect, useRef, useState } from "react";
 import { useIsInView } from "~/hooks/useIsInView";
-import { Html } from "@react-three/drei";
 import {
   Drawer,
   DrawerContent,
@@ -37,26 +36,24 @@ const Projects = ({
   }, []);
 
   return (
-    <Html fullscreen style={{ marginTop: "200vh" }}>
-      <div className="grid h-screen w-screen items-center">
-        <div
-          className={`flex flex-col items-center justify-center justify-items-center px-[5vw] sm:items-start`}
-        >
-          {data.length > 0 &&
-            data.map((p) => (
-              <Project
-                key={p.name}
-                name={p.name}
-                videoSource={p.videoSource}
-                color={p.color}
-                desc={p.desc}
-                changeBackgroundCallback={changeBackgroundCallback}
-                changeLaptopScreenCallback={changeLaptopScreenCallback}
-              />
-            ))}
-        </div>
+    <div className="grid h-screen w-screen items-center">
+      <div
+        className={`flex flex-col items-center justify-center justify-items-center px-[5vw] sm:items-start`}
+      >
+        {data.length > 0 &&
+          data.map((p) => (
+            <Project
+              key={p.name}
+              name={p.name}
+              videoSource={p.videoSource}
+              color={p.color}
+              desc={p.desc}
+              changeBackgroundCallback={changeBackgroundCallback}
+              changeLaptopScreenCallback={changeLaptopScreenCallback}
+            />
+          ))}
       </div>
-    </Html>
+    </div>
   );
 };
 

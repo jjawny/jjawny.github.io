@@ -5,7 +5,7 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { OrbitControls, ScrollControls } from "@react-three/drei";
+import { Html, OrbitControls, ScrollControls } from "@react-three/drei";
 import { useIsMobile } from "~/hooks/useIsMobile";
 import { Canvas } from "@react-three/fiber";
 import Projects from "./Projects.Section";
@@ -68,18 +68,29 @@ const Scene = () => {
           <Lighting />
           {/* <OrbitControls enableZoom={false}/> */}
           <ScrollControls pages={3}>
+            {/* Models */}
             <DotsCircle />
             <Macbook videoSource={videoSource} />
-            <Hero />
-            <About
-              changeBackgroundCallback={changeBackgroundCallback}
-              changeLaptopScreenCallback={changeLaptopScreenCallback}
-            />
-            <Projects
-              changeBackgroundCallback={changeBackgroundCallback}
-              changeLaptopScreenCallback={changeLaptopScreenCallback}
-            />
-            <Credits />
+
+            {/* Sections */}
+            <Html fullscreen>
+              <Hero />
+            </Html>
+            <Html fullscreen style={{ marginTop: "100vh" }}>
+              <About
+                changeBackgroundCallback={changeBackgroundCallback}
+                changeLaptopScreenCallback={changeLaptopScreenCallback}
+              />
+            </Html>
+            <Html fullscreen style={{ marginTop: "200vh" }}>
+              <Projects
+                changeBackgroundCallback={changeBackgroundCallback}
+                changeLaptopScreenCallback={changeLaptopScreenCallback}
+              />
+            </Html>
+            <Html fullscreen style={{ marginTop: "300vh" }}>
+              <Credits />
+            </Html>
           </ScrollControls>
         </Suspense>
       </Canvas>
@@ -90,8 +101,8 @@ const Scene = () => {
 const Lighting = () => {
   return (
     <>
-      <directionalLight />
       <ambientLight />
+      <directionalLight />
       <pointLight position={[-30, 0, -30]} power={10.0} />
     </>
   );
