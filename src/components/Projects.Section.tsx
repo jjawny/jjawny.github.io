@@ -92,12 +92,12 @@ const Project = ({
         <h1
           ref={titleRef}
           className={` rounded-md px-[1vw] font-rubik text-[5vw] font-extrabold tracking-tight sm:text-[4vw]
-          ${isInView ? "animate-fadeInSlide" : "invisible"}
           ${
             isHovered || isDrawerOpen
               ? "bg-white text-slate-900"
               : "bg-black text-white"
-          }`}
+          }
+          ${isInView ? "animate-fadeInSlide" : "animate-fadeOut"}`}
           style={{ textWrap: "nowrap" }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
@@ -110,7 +110,7 @@ const Project = ({
           <DrawerTitle className="font-rubik text-2xl text-white">
             {name}
           </DrawerTitle>
-          <DrawerDescription className=" py-5 text-lg text-white">
+          <DrawerDescription className="py-5 text-lg text-white">
             I&apos;m a{" "}
             <span className="font-extrabold">
               full stack software developer

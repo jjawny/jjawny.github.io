@@ -17,6 +17,7 @@ const config = {
       animation: {
         fadeInSlide: "fadeInSlide 0.2s ease-in forwards",
         fadeIn: "fadeIn 0.2s ease-in forwards",
+        fadeOut: "fadeOut 0.2s ease-in forwards",
         zoomIn: "zoomIn 1.0s ease-in forwards",
       },
       keyframes: {
@@ -28,6 +29,10 @@ const config = {
         fadeIn: {
           "0%": { opacity: 0 },
           "100%": { opacity: 1 },
+        },
+        fadeOut: {
+          "0%": { opacity: 1 },
+          "100%": { opacity: 0 },
         },
         zoomIn: {
           "0%": { transform: "scale(0) " },

@@ -67,8 +67,12 @@ const AboutText = ({
         <h1
           ref={textRef}
           className={`rounded-md px-[2vw] font-rubik text-[10vw] font-extrabold tracking-tight sm:text-[8vw]
-            ${isHovered ? "bg-white text-slate-900" : "bg-black text-white"}
-            ${isInView ? "animate-fadeIn" : "invisible"}`}
+            ${
+              isHovered || isDrawerOpen
+                ? "bg-white text-slate-900"
+                : "bg-black text-white"
+            }
+            ${isInView ? "animate-fadeIn" : "animate-fadeOut"}`}
           style={{ textWrap: "nowrap" }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
@@ -76,7 +80,7 @@ const AboutText = ({
           {currentWord}
         </h1>
       </DrawerTrigger>
-      <DrawerContent className="px-2">
+      <DrawerContent className="z-px-2">
         <DrawerHeader>
           <DrawerTitle className="font-rubik text-2xl text-white">
             ABOUT ME
