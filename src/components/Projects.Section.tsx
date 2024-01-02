@@ -100,7 +100,7 @@ const Project = ({
       <DrawerTrigger>
         <h1
           ref={titleRef}
-          className={` rounded-md px-[1vw] font-rubik text-[5vw] font-extrabold tracking-tight sm:text-[4vw]
+          className={` rounded-2xl px-[1vw] font-rubik text-[5vw] font-extrabold tracking-tight sm:text-[4vw]
           ${
             isHovered || isDrawerOpen
               ? "bg-white text-slate-900"

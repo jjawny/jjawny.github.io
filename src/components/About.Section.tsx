@@ -72,7 +72,7 @@ const AboutText = ({
       <DrawerTrigger>
         <h1
           ref={textRef}
-          className={`rounded-md px-[2vw] font-rubik text-[10vw] font-extrabold tracking-tight sm:text-[8vw]
+          className={`rounded-2xl px-[2vw] font-rubik text-[10vw] font-extrabold tracking-tight sm:text-[8vw]
             ${
               isHovered || isDrawerOpen
                 ? "bg-white text-slate-900"
