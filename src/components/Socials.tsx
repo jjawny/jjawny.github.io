@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const SocialsBar = () => {
+const Socials = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -50,4 +50,4 @@ const SocialsBar = () => {
   );
 };
 
-export default SocialsBar;
+export default Socials;

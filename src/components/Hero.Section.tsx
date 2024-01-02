@@ -1,5 +1,5 @@
 import { useStartTextAnimation } from "~/hooks/useStartTextAnimation";
-import Socials from "./SocialBar";
+import Socials from "./Socials";
 
 const Hero = () => {
   return (
@@ -18,7 +18,7 @@ const HeroText = ({ text }: { text: string }) => {
 
   return (
     <h1
-      className={`z-10 select-none rounded-2xl text-center font-yagiza text-[9vw] font-extrabold text-white sm:text-[11vw]`}
+      className={`cursor-default select-none px-[2vw] text-center font-yagiza text-[9vw] font-extrabold text-white sm:text-[11vw]`}
     >
       {currentWord}
     </h1>
