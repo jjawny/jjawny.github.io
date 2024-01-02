@@ -17,9 +17,7 @@ const HeroText = ({ text }: { text: string }) => {
   const { currentWord } = useStartTextAnimation(text, 0.15, true);
 
   return (
-    <h1
-      className={`cursor-default select-none px-[2vw] text-center font-yagiza text-[9vw] font-extrabold text-slate-900 sm:text-[11vw]`}
-    >
+    <h1 className="cursor-default select-none px-[2vw] text-center font-yagiza text-[9vw] font-extrabold text-black sm:text-[11vw]">
       {currentWord}
     </h1>
   );

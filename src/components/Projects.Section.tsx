@@ -32,9 +32,7 @@ const Projects: React.FC<ProjectsProps> = ({
 
   return (
     <div className="grid h-screen w-screen items-center">
-      <div
-        className={`flex flex-col items-center justify-center justify-items-center px-[5vw] sm:items-start`}
-      >
+      <div className="flex flex-col items-center justify-center justify-items-center space-y-5 px-[5vw] sm:items-start">
         {data.length > 0 &&
           data.map((p) => (
             <Project
@@ -103,8 +101,8 @@ const Project = ({
           className={`whitespace-nowrap rounded-xl px-[1vw] font-rubik text-[5vw] font-extrabold tracking-tight sm:rounded-2xl sm:text-[4vw]
           ${
             isHovered || isDrawerOpen
-              ? "bg-white text-slate-900"
-              : "bg-slate-900 text-white"
+              ? "bg-white text-black"
+              : "bg-black text-white"
           }
           ${isInView ? "animate-fadeInSlide" : "animate-fadeOut"}`}
           onMouseEnter={() => setIsHovered(true)}

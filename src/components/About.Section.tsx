@@ -75,8 +75,8 @@ const AboutText = ({
           className={`whitespace-nowrap rounded-xl px-[2vw] font-rubik text-[10vw] font-extrabold tracking-tight sm:rounded-2xl sm:text-[8vw]
             ${
               isHovered || isDrawerOpen
-                ? "bg-white text-slate-900"
-                : "bg-slate-900 text-white"
+                ? "bg-white text-black"
+                : "bg-black text-white"
             }
             ${isInView ? "animate-fadeIn" : "animate-fadeOut"}`}
           onMouseEnter={() => setIsHovered(true)}
