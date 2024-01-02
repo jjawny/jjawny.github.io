@@ -2,25 +2,25 @@
     {
         "name": "JJ's Delivery Service",
         "videoSource": "jjds.mp4",
-        "color": "#efddff",
+        "color": "#f9f2ff",
         "desc": "lol"
     },
     {
         "name": "CUBE SOLVER",
         "videoSource": "jjds.mp4",
-        "color": "#d0eeff",
+        "color": "#e4f5ff",
         "desc": "lol"
     },
     {
         "name": "GAME OF LIFE",
         "videoSource": "jjds.mp4",
-        "color": "#ffd1d1",
+        "color": "#feeded",
         "desc": "lol"
     },
     {
         "name": "CAR PARK SIMULATOR",
         "videoSource": "jjds.mp4",
-        "color": "#c2ffc2",
+        "color": "#ecffec",
         "desc": "lol"
     }
 ]
