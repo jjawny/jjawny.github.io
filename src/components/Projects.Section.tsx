@@ -2,6 +2,7 @@ import { useStartTextAnimation } from "~/hooks/useStartTextAnimation";
 import { useEffect, useRef, useState } from "react";
 import { Html } from "@react-three/drei";
 import { useIsInView } from "~/hooks/useIsInView";
+import { Html } from "@react-three/drei";
 import {
   Drawer,
   DrawerContent,
@@ -12,6 +13,15 @@ import {
   DrawerTrigger,
 } from "./ui/Drawer";
 
+const PROJECTS_SOURCE = "/data/projects.json";
+
+type ProjectType = {
+  name: string;
+  videoSource: string;
+  color: string;
+  desc: string;
+};
+
 const Projects = ({
   changeBackgroundCallback,
   changeLaptopScreenCallback,
@@ -19,36 +29,32 @@ const Projects = ({
   changeBackgroundCallback: (newColor: string | null) => void;
   changeLaptopScreenCallback: (videoSource: string | null) => void;
 }) => {
+  const [data, setData] = useState<ProjectType[]>([]);
+
+  useEffect(() => {
+    fetch(PROJECTS_SOURCE)
+      .then((res) => res.json())
+      .then((data) => setData(data));
+  }, []);
+
   return (
     <Html fullscreen style={{ marginTop: "200vh" }}>
       <div className="grid h-screen w-screen items-center">
         <div
           className={`flex flex-col items-center justify-center justify-items-center px-[5vw] sm:items-start`}
         >
-          <Project
-            name="JJ's DELIVERY SERVICE"
-            backgroundColor="#5c1138"
-            changeBackgroundCallback={changeBackgroundCallback}
-            changeLaptopScreenCallback={changeLaptopScreenCallback}
-          />
-          <Project
-            name="CUBE SOLVER"
-            backgroundColor="#4b0f2e"
-            changeBackgroundCallback={changeBackgroundCallback}
-            changeLaptopScreenCallback={changeLaptopScreenCallback}
-          />
-          <Project
-            name="GAME OF LIFE"
-            backgroundColor="#400c27"
-            changeBackgroundCallback={changeBackgroundCallback}
-            changeLaptopScreenCallback={changeLaptopScreenCallback}
-          />
-          <Project
-            name="CAR PARK SIMULATOR"
-            backgroundColor="#34071e"
-            changeBackgroundCallback={changeBackgroundCallback}
-            changeLaptopScreenCallback={changeLaptopScreenCallback}
-          />
+          {data.length > 0 &&
+            data.map((p) => (
+              <Project
+                key={p.name}
+                name={p.name}
+                videoSource={p.videoSource}
+                color={p.color}
+                desc={p.desc}
+                changeBackgroundCallback={changeBackgroundCallback}
+                changeLaptopScreenCallback={changeLaptopScreenCallback}
+              />
+            ))}
         </div>
       </div>
     </Html>
@@ -57,12 +63,16 @@ const Projects = ({
 
 const Project = ({
   name,
-  backgroundColor,
+  videoSource,
+  color,
+  desc,
   changeBackgroundCallback,
   changeLaptopScreenCallback,
 }: {
   name: string;
-  backgroundColor: string;
+  videoSource: string;
+  color: string;
+  desc: string;
   changeBackgroundCallback: (newColor: string | null) => void;
   changeLaptopScreenCallback: (videoSource: string | null) => void;
 }) => {
@@ -78,8 +88,8 @@ const Project = ({
     }
 
     if (isDrawerOpen || isHovered) {
-      changeBackgroundCallback(backgroundColor);
-      changeLaptopScreenCallback("jjds.mp4");
+      changeBackgroundCallback(color);
+      changeLaptopScreenCallback(videoSource);
     } else {
       changeBackgroundCallback(null);
       changeLaptopScreenCallback(null);
@@ -111,18 +121,7 @@ const Project = ({
             {name}
           </DrawerTitle>
           <DrawerDescription className="py-5 text-lg text-white">
-            I&apos;m a{" "}
-            <span className="font-extrabold">
-              full stack software developer
-            </span>
-            (.NET, React) currently working at Queensland Health on a portfolio
-            of enterprise apps.
-            <br />
-            <br />
-            As someone who <span className="font-extrabold">thrives</span> on
-            mastering their stack, finding solutions to complex problems, and
-            sharing knowledge, I believe I can bring{" "}
-            <span className="font-extrabold">value</span> to any team.
+            {desc}
           </DrawerDescription>
         </DrawerHeader>
         <DrawerFooter></DrawerFooter>
