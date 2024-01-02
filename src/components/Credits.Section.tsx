@@ -16,6 +16,7 @@ const Credits = ({}: {}) => {
 };
 
 // TODO: research why when this is in 1 component the useIsInView does not work properly and the text never triggers/shows
+// something to do with R3F having its own component tree
 const CreditsText = () => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const { currentWord, startAnimation } = useStartTextAnimation(
@@ -34,7 +35,7 @@ const CreditsText = () => {
   return (
     <h2
       ref={textRef}
-      className={`rounded-md px-[1vw] text-center font-rubik text-[3vw] font-extrabold tracking-tight sm:text-[2vw]
+      className={`cursor-default rounded-md px-[1vw] text-center font-rubik text-[3vw] font-extrabold tracking-tight sm:text-[2vw]
             ${isHovered ? "bg-white text-slate-900" : "bg-black text-white"}
             ${isInView ? "animate-fadeIn" : "animate-fadeOut"}`}
       style={{ textWrap: "nowrap" }}
