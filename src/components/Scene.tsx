@@ -55,7 +55,7 @@ const Scene = () => {
   }, [changeBackgroundCallback, changeLaptopScreenCallback]);
 
   return (
-    <div className="h-screen w-screen">
+    <div className="h-screen w-screen select-none">
       <Canvas
         ref={canvasRef}
         camera={{ position: [0, 0, 35] }}
