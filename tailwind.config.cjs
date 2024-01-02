@@ -8,28 +8,26 @@ const config = {
   theme: {
     extend: {
       fontFamily: {
+        geist: ["Geist", ...defaultTheme.fontFamily.sans],
+        geistmono: ["GeistMono", ...defaultTheme.fontFamily.mono],
         anton: ["Anton", ...defaultTheme.fontFamily.sans],
-        rubik: ["Rubik Mono One", ...defaultTheme.fontFamily.sans],
-        yagiza: ["YAGIZA", ...defaultTheme.fontFamily.sans],
+        rubik: ["Rubik Mono One", ...defaultTheme.fontFamily.mono],
+        yagiza: ["YAGIZA", "Anton", ...defaultTheme.fontFamily.sans],
       },
       animation: {
-        fadeIn: "fadeIn 0.5s ease-in forwards",
-        fadeInLeft: "fadeInLeft 0.5s ease-in forwards",
-        fadeInRight: "fadeInRight 0.5s ease-in forwards",
+        fadeInSlide: "fadeInSlide 0.2s ease-in forwards",
+        fadeIn: "fadeIn 0.2s ease-in forwards",
         zoomIn: "zoomIn 1.0s ease-in forwards",
       },
       keyframes: {
-        fadeIn: {
-          "0%": { opacity: 0, transform: "translateY(25%)" },
-          "100%": { opacity: 1, transform: "translateY(0rem)" },
-        },
-        fadeInLeft: {
+        fadeInSlide: {
           "0%": { opacity: 0, transform: "translateX(-5%)" },
-          "100%": { opacity: 1, transform: "translateX(0rem)" },
+          "60%": { opacity: 1 },
+          "100%": { transform: "translateX(0rem)" },
         },
-        fadeInRight: {
-          "0%": { opacity: 0, transform: "translateX(5%)" },
-          "100%": { opacity: 1, transform: "translateX(0rem)" },
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
         },
         zoomIn: {
           "0%": { transform: "scale(0) " },
