@@ -1,14 +1,25 @@
+/* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
 @font-face {
     font-family: 'YAGIZA';
     src: url('/fonts/YAGIZA.woff') format('woff'); /* add more fonts comma separated */
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Geist';
+    src: url('/fonts/Geist.woff2') format('woff2'); /* add more fonts comma separated */
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GeistMono';
+    src: url('/fonts/GeistMono.woff2') format('woff2'); /* add more fonts comma separated */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
