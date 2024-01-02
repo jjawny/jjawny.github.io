@@ -1,12 +1,27 @@
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 const SocialsBar = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setIsLoaded(true);
+    }, 1000);
+
+    return () => clearTimeout(timeoutId);
+  }, []);
+
+  if (!isLoaded) {
+    return <div className="h-9"></div>;
+  }
+
   return (
-    <div className="flex w-full select-none flex-row justify-between space-x-5 px-[8vw]">
+    <div className="flex w-full animate-fadeIn select-none flex-row justify-between space-x-5 px-[8vw]">
       <Link href={"https://github.com/johnnymadigan"}>
         <Image
-          src={"/github.png"}
+          src={"/images/github.png"}
           alt="github"
           height={32}
           width={32}
@@ -15,7 +30,7 @@ const SocialsBar = () => {
       </Link>
       <Link href={"https://www.linkedin.com/in/johnnymadigan/"}>
         <Image
-          src={"/linkedin.png"}
+          src={"/images/linkedin.png"}
           alt="linkedin"
           height={32}
           width={32}
@@ -24,7 +39,7 @@ const SocialsBar = () => {
       </Link>
       <Link href={"mailto:johnny.madigan@icloud.com"}>
         <Image
-          src={"/email.png"}
+          src={"/images/email.png"}
           alt="email"
           height={32}
           width={32}
