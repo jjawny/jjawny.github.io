@@ -5,6 +5,7 @@ import { Drawer as DrawerPrimitive } from "vaul";
 
 import { cn } from "@/utils";
 
+// TODO: fix issue where drawer trigger overlays drawer content after screen resize
 const Drawer = ({
   shouldScaleBackground = true,
   ...props
@@ -28,7 +29,7 @@ const DrawerOverlay = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DrawerPrimitive.Overlay
     ref={ref}
-    className={cn("fixed inset-0 z-50  ", className)}
+    className={cn("fixed inset-0 z-50", className)}
     {...props}
   />
 ));
@@ -43,7 +44,7 @@ const DrawerContent = React.forwardRef<
     <DrawerPrimitive.Content
       ref={ref}
       className={cn(
-        "bg-background z-60 fixed inset-x-0 bottom-0 mt-24 flex h-auto flex-col bg-black",
+        "bg-background fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col bg-black",
         className
       )}
       {...props}
