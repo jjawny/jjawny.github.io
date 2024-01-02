@@ -4,7 +4,7 @@ const DEPTH = 2;
 const MIN_RADIUS = 8;
 const MAX_RADIUS = 12;
 const NUM_POINTS = 750;
-const LEFT_COLOR = "801556";
+const LEFT_COLOR = "b4719a";
 const RIGHT_COLOR = "ff8852";
 
 const getGradientStop = (ratio: number) => {
