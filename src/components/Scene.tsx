@@ -7,6 +7,7 @@ import React, {
 } from "react";
 import {
   DEFAULT_BACKGROUND_COLOR,
+  DEFAULT_DOTS_SPEED,
   DEFAULT_VIDEO_SOURCE,
 } from "~/constants/defaults";
 import { Html, OrbitControls, ScrollControls } from "@react-three/drei";
@@ -26,7 +27,7 @@ const DEBOUNCED_DELAY_MS = 10;
 const Scene = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const isMobile = useIsMobile();
-  const [videoSource, setVideoSource] = useState(
+  const [videoSource, setVideoSource] = useState<string>(
     `/videos/${DEFAULT_VIDEO_SOURCE}`
   );
 
@@ -71,7 +72,7 @@ const Scene = () => {
           {/* <OrbitControls enableZoom={false}/> */}
           <ScrollControls pages={3}>
             {/* Models */}
-            <DotsCircle />
+            <DotsCircle speed={DEFAULT_DOTS_SPEED} />
             <Macbook videoSource={videoSource} />
 
             {/* Sections */}
