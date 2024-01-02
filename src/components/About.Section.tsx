@@ -41,7 +41,7 @@ const AboutText = ({
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const { currentWord, startAnimation } = useStartTextAnimation(
-    "ABOUT ME",
+    "WHO AM I?",
     0.7
   );
   const textRef = useRef<HTMLHeadingElement>(null);
@@ -88,7 +88,7 @@ const AboutText = ({
       <DrawerContent className="z-px-2">
         <DrawerHeader>
           <DrawerTitle className="font-rubik text-2xl text-white">
-            ABOUT ME
+            WHO AM I?
           </DrawerTitle>
           <DrawerDescription className=" py-5 text-lg text-white ">
             I&apos;m a{" "}
