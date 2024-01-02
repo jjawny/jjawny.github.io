@@ -72,7 +72,7 @@ const AboutText = ({
       <DrawerTrigger>
         <h1
           ref={textRef}
-          className={`whitespace-nowrap rounded-xl px-[2vw] font-rubik text-[10vw] font-extrabold tracking-tight sm:rounded-2xl sm:text-[8vw]
+          className={`whitespace-nowrap rounded-xl px-[2vw] font-geistmono text-[10vw] font-extrabold leading-tight tracking-tight sm:rounded-2xl sm:text-[8vw]
             ${
               isHovered || isDrawerOpen
                 ? "bg-white text-black"
@@ -87,7 +87,7 @@ const AboutText = ({
       </DrawerTrigger>
       <DrawerContent className="z-px-2">
         <DrawerHeader>
-          <DrawerTitle className="font-rubik text-2xl text-white">
+          <DrawerTitle className="font-geistmono text-2xl text-white">
             WHO AM I?
           </DrawerTitle>
           <DrawerDescription className=" py-5 text-lg text-white ">

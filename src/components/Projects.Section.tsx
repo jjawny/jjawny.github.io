@@ -32,7 +32,7 @@ const Projects: React.FC<ProjectsProps> = ({
 
   return (
     <div className="grid h-screen w-screen items-center">
-      <div className="flex flex-col items-center justify-center justify-items-center space-y-5 px-[5vw] sm:items-start">
+      <div className="flex flex-col items-center justify-center justify-items-center space-y-1 px-[5vw] sm:items-start">
         {data.length > 0 &&
           data.map((p) => (
             <Project
@@ -98,7 +98,7 @@ const Project = ({
       <DrawerTrigger>
         <h1
           ref={titleRef}
-          className={`whitespace-nowrap rounded-xl px-[1vw] font-rubik text-[5vw] font-extrabold tracking-tight sm:rounded-2xl sm:text-[4vw]
+          className={`whitespace-nowrap rounded-lg px-[1vw] font-geistmono text-[7vw] font-extrabold leading-tight tracking-tight sm:text-[6vw]
           ${
             isHovered || isDrawerOpen
               ? "bg-white text-black"
@@ -113,7 +113,7 @@ const Project = ({
       </DrawerTrigger>
       <DrawerContent className="px-2">
         <DrawerHeader>
-          <DrawerTitle className="font-rubik text-2xl text-white">
+          <DrawerTitle className="font-geistmono text-2xl text-white">
             {name}
           </DrawerTitle>
           <DrawerDescription className="py-5 text-lg text-white">

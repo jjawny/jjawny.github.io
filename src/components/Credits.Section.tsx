@@ -35,7 +35,7 @@ const CreditsText = () => {
   return (
     <h2
       ref={textRef}
-      className={`cursor-default whitespace-nowrap rounded-xl px-[1vw] text-center font-rubik text-[3vw] font-extrabold tracking-tight sm:rounded-2xl sm:text-[2vw]
+      className={`cursor-default whitespace-nowrap rounded-md px-[0.75vw] text-center font-geistmono text-[4vw] tracking-tight sm:text-[3vw]
             ${isHovered ? "bg-white text-black" : "bg-black text-white"}
             ${isInView ? "animate-fadeIn" : "animate-fadeOut"}`}
       onMouseEnter={() => setIsHovered(true)}
@@ -66,7 +66,7 @@ const CreditsSubtext = () => {
       ref={textRef}
       href="https://skfb.ly/MWtY"
       target="_blank"
-      className={`rounded-xl px-[1vw] text-center font-rubik text-[1.5vw] tracking-tight sm:rounded-2xl sm:text-[1vw]
+      className={`rounded-md px-[0.75vw] text-center font-geistmono text-[2vw] tracking-tight sm:text-[1.5vw]
             ${isHovered ? "bg-white text-black" : "bg-black text-white"}
             ${isInView ? "animate-fadeIn" : "animate-fadeOut"}`}
       style={{ textWrap: "nowrap" }}
