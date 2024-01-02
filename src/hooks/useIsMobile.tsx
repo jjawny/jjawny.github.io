@@ -4,7 +4,11 @@ export const useIsMobile = (maxWidth: number = 640) => {
   const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < maxWidth);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < maxWidth);
+    };
+
+    handleResize(); // call immediately to determine isMobile upon render
 
     window.addEventListener("resize", handleResize);
 
