@@ -6,7 +6,6 @@ export const useIsInView = (ref: RefObject<Element>) => {
     const el = ref.current;
     const observer = new IntersectionObserver(([entry]) => {
       if (entry) {
-        console.log("is in view? ", entry.isIntersecting);
         setIsInView(entry.isIntersecting);
       }
     });
