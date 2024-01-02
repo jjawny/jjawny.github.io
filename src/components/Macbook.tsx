@@ -7,16 +7,16 @@ import MacbookScreen from "./Macbook.Screen";
 import _debounce from "lodash/debounce";
 import { Group } from "three";
 
-type MacbookProps = {
-  videoSource: string;
-};
-
 const ANIMATION_DEBOUNCE_MS = 0; // debouncing animation frames causes jittery movements, but option here when testing new animations and need to improve performance
 const MIN_Z_VALUE = -50; // the min z-index for the model to travel from
 const MAX_Z_VALUE = 30; // the max z-index for the model to travel to
 const TRAVEL_SPEED = 0.4; // the speed the model travels at
 
-export function Macbook({ videoSource }: MacbookProps) {
+type MacbookProps = {
+  videoSource: string;
+};
+
+const Macbook: React.FC<MacbookProps> = ({ videoSource }) => {
   const groupRef = useRef<Group>(null);
 
   // ANIMATIONS
@@ -118,4 +118,6 @@ export function Macbook({ videoSource }: MacbookProps) {
       <MacbookKeyboard />
     </group>
   );
-}
+};
+
+export default Macbook;

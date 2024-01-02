@@ -11,12 +11,14 @@ import {
   DrawerTrigger,
 } from "./ui/Drawer";
 
-const About = ({
-  changeBackgroundCallback,
-  changeLaptopScreenCallback,
-}: {
+type ProjectsProps = {
   changeBackgroundCallback: (newColor: string | null) => void;
   changeLaptopScreenCallback: (videoSource: string | null) => void;
+};
+
+const About: React.FC<ProjectsProps> = ({
+  changeBackgroundCallback,
+  changeLaptopScreenCallback,
 }) => {
   return (
     <div className={`grid h-screen w-screen items-center justify-center`}>

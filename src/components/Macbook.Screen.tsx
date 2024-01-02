@@ -11,7 +11,11 @@ import { LinearFilter, VideoTexture, RGBAFormat, Mesh } from "three";
 import React, { useEffect, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
-const MacbookScreen = ({ videoSource }: { videoSource: string }) => {
+type MacbookScreenProps = {
+  videoSource: string;
+};
+
+const MacbookScreen: React.FC<MacbookScreenProps> = ({ videoSource }) => {
   const { nodes, materials } = useGLTF("/models/macbook.glb") as any;
 
   // don't create a new element on new renders (videoSource changes often)

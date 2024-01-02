@@ -1,5 +1,7 @@
 import { useStartTextAnimation } from "~/hooks/useStartTextAnimation";
+import { PROJECTS_SOURCE } from "~/constants/defaults";
 import { useEffect, useRef, useState } from "react";
+import { ProjectType } from "~/types/project.type";
 import { useIsInView } from "~/hooks/useIsInView";
 import {
   Drawer,
@@ -11,21 +13,14 @@ import {
   DrawerTrigger,
 } from "./ui/Drawer";
 
-const PROJECTS_SOURCE = "/data/projects.json";
-
-type ProjectType = {
-  name: string;
-  videoSource: string;
-  color: string;
-  desc: string;
-};
-
-const Projects = ({
-  changeBackgroundCallback,
-  changeLaptopScreenCallback,
-}: {
+type ProjectsProps = {
   changeBackgroundCallback: (newColor: string | null) => void;
   changeLaptopScreenCallback: (videoSource: string | null) => void;
+};
+
+const Projects: React.FC<ProjectsProps> = ({
+  changeBackgroundCallback,
+  changeLaptopScreenCallback,
 }) => {
   const [data, setData] = useState<ProjectType[]>([]);
 

@@ -5,21 +5,23 @@ import React, {
   useRef,
   useState,
 } from "react";
+import {
+  DEFAULT_BACKGROUND_COLOR,
+  DEFAULT_VIDEO_SOURCE,
+} from "~/constants/defaults";
 import { Html, OrbitControls, ScrollControls } from "@react-three/drei";
 import { useIsMobile } from "~/hooks/useIsMobile";
 import { Canvas } from "@react-three/fiber";
 import Projects from "./Projects.Section";
 import _debounce from "lodash/debounce";
 import Credits from "./Credits.Section";
-import { Macbook } from "./Macbook";
 import About from "./About.Section";
 import Hero from "./Hero.Section";
 import DotsCircle from "./Dots";
+import Macbook from "./Macbook";
 import Cursor from "./Cursor";
 
 const DEBOUNCED_DELAY_MS = 10;
-const DEFAULT_VIDEO_SOURCE = "default.mp4";
-const DEFAULT_BACKGROUND_COLOR = "#111111";
 
 const Scene = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
