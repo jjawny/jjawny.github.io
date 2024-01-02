@@ -1,6 +1,7 @@
 import { useStartTextAnimation } from "~/hooks/useStartTextAnimation";
 import { useEffect, useRef, useState } from "react";
 import { Html } from "@react-three/drei";
+import { useIsInView } from "~/hooks/useIsInView";
 import {
   Drawer,
   DrawerContent,
@@ -15,17 +16,12 @@ const Projects = ({
   changeBackgroundCallback,
   changeLaptopScreenCallback,
 }: {
-  changeBackgroundCallback: (newColor: string) => void;
-  changeLaptopScreenCallback: (videoUrl: string) => void;
+  changeBackgroundCallback: (newColor: string | null) => void;
+  changeLaptopScreenCallback: (videoSource: string | null) => void;
 }) => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-
   return (
     <Html fullscreen style={{ marginTop: "200vh" }}>
-      <div
-        ref={sectionRef}
-        className="mb-40 grid h-screen w-screen items-center"
-      >
+      <div className="mb-40 grid h-screen w-screen items-center">
         <div
           className={`flex flex-col  items-center justify-center justify-items-center space-y-3 px-[5vw] sm:items-start`}
         >
@@ -67,12 +63,14 @@ const Project = ({
 }: {
   name: string;
   backgroundColor: string;
-  changeBackgroundCallback: (newColor: string) => void;
-  changeLaptopScreenCallback: (videoUrl: string) => void;
+  changeBackgroundCallback: (newColor: string | null) => void;
+  changeLaptopScreenCallback: (videoSource: string | null) => void;
 }) => {
   const { currentWord, startAnimation } = useStartTextAnimation(name, 1);
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
   const [isHovered, setIsHovered] = useState<boolean>(false);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const isInView = useIsInView(titleRef);
 
   useEffect(() => {
     if (!isDrawerOpen && isHovered) {
@@ -83,8 +81,8 @@ const Project = ({
       changeBackgroundCallback(backgroundColor);
       changeLaptopScreenCallback("jjds.mp4");
     } else {
-      changeBackgroundCallback("");
-      changeLaptopScreenCallback("");
+      changeBackgroundCallback(null);
+      changeLaptopScreenCallback(null);
     }
   }, [isDrawerOpen, isHovered]);
 
@@ -92,7 +90,9 @@ const Project = ({
     <Drawer onOpenChange={(isOpen) => setIsDrawerOpen(isOpen)}>
       <DrawerTrigger>
         <h1
-          className={` rounded-md px-[1vw] font-rubik text-[4vw] font-extrabold tracking-tight
+          ref={titleRef}
+          className={` rounded-md px-[1vw] font-rubik text-[5vw] font-extrabold tracking-tight sm:text-[4vw]
+          ${isInView ? "animate-fadeInSlide" : "invisible"}
           ${
             isHovered || isDrawerOpen
               ? "bg-white text-slate-900"
