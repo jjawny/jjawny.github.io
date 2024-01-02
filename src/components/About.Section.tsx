@@ -1,3 +1,4 @@
+import { ABOUT_SECTION_COLOR, ABOUT_SECTION_VIDEO } from "~/constants/defaults";
 import { useStartTextAnimation } from "~/hooks/useStartTextAnimation";
 import { useEffect, useRef, useState } from "react";
 import { useIsInView } from "~/hooks/useIsInView";
@@ -52,8 +53,8 @@ const AboutText = ({
     }
 
     if (isDrawerOpen || isHovered) {
-      changeBackgroundCallback("#670e3c");
-      changeLaptopScreenCallback("jjds.mp4");
+      changeBackgroundCallback(ABOUT_SECTION_COLOR);
+      changeLaptopScreenCallback(ABOUT_SECTION_VIDEO);
     } else {
       changeBackgroundCallback(null);
       changeLaptopScreenCallback(null);
@@ -75,7 +76,7 @@ const AboutText = ({
             ${
               isHovered || isDrawerOpen
                 ? "bg-white text-slate-900"
-                : "bg-black text-white"
+                : "bg-slate-900 text-white"
             }
             ${isInView ? "animate-fadeIn" : "animate-fadeOut"}`}
           style={{ textWrap: "nowrap" }}

@@ -4,10 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head />
-      <body
-        style={{ backgroundColor: "#111111" }}
-        className="transition-colors duration-150 ease-in"
-      >
+      <body className="transition-colors duration-150 ease-in">
         <Main />
         <NextScript />
       </body>

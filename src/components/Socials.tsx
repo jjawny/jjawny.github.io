@@ -25,7 +25,7 @@ const Socials = () => {
           alt="github"
           height={32}
           width={32}
-          className="duration-200 hover:scale-110"
+          className="rounded-md bg-slate-900 duration-200 hover:scale-110"
         />
       </Link>
       <Link href={"https://www.linkedin.com/in/johnnymadigan/"}>
@@ -34,7 +34,7 @@ const Socials = () => {
           alt="linkedin"
           height={32}
           width={32}
-          className="duration-200 hover:scale-110"
+          className="rounded-md bg-slate-900 duration-200 hover:scale-110"
         />
       </Link>
       <Link href={"mailto:johnny.madigan@icloud.com"}>
@@ -43,7 +43,7 @@ const Socials = () => {
           alt="email"
           height={32}
           width={32}
-          className="duration-200 hover:scale-110"
+          className="rounded-md bg-slate-900 px-1 duration-200 hover:scale-110"
         />
       </Link>
     </div>

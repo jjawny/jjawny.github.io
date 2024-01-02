@@ -104,7 +104,7 @@ const Project = ({
           ${
             isHovered || isDrawerOpen
               ? "bg-white text-slate-900"
-              : "bg-black text-white"
+              : "bg-slate-900 text-white"
           }
           ${isInView ? "animate-fadeInSlide" : "animate-fadeOut"}`}
           style={{ textWrap: "nowrap" }}
