@@ -8,9 +8,8 @@
 */
 
 import { LinearFilter, VideoTexture, RGBAFormat, Mesh } from "three";
-import { useFrame } from "@react-three/fiber";
+import React, { useEffect, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
-import React, { useEffect, useRef, useState } from "react";
 
 const MacbookScreen = ({ videoSource }: { videoSource: string }) => {
   const { nodes, materials } = useGLTF("/models/macbook.glb") as any;
@@ -24,6 +23,7 @@ const MacbookScreen = ({ videoSource }: { videoSource: string }) => {
     const { current: texture } = textureRef;
 
     video.src = videoSource;
+    video.playsInline = true;
     video.muted = true;
     video.loop = true;
 
