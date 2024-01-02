@@ -21,9 +21,9 @@ const Projects = ({
 }) => {
   return (
     <Html fullscreen style={{ marginTop: "200vh" }}>
-      <div className="mb-40 grid h-screen w-screen items-center">
+      <div className="grid h-screen w-screen items-center">
         <div
-          className={`flex flex-col  items-center justify-center justify-items-center space-y-3 px-[5vw] sm:items-start`}
+          className={`flex flex-col items-center justify-center justify-items-center px-[5vw] sm:items-start`}
         >
           <Project
             name="JJ's DELIVERY SERVICE"
