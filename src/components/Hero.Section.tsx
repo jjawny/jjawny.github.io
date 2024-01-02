@@ -21,7 +21,7 @@ const HeroText = ({ text }: { text: string }) => {
 
   return (
     <h1
-      className={`z-10 cursor-default select-none rounded-2xl text-center font-yagiza  text-[9vw] font-extrabold text-white sm:text-[11vw]`}
+      className={`z-10 select-none rounded-2xl text-center font-yagiza text-[9vw] font-extrabold text-white sm:text-[11vw]`}
     >
       {currentWord}
     </h1>
