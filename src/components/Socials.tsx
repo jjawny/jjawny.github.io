@@ -14,18 +14,18 @@ const Socials = () => {
   }, []);
 
   if (!isLoaded) {
-    return <div className="h-9"></div>;
+    return <div className="h-14"></div>;
   }
 
   return (
-    <div className="flex w-full animate-fadeIn select-none flex-row justify-between space-x-5 px-[8vw]">
+    <div className="flex w-full animate-fadeIn select-none flex-row justify-between space-x-5 py-3 px-[8vw]">
       <Link href={"https://github.com/johnnymadigan"}>
         <Image
           src={"/images/github.png"}
           alt="github"
           height={32}
           width={32}
-          className="rounded-md bg-black duration-200 hover:scale-110"
+          className="duration-200 hover:scale-110"
         />
       </Link>
       <Link href={"https://www.linkedin.com/in/johnnymadigan/"}>
@@ -34,7 +34,7 @@ const Socials = () => {
           alt="linkedin"
           height={32}
           width={32}
-          className="rounded-md bg-black duration-200 hover:scale-110"
+          className="duration-200 hover:scale-110"
         />
       </Link>
       <Link href={"mailto:johnny.madigan@icloud.com"}>
@@ -43,7 +43,7 @@ const Socials = () => {
           alt="email"
           height={32}
           width={32}
-          className="rounded-md bg-black px-1 duration-200 hover:scale-110"
+          className="duration-200 hover:scale-110"
         />
       </Link>
     </div>
