@@ -1,6 +1,5 @@
 import { useStartTextAnimation } from "~/hooks/useStartTextAnimation";
 import { useEffect, useRef, useState } from "react";
-import { Html } from "@react-three/drei";
 import { useIsInView } from "~/hooks/useIsInView";
 import { Html } from "@react-three/drei";
 import {
@@ -94,7 +93,15 @@ const Project = ({
       changeBackgroundCallback(null);
       changeLaptopScreenCallback(null);
     }
-  }, [isDrawerOpen, isHovered]);
+  }, [
+    isDrawerOpen,
+    isHovered,
+    color,
+    videoSource,
+    changeBackgroundCallback,
+    changeLaptopScreenCallback,
+    startAnimation,
+  ]);
 
   return (
     <Drawer onOpenChange={(isOpen) => setIsDrawerOpen(isOpen)}>

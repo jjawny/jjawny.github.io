@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export const useStartTextAnimation = (
   text: string,
@@ -9,15 +9,13 @@ export const useStartTextAnimation = (
   const frameRef = useRef<number | null>(null);
   const [currentWord, setCurrentWord] = useState(text);
 
-  let iteration = 0;
-
-  const startAnimation = () => {
+  const startAnimation = useCallback(() => {
     if (frameRef.current) {
       cancelAnimationFrame(frameRef.current);
       setCurrentWord(text);
     }
 
-    iteration = 0;
+    let iteration = 0;
 
     const animate = () => {
       const newWord = text
@@ -43,7 +41,7 @@ export const useStartTextAnimation = (
     };
 
     frameRef.current = requestAnimationFrame(animate);
-  };
+  }, [speed, text]);
 
   useEffect(() => {
     if (isPlayOnRender) startAnimation();
@@ -52,7 +50,7 @@ export const useStartTextAnimation = (
     return () => {
       if (frameRef.current) cancelAnimationFrame(frameRef.current);
     };
-  }, []);
+  }, [isPlayOnRender, startAnimation]);
 
   return { currentWord, startAnimation };
 };

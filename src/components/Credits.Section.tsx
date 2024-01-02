@@ -23,7 +23,7 @@ const CreditsText = () => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const { currentWord, startAnimation } = useStartTextAnimation(
     "Created by Johnny Madigan",
-    0.9
+    1.5
   );
   const textRef = useRef<HTMLHeadingElement>(null);
   const isInView = useIsInView(textRef);
@@ -32,7 +32,7 @@ const CreditsText = () => {
     if (isHovered) {
       startAnimation();
     }
-  }, [, isHovered]);
+  }, [isHovered, startAnimation]);
 
   return (
     <h2
@@ -53,7 +53,7 @@ const CreditsSubtext = () => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const { currentWord, startAnimation } = useStartTextAnimation(
     "'Macbook Pro 13 inch' by chrisgreig (CC BY)",
-    2
+    2.6
   );
   const textRef = useRef<HTMLAnchorElement>(null);
   const isInView = useIsInView(textRef);
@@ -62,7 +62,7 @@ const CreditsSubtext = () => {
     if (isHovered) {
       startAnimation();
     }
-  }, [, isHovered]);
+  }, [isHovered, startAnimation]);
 
   return (
     <a

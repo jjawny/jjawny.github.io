@@ -42,7 +42,7 @@ const AboutText = ({
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const { currentWord, startAnimation } = useStartTextAnimation(
     "ABOUT ME",
-    0.3
+    0.7
   );
   const textRef = useRef<HTMLHeadingElement>(null);
   const isInView = useIsInView(textRef);
@@ -59,7 +59,13 @@ const AboutText = ({
       changeBackgroundCallback(null);
       changeLaptopScreenCallback(null);
     }
-  }, [isDrawerOpen, isHovered]);
+  }, [
+    isDrawerOpen,
+    isHovered,
+    changeBackgroundCallback,
+    changeLaptopScreenCallback,
+    startAnimation,
+  ]);
 
   return (
     <Drawer onOpenChange={(isOpen) => setIsDrawerOpen(isOpen)}>
