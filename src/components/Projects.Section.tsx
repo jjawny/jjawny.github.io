@@ -100,14 +100,13 @@ const Project = ({
       <DrawerTrigger>
         <h1
           ref={titleRef}
-          className={` rounded-2xl px-[1vw] font-rubik text-[5vw] font-extrabold tracking-tight sm:text-[4vw]
+          className={`whitespace-nowrap rounded-xl px-[1vw] font-rubik text-[5vw] font-extrabold tracking-tight sm:rounded-2xl sm:text-[4vw]
           ${
             isHovered || isDrawerOpen
               ? "bg-white text-slate-900"
               : "bg-slate-900 text-white"
           }
           ${isInView ? "animate-fadeInSlide" : "animate-fadeOut"}`}
-          style={{ textWrap: "nowrap" }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
