@@ -11,7 +11,7 @@ const Credits = ({}: {}) => {
           className={`flex flex-col items-center justify-center justify-items-center px-[5vw]`}
         >
           <CreditsText />
-          <CreditsText2 />
+          <CreditsSubtext />
         </div>
       </div>
     </Html>
@@ -35,23 +35,21 @@ const CreditsText = () => {
   }, [, isHovered]);
 
   return (
-    <>
-      <h2
-        ref={textRef}
-        className={`rounded-md px-[1vw] text-center font-rubik text-[3vw] font-extrabold tracking-tight sm:text-[2vw]
+    <h2
+      ref={textRef}
+      className={`rounded-md px-[1vw] text-center font-rubik text-[3vw] font-extrabold tracking-tight sm:text-[2vw]
             ${isHovered ? "bg-white text-slate-900" : "bg-black text-white"}
-            ${isInView ? "animate-fadeIn" : "invisible"}`}
-        style={{ textWrap: "nowrap" }}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        {currentWord}
-      </h2>
-    </>
+            ${isInView ? "animate-fadeIn" : "animate-fadeOut"}`}
+      style={{ textWrap: "nowrap" }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {currentWord}
+    </h2>
   );
 };
 
-const CreditsText2 = () => {
+const CreditsSubtext = () => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const { currentWord, startAnimation } = useStartTextAnimation(
     "'Macbook Pro 13 inch' by chrisgreig (CC BY)",
@@ -67,21 +65,19 @@ const CreditsText2 = () => {
   }, [, isHovered]);
 
   return (
-    <>
-      <a
-        ref={textRef}
-        href="https://skfb.ly/MWtY"
-        target="_blank"
-        className={`rounded-md px-[1vw] text-center font-rubik text-[1.5vw] tracking-tight sm:text-[1vw]
+    <a
+      ref={textRef}
+      href="https://skfb.ly/MWtY"
+      target="_blank"
+      className={`rounded-md px-[1vw] text-center font-rubik text-[1.5vw] tracking-tight sm:text-[1vw]
             ${isHovered ? "bg-white text-slate-900" : "bg-black text-white"}
-            ${isInView ? "animate-fadeIn" : "invisible"}`}
-        style={{ textWrap: "nowrap" }}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        {currentWord}
-      </a>
-    </>
+            ${isInView ? "animate-fadeIn" : "animate-fadeOut"}`}
+      style={{ textWrap: "nowrap" }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {currentWord}
+    </a>
   );
 };
 
