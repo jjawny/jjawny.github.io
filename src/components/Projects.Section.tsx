@@ -3,6 +3,8 @@ import { PROJECTS_SOURCE } from "~/constants/defaults";
 import { useEffect, useRef, useState } from "react";
 import { ProjectType } from "~/types/project.type";
 import { useIsInView } from "~/hooks/useIsInView";
+import Image from "next/image";
+import Link from "next/link";
 import {
   Drawer,
   DrawerContent,
@@ -39,12 +41,9 @@ const Projects: React.FC<ProjectsProps> = ({
       >
         {data.length > 0 &&
           data.map((p) => (
-            <Project
+            <ProjectDrawer
               key={p.name}
-              name={p.name}
-              videoSource={p.videoSource}
-              color={p.color}
-              desc={p.desc}
+              project={p}
               changeBackgroundCallback={changeBackgroundCallback}
               changeLaptopScreenCallback={changeLaptopScreenCallback}
               changeIsDrawerOpenCallback={setIsDrawerOpen}
@@ -55,24 +54,23 @@ const Projects: React.FC<ProjectsProps> = ({
   );
 };
 
-const Project = ({
-  name,
-  videoSource,
-  color,
-  desc,
-  changeBackgroundCallback,
-  changeLaptopScreenCallback,
-  changeIsDrawerOpenCallback,
-}: {
-  name: string;
-  videoSource: string;
-  color: string;
-  desc: string;
+type ProjectDrawerProps = {
+  project: ProjectType;
   changeBackgroundCallback: (newColor: string | null) => void;
   changeLaptopScreenCallback: (videoSource: string | null) => void;
   changeIsDrawerOpenCallback: (isOpen: boolean) => void;
+};
+
+const ProjectDrawer: React.FC<ProjectDrawerProps> = ({
+  project,
+  changeBackgroundCallback,
+  changeLaptopScreenCallback,
+  changeIsDrawerOpenCallback,
 }) => {
-  const { currentWord, startAnimation } = useStartTextAnimation(name, 1);
+  const { currentWord, startAnimation } = useStartTextAnimation(
+    project.name,
+    1
+  );
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -86,8 +84,8 @@ const Project = ({
     }
 
     if (isDrawerOpen || isHovered) {
-      changeBackgroundCallback(color);
-      changeLaptopScreenCallback(videoSource);
+      changeBackgroundCallback(project.color);
+      changeLaptopScreenCallback(project.videoSource);
     } else {
       changeBackgroundCallback(null);
       changeLaptopScreenCallback(null);
@@ -95,8 +93,7 @@ const Project = ({
   }, [
     isDrawerOpen,
     isHovered,
-    color,
-    videoSource,
+    project,
     changeBackgroundCallback,
     changeLaptopScreenCallback,
     startAnimation,
@@ -123,10 +120,21 @@ const Project = ({
       <DrawerContent className="px-2">
         <DrawerHeader>
           <DrawerTitle className="font-geistmono text-2xl text-white">
-            {name}
+            {project.name}
           </DrawerTitle>
           <DrawerDescription className="py-5 text-lg text-white">
-            {desc}
+            {project.desc}
+            <br />
+            <br />
+            <Link href={project.link} target="_blank">
+              <Image
+                src={"/images/link.png"}
+                alt="link"
+                height={32}
+                width={32}
+                className="duration-200 hover:scale-110"
+              />
+            </Link>
           </DrawerDescription>
         </DrawerHeader>
         <DrawerFooter></DrawerFooter>

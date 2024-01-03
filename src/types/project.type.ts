@@ -3,4 +3,5 @@ export type ProjectType = {
   videoSource: string;
   color: string;
   desc: string;
+  link: string;
 };
