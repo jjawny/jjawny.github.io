@@ -28,6 +28,7 @@ const MacbookScreen: React.FC<MacbookScreenProps> = ({ videoSource }) => {
 
     video.src = videoSource;
     video.playsInline = true;
+    video.autoplay = true;
     video.muted = true;
     video.loop = true;
 
