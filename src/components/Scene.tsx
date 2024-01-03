@@ -64,52 +64,51 @@ const Scene = () => {
         camera={{ position: [0, 0, 35] }}
         className="h-screen w-screen"
       >
+        <Lighting />
         {!isMobile && <Cursor />}
+        {/* <OrbitControls enableZoom={false}/> */}
 
-        {/* TODO: test the suspense */}
-        <Suspense fallback={null}>
-          <Lighting />
-          {/* <OrbitControls enableZoom={false}/> */}
-          <ScrollControls pages={3}>
-            {/* Models */}
+        <ScrollControls pages={3}>
+          {/* Models */}
+          <Suspense fallback={null}>
             <DotsCircle speed={DEFAULT_DOTS_SPEED} />
             <Macbook videoSource={videoSource} />
+          </Suspense>
 
-            {/* Sections */}
-            {/* NOTE: zIndexRange prop required to allow setting z-index to items within */}
-            {/* (resolves bug where shadcn drawer content cannot be interacted with after resize) */}
-            <Html fullscreen zIndexRange={[1, 1000]}>
-              <Hero />
-            </Html>
-            <Html
-              fullscreen
-              style={{ marginTop: "100vh" }}
-              zIndexRange={[1, 1000]}
-            >
-              <About
-                changeBackgroundCallback={changeBackgroundCallback}
-                changeLaptopScreenCallback={changeLaptopScreenCallback}
-              />
-            </Html>
-            <Html
-              fullscreen
-              style={{ marginTop: "200vh" }}
-              zIndexRange={[1, 1000]}
-            >
-              <Projects
-                changeBackgroundCallback={changeBackgroundCallback}
-                changeLaptopScreenCallback={changeLaptopScreenCallback}
-              />
-            </Html>
-            <Html
-              fullscreen
-              style={{ marginTop: "300vh" }}
-              zIndexRange={[1, 1000]}
-            >
-              <Credits />
-            </Html>
-          </ScrollControls>
-        </Suspense>
+          {/* Sections */}
+          {/* NOTE: zIndexRange prop required to allow setting z-index to items within */}
+          {/* (resolves bug where shadcn drawer content cannot be interacted with after resize) */}
+          <Html fullscreen zIndexRange={[1, 1000]}>
+            <Hero />
+          </Html>
+          <Html
+            fullscreen
+            style={{ marginTop: "100vh" }}
+            zIndexRange={[1, 1000]}
+          >
+            <About
+              changeBackgroundCallback={changeBackgroundCallback}
+              changeLaptopScreenCallback={changeLaptopScreenCallback}
+            />
+          </Html>
+          <Html
+            fullscreen
+            style={{ marginTop: "200vh" }}
+            zIndexRange={[1, 1000]}
+          >
+            <Projects
+              changeBackgroundCallback={changeBackgroundCallback}
+              changeLaptopScreenCallback={changeLaptopScreenCallback}
+            />
+          </Html>
+          <Html
+            fullscreen
+            style={{ marginTop: "300vh" }}
+            zIndexRange={[1, 1000]}
+          >
+            <Credits />
+          </Html>
+        </ScrollControls>
       </Canvas>
     </div>
   );
