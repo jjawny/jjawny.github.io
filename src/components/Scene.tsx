@@ -70,7 +70,7 @@ const Scene = () => {
 
         <ScrollControls pages={3}>
           {/* Models */}
-          <Suspense fallback={null}>
+          <Suspense fallback={<Loader />}>
             <DotsCircle speed={DEFAULT_DOTS_SPEED} />
             <Macbook videoSource={videoSource} />
           </Suspense>
@@ -121,6 +121,22 @@ const Lighting = () => {
       <directionalLight />
       <pointLight position={[-30, 0, -30]} power={10.0} />
     </>
+  );
+};
+
+const Loader = () => {
+  return (
+    <Html fullscreen>
+      <div className="grid h-screen w-screen items-center justify-center">
+        <div
+          className="inline-block h-[30vh] w-[30vh] animate-spin rounded-full border-[1px] border-current border-t-transparent dark:text-gray-400"
+          role="status"
+          aria-label="loading"
+        >
+          <span className="sr-only">Loading...</span>
+        </div>
+      </div>
+    </Html>
   );
 };
 
