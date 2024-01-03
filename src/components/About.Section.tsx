@@ -31,6 +31,8 @@ const About: React.FC<ProjectsProps> = ({
   );
 };
 
+// ISSUE: R3F's custom render tree somehow prevents 'useIsInView' (intersection observer hook) from triggering ∴ component never intersects
+// SOLUTION: Extract component that relies on 'useInView' hook
 const AboutText = ({
   changeBackgroundCallback,
   changeLaptopScreenCallback,

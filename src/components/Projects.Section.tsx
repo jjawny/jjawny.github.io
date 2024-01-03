@@ -61,6 +61,8 @@ type ProjectDrawerProps = {
   changeIsDrawerOpenCallback: (isOpen: boolean) => void;
 };
 
+// ISSUE: R3F's custom render tree somehow prevents 'useIsInView' (intersection observer hook) from triggering ∴ component never intersects
+// SOLUTION: Extract component that relies on 'useInView' hook
 const ProjectDrawer: React.FC<ProjectDrawerProps> = ({
   project,
   changeBackgroundCallback,

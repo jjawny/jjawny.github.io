@@ -5,7 +5,6 @@ import { Drawer as DrawerPrimitive } from "vaul";
 
 import { cn } from "@/utils";
 
-// TODO: fix issue where drawer trigger overlays drawer content after screen resize
 const Drawer = ({
   shouldScaleBackground = true,
   ...props

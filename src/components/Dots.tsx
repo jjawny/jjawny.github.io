@@ -17,7 +17,7 @@ const DotsCircle: React.FC<DotsCirleProps> = ({ speed }) => {
     if (ref.current?.rotation)
       ref.current.rotation.z = clock.getElapsedTime() * speed;
 
-    if (scroll && ref.current) ref.current.position.z = scroll.offset * 25; // TODO: figure this out Adjust this value to fit your needs
+    if (scroll && ref.current) ref.current.position.z = scroll.offset * 25; // adjust value
   });
 
   return (

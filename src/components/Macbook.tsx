@@ -23,8 +23,8 @@ const Macbook: React.FC<MacbookProps> = ({ videoSource }) => {
   const scroll = useScroll();
 
   // ANIMATIONS
-  // TODO: RnD
   // For gyroscope orientation
+  // TODO: RnD
   // useEffect(() => {
   //   if (window.DeviceOrientationEvent) {
   //     const debouncedHandleOrientation = _debounce((event) => {

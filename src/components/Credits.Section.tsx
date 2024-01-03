@@ -16,8 +16,8 @@ const Credits = ({}: {}) => {
   );
 };
 
-// TODO: research why when this is in 1 component the useIsInView does not work properly and the text never triggers/shows
-// something to do with R3F having its own component tree
+// ISSUE: R3F's custom render tree somehow prevents 'useIsInView' (intersection observer hook) from triggering ∴ component never intersects
+// SOLUTION: Extract component that relies on 'useInView' hook
 const CreditsText = () => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const { currentWord, startAnimation } = useStartTextAnimation(
@@ -51,6 +51,8 @@ const CreditsText = () => {
   );
 };
 
+// ISSUE: R3F's custom render tree somehow prevents 'useIsInView' (intersection observer hook) from triggering ∴ component never intersects
+// SOLUTION: Extract component that relies on 'useInView' hook
 const CreditsSubtext = () => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const { currentWord, startAnimation } = useStartTextAnimation(
