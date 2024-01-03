@@ -3,24 +3,28 @@
         "name": "JJ's Delivery Service",
         "videoSource": "jjds.mp4",
         "color": "#f9f2ff",
-        "desc": "lol"
+        "desc": "TODO: A full-stack chat...",
+        "link": "TODO: use link from vercel"
     },
     {
         "name": "Cube Solver",
-        "videoSource": "jjds.mp4",
+        "videoSource": "cube-solver.mp4",
         "color": "#e4f5ff",
-        "desc": "lol"
+        "desc": "A graph theory project on finding the minimum number of moves to solve a Rubik's Pocket cube.",
+        "link": "https://github.com/johnnymadigan/cube-solver"
     },
     {
         "name": "Game of Life",
-        "videoSource": "jjds.mp4",
+        "videoSource": "gol.mp4",
         "color": "#feeded",
-        "desc": "lol"
+        "desc": "A zero-player, cellular automaton game with a wide-variety of options all from your terminal.",
+        "link": "https://github.com/johnnymadigan/game-of-life"
     },
     {
-        "name": "Car Park Simulator",
-        "videoSource": "jjds.mp4",
+        "name": "Stonk Machine",
+        "videoSource": "stonk-machine.mp4",
         "color": "#ecffec",
-        "desc": "lol"
+        "desc": "A desktop app for electronic trading of virtual assets.",
+        "link": "https://github.com/johnnymadigan/stonk-machine"
     }
 ]
