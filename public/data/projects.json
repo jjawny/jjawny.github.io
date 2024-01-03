@@ -3,8 +3,8 @@
         "name": "JJ's Delivery Service",
         "videoSource": "jjds.mp4",
         "color": "#f9f2ff",
-        "desc": "TODO: A full-stack chat...",
-        "link": "TODO: use link from vercel"
+        "desc": "A full-stack chat app, unlike the rest.",
+        "link": "https://jj-delivery-service.vercel.app"
     },
     {
         "name": "Cube Solver",
@@ -26,5 +26,12 @@
         "color": "#ecffec",
         "desc": "A desktop app for electronic trading of virtual assets.",
         "link": "https://github.com/johnnymadigan/stonk-machine"
+    },
+    {
+        "name": "Undertale Musicbox",
+        "videoSource": "undertale-musicbox.mp4",
+        "color": "#eaf0ff",
+        "desc": "An Arduino device that plays and adjusts a relaxing tune.",
+        "link": "https://github.com/johnnymadigan/undertale-musicbox"
     }
 ]
