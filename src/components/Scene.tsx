@@ -76,22 +76,36 @@ const Scene = () => {
             <Macbook videoSource={videoSource} />
 
             {/* Sections */}
-            <Html fullscreen>
+            {/* NOTE: zIndexRange prop required to allow setting z-index to items within */}
+            {/* (resolves bug where shadcn drawer content cannot be interacted with after resize) */}
+            <Html fullscreen zIndexRange={[1, 1000]}>
               <Hero />
             </Html>
-            <Html fullscreen style={{ marginTop: "100vh" }}>
+            <Html
+              fullscreen
+              style={{ marginTop: "100vh" }}
+              zIndexRange={[1, 1000]}
+            >
               <About
                 changeBackgroundCallback={changeBackgroundCallback}
                 changeLaptopScreenCallback={changeLaptopScreenCallback}
               />
             </Html>
-            <Html fullscreen style={{ marginTop: "200vh" }}>
+            <Html
+              fullscreen
+              style={{ marginTop: "200vh" }}
+              zIndexRange={[1, 1000]}
+            >
               <Projects
                 changeBackgroundCallback={changeBackgroundCallback}
                 changeLaptopScreenCallback={changeLaptopScreenCallback}
               />
             </Html>
-            <Html fullscreen style={{ marginTop: "300vh" }}>
+            <Html
+              fullscreen
+              style={{ marginTop: "300vh" }}
+              zIndexRange={[1, 1000]}
+            >
               <Credits />
             </Html>
           </ScrollControls>

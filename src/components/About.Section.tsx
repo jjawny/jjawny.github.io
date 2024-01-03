@@ -93,7 +93,7 @@ const AboutText = ({
           {currentWord}
         </h1>
       </DrawerTrigger>
-      <DrawerContent className="z-px-2">
+      <DrawerContent className="z-50 px-2">
         <DrawerHeader>
           <DrawerTitle className="font-geistmono text-2xl text-white">
             WHO AM I?
