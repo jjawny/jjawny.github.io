@@ -32,7 +32,7 @@ const Projects: React.FC<ProjectsProps> = ({
 
   return (
     <div className="grid h-screen w-screen items-center">
-      <div className="flex flex-col items-center justify-center justify-items-center space-y-1 px-[5vw] sm:items-start">
+      <div className="flex flex-col items-center justify-center justify-items-center space-y-2 px-[5vw] sm:items-start">
         {data.length > 0 &&
           data.map((p) => (
             <Project
