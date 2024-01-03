@@ -124,17 +124,17 @@ const ProjectDrawer: React.FC<ProjectDrawerProps> = ({
           </DrawerTitle>
           <DrawerDescription className="py-5 text-lg text-white">
             {project.desc}
-            <br />
-            <br />
-            <Link href={project.link} target="_blank">
-              <Image
-                src={"/images/link.png"}
-                alt="link"
-                height={32}
-                width={32}
-                className="duration-200 hover:scale-110"
-              />
-            </Link>
+            <div className="flex content-start pt-5">
+              <Link href={project.link} target="_blank">
+                <Image
+                  src={"/images/link.png"}
+                  alt="link"
+                  height={32}
+                  width={32}
+                  className="duration-200 hover:scale-110"
+                />
+              </Link>
+            </div>
           </DrawerDescription>
         </DrawerHeader>
         <DrawerFooter></DrawerFooter>
