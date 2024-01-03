@@ -2,35 +2,30 @@
     {
         "name": "JJ's Delivery Service",
         "videoSource": "jjds.mp4",
-        "color": "#f9f2ff",
         "desc": "A full-stack chat app, unlike the rest.",
         "link": "https://jj-delivery-service.vercel.app"
     },
     {
         "name": "Cube Solver",
         "videoSource": "cube-solver.mp4",
-        "color": "#e4f5ff",
         "desc": "A graph theory project on finding the minimum number of moves to solve a Rubik's Pocket cube.",
         "link": "https://github.com/johnnymadigan/cube-solver"
     },
     {
         "name": "Game of Life",
         "videoSource": "gol.mp4",
-        "color": "#feeded",
         "desc": "A zero-player, cellular automaton game with a wide-variety of options all from your terminal.",
         "link": "https://github.com/johnnymadigan/game-of-life"
     },
     {
         "name": "Stonk Machine",
         "videoSource": "stonk-machine.mp4",
-        "color": "#ecffec",
         "desc": "A desktop app for electronic trading of virtual assets.",
         "link": "https://github.com/johnnymadigan/stonk-machine"
     },
     {
         "name": "Undertale Musicbox",
         "videoSource": "undertale-musicbox.mp4",
-        "color": "#eaf0ff",
         "desc": "An Arduino device that plays and adjusts a relaxing tune.",
         "link": "https://github.com/johnnymadigan/undertale-musicbox"
     }

@@ -1,5 +1,5 @@
-import { ABOUT_SECTION_COLOR, ABOUT_SECTION_VIDEO } from "~/constants/defaults";
 import { useStartTextAnimation } from "~/hooks/useStartTextAnimation";
+import { ABOUT_SECTION_VIDEO } from "~/constants/defaults";
 import { useEffect, useRef, useState } from "react";
 import { useIsInView } from "~/hooks/useIsInView";
 import {
@@ -13,20 +13,13 @@ import {
 } from "./ui/Drawer";
 
 type ProjectsProps = {
-  changeBackgroundCallback: (newColor: string | null) => void;
   changeLaptopScreenCallback: (videoSource: string | null) => void;
 };
 
-const About: React.FC<ProjectsProps> = ({
-  changeBackgroundCallback,
-  changeLaptopScreenCallback,
-}) => {
+const About: React.FC<ProjectsProps> = ({ changeLaptopScreenCallback }) => {
   return (
     <div className={`grid h-screen w-screen items-center justify-center`}>
-      <AboutText
-        changeBackgroundCallback={changeBackgroundCallback}
-        changeLaptopScreenCallback={changeLaptopScreenCallback}
-      />
+      <AboutText changeLaptopScreenCallback={changeLaptopScreenCallback} />
     </div>
   );
 };
@@ -34,10 +27,8 @@ const About: React.FC<ProjectsProps> = ({
 // ISSUE: R3F's custom render tree somehow prevents 'useIsInView' (intersection observer hook) from triggering ∴ component never intersects
 // SOLUTION: Extract component that relies on 'useInView' hook
 const AboutText = ({
-  changeBackgroundCallback,
   changeLaptopScreenCallback,
 }: {
-  changeBackgroundCallback: (newColor: string | null) => void;
   changeLaptopScreenCallback: (videoSource: string | null) => void;
 }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
@@ -55,19 +46,11 @@ const AboutText = ({
     }
 
     if (isDrawerOpen || isHovered) {
-      changeBackgroundCallback(ABOUT_SECTION_COLOR);
       changeLaptopScreenCallback(ABOUT_SECTION_VIDEO);
     } else {
-      changeBackgroundCallback(null);
       changeLaptopScreenCallback(null);
     }
-  }, [
-    isDrawerOpen,
-    isHovered,
-    changeBackgroundCallback,
-    changeLaptopScreenCallback,
-    startAnimation,
-  ]);
+  }, [isDrawerOpen, isHovered, changeLaptopScreenCallback, startAnimation]);
 
   useEffect(() => {
     if (isInView) startAnimation();

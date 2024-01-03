@@ -5,11 +5,7 @@ import React, {
   useRef,
   useState,
 } from "react";
-import {
-  DEFAULT_BACKGROUND_COLOR,
-  DEFAULT_DOTS_SPEED,
-  DEFAULT_VIDEO_SOURCE,
-} from "~/constants/defaults";
+import { DEFAULT_DOTS_SPEED, DEFAULT_VIDEO_SOURCE } from "~/constants/defaults";
 import { Html, OrbitControls, ScrollControls } from "@react-three/drei";
 import { useIsMobile } from "~/hooks/useIsMobile";
 import { Canvas } from "@react-three/fiber";
@@ -31,15 +27,6 @@ const Scene = () => {
     `/videos/${DEFAULT_VIDEO_SOURCE}`
   );
 
-  const changeBackgroundCallback = useCallback(
-    _debounce((newColor: string | null) => {
-      document.body.style.backgroundColor = newColor
-        ? newColor
-        : DEFAULT_BACKGROUND_COLOR;
-    }, DEBOUNCED_DELAY_MS),
-    []
-  );
-
   const changeLaptopScreenCallback = useCallback(
     _debounce((videoSource: string | null) => {
       setVideoSource(
@@ -52,10 +39,9 @@ const Scene = () => {
   useEffect(() => {
     // Cleanup
     return () => {
-      changeBackgroundCallback.cancel();
       changeLaptopScreenCallback.cancel();
     };
-  }, [changeBackgroundCallback, changeLaptopScreenCallback]);
+  }, [changeLaptopScreenCallback]);
 
   return (
     <div className="relative h-screen w-screen select-none overflow-hidden">
@@ -91,20 +77,14 @@ const Scene = () => {
             style={{ marginTop: "100vh" }}
             zIndexRange={[1, 1000]}
           >
-            <About
-              changeBackgroundCallback={changeBackgroundCallback}
-              changeLaptopScreenCallback={changeLaptopScreenCallback}
-            />
+            <About changeLaptopScreenCallback={changeLaptopScreenCallback} />
           </Html>
           <Html
             fullscreen
             style={{ marginTop: "200vh" }}
             zIndexRange={[1, 1000]}
           >
-            <Projects
-              changeBackgroundCallback={changeBackgroundCallback}
-              changeLaptopScreenCallback={changeLaptopScreenCallback}
-            />
+            <Projects changeLaptopScreenCallback={changeLaptopScreenCallback} />
           </Html>
           <Html
             fullscreen

@@ -16,14 +16,10 @@ import {
 } from "./ui/Drawer";
 
 type ProjectsProps = {
-  changeBackgroundCallback: (newColor: string | null) => void;
   changeLaptopScreenCallback: (videoSource: string | null) => void;
 };
 
-const Projects: React.FC<ProjectsProps> = ({
-  changeBackgroundCallback,
-  changeLaptopScreenCallback,
-}) => {
+const Projects: React.FC<ProjectsProps> = ({ changeLaptopScreenCallback }) => {
   const [data, setData] = useState<ProjectType[]>([]);
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
 
@@ -44,7 +40,6 @@ const Projects: React.FC<ProjectsProps> = ({
             <ProjectDrawer
               key={p.name}
               project={p}
-              changeBackgroundCallback={changeBackgroundCallback}
               changeLaptopScreenCallback={changeLaptopScreenCallback}
               changeIsDrawerOpenCallback={setIsDrawerOpen}
             />
@@ -56,7 +51,6 @@ const Projects: React.FC<ProjectsProps> = ({
 
 type ProjectDrawerProps = {
   project: ProjectType;
-  changeBackgroundCallback: (newColor: string | null) => void;
   changeLaptopScreenCallback: (videoSource: string | null) => void;
   changeIsDrawerOpenCallback: (isOpen: boolean) => void;
 };
@@ -65,7 +59,6 @@ type ProjectDrawerProps = {
 // SOLUTION: Extract component that relies on 'useInView' hook
 const ProjectDrawer: React.FC<ProjectDrawerProps> = ({
   project,
-  changeBackgroundCallback,
   changeLaptopScreenCallback,
   changeIsDrawerOpenCallback,
 }) => {
@@ -86,17 +79,14 @@ const ProjectDrawer: React.FC<ProjectDrawerProps> = ({
     }
 
     if (isDrawerOpen || isHovered) {
-      changeBackgroundCallback(project.color);
       changeLaptopScreenCallback(project.videoSource);
     } else {
-      changeBackgroundCallback(null);
       changeLaptopScreenCallback(null);
     }
   }, [
     isDrawerOpen,
     isHovered,
     project,
-    changeBackgroundCallback,
     changeLaptopScreenCallback,
     startAnimation,
   ]);
