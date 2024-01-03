@@ -73,10 +73,14 @@ const AboutText = ({
 
   return (
     <Drawer onOpenChange={(isOpen) => setIsDrawerOpen(isOpen)}>
-      <DrawerTrigger>
+      <DrawerTrigger
+        className={`transition-opacity duration-300 ease-in-out ${
+          isDrawerOpen ? "pointer-events-none opacity-10" : ""
+        }`}
+      >
         <h1
           ref={textRef}
-          className={`whitespace-nowrap rounded-lg px-[2vw] font-geistmono text-[10vw] font-extrabold leading-tight tracking-tight sm:text-[8vw]
+          className={`whitespace-nowrap rounded-lg px-[2vw] font-geistmono text-[10vw] font-extrabold leading-tight tracking-tight transition-opacity duration-300 ease-in-out sm:text-[8vw]
             ${
               isHovered || isDrawerOpen
                 ? "bg-white text-black"

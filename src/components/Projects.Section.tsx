@@ -23,6 +23,7 @@ const Projects: React.FC<ProjectsProps> = ({
   changeLaptopScreenCallback,
 }) => {
   const [data, setData] = useState<ProjectType[]>([]);
+  const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
 
   useEffect(() => {
     fetch(PROJECTS_SOURCE)
@@ -32,7 +33,10 @@ const Projects: React.FC<ProjectsProps> = ({
 
   return (
     <div className="grid h-screen w-screen items-center">
-      <div className="flex flex-col items-center justify-center justify-items-center space-y-2 px-[5vw] sm:items-start">
+      <div
+        className={`flex flex-col items-center justify-center justify-items-center space-y-2 px-[5vw] transition-opacity duration-300 ease-in-out sm:items-start
+        ${isDrawerOpen ? "pointer-events-none opacity-10" : ""}`}
+      >
         {data.length > 0 &&
           data.map((p) => (
             <Project
@@ -43,6 +47,7 @@ const Projects: React.FC<ProjectsProps> = ({
               desc={p.desc}
               changeBackgroundCallback={changeBackgroundCallback}
               changeLaptopScreenCallback={changeLaptopScreenCallback}
+              changeIsDrawerOpenCallback={setIsDrawerOpen}
             />
           ))}
       </div>
@@ -57,6 +62,7 @@ const Project = ({
   desc,
   changeBackgroundCallback,
   changeLaptopScreenCallback,
+  changeIsDrawerOpenCallback,
 }: {
   name: string;
   videoSource: string;
@@ -64,6 +70,7 @@ const Project = ({
   desc: string;
   changeBackgroundCallback: (newColor: string | null) => void;
   changeLaptopScreenCallback: (videoSource: string | null) => void;
+  changeIsDrawerOpenCallback: (isOpen: boolean) => void;
 }) => {
   const { currentWord, startAnimation } = useStartTextAnimation(name, 1);
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
@@ -72,6 +79,8 @@ const Project = ({
   const isInView = useIsInView(titleRef);
 
   useEffect(() => {
+    changeIsDrawerOpenCallback(isDrawerOpen);
+
     if (!isDrawerOpen && isHovered) {
       startAnimation();
     }
