@@ -1,6 +1,7 @@
 import { useStartTextAnimation } from "~/hooks/useStartTextAnimation";
 import { useEffect, useRef, useState } from "react";
 import { useIsInView } from "~/hooks/useIsInView";
+import Link from "next/link";
 
 const Credits = ({}: {}) => {
   return (
@@ -62,7 +63,7 @@ const CreditsSubtext = () => {
   }, [isHovered, startAnimation]);
 
   return (
-    <a
+    <Link
       ref={textRef}
       href="https://skfb.ly/MWtY"
       target="_blank"
@@ -74,7 +75,7 @@ const CreditsSubtext = () => {
       onMouseLeave={() => setIsHovered(false)}
     >
       {currentWord}
-    </a>
+    </Link>
   );
 };
 
