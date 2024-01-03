@@ -101,18 +101,14 @@ const AboutText = ({
             WHO AM I ?
           </DrawerTitle>
           <DrawerDescription className=" py-5 text-lg text-white ">
-            I&apos;m a{" "}
-            <span className="font-extrabold">
-              full stack software developer
-            </span>
-            (.NET, React) currently working at Queensland Health on a portfolio
-            of enterprise apps.
+            I&apos;m a {BoldText("full stack software developer")} (.NET, React)
+            currently working at Queensland Health on a portfolio of enterprise
+            apps.
             <br />
             <br />
-            As someone who <span className="font-extrabold">thrives</span> on
-            mastering their stack, finding solutions to complex problems, and
-            sharing knowledge, I believe I can bring{" "}
-            <span className="font-extrabold">value</span> to any team.
+            As someone who {BoldText("thrives")} on mastering their stack,
+            finding solutions to complex problems, and sharing knowledge, I
+            believe I can bring {BoldText("value")} to any team.
           </DrawerDescription>
         </DrawerHeader>
         <DrawerFooter></DrawerFooter>
@@ -120,5 +116,9 @@ const AboutText = ({
     </Drawer>
   );
 };
+
+const BoldText = (text: string) => (
+  <span className="font-extrabold">{text}</span>
+);
 
 export default About;
