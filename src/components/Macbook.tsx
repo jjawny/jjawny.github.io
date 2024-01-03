@@ -21,7 +21,6 @@ const Macbook: React.FC<MacbookProps> = ({ videoSource }) => {
   const [mouseCoords, setMouseCoords] = useState({ x: 0, y: 0 });
   const groupRef = useRef<Group>(null);
   const scroll = useScroll();
-
   // ANIMATIONS
   // TODO: test gyroscope orientation
   // For gyroscope orientation
@@ -76,37 +75,44 @@ const Macbook: React.FC<MacbookProps> = ({ videoSource }) => {
       groupRef.current.rotation.y +=
         0.04 * (targetRotationY - groupRef.current.rotation.y);
 
-      // TODO: WIP moving model left and right as we scroll
       // Update the model's position as we scroll down the page (use lerp for smooth transition)
-      // const targetX = calculateTargetX(scroll.offset);
+      // This is mainly for mobile devices to ensure the model is zoomed in after we go beyond a certain % of the page
+      const targetZ = calculateTargetZ(scroll.offset);
 
-      // groupRef.current.position.x = lerp(
-      //   groupRef.current.position.x,
-      //   targetX,
-      //   0.1 // speed of transition
-      // );
+      if (targetZ) {
+        groupRef.current.position.z = lerp(
+          groupRef.current.position.z,
+          targetZ,
+          0.1 // speed of transition
+        );
+      }
     }
   });
 
   // GESTURES
   useGesture(
     {
-      onWheel: ({ delta: [, deltaY] }) => {
-        // Zoom in model's z-axis on scroll up until a certain percentage
-        if (groupRef.current && scroll.offset < PERCENTAGE_TO_STOP_TRAVEL_AT) {
-          const newPositionZ = Math.max(
-            Math.min(
-              groupRef.current.position.z + deltaY * TRAVEL_SPEED,
-              MAX_Z_VALUE
-            ),
-            MIN_Z_VALUE
-          );
-          groupRef.current.position.z = newPositionZ;
-        }
-      },
+      onWheel: ({ delta: [, deltaY] }) => handleZoom(deltaY),
     },
     { target: window }
   );
+
+  const handleZoom = (value: number) => {
+    if (groupRef.current) {
+      if (scroll.offset < PERCENTAGE_TO_STOP_TRAVEL_AT) {
+        const newPositionZ = Math.max(
+          Math.min(
+            groupRef.current.position.z + value * TRAVEL_SPEED,
+            MAX_Z_VALUE
+          ),
+          MIN_Z_VALUE
+        );
+        groupRef.current.position.z = newPositionZ;
+      } else {
+        groupRef.current.position.z = MAX_Z_VALUE;
+      }
+    }
+  };
 
   return (
     <group
@@ -122,24 +128,15 @@ const Macbook: React.FC<MacbookProps> = ({ videoSource }) => {
   );
 };
 
-// TODO: WIP moving model left and right as we scroll
-// const lerp = (start: number, end: number, alpha: number) =>
-//   start * (1 - alpha) + end * alpha;
+const lerp = (start: number, end: number, alpha: number) =>
+  start * (1 - alpha) + end * alpha;
 
-// const calculateTargetX = (offset: number): number => {
-//   if (offset > 0.75) {
-//     // Page 4: Credits
-//     return 0;
-//   } else if (offset > 0.5) {
-//     // Page 3: Projects
-//     return 2;
-//   } else if (offset > 0.25) {
-//     // Page 2: About
-//     return -2;
-//   } else {
-//     // Page 1: Hero
-//     return 0;
-//   }
-// };
+const calculateTargetZ = (offset: number): number | null => {
+  const tenPercentOfDocument = 0.1; // %
+
+  if (offset > tenPercentOfDocument) return MAX_Z_VALUE;
+  else if (offset < 0.01) return MIN_Z_VALUE;
+  else return null;
+};
 
 export default Macbook;
