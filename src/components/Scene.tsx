@@ -140,4 +140,18 @@ const Loader = () => {
   );
 };
 
+// TODO: try out new loader
+const Loader2 = () => {
+  return (
+    <Html fullscreen>
+      <div className="flex h-screen items-center justify-center">
+        <div className="relative">
+          <div className="h-24 w-24 rounded-full border-t-8 border-b-8 border-gray-200"></div>
+          <div className="absolute top-0 left-0 h-24 w-24 animate-spin rounded-full border-t-8 border-b-8 border-blue-500"></div>
+        </div>
+      </div>
+    </Html>
+  );
+};
+
 export default Scene;
