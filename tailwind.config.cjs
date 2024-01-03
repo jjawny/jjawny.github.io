@@ -24,8 +24,8 @@ const config = {
         dirtyline: ["Dirtyline", ...defaultTheme.fontFamily.sans],
       },
       animation: {
-        fadeInSlide: "fadeInSlide 0.2s ease-in forwards",
-        fadeIn: "fadeIn 0.2s ease-in forwards",
+        fadeInSlide: "fadeInSlide 0.4s ease-in forwards",
+        fadeIn: "fadeIn 0.4s ease-in forwards",
         fadeOut: "fadeOut 0.2s ease-in forwards",
         zoomIn: "zoomIn 0.4s ease-in forwards",
       },
