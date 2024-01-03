@@ -77,7 +77,7 @@ const AboutText = ({
     <Drawer onOpenChange={(isOpen) => setIsDrawerOpen(isOpen)}>
       <DrawerTrigger
         className={`transition-opacity duration-300 ease-in-out ${
-          isDrawerOpen ? "pointer-events-none opacity-10" : ""
+          isDrawerOpen ? "pointer-events-none opacity-5" : ""
         }`}
       >
         <h1

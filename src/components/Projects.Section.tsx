@@ -37,7 +37,7 @@ const Projects: React.FC<ProjectsProps> = ({
     <div className="grid h-screen w-screen items-center">
       <div
         className={`flex flex-col items-center justify-center justify-items-center space-y-2 transition-opacity duration-300 ease-in-out sm:items-start sm:px-[5vw]
-        ${isDrawerOpen ? "pointer-events-none opacity-10" : ""}`}
+        ${isDrawerOpen ? "pointer-events-none opacity-5" : ""}`}
       >
         {data.length > 0 &&
           data.map((p) => (
