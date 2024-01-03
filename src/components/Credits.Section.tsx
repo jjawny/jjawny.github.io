@@ -33,6 +33,10 @@ const CreditsText = () => {
     }
   }, [isHovered, startAnimation]);
 
+  useEffect(() => {
+    if (isInView) startAnimation();
+  }, [isInView, startAnimation]);
+
   return (
     <h2
       ref={textRef}
