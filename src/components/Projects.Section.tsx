@@ -36,7 +36,7 @@ const Projects: React.FC<ProjectsProps> = ({
   return (
     <div className="grid h-screen w-screen items-center">
       <div
-        className={`flex flex-col items-center justify-center justify-items-center space-y-2 px-[5vw] transition-opacity duration-300 ease-in-out sm:items-start
+        className={`flex flex-col items-center justify-center justify-items-center space-y-2 transition-opacity duration-300 ease-in-out sm:items-start sm:px-[5vw]
         ${isDrawerOpen ? "pointer-events-none opacity-10" : ""}`}
       >
         {data.length > 0 &&
