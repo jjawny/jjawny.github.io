@@ -41,7 +41,7 @@ const AboutText = ({
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const { currentWord, startAnimation } = useStartTextAnimation(
-    "WHO AM I?",
+    "WHO AM I ?",
     0.7
   );
   const textRef = useRef<HTMLHeadingElement>(null);
@@ -67,12 +67,16 @@ const AboutText = ({
     startAnimation,
   ]);
 
+  useEffect(() => {
+    if (isInView) startAnimation();
+  }, [isInView]);
+
   return (
     <Drawer onOpenChange={(isOpen) => setIsDrawerOpen(isOpen)}>
       <DrawerTrigger>
         <h1
           ref={textRef}
-          className={`whitespace-nowrap rounded-xl px-[2vw] font-geistmono text-[10vw] font-extrabold leading-tight tracking-tight sm:rounded-2xl sm:text-[8vw]
+          className={`whitespace-nowrap rounded-lg px-[2vw] font-geistmono text-[10vw] font-extrabold leading-tight tracking-tight sm:text-[8vw]
             ${
               isHovered || isDrawerOpen
                 ? "bg-white text-black"
