@@ -21,30 +21,56 @@ const Macbook: React.FC<MacbookProps> = ({ videoSource }) => {
   const [mouseCoords, setMouseCoords] = useState({ x: 0, y: 0 });
   const groupRef = useRef<Group>(null);
   const scroll = useScroll();
+
   // ANIMATIONS
-  // TODO: test gyroscope orientation
   // For gyroscope orientation
+  const debouncedHandleOrientation = _debounce((event) => {
+    const { beta, gamma } = event;
+
+    if (groupRef.current) {
+      groupRef.current.rotation.x = (beta || 0) * (Math.PI / 180);
+      groupRef.current.rotation.y = (gamma || 0) * (Math.PI / 180);
+    }
+  }, ANIMATION_DEBOUNCE_MS);
+
   useEffect(() => {
-    if (window.DeviceOrientationEvent) {
-      const debouncedHandleOrientation = _debounce((event) => {
-        const { beta, gamma } = event;
+    if ("DeviceOrientationEvent" in window) {
+      // iOS 13+ request permission
+      const DeviceOrientationEvent = window.DeviceOrientationEvent as any;
 
-        if (groupRef.current) {
-          groupRef.current.rotation.x = (beta || 0) * (Math.PI / 180);
-          groupRef.current.rotation.y = (gamma || 0) * (Math.PI / 180);
-        }
-      }, ANIMATION_DEBOUNCE_MS);
-
-      window.addEventListener("deviceorientation", debouncedHandleOrientation);
-
-      return () => {
-        window.removeEventListener(
+      if (typeof DeviceOrientationEvent.requestPermission === "function") {
+        DeviceOrientationEvent.requestPermission()
+          .then((permissionState: string) => {
+            if (permissionState === "granted") {
+              window.addEventListener(
+                "deviceorientation",
+                debouncedHandleOrientation
+              );
+            }
+          })
+          .catch((error: any) => {
+            console.error(error);
+            window.removeEventListener(
+              "deviceorientation",
+              debouncedHandleOrientation
+            );
+          });
+      } else {
+        // non iOS 13+
+        window.addEventListener(
           "deviceorientation",
           debouncedHandleOrientation
         );
-        debouncedHandleOrientation.cancel();
-      };
+      }
     }
+
+    return () => {
+      window.removeEventListener(
+        "deviceorientation",
+        debouncedHandleOrientation
+      );
+      debouncedHandleOrientation.cancel();
+    };
   }, []);
 
   // For mouse movement
