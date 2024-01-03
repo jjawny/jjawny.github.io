@@ -96,7 +96,7 @@ const AboutText = ({
       <DrawerContent className="z-50 px-2">
         <DrawerHeader>
           <DrawerTitle className="font-geistmono text-2xl text-white">
-            WHO AM I?
+            WHO AM I ?
           </DrawerTitle>
           <DrawerDescription className=" py-5 text-lg text-white ">
             I&apos;m a{" "}
