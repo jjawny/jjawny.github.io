@@ -95,12 +95,12 @@ const AboutText = ({
           {currentWord}
         </h1>
       </DrawerTrigger>
-      <DrawerContent className="z-50 px-2">
+      <DrawerContent className="z-50 px-2 text-black">
         <DrawerHeader>
-          <DrawerTitle className="font-geistmono text-2xl text-white">
+          <DrawerTitle className="font-geistmono text-2xl">
             WHO AM I ?
           </DrawerTitle>
-          <DrawerDescription className=" py-5 text-lg text-white ">
+          <DrawerDescription className=" py-5 text-lg">
             I&apos;m a {BoldText("full stack software developer")} (.NET, React)
             currently working at Queensland Health on a portfolio of enterprise
             apps.

@@ -123,12 +123,12 @@ const ProjectDrawer: React.FC<ProjectDrawerProps> = ({
           {currentWord}
         </h1>
       </DrawerTrigger>
-      <DrawerContent className="z-50 px-2">
+      <DrawerContent className="z-50 px-2 text-black">
         <DrawerHeader>
-          <DrawerTitle className="font-geistmono text-2xl text-white">
+          <DrawerTitle className="font-geistmono text-2xl">
             {project.name}
           </DrawerTitle>
-          <DrawerDescription className="py-5 text-lg text-white">
+          <DrawerDescription className="py-5 text-lg">
             {project.desc}
             <span className="flex justify-center pt-5 sm:justify-start">
               <Link href={project.link} target="_blank">
