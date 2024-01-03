@@ -140,7 +140,7 @@ const Loader = () => {
   );
 };
 
-// TODO: try out new loader
+// TODO: try out new loader and have 2 separate loaders (2x suspense) for the macbook and dots
 const Loader2 = () => {
   return (
     <Html fullscreen>
