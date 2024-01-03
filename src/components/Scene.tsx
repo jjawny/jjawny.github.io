@@ -70,8 +70,11 @@ const Scene = () => {
 
         <ScrollControls pages={3}>
           {/* Models */}
-          <Suspense fallback={<Loader />}>
+          <Suspense fallback={<CircleLoader />}>
             <DotsCircle speed={DEFAULT_DOTS_SPEED} />
+          </Suspense>
+
+          <Suspense fallback={null}>
             <Macbook videoSource={videoSource} />
           </Suspense>
 
@@ -124,30 +127,19 @@ const Lighting = () => {
   );
 };
 
-const Loader = () => {
+const CircleLoader = () => {
   return (
-    <Html fullscreen>
-      <div className="grid h-screen w-screen items-center justify-center">
-        <div
-          className="inline-block h-[30vh] w-[30vh] animate-spin rounded-full border-[1px] border-current border-t-transparent dark:text-gray-400"
-          role="status"
-          aria-label="loading"
-        >
-          <span className="sr-only">Loading...</span>
-        </div>
-      </div>
-    </Html>
-  );
-};
-
-// TODO: try out new loader and have 2 separate loaders (2x suspense) for the macbook and dots
-const Loader2 = () => {
-  return (
-    <Html fullscreen>
-      <div className="flex h-screen items-center justify-center">
-        <div className="relative">
-          <div className="h-24 w-24 rounded-full border-t-8 border-b-8 border-gray-200"></div>
-          <div className="absolute top-0 left-0 h-24 w-24 animate-spin rounded-full border-t-8 border-b-8 border-blue-500"></div>
+    <Html fullscreen style={{ height: "400vh" }}>
+      <div className="sticky top-[-18.5%] ">
+        <div className="flex items-center justify-center">
+          <div className="relative">
+            <div
+              className={`h-[30vh] w-[30vh] rounded-full border-t-2 border-b-2 border-gray-100`}
+            ></div>
+            <div
+              className={`absolute top-0 left-0 h-[30vh] w-[30vh] animate-spin rounded-full border-t-2 border-b-2 border-gray-200`}
+            ></div>
+          </div>
         </div>
       </div>
     </Html>
