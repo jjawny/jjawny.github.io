@@ -18,7 +18,7 @@ const Socials = () => {
   }
 
   return (
-    <div className="flex w-full animate-fadeIn select-none flex-row justify-between space-x-5 py-3 px-[8vw]">
+    <div className="flex w-full animate-fadeIn select-none flex-row justify-between space-x-5 py-3 px-[20vw] sm:px-[8vw]">
       <Link href={"https://github.com/johnnymadigan"}>
         <Image
           src={"/images/github.png"}
