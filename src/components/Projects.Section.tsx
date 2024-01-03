@@ -99,6 +99,10 @@ const ProjectDrawer: React.FC<ProjectDrawerProps> = ({
     startAnimation,
   ]);
 
+  useEffect(() => {
+    if (isInView) startAnimation();
+  }, [isInView, startAnimation]);
+
   return (
     <Drawer onOpenChange={(isOpen) => setIsDrawerOpen(isOpen)}>
       <DrawerTrigger>

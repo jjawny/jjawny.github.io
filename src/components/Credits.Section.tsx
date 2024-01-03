@@ -62,6 +62,10 @@ const CreditsSubtext = () => {
     }
   }, [isHovered, startAnimation]);
 
+  useEffect(() => {
+    if (isInView) startAnimation();
+  }, [isInView, startAnimation]);
+
   return (
     <Link
       ref={textRef}

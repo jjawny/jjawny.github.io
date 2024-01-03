@@ -69,7 +69,7 @@ const AboutText = ({
 
   useEffect(() => {
     if (isInView) startAnimation();
-  }, [isInView]);
+  }, [isInView, startAnimation]);
 
   return (
     <Drawer onOpenChange={(isOpen) => setIsDrawerOpen(isOpen)}>
