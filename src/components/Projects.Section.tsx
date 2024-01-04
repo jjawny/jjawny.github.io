@@ -32,8 +32,9 @@ const Projects: React.FC<ProjectsProps> = ({ changeLaptopScreenCallback }) => {
   return (
     <div className="grid h-screen w-screen items-center">
       <div
-        className={`flex flex-col items-center justify-center justify-items-center space-y-5 transition-opacity duration-300 ease-in-out sm:items-start sm:px-[5vw]
-        ${isDrawerOpen ? "pointer-events-none opacity-5" : ""}`}
+        className={`flex flex-col items-center justify-center justify-items-center space-y-5 transition-all duration-300 ease-in-out sm:items-start sm:px-[5vw]
+          ${isDrawerOpen ? "pointer-events-none opacity-5" : ""}
+        `}
       >
         {data.length > 0 &&
           data.map((p) => (
@@ -102,7 +103,7 @@ const ProjectDrawer: React.FC<ProjectDrawerProps> = ({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         className={`glow-bg transition-all duration-300 ease-in-out hover:scale-110
-          ${isInView ? "animate-fadeInSlide" : "animate-fadeOut"}
+          ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
         `}
       >
         <h1 className="whitespace-nowrap px-[1vw] font-geistmono text-[7vw] font-extrabold leading-tight tracking-tight sm:text-[6vw]">

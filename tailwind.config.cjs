@@ -24,17 +24,11 @@ const config = {
         dirtyline: ["Dirtyline", ...defaultTheme.fontFamily.sans],
       },
       animation: {
-        fadeInSlide: "fadeInSlide 0.4s ease-in forwards",
-        fadeIn: "fadeIn 0.4s ease-in forwards",
+        fadeIn: "fadeIn 0.2s ease-in forwards",
         fadeOut: "fadeOut 0.2s ease-in forwards",
         zoomIn: "zoomIn 0.4s ease-in forwards",
       },
       keyframes: {
-        fadeInSlide: {
-          "0%": { opacity: 0, transform: "translateX(-5%)" },
-          "60%": { opacity: 1 },
-          "100%": { transform: "translateX(0rem)" },
-        },
         fadeIn: {
           "0%": { opacity: 0 },
           "100%": { opacity: 1 },

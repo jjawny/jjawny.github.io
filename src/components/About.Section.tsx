@@ -63,11 +63,14 @@ const AboutText = ({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         className={`glow-bg transition-all duration-300 ease-in-out hover:scale-110
-          ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
-          ${isDrawerOpen ? "pointer-events-none opacity-5" : ""}
+          ${isInView ? "animate-fadeIn" : "animate-fadeOut"}  
         `}
       >
-        <h1 className="whitespace-nowrap px-[2vw] font-geistmono text-[10vw] font-extrabold leading-tight tracking-tight sm:text-[8vw]">
+        <h1
+          className={`whitespace-nowrap px-[2vw] font-geistmono text-[10vw] font-extrabold leading-tight tracking-tight transition-all duration-300 ease-in-out sm:text-[8vw]
+            ${isDrawerOpen ? "pointer-events-none opacity-5" : ""}
+          `}
+        >
           {currentWord}
         </h1>
       </DrawerTrigger>
