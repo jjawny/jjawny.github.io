@@ -32,7 +32,7 @@ const Projects: React.FC<ProjectsProps> = ({ changeLaptopScreenCallback }) => {
   return (
     <div className="grid h-screen w-screen items-center">
       <div
-        className={`flex flex-col items-center justify-center justify-items-center space-y-2 transition-opacity duration-300 ease-in-out sm:items-start sm:px-[5vw]
+        className={`flex flex-col items-center justify-center justify-items-center space-y-5 transition-opacity duration-300 ease-in-out sm:items-start sm:px-[5vw]
         ${isDrawerOpen ? "pointer-events-none opacity-5" : ""}`}
       >
         {data.length > 0 &&
@@ -63,13 +63,13 @@ const ProjectDrawer: React.FC<ProjectDrawerProps> = ({
   changeIsDrawerOpenCallback,
 }) => {
   const { currentWord, startAnimation } = useStartTextAnimation(
-    project.name,
+    project.name.toUpperCase(),
     1
   );
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
   const [isHovered, setIsHovered] = useState<boolean>(false);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const isInView = useIsInView(titleRef);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const isInView = useIsInView(triggerRef);
 
   useEffect(() => {
     changeIsDrawerOpenCallback(isDrawerOpen);
@@ -97,19 +97,15 @@ const ProjectDrawer: React.FC<ProjectDrawerProps> = ({
 
   return (
     <Drawer onOpenChange={(isOpen) => setIsDrawerOpen(isOpen)}>
-      <DrawerTrigger>
-        <h1
-          ref={titleRef}
-          className={`whitespace-nowrap rounded-lg px-[1vw] font-geistmono text-[7vw] font-extrabold leading-tight tracking-tight sm:text-[6vw]
-          ${
-            isHovered || isDrawerOpen
-              ? "bg-white text-black"
-              : "bg-black text-white"
-          }
-          ${isInView ? "animate-fadeInSlide" : "animate-fadeOut"}`}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
+      <DrawerTrigger
+        ref={triggerRef}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className={`glow-bg transition-all duration-300 ease-in-out hover:scale-110
+          ${isInView ? "animate-fadeInSlide" : "animate-fadeOut"}
+        `}
+      >
+        <h1 className="whitespace-nowrap px-[1vw] font-geistmono text-[7vw] font-extrabold leading-tight tracking-tight sm:text-[6vw]">
           {currentWord}
         </h1>
       </DrawerTrigger>

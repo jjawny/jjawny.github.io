@@ -37,8 +37,8 @@ const AboutText = ({
     "WHO AM I ?",
     0.7
   );
-  const textRef = useRef<HTMLHeadingElement>(null);
-  const isInView = useIsInView(textRef);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const isInView = useIsInView(triggerRef);
 
   useEffect(() => {
     if (!isDrawerOpen && isHovered) {
@@ -59,22 +59,15 @@ const AboutText = ({
   return (
     <Drawer onOpenChange={(isOpen) => setIsDrawerOpen(isOpen)}>
       <DrawerTrigger
-        className={`transition-opacity duration-300 ease-in-out ${
-          isDrawerOpen ? "pointer-events-none opacity-5" : ""
-        }`}
+        ref={triggerRef}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className={`glow-bg transition-all duration-300 ease-in-out hover:scale-110
+          ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
+          ${isDrawerOpen ? "pointer-events-none opacity-5" : ""}
+        `}
       >
-        <h1
-          ref={textRef}
-          className={`whitespace-nowrap rounded-lg px-[2vw] font-geistmono text-[10vw] font-extrabold leading-tight tracking-tight transition-opacity duration-300 ease-in-out sm:text-[8vw]
-            ${
-              isHovered || isDrawerOpen
-                ? "bg-white text-black"
-                : "bg-black text-white"
-            }
-            ${isInView ? "animate-fadeIn" : "animate-fadeOut"}`}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
+        <h1 className="whitespace-nowrap px-[2vw] font-geistmono text-[10vw] font-extrabold leading-tight tracking-tight sm:text-[8vw]">
           {currentWord}
         </h1>
       </DrawerTrigger>

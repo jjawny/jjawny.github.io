@@ -6,9 +6,7 @@ import Link from "next/link";
 const Credits = ({}: {}) => {
   return (
     <div className={`grid h-screen w-screen items-center justify-center`}>
-      <div
-        className={`flex flex-col items-center justify-center justify-items-center px-[5vw]`}
-      >
+      <div className="flex flex-col items-center justify-center justify-items-center space-y-5 px-[5vw]">
         <CreditsText />
         <CreditsSubtext />
       </div>
@@ -40,11 +38,11 @@ const CreditsText = () => {
   return (
     <h2
       ref={textRef}
-      className={`cursor-default whitespace-nowrap rounded-md px-[0.75vw] text-center font-geistmono text-[4vw] tracking-tight sm:text-[3vw]
-            ${isHovered ? "bg-white text-black" : "bg-black text-white"}
-            ${isInView ? "animate-fadeIn" : "animate-fadeOut"}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      className={`glow-bg select-text whitespace-nowrap px-[0.75vw] text-center font-geistmono text-[4vw] tracking-tight sm:text-[3vw]
+        ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
+      `}
     >
       {currentWord}
     </h2>
@@ -59,8 +57,8 @@ const CreditsSubtext = () => {
     "'Macbook Pro 13 inch' by chrisgreig (CC BY)",
     2.6
   );
-  const textRef = useRef<HTMLAnchorElement>(null);
-  const isInView = useIsInView(textRef);
+  const linkRef = useRef<HTMLAnchorElement>(null);
+  const isInView = useIsInView(linkRef);
 
   useEffect(() => {
     if (isHovered) {
@@ -74,15 +72,14 @@ const CreditsSubtext = () => {
 
   return (
     <Link
-      ref={textRef}
-      href="https://skfb.ly/MWtY"
+      ref={linkRef}
       target="_blank"
-      className={`rounded-md px-[0.75vw] text-center font-geistmono text-[2vw] tracking-tight sm:text-[1.5vw]
-            ${isHovered ? "bg-white text-black" : "bg-black text-white"}
-            ${isInView ? "animate-fadeIn" : "animate-fadeOut"}`}
-      style={{ textWrap: "nowrap" }}
+      href="https://skfb.ly/MWtY"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      className={`glow-bg whitespace-nowrap px-[0.75vw] text-center font-geistmono text-[2vw] tracking-tight sm:text-[1.5vw]
+        ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
+      `}
     >
       {currentWord}
     </Link>
