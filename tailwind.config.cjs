@@ -13,7 +13,7 @@ const config = {
         anton: ["Anton", ...defaultTheme.fontFamily.sans],
         rubik: ["Rubik Mono One", ...defaultTheme.fontFamily.mono],
         yagiza: ["YAGIZA", ...defaultTheme.fontFamily.sans],
-        dxslight: ["DxSlight", ...defaultTheme.fontFamily.sans],
+        dxslight: ["DxSlight", "Thunder", ...defaultTheme.fontFamily.sans],
         graffity: ["Graffity", ...defaultTheme.fontFamily.sans],
         graffityalt: ["GraffityAlt", ...defaultTheme.fontFamily.sans],
         nighty: ["Nighty", ...defaultTheme.fontFamily.sans],
@@ -26,7 +26,7 @@ const config = {
       animation: {
         fadeIn: "fadeIn 0.2s ease-in forwards",
         fadeOut: "fadeOut 0.2s ease-in forwards",
-        zoomIn: "zoomIn 0.4s ease-in forwards",
+        zoomIn: "zoomIn 0.25s ease-in forwards",
       },
       keyframes: {
         fadeIn: {

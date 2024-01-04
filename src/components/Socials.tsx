@@ -8,23 +8,23 @@ const Socials = () => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setIsLoaded(true);
-    }, 1000);
+    }, 200);
 
     return () => clearTimeout(timeoutId);
   }, []);
 
   if (!isLoaded) {
-    return <div className="h-14 sm:h-8"></div>;
+    return <div className="h-[52px] sm:h-[52px]"></div>;
   }
 
   return (
-    <div className="flex w-full animate-fadeIn select-none flex-row justify-between space-x-5 px-[20vw] py-3 sm:py-0 sm:px-[8vw]">
+    <div className="flex w-full animate-fadeIn select-none flex-row justify-between space-x-4 px-[24vw] py-3 sm:px-[8vw]">
       <Link href={"https://github.com/johnnymadigan"}>
         <Image
           src={"/images/github.png"}
           alt="github"
-          height={32}
-          width={32}
+          height={28}
+          width={28}
           className="duration-200 hover:scale-110"
         />
       </Link>
@@ -32,8 +32,8 @@ const Socials = () => {
         <Image
           src={"/images/linkedin.png"}
           alt="linkedin"
-          height={32}
-          width={32}
+          height={28}
+          width={28}
           className="duration-200 hover:scale-110"
         />
       </Link>
@@ -41,8 +41,8 @@ const Socials = () => {
         <Image
           src={"/images/email.png"}
           alt="email"
-          height={32}
-          width={32}
+          height={28}
+          width={28}
           className="duration-200 hover:scale-110"
         />
       </Link>
