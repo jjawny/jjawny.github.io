@@ -57,7 +57,7 @@ const Scene = () => {
         {/* <OrbitControls enableZoom={false}/> */}
 
         <ScrollControls pages={3}>
-          {/* Models */}
+          {/* MODELS */}
           <Suspense fallback={<CircleLoader />}>
             <DotsCircle />
           </Suspense>
@@ -66,31 +66,13 @@ const Scene = () => {
             <Macbook videoSource={videoSource} />
           </Suspense>
 
-          {/* Sections */}
+          {/* HTML */}
           {/* NOTE: zIndexRange prop required to allow setting z-index to items within */}
           {/* (resolves bug where shadcn drawer content cannot be interacted with after resize) */}
           <Html fullscreen zIndexRange={[1, 1000]}>
             <Hero />
-          </Html>
-          <Html
-            fullscreen
-            style={{ marginTop: "100vh" }}
-            zIndexRange={[1, 1000]}
-          >
             <About changeLaptopScreenCallback={changeLaptopScreenCallback} />
-          </Html>
-          <Html
-            fullscreen
-            style={{ marginTop: "200vh" }}
-            zIndexRange={[1, 1000]}
-          >
             <Projects changeLaptopScreenCallback={changeLaptopScreenCallback} />
-          </Html>
-          <Html
-            fullscreen
-            style={{ marginTop: "300vh" }}
-            zIndexRange={[1, 1000]}
-          >
             <Credits />
           </Html>
         </ScrollControls>

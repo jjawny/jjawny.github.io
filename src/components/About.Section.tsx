@@ -18,7 +18,7 @@ type ProjectsProps = {
 
 const About: React.FC<ProjectsProps> = ({ changeLaptopScreenCallback }) => {
   return (
-    <div className={`grid h-screen w-screen items-center justify-center`}>
+    <div className="grid h-screen w-screen items-center justify-center">
       <AboutText changeLaptopScreenCallback={changeLaptopScreenCallback} />
     </div>
   );

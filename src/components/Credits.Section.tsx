@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Credits = ({}: {}) => {
   return (
-    <div className={`grid h-screen w-screen items-center justify-center`}>
+    <div className="grid h-screen w-screen items-center justify-center">
       <div className="flex flex-col items-center justify-center justify-items-center space-y-5 px-[5vw]">
         <CreditsText />
         <CreditsSubtext />
