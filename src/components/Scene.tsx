@@ -5,16 +5,16 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { DEFAULT_DOTS_SPEED, DEFAULT_VIDEO_SOURCE } from "~/constants/defaults";
 import { Html, OrbitControls, ScrollControls } from "@react-three/drei";
+import { DEFAULT_VIDEO_SOURCE } from "~/constants/defaults";
 import { useIsMobile } from "~/hooks/useIsMobile";
 import { Canvas } from "@react-three/fiber";
 import Projects from "./Projects.Section";
 import _debounce from "lodash/debounce";
 import Credits from "./Credits.Section";
+import DotsCircle from "./DotsCircle";
 import About from "./About.Section";
 import Hero from "./Hero.Section";
-import DotsCircle from "./Dots";
 import Macbook from "./Macbook";
 import Cursor from "./Cursor";
 
@@ -59,7 +59,7 @@ const Scene = () => {
         <ScrollControls pages={3}>
           {/* Models */}
           <Suspense fallback={<CircleLoader />}>
-            <DotsCircle speed={DEFAULT_DOTS_SPEED} />
+            <DotsCircle />
           </Suspense>
 
           <Suspense fallback={null}>

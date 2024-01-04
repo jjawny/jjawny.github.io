@@ -4,20 +4,29 @@ import { useFrame } from "@react-three/fiber";
 import _debounce from "lodash/debounce";
 import { Group, Vector3 } from "three";
 import React, { useRef } from "react";
+import {
+  DOTS_CIRCLE_SPEED,
+  DOTS_CIRCLE_X_TRAVEL_RATE,
+  DOTS_CIRCLE_Y_TRAVEL_RATE,
+  DOTS_CIRCLE_Z_TRAVEL_RATE,
+} from "~/constants/defaults";
 
-type DotsCirleProps = {
-  speed: number;
-};
-
-const DotsCircle: React.FC<DotsCirleProps> = ({ speed }) => {
+const DotsCircle = () => {
   const ref = useRef<Group>(null);
   const scroll = useScroll();
 
   useFrame(({ clock }) => {
-    if (ref.current?.rotation)
-      ref.current.rotation.z = clock.getElapsedTime() * speed;
+    if (ref.current) {
+      // Spin
+      ref.current.rotation.z = clock.getElapsedTime() * DOTS_CIRCLE_SPEED;
 
-    if (scroll && ref.current) ref.current.position.z = scroll.offset * 25; // adjust value
+      // On scroll
+      if (scroll) {
+        ref.current.rotation.x = scroll.offset * DOTS_CIRCLE_X_TRAVEL_RATE;
+        ref.current.rotation.y = scroll.offset * DOTS_CIRCLE_Y_TRAVEL_RATE;
+        ref.current.position.z = scroll.offset * DOTS_CIRCLE_Z_TRAVEL_RATE;
+      }
+    }
   });
 
   return (
