@@ -29,9 +29,7 @@ const Scene = () => {
 
   const changeLaptopScreenCallback = useCallback(
     _debounce((videoSource: string | null) => {
-      setVideoSource(
-        `/videos/${videoSource ? videoSource : DEFAULT_VIDEO_SOURCE}`
-      );
+      setVideoSource(`/videos/${videoSource ? videoSource : DEFAULT_VIDEO_SOURCE}`);
     }, DEBOUNCED_DELAY_MS),
     [setVideoSource]
   );
@@ -96,12 +94,8 @@ const CircleLoader = () => {
       <div className="sticky top-[-18.5%] ">
         <div className="flex items-center justify-center">
           <div className="relative">
-            <div
-              className={`h-[30vh] w-[30vh] rounded-full border-t-2 border-b-2 border-gray-100`}
-            ></div>
-            <div
-              className={`absolute top-0 left-0 h-[30vh] w-[30vh] animate-spin rounded-full border-t-2 border-b-2 border-gray-200`}
-            ></div>
+            <div className={`h-[30vh] w-[30vh] rounded-full border-t-2 border-b-2 border-gray-100`}></div>
+            <div className={`absolute top-0 left-0 h-[30vh] w-[30vh] animate-spin rounded-full border-t-2 border-b-2 border-gray-200`}></div>
           </div>
         </div>
       </div>
