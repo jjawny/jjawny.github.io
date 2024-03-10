@@ -63,7 +63,7 @@ const AboutText = ({
         `}
       >
         <h1
-          className={`whitespace-nowrap rounded-sm bg-black px-[2vw] font-geistmono text-[10vw] font-extrabold leading-tight tracking-tight transition-all duration-300 ease-in-out hover:bg-white sm:text-[8vw]
+          className={`whitespace-nowrap rounded-sm bg-black px-[2vw] font-geistmono text-[10vw] leading-tight tracking-tight transition-all duration-300 ease-in-out hover:bg-white sm:text-[8vw]
             ${isDrawerOpen ? "pointer-events-none opacity-5" : ""}
           `}
         >

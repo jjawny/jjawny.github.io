@@ -64,7 +64,7 @@ const ProjectDrawer: React.FC<ProjectDrawerProps> = ({
   changeIsDrawerOpenCallback,
 }) => {
   const { currentWord, startAnimation } = useStartTextAnimation(
-    project.name.toUpperCase(),
+    project.name,
     0.33
   );
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
@@ -102,7 +102,7 @@ const ProjectDrawer: React.FC<ProjectDrawerProps> = ({
           ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
         `}
       >
-        <h1 className="whitespace-nowrap rounded-sm bg-black px-[1vw] font-geistmono text-[7vw] font-extrabold leading-tight tracking-tight hover:bg-white sm:text-[6vw]">
+        <h1 className="whitespace-nowrap rounded-sm bg-black px-[1vw] font-geistmono text-[7vw] leading-tight tracking-tight hover:bg-white sm:text-[6vw]">
           {currentWord}
         </h1>
       </DrawerTrigger>
