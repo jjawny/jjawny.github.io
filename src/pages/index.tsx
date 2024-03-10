@@ -1,3 +1,4 @@
+import Footer from "~/components/Footer";
 import Scene from "~/components/Scene";
 import { type NextPage } from "next";
 import Head from "next/head";
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
         <meta property="og:image:alt" content="j" />
       </Head>
       <Scene />
+      <Footer />
     </>
   );
 };
