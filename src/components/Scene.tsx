@@ -37,7 +37,6 @@ const Scene = () => {
   );
 
   useEffect(() => {
-    // Cleanup
     return () => {
       changeLaptopScreenCallback.cancel();
     };
