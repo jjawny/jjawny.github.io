@@ -111,7 +111,7 @@ const ProjectDrawer: React.FC<ProjectDrawerProps> = ({
           <DrawerTitle className="font-geistmono text-2xl">
             {project.name}
           </DrawerTitle>
-          <DrawerDescription className="py-5 text-lg">
+          <DrawerDescription className="py-5 font-geistmono">
             {project.desc}
             <span className="flex justify-center pt-5 sm:justify-start">
               <Link href={project.link} target="_blank">

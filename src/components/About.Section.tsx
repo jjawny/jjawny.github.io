@@ -75,7 +75,7 @@ const AboutText = ({
           <DrawerTitle className="font-geistmono text-2xl">
             WHO AM I ?
           </DrawerTitle>
-          <DrawerDescription className=" py-5 text-lg">
+          <DrawerDescription className="py-5 font-geistmono">
             I&apos;m a {BoldText("full stack software developer")} currently
             working at Queensland Health on a portfolio of enterprise apps.
             <br />
