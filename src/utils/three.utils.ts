@@ -3,9 +3,9 @@ import { Vector3 } from "three";
 const DEPTH = 2;
 const MIN_RADIUS = 8;
 const MAX_RADIUS = 12;
-const NUM_POINTS = 750;
-const LEFT_COLOR = "b4719a";
-const RIGHT_COLOR = "ff8852";
+const NUM_POINTS = 500;
+const LEFT_COLOR = "ebff00";
+const RIGHT_COLOR = "2cff00";
 
 const getGradientStop = (ratio: number) => {
   ratio = Math.max(0, Math.min(ratio, 1));
