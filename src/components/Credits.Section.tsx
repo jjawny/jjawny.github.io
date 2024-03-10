@@ -6,7 +6,7 @@ import Link from "next/link";
 const Credits = ({}: {}) => {
   return (
     <div className="grid h-screen w-screen items-center justify-center">
-      <div className="flex flex-col items-center justify-center justify-items-center space-y-5 px-[5vw]">
+      <div className="flex flex-col items-center justify-center justify-items-center space-y-1 px-[5vw]">
         <CreditsText />
         <CreditsSubtext />
       </div>
@@ -20,7 +20,7 @@ const CreditsText = () => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const { currentWord, startAnimation } = useStartTextAnimation(
     "Created by Johnny Madigan",
-    1.5
+    0.6
   );
   const textRef = useRef<HTMLHeadingElement>(null);
   const isInView = useIsInView(textRef);
@@ -40,7 +40,7 @@ const CreditsText = () => {
       ref={textRef}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`glow-bg select-text whitespace-nowrap px-[0.75vw] text-center font-geistmono text-[4vw] tracking-tight sm:text-[3vw]
+      className={`select-text whitespace-nowrap rounded-sm bg-black px-[0.75vw] text-center font-geistmono text-[4vw] tracking-tight text-white hover:bg-white hover:text-black sm:text-[3vw]
         ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
       `}
     >
@@ -55,7 +55,7 @@ const CreditsSubtext = () => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const { currentWord, startAnimation } = useStartTextAnimation(
     "'Macbook Pro 13 inch' by chrisgreig (CC BY)",
-    2.6
+    0.9
   );
   const linkRef = useRef<HTMLAnchorElement>(null);
   const isInView = useIsInView(linkRef);
@@ -77,7 +77,7 @@ const CreditsSubtext = () => {
       href="https://skfb.ly/MWtY"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`glow-bg whitespace-nowrap px-[0.75vw] text-center font-geistmono text-[2vw] tracking-tight sm:text-[1.5vw]
+      className={`whitespace-nowrap rounded-sm bg-black px-[0.75vw] text-center font-geistmono text-[2vw] tracking-tight text-white hover:bg-white hover:text-black sm:text-[1.5vw]
         ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
       `}
     >

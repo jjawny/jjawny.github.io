@@ -32,7 +32,7 @@ const Projects: React.FC<ProjectsProps> = ({ changeLaptopScreenCallback }) => {
   return (
     <div className="grid h-screen w-screen items-center">
       <div
-        className={`flex flex-col items-center justify-center justify-items-center space-y-5 transition-all duration-300 ease-in-out sm:items-start sm:px-[5vw]
+        className={`flex flex-col items-center justify-center justify-items-center space-y-1 transition-all duration-300 ease-in-out sm:items-start sm:px-[5vw]
           ${isDrawerOpen ? "pointer-events-none opacity-5" : ""}
         `}
       >
@@ -65,7 +65,7 @@ const ProjectDrawer: React.FC<ProjectDrawerProps> = ({
 }) => {
   const { currentWord, startAnimation } = useStartTextAnimation(
     project.name.toUpperCase(),
-    1
+    0.33
   );
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
   const [isHovered, setIsHovered] = useState<boolean>(false);
@@ -74,10 +74,6 @@ const ProjectDrawer: React.FC<ProjectDrawerProps> = ({
 
   useEffect(() => {
     changeIsDrawerOpenCallback(isDrawerOpen);
-
-    if (!isDrawerOpen && isHovered) {
-      startAnimation();
-    }
 
     if (isDrawerOpen || isHovered) {
       changeLaptopScreenCallback(project.videoSource);
@@ -102,11 +98,11 @@ const ProjectDrawer: React.FC<ProjectDrawerProps> = ({
         ref={triggerRef}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className={`glow-bg transition-all duration-300 ease-in-out hover:scale-110
+        className={`text-white transition-all duration-100 ease-in-out hover:scale-y-110 hover:text-black
           ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
         `}
       >
-        <h1 className="whitespace-nowrap px-[1vw] font-geistmono text-[7vw] font-extrabold leading-tight tracking-tight sm:text-[6vw]">
+        <h1 className="whitespace-nowrap rounded-sm bg-black px-[1vw] font-geistmono text-[7vw] font-extrabold leading-tight tracking-tight hover:bg-white sm:text-[6vw]">
           {currentWord}
         </h1>
       </DrawerTrigger>
@@ -124,7 +120,7 @@ const ProjectDrawer: React.FC<ProjectDrawerProps> = ({
                   alt="link"
                   height={32}
                   width={32}
-                  className="duration-200 hover:scale-110"
+                  className="duration-200 hover:scale-x-110"
                 />
               </Link>
             </span>

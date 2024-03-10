@@ -35,16 +35,12 @@ const AboutText = ({
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const { currentWord, startAnimation } = useStartTextAnimation(
     "WHO AM I ?",
-    0.7
+    0.15
   );
   const triggerRef = useRef<HTMLButtonElement>(null);
   const isInView = useIsInView(triggerRef);
 
   useEffect(() => {
-    if (!isDrawerOpen && isHovered) {
-      startAnimation();
-    }
-
     if (isDrawerOpen || isHovered) {
       changeLaptopScreenCallback(ABOUT_SECTION_VIDEO);
     } else {
@@ -62,12 +58,12 @@ const AboutText = ({
         ref={triggerRef}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className={`glow-bg transition-all duration-300 ease-in-out hover:scale-110
+        className={`text-white transition-all duration-100 ease-in-out hover:scale-x-110 hover:text-black
           ${isInView ? "animate-fadeIn" : "animate-fadeOut"}  
         `}
       >
         <h1
-          className={`whitespace-nowrap px-[2vw] font-geistmono text-[10vw] font-extrabold leading-tight tracking-tight transition-all duration-300 ease-in-out sm:text-[8vw]
+          className={`whitespace-nowrap rounded-sm bg-black px-[2vw] font-geistmono text-[10vw] font-extrabold leading-tight tracking-tight transition-all duration-300 ease-in-out hover:bg-white sm:text-[8vw]
             ${isDrawerOpen ? "pointer-events-none opacity-5" : ""}
           `}
         >
@@ -80,9 +76,8 @@ const AboutText = ({
             WHO AM I ?
           </DrawerTitle>
           <DrawerDescription className=" py-5 text-lg">
-            I&apos;m a {BoldText("full stack software developer")} (.NET, React)
-            currently working at Queensland Health on a portfolio of enterprise
-            apps.
+            I&apos;m a {BoldText("full stack software developer")} currently
+            working at Queensland Health on a portfolio of enterprise apps.
             <br />
             <br />
             As someone who {BoldText("thrives")} on mastering their stack,
