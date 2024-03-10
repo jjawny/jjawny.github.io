@@ -29,12 +29,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Set environment variable
+        run: echo "NEXT_PUBLIC_BUILD_NUMBER=${{ github.run_number }}" >> $GITHUB_ENV
       - name: Checkout
         uses: actions/checkout@v3
       - name: Detect package manager
         id: detect-package-manager
-        env:
-          NEXT_PUBLIC_BUILD_NUMBER: ${{ github.run_number }}
         run: |
           if [ -f "${{ github.workspace }}/yarn.lock" ]; then
             echo "manager=yarn" >> $GITHUB_OUTPUT
