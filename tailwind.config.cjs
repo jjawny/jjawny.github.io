@@ -16,12 +16,15 @@ const config = {
         dxslight: ["DxSlight", "Thunder", ...defaultTheme.fontFamily.sans],
         graffity: ["Graffity", ...defaultTheme.fontFamily.sans],
         graffityalt: ["GraffityAlt", ...defaultTheme.fontFamily.sans],
-        nighty: ["Nighty", ...defaultTheme.fontFamily.sans],
         remboy: ["Remboy", ...defaultTheme.fontFamily.serif],
         thunder: ["Thunder", ...defaultTheme.fontFamily.sans],
-        disketmono: ["DisketMono", ...defaultTheme.fontFamily.mono],
-        humane: ["Humane", ...defaultTheme.fontFamily.sans],
+        humane: ["Humane", ...defaultTheme.fontFamily.mono],
         dirtyline: ["Dirtyline", ...defaultTheme.fontFamily.sans],
+        centrion: [
+          "CentrionHigh",
+          "GeistMono",
+          ...defaultTheme.fontFamily.mono,
+        ],
       },
       animation: {
         fadeIn: "fadeIn 0.2s ease-in forwards",
@@ -78,16 +81,8 @@ const config = {
             src: `url('/fonts/Remboy.ttf') format('truetype')`,
           },
           {
-            fontFamily: "Nighty",
-            src: `url('/fonts/Nighty.otf') format('opentype')`,
-          },
-          {
             fontFamily: "Thunder",
             src: `url('/fonts/Thunder.woff2') format('woff2')`,
-          },
-          {
-            fontFamily: "DisketMono",
-            src: `url('/fonts/DisketMono.ttf') format('truetype')`,
           },
           {
             fontFamily: "Humane",
@@ -96,6 +91,10 @@ const config = {
           {
             fontFamily: "Dirtyline",
             src: `url('/fonts/Dirtyline.woff2') format('woff2')`,
+          },
+          {
+            fontFamily: "CentrionHigh",
+            src: `url('/fonts/CentrionHigh.woff2') format('woff2')`,
           },
         ],
       });

@@ -12,13 +12,7 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 1%); /* Final % is height of overlay */
+  background: linear-gradient(to bottom, rgb(28, 28, 28) 0%, rgba(255, 255, 255, 0) 1%); /* Final % is height of overlay */
   pointer-events: none; /* Allows clicks to go through the overlay */
   z-index: 999;
-}
-
-.glow-bg {
-  border-radius: 25%;
-  background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 0 18px 18px rgba(255, 255, 255, 0.8);
 }

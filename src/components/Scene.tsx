@@ -53,7 +53,7 @@ const Scene = () => {
         className="h-screen w-screen"
       >
         <Lighting />
-        {!isMobile && <Cursor />}
+        {/* {!isMobile && <Cursor />} */}
         {/* <OrbitControls enableZoom={false}/> */}
 
         <ScrollControls pages={3}>
@@ -84,7 +84,7 @@ const Scene = () => {
 const Lighting = () => {
   return (
     <>
-      <ambientLight />
+      {/* <ambientLight /> */}
       <directionalLight />
       <pointLight position={[-30, 0, -30]} power={10.0} />
     </>

@@ -18,7 +18,7 @@ const Socials = () => {
   }
 
   return (
-    <div className="flex w-full animate-fadeIn select-none flex-row justify-between space-x-4 px-[24vw] py-3 sm:px-[8vw]">
+    <div className="flex w-full animate-fadeIn select-none flex-row justify-between space-x-4 px-[24vw] py-3 invert filter sm:px-[8vw]">
       <Link href={"https://github.com/johnnymadigan"}>
         <Image
           src={"/images/github.png"}
@@ -28,7 +28,7 @@ const Socials = () => {
           className="duration-200 hover:scale-110"
         />
       </Link>
-      <Link href={"https://www.linkedin.com/in/johnnymadigan/"}>
+      <Link href={"https://www.linkedin.com/in/johnnymadigan"}>
         <Image
           src={"/images/linkedin.png"}
           alt="linkedin"
