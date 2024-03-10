@@ -98,7 +98,7 @@ const ProjectDrawer: React.FC<ProjectDrawerProps> = ({
         ref={triggerRef}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className={`text-white transition-all duration-100 ease-in-out hover:scale-y-110 hover:text-black
+        className={`text-white transition-all duration-100 ease-in-out hover:scale-x-105 hover:text-black
           ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
         `}
       >
