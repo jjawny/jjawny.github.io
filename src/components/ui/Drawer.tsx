@@ -48,7 +48,7 @@ const DrawerContent = React.forwardRef<
       )}
       style={{
         background:
-          "linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 90%, rgba(255, 255, 255, 0) 100%)",
+          "linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 80%, rgba(255, 255, 255, 0) 100%)",
       }}
       {...props}
     >
