@@ -106,7 +106,7 @@ const ProjectDrawer: React.FC<ProjectDrawerProps> = ({
           {currentWord}
         </h1>
       </DrawerTrigger>
-      <DrawerContent className="z-50 px-2 text-black">
+      <DrawerContent className="z-50 px-2 text-white">
         <DrawerHeader>
           <DrawerTitle className="font-geistmono text-2xl">
             {project.name}
@@ -120,7 +120,7 @@ const ProjectDrawer: React.FC<ProjectDrawerProps> = ({
                   alt="link"
                   height={32}
                   width={32}
-                  className="duration-200 hover:scale-x-110"
+                  className="invert filter duration-200 hover:scale-110"
                 />
               </Link>
             </span>
