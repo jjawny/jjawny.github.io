@@ -6,6 +6,11 @@ const Hero = () => {
   const triggerDivRef = useRef(null);
   const isInView = useIsInView(triggerDivRef);
 
+  /* Currently no support for text-shadow in tailwind */
+  const glowingTextStyle = {
+    textShadow: "0 0 10px rgba(255,255,255,0.25)",
+  };
+
   return (
     <>
       {/* 
@@ -36,6 +41,7 @@ const Hero = () => {
               text-white
               sm:whitespace-nowrap
               sm:text-[8vw]"
+            style={glowingTextStyle}
           >
             JOHNNY MADIGAN
           </h1>
