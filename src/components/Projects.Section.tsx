@@ -1,4 +1,3 @@
-import { useStartTextAnimation } from "~/hooks/useStartTextAnimation";
 import { PROJECTS_SOURCE } from "~/constants/defaults";
 import { useEffect, useRef, useState } from "react";
 import { ProjectType } from "~/types/project.type";
@@ -63,10 +62,6 @@ const ProjectDrawer: React.FC<ProjectDrawerProps> = ({
   changeLaptopScreenCallback,
   changeIsDrawerOpenCallback,
 }) => {
-  const { currentWord, startAnimation } = useStartTextAnimation(
-    project.name,
-    0.33
-  );
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -85,12 +80,7 @@ const ProjectDrawer: React.FC<ProjectDrawerProps> = ({
     isHovered,
     project,
     changeLaptopScreenCallback,
-    startAnimation,
   ]);
-
-  useEffect(() => {
-    if (isInView) startAnimation();
-  }, [isInView, startAnimation]);
 
   return (
     <Drawer onOpenChange={(isOpen) => setIsDrawerOpen(isOpen)}>
@@ -98,12 +88,12 @@ const ProjectDrawer: React.FC<ProjectDrawerProps> = ({
         ref={triggerRef}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className={`text-white transition-all duration-100 ease-in-out hover:scale-x-105 hover:text-black
+        className={`text-white transition-all duration-100 ease-in-out hover:scale-x-105
           ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
         `}
       >
-        <h1 className="whitespace-nowrap rounded-sm bg-black px-[1vw] font-geistmono text-[7vw] leading-tight tracking-tight hover:bg-white sm:text-[6vw]">
-          {currentWord}
+        <h1 className="whitespace-nowrap rounded-sm px-[1vw] font-monument text-[6vw] leading-tight tracking-tight sm:text-[5vw]">
+          {project.name}
         </h1>
       </DrawerTrigger>
       <DrawerContent className="z-50 px-2 text-white">

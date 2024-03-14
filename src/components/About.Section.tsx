@@ -1,4 +1,3 @@
-import { useStartTextAnimation } from "~/hooks/useStartTextAnimation";
 import { ABOUT_SECTION_VIDEO } from "~/constants/defaults";
 import { useEffect, useRef, useState } from "react";
 import { useIsInView } from "~/hooks/useIsInView";
@@ -33,10 +32,6 @@ const AboutText = ({
 }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
   const [isHovered, setIsHovered] = useState<boolean>(false);
-  const { currentWord, startAnimation } = useStartTextAnimation(
-    "WHO AM I ?",
-    0.15
-  );
   const triggerRef = useRef<HTMLButtonElement>(null);
   const isInView = useIsInView(triggerRef);
 
@@ -46,11 +41,7 @@ const AboutText = ({
     } else {
       changeLaptopScreenCallback(null);
     }
-  }, [isDrawerOpen, isHovered, changeLaptopScreenCallback, startAnimation]);
-
-  useEffect(() => {
-    if (isInView) startAnimation();
-  }, [isInView, startAnimation]);
+  }, [isDrawerOpen, isHovered, changeLaptopScreenCallback]);
 
   return (
     <Drawer onOpenChange={(isOpen) => setIsDrawerOpen(isOpen)}>
@@ -58,16 +49,16 @@ const AboutText = ({
         ref={triggerRef}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className={`text-white transition-all duration-100 ease-in-out hover:scale-x-110 hover:text-black
+        className={`text-white transition-all duration-100 ease-in-out hover:scale-110
           ${isInView ? "animate-fadeIn" : "animate-fadeOut"}  
         `}
       >
         <h1
-          className={`whitespace-nowrap rounded-sm bg-black px-[2vw] font-geistmono text-[10vw] leading-tight tracking-tight transition-all duration-300 ease-in-out hover:bg-white sm:text-[8vw]
+          className={`whitespace-nowrap rounded-sm px-[2vw] font-monument text-[10vw] leading-tight tracking-tight transition-all duration-300 ease-in-out sm:text-[6vw]
             ${isDrawerOpen ? "pointer-events-none opacity-5" : ""}
           `}
         >
-          {currentWord}
+          WHO AM I ?
         </h1>
       </DrawerTrigger>
       <DrawerContent className="z-50 px-2 text-white">
