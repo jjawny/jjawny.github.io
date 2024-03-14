@@ -36,11 +36,12 @@ const Hero = () => {
               select-none
               px-[5vw]
               text-center
-              font-centrion
-              text-[15vw]
+              font-monument
+              text-[13.5vw]
+              font-extrabold
               text-white
               sm:whitespace-nowrap
-              sm:text-[8vw]"
+              sm:text-[6.75vw]"
             style={glowingTextStyle}
           >
             JOHNNY MADIGAN

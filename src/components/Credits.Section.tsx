@@ -7,16 +7,21 @@ const Credits = ({}: {}) => {
   return (
     <div className="grid h-screen w-screen items-center justify-center">
       <div className="flex flex-col items-center justify-center justify-items-center space-y-1 px-[5vw]">
-        <CreditsText />
-        <CreditsSubtext />
+        {/*
+         * ISSUE: R3F's custom render tree somehow prevents 'useIsInView' (intersection observer hook) from triggering ∴ component never intersects
+         * SOLUTION: Extract into separate components that rely on 'useInView' hook
+         */}
+        <DevCredits />
+        <ModelCredits />
+        <FontCredits />
       </div>
     </div>
   );
 };
 
-// ISSUE: R3F's custom render tree somehow prevents 'useIsInView' (intersection observer hook) from triggering ∴ component never intersects
-// SOLUTION: Extract component that relies on 'useInView' hook
-const CreditsText = () => {
+// TODO: Change into single component that accepts children?
+
+const DevCredits = () => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const { currentWord, startAnimation } = useStartTextAnimation(
     "Created by Johnny Madigan",
@@ -49,9 +54,7 @@ const CreditsText = () => {
   );
 };
 
-// ISSUE: R3F's custom render tree somehow prevents 'useIsInView' (intersection observer hook) from triggering ∴ component never intersects
-// SOLUTION: Extract component that relies on 'useInView' hook
-const CreditsSubtext = () => {
+const ModelCredits = () => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const { currentWord, startAnimation } = useStartTextAnimation(
     "'Macbook Pro 13 inch' by chrisgreig (CC BY)",
@@ -83,6 +86,39 @@ const CreditsSubtext = () => {
     >
       {currentWord}
     </Link>
+  );
+};
+
+const FontCredits = () => {
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+  const { currentWord, startAnimation } = useStartTextAnimation(
+    "Fonts: Monument Extended, Giest Mono",
+    0.9
+  );
+  const linkRef = useRef<HTMLHeadingElement>(null);
+  const isInView = useIsInView(linkRef);
+
+  useEffect(() => {
+    if (isHovered) {
+      startAnimation();
+    }
+  }, [isHovered, startAnimation]);
+
+  useEffect(() => {
+    if (isInView) startAnimation();
+  }, [isInView, startAnimation]);
+
+  return (
+    <h3
+      ref={linkRef}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className={`select-text whitespace-nowrap rounded-sm bg-black px-[0.75vw] text-center font-geistmono text-[1.5vw] tracking-tight text-white hover:bg-white hover:text-black sm:text-[1vw]
+        ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
+      `}
+    >
+      {currentWord}
+    </h3>
   );
 };
 

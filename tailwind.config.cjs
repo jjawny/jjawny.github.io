@@ -8,13 +8,12 @@ const config = {
   theme: {
     extend: {
       fontFamily: {
-        geist: ["Geist", ...defaultTheme.fontFamily.sans],
         geistmono: ["GeistMono", ...defaultTheme.fontFamily.mono],
-        centrion: ["CentrionHigh", "GeistMono", ...defaultTheme.fontFamily.mono],
+        monument: ["MonumentExtended", "GeistMono", ...defaultTheme.fontFamily.mono],
       },
       animation: {
-        fadeIn: "fadeIn 0.2s ease-in forwards",
-        fadeOut: "fadeOut 0.2s ease-in forwards",
+        fadeIn: "fadeIn 0.25s ease-in forwards",
+        fadeOut: "fadeOut 0.25s ease-in forwards",
         zoomIn: "zoomIn 0.25s ease-in forwards",
       },
       keyframes: {
@@ -39,16 +38,12 @@ const config = {
       addBase({
         "@font-face": [
           {
-            fontFamily: "Geist",
-            src: `url('/fonts/Geist.woff2') format('woff2')`,
-          },
-          {
             fontFamily: "GeistMono",
             src: `url('/fonts/GeistMono.woff2') format('woff2')`,
           },
           {
-            fontFamily: "CentrionHigh",
-            src: `url('/fonts/CentrionHigh.woff2') format('woff2')`,
+            fontFamily: "MonumentExtended",
+            src: `url('/fonts/MonumentExtended.otf') format('opentype')`
           },
         ],
       });
