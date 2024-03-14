@@ -8,7 +8,7 @@ const Hero = () => {
 
   /* Currently no support for text-shadow in tailwind */
   const glowingTextStyle = {
-    textShadow: "0 0 10px rgba(255,255,255,0.25)",
+    textShadow: "0 0 10px rgba(255,255,255,0.15)",
   };
 
   return (
