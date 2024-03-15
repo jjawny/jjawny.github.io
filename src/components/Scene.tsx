@@ -81,7 +81,7 @@ const Scene = () => {
 const Lighting = () => {
   return (
     <>
-      {/* <ambientLight /> */}
+      <ambientLight />
       <directionalLight />
       <pointLight position={[-30, 0, -30]} power={10.0} />
     </>

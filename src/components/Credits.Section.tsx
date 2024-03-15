@@ -13,13 +13,10 @@ const Credits = ({}: {}) => {
          */}
         <DevCredits />
         <ModelCredits />
-        <FontCredits />
       </div>
     </div>
   );
 };
-
-// TODO: Change into single component that accepts children?
 
 const DevCredits = () => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
@@ -86,39 +83,6 @@ const ModelCredits = () => {
     >
       {currentWord}
     </Link>
-  );
-};
-
-const FontCredits = () => {
-  const [isHovered, setIsHovered] = useState<boolean>(false);
-  const { currentWord, startAnimation } = useStartTextAnimation(
-    "Fonts: Monument Extended, Giest Mono",
-    0.9
-  );
-  const linkRef = useRef<HTMLHeadingElement>(null);
-  const isInView = useIsInView(linkRef);
-
-  useEffect(() => {
-    if (isHovered) {
-      startAnimation();
-    }
-  }, [isHovered, startAnimation]);
-
-  useEffect(() => {
-    if (isInView) startAnimation();
-  }, [isInView, startAnimation]);
-
-  return (
-    <h3
-      ref={linkRef}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className={`select-text whitespace-nowrap rounded-sm bg-black px-[0.75vw] text-center font-geistmono text-[1.5vw] tracking-tight text-white hover:bg-white hover:text-black sm:text-[1vw]
-        ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
-      `}
-    >
-      {currentWord}
-    </h3>
   );
 };
 
