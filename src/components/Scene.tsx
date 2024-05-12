@@ -7,8 +7,7 @@ import React, {
 } from "react";
 import { Html, OrbitControls, ScrollControls } from "@react-three/drei";
 import { DEFAULT_VIDEO_SOURCE } from "~/constants/defaults";
-import { useIsMobile } from "~/hooks/useIsMobile";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useThree } from "@react-three/fiber";
 import Projects from "./Projects.Section";
 import _debounce from "lodash/debounce";
 import Credits from "./Credits.Section";
@@ -16,20 +15,20 @@ import DotsCircle from "./DotsCircle";
 import About from "./About.Section";
 import Hero from "./Hero.Section";
 import Macbook from "./Macbook";
-import Cursor from "./Cursor";
 
 const DEBOUNCED_DELAY_MS = 10;
 
 const Scene = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const isMobile = useIsMobile();
   const [videoSource, setVideoSource] = useState<string>(
     `/videos/${DEFAULT_VIDEO_SOURCE}`
   );
 
   const changeLaptopScreenCallback = useCallback(
     _debounce((videoSource: string | null) => {
-      setVideoSource(`/videos/${videoSource ? videoSource : DEFAULT_VIDEO_SOURCE}`);
+      setVideoSource(
+        `/videos/${videoSource ? videoSource : DEFAULT_VIDEO_SOURCE}`
+      );
     }, DEBOUNCED_DELAY_MS),
     [setVideoSource]
   );
@@ -50,8 +49,7 @@ const Scene = () => {
         className="h-screen w-screen"
       >
         <Lighting />
-        {/* {!isMobile && <Cursor />} */}
-        {/* <OrbitControls enableZoom={false}/> */}
+        {/* <OrbitControls/> */}
 
         <ScrollControls pages={3}>
           {/* MODELS */}
@@ -94,8 +92,12 @@ const CircleLoader = () => {
       <div className="sticky top-[-18.5%] ">
         <div className="flex items-center justify-center">
           <div className="relative">
-            <div className={`h-[30vh] w-[30vh] rounded-full border-t-2 border-b-2 border-gray-100`}></div>
-            <div className={`absolute top-0 left-0 h-[30vh] w-[30vh] animate-spin rounded-full border-t-2 border-b-2 border-gray-200`}></div>
+            <div
+              className={`h-[30vh] w-[30vh] rounded-full border-t-2 border-b-2 border-gray-100`}
+            ></div>
+            <div
+              className={`absolute top-0 left-0 h-[30vh] w-[30vh] animate-spin rounded-full border-t-2 border-b-2 border-gray-200`}
+            ></div>
           </div>
         </div>
       </div>
