@@ -6,26 +6,25 @@ import Link from "next/link";
 const Credits = ({}: {}) => {
   return (
     <div className="grid h-screen w-screen items-center justify-center">
-      <div className="flex flex-col items-center justify-center justify-items-center space-y-1 px-[5vw]">
+      <div className="flex w-[37vw] min-w-[fit-content] flex-col items-center justify-center justify-items-center space-y-1">
         {/*
          * ISSUE: R3F's custom render tree somehow prevents 'useIsInView' (intersection observer hook) from triggering ∴ component never intersects
          * SOLUTION: Extract into separate components that rely on 'useInView' hook
          */}
-        <DevCredits />
-        <ModelCredits />
+        <CreditText />
       </div>
     </div>
   );
 };
 
-const DevCredits = () => {
+const CreditText = () => {
+  const creditsRef = useRef<HTMLHeadingElement>(null);
+  const isInView = useIsInView(creditsRef);
   const [isHovered, setIsHovered] = useState<boolean>(false);
-  const { currentWord, startAnimation } = useStartTextAnimation(
-    "Created by Johnny Madigan",
-    0.6
+  const { currentText, startAnimation } = useStartTextAnimation(
+    "Johnny Madigan",
+    0.25
   );
-  const textRef = useRef<HTMLHeadingElement>(null);
-  const isInView = useIsInView(textRef);
 
   useEffect(() => {
     if (isHovered) {
@@ -38,51 +37,31 @@ const DevCredits = () => {
   }, [isInView, startAnimation]);
 
   return (
-    <h2
-      ref={textRef}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className={`select-text whitespace-nowrap rounded-sm bg-black px-[0.75vw] text-center font-geistmono text-[4vw] tracking-tight text-white hover:bg-white hover:text-black sm:text-[3vw]
-        ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
-      `}
+    <div
+      ref={creditsRef}
+      className={`flex w-full select-text flex-col whitespace-nowrap text-center font-monument tracking-tight text-white ${
+        isInView ? "animate-fadeIn" : "animate-fadeOut"
+      }`}
     >
-      {currentWord}
-    </h2>
-  );
-};
-
-const ModelCredits = () => {
-  const [isHovered, setIsHovered] = useState<boolean>(false);
-  const { currentWord, startAnimation } = useStartTextAnimation(
-    "'Macbook Pro 13 inch' by chrisgreig (CC BY)",
-    0.9
-  );
-  const linkRef = useRef<HTMLAnchorElement>(null);
-  const isInView = useIsInView(linkRef);
-
-  useEffect(() => {
-    if (isHovered) {
-      startAnimation();
-    }
-  }, [isHovered, startAnimation]);
-
-  useEffect(() => {
-    if (isInView) startAnimation();
-  }, [isInView, startAnimation]);
-
-  return (
-    <Link
-      ref={linkRef}
-      target="_blank"
-      href="https://skfb.ly/MWtY"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className={`whitespace-nowrap rounded-sm bg-black px-[0.75vw] text-center font-geistmono text-[2vw] tracking-tight text-white hover:bg-white hover:text-black sm:text-[1.5vw]
-        ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
-      `}
-    >
-      {currentWord}
-    </Link>
+      <p className={`self-start text-[1.75vw] sm:text-[1.25vw]`}>Created by</p>
+      <h2
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className={`self-end text-[3.75vw] font-extrabold sm:text-[2.75vw]`}
+      >
+        {currentText}
+      </h2>
+      <Link
+        target="_blank"
+        href="https://skfb.ly/MWtY"
+        className={`text-[1vw] sm:text-[1vw]`}
+      >
+        <i>Macbook Pro 13 inch</i> model by
+      </Link>
+      <p className={`self-end text-[1.5vw] sm:text-[1.5vw]`}>
+        chrisgreig (CC BY)
+      </p>
+    </div>
   );
 };
 

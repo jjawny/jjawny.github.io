@@ -5,14 +5,14 @@ export const useStartTextAnimation = (
   speed: number = 0.3,
   isPlayOnRender: boolean = false
 ) => {
-  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&";
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const frameRef = useRef<number | null>(null);
-  const [currentWord, setCurrentWord] = useState(text);
+  const [currentText, setCurrentText] = useState(text);
 
   const startAnimation = useCallback(() => {
     if (frameRef.current) {
       cancelAnimationFrame(frameRef.current);
-      setCurrentWord(text);
+      setCurrentText(text);
     }
 
     let iteration = 0;
@@ -28,7 +28,8 @@ export const useStartTextAnimation = (
           if (letter.trim() === "") return " ";
 
           // the randomized letter
-          const randomLetter = letters[Math.floor(Math.random() * letters.length)] ?? "$";
+          const randomLetter =
+            letters[Math.floor(Math.random() * letters.length)] ?? "$";
           const isLowerCase = letter === letter.toLowerCase();
           return isLowerCase
             ? randomLetter.toLocaleLowerCase()
@@ -36,7 +37,7 @@ export const useStartTextAnimation = (
         })
         .join("");
 
-      setCurrentWord(newWord);
+      setCurrentText(newWord);
 
       if (iteration < text.length) {
         iteration += speed;
@@ -56,5 +57,5 @@ export const useStartTextAnimation = (
     };
   }, [isPlayOnRender, startAnimation]);
 
-  return { currentWord, startAnimation };
+  return { currentText, startAnimation };
 };
