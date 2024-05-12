@@ -1,5 +1,5 @@
 export const DEFAULT_VIDEO_SOURCE = "default.mp4";
-export const ABOUT_SECTION_VIDEO = "hello-bear.mp4";
+export const ABOUT_SECTION_VIDEO = "about-me.mp4";
 export const PROJECTS_SOURCE = "/data/projects.json";
 
 export const DOTS_CIRCLE_SPEED = 0.06;
