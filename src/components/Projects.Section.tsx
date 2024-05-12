@@ -30,14 +30,6 @@ const Projects: React.FC<ProjectsProps> = ({ changeLaptopScreenCallback }) => {
       .then((data) => setData(data));
   }, []);
 
-  // useEffect(() => {
-  //   if (isInView) {
-  //     changeCameraPosCallback(5);
-  //   } else {
-  //     changeCameraPosCallback(0);
-  //   }
-  // }, []);
-
   return (
     <div className="grid h-screen w-screen items-center">
       <div

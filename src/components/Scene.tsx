@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import { Html, OrbitControls, ScrollControls } from "@react-three/drei";
 import { DEFAULT_VIDEO_SOURCE } from "~/constants/defaults";
-import { Canvas, useThree } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import Projects from "./Projects.Section";
 import _debounce from "lodash/debounce";
 import Credits from "./Credits.Section";
