@@ -1,5 +1,5 @@
+import { useContext, useEffect, useRef, useState } from "react";
 import { PROJECTS_SOURCE } from "~/constants/defaults";
-import { useEffect, useRef, useState } from "react";
 import { ProjectType } from "~/types/project.type";
 import { useIsInView } from "~/hooks/useIsInView";
 import Image from "next/image";
@@ -21,6 +21,8 @@ type ProjectsProps = {
 const Projects: React.FC<ProjectsProps> = ({ changeLaptopScreenCallback }) => {
   const [data, setData] = useState<ProjectType[]>([]);
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
+  const sectionRef = useRef(null);
+  const isInView = useIsInView(sectionRef);
 
   useEffect(() => {
     fetch(PROJECTS_SOURCE)
@@ -28,9 +30,18 @@ const Projects: React.FC<ProjectsProps> = ({ changeLaptopScreenCallback }) => {
       .then((data) => setData(data));
   }, []);
 
+  // useEffect(() => {
+  //   if (isInView) {
+  //     changeCameraPosCallback(5);
+  //   } else {
+  //     changeCameraPosCallback(0);
+  //   }
+  // }, []);
+
   return (
     <div className="grid h-screen w-screen items-center">
       <div
+        ref={sectionRef}
         className={`flex flex-col items-center justify-center justify-items-center space-y-1 transition-all duration-300 ease-in-out sm:items-start sm:px-[5vw]
           ${isDrawerOpen ? "pointer-events-none opacity-5" : ""}
         `}
@@ -64,8 +75,8 @@ const ProjectDrawer: React.FC<ProjectDrawerProps> = ({
 }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
   const [isHovered, setIsHovered] = useState<boolean>(false);
-  const triggerRef = useRef<HTMLButtonElement>(null);
-  const isInView = useIsInView(triggerRef);
+  const drawerTriggerRef = useRef<HTMLButtonElement>(null);
+  const isInView = useIsInView(drawerTriggerRef);
 
   useEffect(() => {
     changeIsDrawerOpenCallback(isDrawerOpen);
@@ -75,17 +86,12 @@ const ProjectDrawer: React.FC<ProjectDrawerProps> = ({
     } else {
       changeLaptopScreenCallback(null);
     }
-  }, [
-    isDrawerOpen,
-    isHovered,
-    project,
-    changeLaptopScreenCallback,
-  ]);
+  }, [isDrawerOpen, isHovered, project, changeLaptopScreenCallback]);
 
   return (
     <Drawer onOpenChange={(isOpen) => setIsDrawerOpen(isOpen)}>
       <DrawerTrigger
-        ref={triggerRef}
+        ref={drawerTriggerRef}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         className={`text-white transition-all duration-100 ease-in-out hover:scale-x-105
