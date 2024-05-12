@@ -1,6 +1,7 @@
 import { ABOUT_SECTION_VIDEO } from "~/constants/defaults";
 import { useEffect, useRef, useState } from "react";
 import { useIsInView } from "~/hooks/useIsInView";
+import Socials from "./Socials";
 import {
   Drawer,
   DrawerContent,
@@ -49,17 +50,20 @@ const AboutText = ({
         ref={triggerRef}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className={`text-white transition-all duration-100 ease-in-out hover:scale-110
+        className={`text-white transition-all duration-100 ease-in-out 
           ${isInView ? "animate-fadeIn" : "animate-fadeOut"}  
         `}
       >
         <h1
-          className={`whitespace-nowrap rounded-sm px-[2vw] font-monument text-[10vw] leading-tight tracking-tight transition-all duration-300 ease-in-out sm:text-[6vw]
+          className={`whitespace-nowrap rounded-sm px-[2vw] font-monument text-[10vw] leading-tight tracking-tight transition-all duration-100 ease-in-out hover:scale-x-105 sm:text-[6vw]
             ${isDrawerOpen ? "pointer-events-none opacity-5" : ""}
           `}
         >
           WHO AM I ?
         </h1>
+        <div className={isDrawerOpen ? "pointer-events-none opacity-5" : ""}>
+          <Socials />
+        </div>
       </DrawerTrigger>
       <DrawerContent className="z-50 px-2 text-white">
         <DrawerHeader>

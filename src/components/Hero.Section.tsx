@@ -1,6 +1,5 @@
 import { useDynamicFontSize } from "~/hooks/useDynamicFontSize";
 import { useIsInView } from "~/hooks/useIsInView";
-import Socials from "./Socials";
 import { useRef } from "react";
 
 const Hero = () => {
@@ -37,7 +36,6 @@ const Hero = () => {
           >
             JOHNNY MADIGAN
           </h1>
-          {/* <Socials /> */}
         </div>
       </main>
     </>
