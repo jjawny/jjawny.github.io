@@ -1,7 +1,7 @@
 [
   {
     "name": "JJ's Delivery Service",
-    "videoSource": "jjds.mp4",
+    "videoSource": "jjds.mov",
     "desc": "A secure chat service, unlike the rest.",
     "link": "https://jj-delivery-service.vercel.app"
   },
