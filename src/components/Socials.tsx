@@ -23,28 +23,22 @@ const Socials = () => {
         <Image
           src={"/images/github.png"}
           alt="github"
-          height={28}
-          width={28}
-          className="duration-200 hover:scale-110"
+          height={24}
+          width={24}
+          className="duration-200 hover:scale-125"
         />
       </Link>
       <Link href={"https://www.linkedin.com/in/johnnymadigan"}>
         <Image
           src={"/images/linkedin.png"}
           alt="linkedin"
-          height={28}
-          width={28}
-          className="duration-200 hover:scale-110"
+          height={24}
+          width={24}
+          className="duration-200 hover:scale-125"
         />
       </Link>
       <Link href={"mailto:johnny.madigan@icloud.com"}>
-        <Image
-          src={"/images/email.png"}
-          alt="email"
-          height={28}
-          width={28}
-          className="duration-200 hover:scale-110"
-        />
+        <Image src={"/images/email.png"} alt="email" height={24} width={24} className="duration-200 hover:scale-125" />
       </Link>
     </div>
   );
