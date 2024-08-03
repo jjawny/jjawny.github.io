@@ -11,7 +11,7 @@ import {
   DrawerTrigger,
   DrawerContent,
   DrawerDescription,
-} from "./ui/Drawer";
+} from "~/components/ui/Drawer";
 
 const Credits = ({}: {}) => {
   return (
