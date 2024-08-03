@@ -12,7 +12,7 @@ import { Group } from "three";
 const Macbook: React.FC = () => {
   const initialVideoSource = `/videos/${DEFAULT_VIDEO_SOURCE}`;
   const [data, setData] = useState<ProjectType[]>([]);
-  const [, setIdx] = useState<number>(0);
+  const [, setIdx] = useState<number>(-1);
   const [videoSource, setVideoSource] = useState<string>(initialVideoSource);
   const groupRef = useRef<Group>(null);
   const mouseCoords = useMouseCoords();
