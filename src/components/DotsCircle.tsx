@@ -44,12 +44,7 @@ const DotsCircle = () => {
 const Dot = ({ position, color }: { position: Vector3; color: string }) => {
   return (
     <Sphere position={position} args={[0.1, 10, 10]}>
-      <meshStandardMaterial
-        emissive={color}
-        emissiveIntensity={0.8}
-        roughness={1.0}
-        color={color}
-      />
+      <meshStandardMaterial emissive={color} emissiveIntensity={0.8} roughness={1.0} color={color} />
     </Sphere>
   );
 };
