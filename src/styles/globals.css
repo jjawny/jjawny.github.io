@@ -17,11 +17,3 @@
   pointer-events: none; /* Allows clicks to go through the overlay */
   z-index: 999;
 }
-
-.grid-bg {
-  background-color: #101010;
-  /* background-size: 40px 40px;
-  background-image: linear-gradient(to right, #8080801a 1px, transparent 1px),
-    linear-gradient(to bottom, #8080801a 1px, transparent 1px),
-    linear-gradient(to bottom right, #8080801a 1px, transparent 1px); */
-}
