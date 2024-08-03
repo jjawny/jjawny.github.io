@@ -49,7 +49,7 @@ const CreditText = () => {
         >
           <h2 className={`self-end text-[3.75vw] font-extrabold sm:text-[2.75vw]`}>Johnny Madigan</h2>
         </DrawerTrigger>
-        <DrawerContent className="z-50 px-2 text-white">
+        <DrawerContent className="bottom-[-50px] z-50 px-2 pb-[50px] text-white">
           <DrawerHeader>
             <DrawerTitle className="font-geistmono text-2xl">WHO AM I ?</DrawerTitle>
             <DrawerDescription className="py-5 font-geistmono">
