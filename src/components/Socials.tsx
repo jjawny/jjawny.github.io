@@ -18,33 +18,27 @@ const Socials = () => {
   }
 
   return (
-    <div className="flex w-full select-none flex-row justify-between space-x-4 px-[10vw] py-3 invert filter sm:px-[8vw]">
+    <div className="flex w-full select-none flex-row justify-between space-x-4 px-[10vw] py-3 filter sm:px-[8vw]">
       <Link href={"https://github.com/johnnymadigan"}>
         <Image
           src={"/images/github.png"}
           alt="github"
-          height={28}
-          width={28}
-          className="duration-200 hover:scale-110"
+          height={24}
+          width={24}
+          className="duration-200 hover:scale-125"
         />
       </Link>
       <Link href={"https://www.linkedin.com/in/johnnymadigan"}>
         <Image
           src={"/images/linkedin.png"}
           alt="linkedin"
-          height={28}
-          width={28}
-          className="duration-200 hover:scale-110"
+          height={24}
+          width={24}
+          className="duration-200 hover:scale-125"
         />
       </Link>
       <Link href={"mailto:johnny.madigan@icloud.com"}>
-        <Image
-          src={"/images/email.png"}
-          alt="email"
-          height={28}
-          width={28}
-          className="duration-200 hover:scale-110"
-        />
+        <Image src={"/images/email.png"} alt="email" height={24} width={24} className="duration-200 hover:scale-125" />
       </Link>
     </div>
   );

@@ -18,7 +18,6 @@ const Hero = () => {
     cursor: "default",
     lineHeight: 0.8,
     fontWeight: 800,
-    color: "white",
   };
 
   return (
@@ -30,10 +29,7 @@ const Hero = () => {
             ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
           `}
         >
-          <h1
-            className="select-none text-center font-monument"
-            style={heroStyle}
-          >
+          <h1 className="select-none text-center font-monument text-black" style={heroStyle}>
             JOHNNY MADIGAN
           </h1>
         </div>

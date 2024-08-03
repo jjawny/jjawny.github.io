@@ -6,12 +6,6 @@
     "link": "https://jj-delivery-service.vercel.app"
   },
   {
-    "name": "Cube Solver",
-    "videoSource": "cube-solver.mp4",
-    "desc": "A graph theory project on finding the minimum number of moves to solve a Rubik's Pocket cube.",
-    "link": "https://github.com/johnnymadigan/cube-solver"
-  },
-  {
     "name": "Game of Life",
     "videoSource": "gol.mp4",
     "desc": "A zero-player, cellular automaton game with a wide-variety of options all from your terminal.",
@@ -28,5 +22,11 @@
     "videoSource": "undertale-musicbox.mp4",
     "desc": "An Arduino device that plays and adjusts a relaxing tune.",
     "link": "https://github.com/johnnymadigan/undertale-musicbox"
+  },
+  {
+    "name": "Cube Solver",
+    "videoSource": "cube-solver.mp4",
+    "desc": "A graph theory project on finding the minimum number of moves to solve a Rubik's Pocket cube.",
+    "link": "https://github.com/johnnymadigan/cube-solver"
   }
 ]
