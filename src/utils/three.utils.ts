@@ -1,7 +1,7 @@
 import { Vector3 } from "three";
 
-const DEPTH = 2;
-const MIN_RADIUS = 8;
+const DEPTH = 10;
+const MIN_RADIUS = 1;
 const MAX_RADIUS = 12;
 const NUM_POINTS = 500;
 const LEFT_COLOR = "de0000";
