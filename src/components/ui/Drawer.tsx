@@ -34,7 +34,7 @@ const DrawerContent = React.forwardRef<
       ref={ref}
       className={cn("bg-background fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col", className)}
       style={{
-        background: "linear-gradient(to top, rgba(255,255,255) 0%, rgba(255,255,255) 80%, rgba(255, 255, 255, 0) 100%)",
+        background: "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 80%, rgba(0, 0, 0, 0) 100%)",
       }}
       {...props}
     >

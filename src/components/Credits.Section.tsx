@@ -36,15 +36,15 @@ const CreditText = () => {
   return (
     <div
       ref={creditsRef}
-      className={`flex w-full select-text flex-col whitespace-nowrap pb-24 text-center font-monument tracking-tight text-black
+      className={`flex w-full select-text flex-col whitespace-nowrap pb-24 text-center font-monument tracking-tight text-white
         ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
-        ${isDrawerOpen ? "pointer-events-none !opacity-5" : ""}`}
+        ${isDrawerOpen ? "pointer-events-none !opacity-25" : ""}`}
     >
       <p className={`self-start text-[2.5vw] sm:text-[2vw]`}>Created by</p>
 
       <Drawer onOpenChange={(isOpen) => setIsDrawerOpen(isOpen)}>
         <DrawerTrigger
-          className={`text-black transition-all duration-100 ease-in-out 
+          className={`text-white transition-all duration-100 ease-in-out 
           ${isInView ? "animate-fadeIn" : "animate-fadeOut"}  
         `}
         >
@@ -62,7 +62,7 @@ const CreditText = () => {
             </div>
           </h2>
         </DrawerTrigger>
-        <DrawerContent className="bottom-[-50px] z-50 px-2 pb-[50px] text-black">
+        <DrawerContent className="bottom-[-50px] z-50 px-2 pb-[50px] text-white">
           <DrawerHeader>
             <DrawerTitle className="font-monument text-2xl">WHO AM I ?</DrawerTitle>
             <DrawerDescription className="py-5 font-geistmono">
