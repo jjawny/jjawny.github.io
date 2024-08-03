@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { useIsInView } from "~/hooks/useIsInView";
 import Socials from "~/components/Socials";
+import Image from "next/image";
 import Link from "next/link";
 import {
   Drawer,
@@ -14,8 +15,8 @@ import {
 
 const Credits = ({}: {}) => {
   return (
-    <div className="grid h-screen w-screen items-end justify-center">
-      <div className="flex w-[37vw] min-w-[fit-content] flex-col items-center justify-center justify-items-center space-y-1">
+    <div className="grid h-[80vh] w-screen items-end justify-center">
+      <div className="flex w-[50vw] min-w-[fit-content] flex-col items-center justify-center justify-items-center space-y-1">
         {/*
          * ISSUE: R3F's custom render tree somehow prevents 'useIsInView' (intersection observer hook) from triggering ∴ component never intersects
          * SOLUTION: Extract into separate components that rely on 'useInView' hook
@@ -35,23 +36,35 @@ const CreditText = () => {
   return (
     <div
       ref={creditsRef}
-      className={`flex w-full select-text flex-col whitespace-nowrap pb-24 text-center font-monument tracking-tight text-white
+      className={`flex w-full select-text flex-col whitespace-nowrap pb-24 text-center font-monument tracking-tight text-black
         ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
         ${isDrawerOpen ? "pointer-events-none !opacity-5" : ""}`}
     >
-      <p className={`self-start text-[1.75vw] sm:text-[1.25vw]`}>Created by</p>
+      <p className={`self-start text-[2.5vw] sm:text-[2vw]`}>Created by</p>
 
       <Drawer onOpenChange={(isOpen) => setIsDrawerOpen(isOpen)}>
         <DrawerTrigger
-          className={`text-white transition-all duration-100 ease-in-out 
+          className={`text-black transition-all duration-100 ease-in-out 
           ${isInView ? "animate-fadeIn" : "animate-fadeOut"}  
         `}
         >
-          <h2 className={`self-end text-[3.75vw] font-extrabold sm:text-[2.75vw]`}>Johnny Madigan</h2>
+          <h2 className={`relative self-end text-[4.5vw] font-extrabold  sm:text-[3.75vw]`}>
+            Johnny Madigan
+            <div style={{ width: "3vw", height: "3vw", position: "absolute", right: 0, bottom: 0 }}>
+              {/* TODO: revise dynamic size (see current NextJS recommendation), then apply to social icons */}
+              <Image
+                src={"/images/click.gif"}
+                alt="Click to learn more about me!"
+                fill
+                sizes="3vw"
+                style={{ rotate: "-30deg", objectFit: "cover", height: "" }}
+              />
+            </div>
+          </h2>
         </DrawerTrigger>
-        <DrawerContent className="bottom-[-50px] z-50 px-2 pb-[50px] text-white">
+        <DrawerContent className="bottom-[-50px] z-50 px-2 pb-[50px] text-black">
           <DrawerHeader>
-            <DrawerTitle className="font-geistmono text-2xl">WHO AM I ?</DrawerTitle>
+            <DrawerTitle className="font-monument text-2xl">WHO AM I ?</DrawerTitle>
             <DrawerDescription className="py-5 font-geistmono">
               I&apos;m a {BoldText("full stack software developer")} currently working for Queensland Government on a
               portfolio of enterprise apps.
@@ -64,10 +77,10 @@ const CreditText = () => {
           <DrawerFooter></DrawerFooter>
         </DrawerContent>
       </Drawer>
-      <Link target="_blank" href="https://skfb.ly/MWtY" className={`text-[1vw] sm:text-[1vw]`}>
+      <Link target="_blank" href="https://skfb.ly/MWtY" className={`text-[2vw] sm:text-[1.75vw]`}>
         <i>Macbook Pro 13 inch</i> model by
       </Link>
-      <p className={`self-end text-[1.5vw] sm:text-[1.5vw]`}>chrisgreig (CC BY)</p>
+      <p className={`self-end text-[1.5vw] sm:text-[1.15vw]`}>chrisgreig (CC BY)</p>
       <Socials />
     </div>
   );
