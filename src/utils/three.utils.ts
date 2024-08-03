@@ -4,8 +4,8 @@ const DEPTH = 2;
 const MIN_RADIUS = 8;
 const MAX_RADIUS = 12;
 const NUM_POINTS = 500;
-const LEFT_COLOR = "ebff00";
-const RIGHT_COLOR = "2cff00";
+const LEFT_COLOR = "d25030";
+const RIGHT_COLOR = "3caf2c";
 
 const getGradientStop = (ratio: number) => {
   ratio = Math.max(0, Math.min(ratio, 1));
