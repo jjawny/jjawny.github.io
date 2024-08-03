@@ -11,9 +11,7 @@ const Scene = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   return (
-    <div className="relative h-screen w-screen select-none overflow-hidden">
-      <div className="overlay"></div>
-
+    <div className="relative h-screen w-screen overflow-hidden">
       <Canvas ref={canvasRef} camera={{ position: [0, 0, 35] }} className="h-screen w-screen">
         {/* <OrbitControls/> */}
         {/* LIGHTING */}
@@ -21,12 +19,11 @@ const Scene = () => {
         <directionalLight />
         <pointLight position={[-30, 0, -30]} power={10.0} />
 
-        <ScrollControls pages={1}>
+        <ScrollControls pages={0.8}>
           {/* MODELS */}
           <Suspense fallback={<CircleLoader />}>
             <DotsCircle />
           </Suspense>
-
           <Suspense fallback={null}>
             <Macbook />
           </Suspense>
