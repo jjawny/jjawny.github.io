@@ -29,7 +29,7 @@ const Hero = () => {
             ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
           `}
         >
-          <h1 className="select-none text-center font-monument text-black" style={heroStyle}>
+          <h1 className="select-none text-center font-monument text-white" style={heroStyle}>
             JOHNNY MADIGAN
           </h1>
         </div>
