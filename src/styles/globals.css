@@ -3,8 +3,5 @@
 @tailwind utilities;
 
 .bg {
-  background-color: black;
-  background-image: url("/images/bg.jpg");
-  background-position: top;
-  background-size: cover;
+  background-color: #0e0000;
 }
