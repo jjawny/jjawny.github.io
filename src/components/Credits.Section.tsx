@@ -40,7 +40,7 @@ const CreditText = () => {
         ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
         ${isDrawerOpen ? "pointer-events-none !opacity-25" : ""}`}
     >
-      <p className={`self-start text-[2.5vw] sm:text-[2vw]`}>Created by</p>
+      <p className={`self-start text-[2.5vw] sm:text-[2vw]`}>Hey! I'm…</p>
 
       <Drawer onOpenChange={(isOpen) => setIsDrawerOpen(isOpen)}>
         <DrawerTrigger
@@ -50,7 +50,10 @@ const CreditText = () => {
         >
           <h2 className={`relative self-end text-[4.5vw] font-extrabold  sm:text-[3.75vw]`}>
             Johnny Madigan
-            <div style={{ width: "3vw", height: "3vw", position: "absolute", right: 0, bottom: 0 }}>
+            <div
+              className="duration-200 hover:scale-125"
+              style={{ width: "3vw", height: "3vw", position: "absolute", right: 0, bottom: 0 }}
+            >
               {/* TODO: revise dynamic size (see current NextJS recommendation), then apply to social icons */}
               <Image
                 src={"/images/click.gif"}
@@ -66,7 +69,7 @@ const CreditText = () => {
           <DrawerHeader>
             <DrawerTitle className="font-monument text-2xl">WHO AM I ?</DrawerTitle>
             <DrawerDescription className="py-5 font-geistmono">
-              I&apos;m a {BoldText("full stack software developer")} currently working for Queensland Government on a
+              I&apos;m a {BoldText("Full Stack Software Developer")} currently working for Queensland Government on a
               portfolio of enterprise apps.
               <br />
               <br />
@@ -77,10 +80,13 @@ const CreditText = () => {
           <DrawerFooter></DrawerFooter>
         </DrawerContent>
       </Drawer>
-      <Link target="_blank" href="https://skfb.ly/MWtY" className={`text-[2vw] sm:text-[1.75vw]`}>
-        <i>Macbook Pro 13 inch</i> model by
-      </Link>
-      <p className={`self-end text-[1.5vw] sm:text-[1.15vw]`}>chrisgreig (CC BY)</p>
+      <p className={`text-[2vw] sm:text-[1.75vw]`}>Full Stack Software Developer</p>
+      <p className={`self-end pr-4 text-[1.5vw] sm:text-[1.15vw]`}>
+        <Link target="_blank" href="https://skfb.ly/MWtY">
+          <i>MacBook</i>
+        </Link>{" "}
+        by chrisgreig <span className="text-[1vw] sm:text-[0.75vw]">(CC BY)</span>
+      </p>
       <Socials />
     </div>
   );
