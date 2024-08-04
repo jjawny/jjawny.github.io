@@ -18,7 +18,7 @@ const Socials = () => {
   }
 
   return (
-    <div className="flex w-full select-none flex-row justify-between space-x-4 px-[10vw] py-3 invert filter sm:px-[8vw]">
+    <div className="flex w-full select-none flex-row justify-end space-x-4 py-3 invert filter">
       <Link href={"https://github.com/johnnymadigan"}>
         <Image
           src={"/images/github.png"}
