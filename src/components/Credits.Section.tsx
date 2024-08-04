@@ -40,7 +40,7 @@ const CreditText = () => {
         ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
         ${isDrawerOpen ? "pointer-events-none !opacity-25" : ""}`}
     >
-      <p className={`self-start text-[2.5vw] sm:text-[2vw]`}>Hey! I'm…</p>
+      <p className={`self-start text-[2.5vw] sm:text-[2vw]`}>Hey! I&rsquo;m…</p>
 
       <Drawer onOpenChange={(isOpen) => setIsDrawerOpen(isOpen)}>
         <DrawerTrigger

@@ -38,7 +38,7 @@ const Macbook: React.FC = () => {
 
       return () => clearInterval(intervalId);
     },
-    [data.length]
+    [data, data.length]
   );
 
   useFrame(() => {
