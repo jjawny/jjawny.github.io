@@ -13,53 +13,63 @@ import {
   DrawerDescription,
 } from "~/components/ui/Drawer";
 
-const Credits = ({}: {}) => {
+interface InfoSectionProps {
+  isShowAboutCallback: (isShowAbout: boolean) => void;
+}
+
+const InfoSection: React.FC<InfoSectionProps> = (props) => {
   return (
     <div className="grid h-[80vh] w-screen items-end justify-center">
       <div className="flex w-[50vw] min-w-[fit-content] flex-col items-center justify-center justify-items-center space-y-1">
-        {/*
-         * ISSUE: R3F's custom render tree somehow prevents 'useIsInView' (intersection observer hook) from triggering ∴ component never intersects
-         * SOLUTION: Extract into separate components that rely on 'useInView' hook
-         */}
-        <CreditText />
+        <InfoSectionContent isShowAboutCallback={props.isShowAboutCallback} />
       </div>
     </div>
   );
 };
 
-const CreditText = () => {
-  const creditsRef = useRef<HTMLHeadingElement>(null);
-  const isInView = useIsInView(creditsRef);
-
+// ISSUE: R3F's custom render tree stops 'useIsInView' (intersection observer hook) from triggering ∴ component never intersects
+// SOLUTION: Extract content (that relies on the hook) another level deeper into the tree...
+const InfoSectionContent: React.FC<InfoSectionProps> = (props) => {
+  const { isShowAboutCallback } = props;
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
+  const infoSectionContentRef = useRef<HTMLHeadingElement>(null);
+  const isInView = useIsInView(infoSectionContentRef);
+  const BoldText = (text: string) => <span className="font-extrabold">{text}</span>;
 
   return (
     <div
-      ref={creditsRef}
-      className={`flex w-full select-text flex-col whitespace-nowrap pb-24 text-center font-monument tracking-tight text-white
+      ref={infoSectionContentRef}
+      className={`flex w-full select-text flex-col whitespace-nowrap pb-[10vh] text-center font-monument tracking-tight text-white
         ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
-        ${isDrawerOpen ? "pointer-events-none !opacity-25" : ""}`}
+        ${isDrawerOpen ? "pointer-events-none !opacity-25" : ""}
+      `}
     >
-      <p className={`self-start text-[2.5vw] sm:text-[2vw]`}>Hey! I&rsquo;m…</p>
+      <p className="self-start text-[3.5vw] sm:text-[3vw]">Hey! I&rsquo;m…</p>
 
-      <Drawer onOpenChange={(isOpen) => setIsDrawerOpen(isOpen)}>
+      <Drawer
+        onOpenChange={(isOpen) => {
+          console.log("here");
+          setIsDrawerOpen(isOpen);
+          isShowAboutCallback(isOpen);
+        }}
+      >
         <DrawerTrigger
           className={`text-white transition-all duration-100 ease-in-out 
-          ${isInView ? "animate-fadeIn" : "animate-fadeOut"}  
-        `}
+            ${isInView ? "animate-fadeIn" : "animate-fadeOut"}  
+          `}
         >
-          <h2 className={`relative self-end text-[4.5vw] font-extrabold  sm:text-[3.75vw]`}>
+          <h2 className="relative self-end px-[2vw] text-[5.5vw] font-extrabold duration-150 hover:scale-105 sm:text-[4.75vw]">
             Johnny Madigan
             <div
               className="duration-200 hover:scale-125"
-              style={{ width: "3vw", height: "3vw", position: "absolute", right: 0, bottom: 0 }}
+              style={{ width: "5vw", height: "5vw", position: "absolute", right: 0, bottom: 0 }}
             >
               {/* TODO: revise dynamic size (see current NextJS recommendation), then apply to social icons */}
               <Image
                 src={"/images/click.gif"}
                 alt="Click to learn more about me!"
                 fill
-                sizes="3vw"
+                sizes="5vw"
                 style={{ rotate: "-30deg", objectFit: "cover", height: "" }}
               />
             </div>
@@ -80,18 +90,16 @@ const CreditText = () => {
           <DrawerFooter></DrawerFooter>
         </DrawerContent>
       </Drawer>
-      <p className={`text-[2vw] sm:text-[1.75vw]`}>Full Stack Software Developer</p>
-      <p className={`self-end pr-4 text-[1.5vw] sm:text-[1.15vw]`}>
+      <p className="text-[3vw] sm:text-[2.5vw]">Full Stack Software Developer</p>
+      <p className="self-end pr-4 text-[1.75vw] sm:text-[1.75vw]">
         <Link target="_blank" href="https://skfb.ly/MWtY">
-          <i>MacBook</i>
+          <i className="underline">MacBook</i>
         </Link>{" "}
-        by chrisgreig <span className="text-[1vw] sm:text-[0.75vw]">(CC BY)</span>
+        by chrisgreig <span className="text-[1.25vw] sm:text-[1vw]">(CC BY)</span>
       </p>
       <Socials />
     </div>
   );
 };
 
-const BoldText = (text: string) => <span className="font-extrabold">{text}</span>;
-
-export default Credits;
+export default InfoSection;
