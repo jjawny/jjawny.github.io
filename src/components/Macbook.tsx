@@ -9,11 +9,16 @@ import { useScroll } from "@react-three/drei";
 import _debounce from "lodash/debounce";
 import { Group } from "three";
 
-const Macbook: React.FC = () => {
+interface MacbookProps {
+  isShowAbout?: boolean;
+}
+
+const Macbook: React.FC<MacbookProps> = (props) => {
+  const { isShowAbout = false } = props;
   const initialVideoSource = `/videos/${DEFAULT_VIDEO_SOURCE}`;
+  const [videoSource, setVideoSource] = useState<string>(initialVideoSource);
   const [data, setData] = useState<ProjectType[]>([]);
   const [, setIdx] = useState<number>(-1);
-  const [videoSource, setVideoSource] = useState<string>(initialVideoSource);
   const groupRef = useRef<Group>(null);
   const mouseCoords = useMouseCoords();
   const scroll = useScroll();
@@ -26,6 +31,11 @@ const Macbook: React.FC = () => {
 
   useEffect(
     function changeVideoSource() {
+      if (isShowAbout) {
+        setVideoSource(initialVideoSource);
+        return;
+      }
+
       const intervalId = setInterval(() => {
         setIdx((prevIdx) => {
           const nextIdx = (prevIdx + 1) % data.length;
@@ -38,18 +48,18 @@ const Macbook: React.FC = () => {
 
       return () => clearInterval(intervalId);
     },
-    [data, data.length]
+    [data, data.length, isShowAbout]
   );
 
   useFrame(() => {
     if (groupRef.current) {
-      // Animate Macbook rotation (follow cursor)
+      // Animate rotation (follow cursor)
       const targetRotationX = -(mouseCoords.y * (Math.PI / 8));
       const targetRotationY = mouseCoords.x * (Math.PI / 8);
       groupRef.current.rotation.x += 0.04 * (targetRotationX - groupRef.current.rotation.x);
       groupRef.current.rotation.y += 0.04 * (targetRotationY - groupRef.current.rotation.y);
 
-      // Animate Macbook zoom
+      // Animate zoom on scroll
       const newZ = scroll.offset * MACBOOK_Z_TRAVEL_RATE;
       groupRef.current.position.z = newZ > MACBOOK_Z_MAX ? MACBOOK_Z_MAX : scroll.offset * MACBOOK_Z_TRAVEL_RATE;
     }
