@@ -39,11 +39,12 @@ const InfoSectionContent: React.FC<InfoSectionProps> = (props) => {
   return (
     <div
       ref={infoSectionContentRef}
-      className={`flex w-full select-text flex-col whitespace-nowrap pb-24 text-center font-monument tracking-tight text-white
+      className={`flex w-full select-text flex-col whitespace-nowrap pb-[10vh] text-center font-monument tracking-tight text-white
         ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
-        ${isDrawerOpen ? "pointer-events-none !opacity-25" : ""}`}
+        ${isDrawerOpen ? "pointer-events-none !opacity-25" : ""}
+      `}
     >
-      <p className={`self-start text-[2.5vw] sm:text-[2vw]`}>Hey! I&rsquo;m…</p>
+      <p className="self-start text-[3.5vw] sm:text-[3vw]">Hey! I&rsquo;m…</p>
 
       <Drawer
         onOpenChange={(isOpen) => {
@@ -54,21 +55,21 @@ const InfoSectionContent: React.FC<InfoSectionProps> = (props) => {
       >
         <DrawerTrigger
           className={`text-white transition-all duration-100 ease-in-out 
-          ${isInView ? "animate-fadeIn" : "animate-fadeOut"}  
-        `}
+            ${isInView ? "animate-fadeIn" : "animate-fadeOut"}  
+          `}
         >
-          <h2 className={`relative self-end text-[4.5vw] font-extrabold duration-150 hover:scale-105 sm:text-[3.75vw]`}>
+          <h2 className="relative self-end px-[2vw] text-[5.5vw] font-extrabold duration-150 hover:scale-105 sm:text-[4.75vw]">
             Johnny Madigan
             <div
               className="duration-200 hover:scale-125"
-              style={{ width: "3vw", height: "3vw", position: "absolute", right: 0, bottom: 0 }}
+              style={{ width: "5vw", height: "5vw", position: "absolute", right: 0, bottom: 0 }}
             >
               {/* TODO: revise dynamic size (see current NextJS recommendation), then apply to social icons */}
               <Image
                 src={"/images/click.gif"}
                 alt="Click to learn more about me!"
                 fill
-                sizes="3vw"
+                sizes="5vw"
                 style={{ rotate: "-30deg", objectFit: "cover", height: "" }}
               />
             </div>
@@ -89,12 +90,12 @@ const InfoSectionContent: React.FC<InfoSectionProps> = (props) => {
           <DrawerFooter></DrawerFooter>
         </DrawerContent>
       </Drawer>
-      <p className={`text-[2vw] sm:text-[1.75vw]`}>Full Stack Software Developer</p>
-      <p className={`self-end pr-4 text-[1.5vw] sm:text-[1.15vw]`}>
+      <p className="text-[3vw] sm:text-[2.5vw]">Full Stack Software Developer</p>
+      <p className="self-end pr-4 text-[1.75vw] sm:text-[1.75vw]">
         <Link target="_blank" href="https://skfb.ly/MWtY">
           <i className="underline">MacBook</i>
         </Link>{" "}
-        by chrisgreig <span className="text-[1vw] sm:text-[0.75vw]">(CC BY)</span>
+        by chrisgreig <span className="text-[1.25vw] sm:text-[1vw]">(CC BY)</span>
       </p>
       <Socials />
     </div>
