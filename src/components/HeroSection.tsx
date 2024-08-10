@@ -17,7 +17,7 @@ const HeroSection = () => {
           `}
         >
           <h1
-            className="cursor-default select-none py-[5vw] text-center font-ps2 font-extrabold text-white"
+            className="cursor-default select-none py-[5vw] text-center font-monument font-extrabold text-white"
             style={{
               textShadow: "0 0 10px rgba(255,255,255,0.15)",
               fontSize: `${fontSize}px`,
