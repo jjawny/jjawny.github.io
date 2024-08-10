@@ -75,7 +75,7 @@ const InfoSectionContent: React.FC<InfoSectionProps> = (props) => {
             </div>
           </h2>
         </DrawerTrigger>
-        <DrawerContent className="bottom-[-50px] z-50 px-2 pb-[50px] text-white">
+        <DrawerContent className="bottom-[-50px] z-50 !select-text px-2 pb-[50px] text-white">
           <DrawerHeader>
             <DrawerTitle className="font-monument text-2xl">WHO AM I ?</DrawerTitle>
             <DrawerDescription className="py-5 font-geistmono">
