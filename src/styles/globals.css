@@ -11,3 +11,13 @@
   height: 100svh; /* Small viewport height */
   height: 100dvh; /* Dynamic viewport height for modern browsers */
 }
+
+::-moz-selection {
+  color: black;
+  background: white;
+}
+
+::selection {
+  color: black;
+  background: white;
+}
