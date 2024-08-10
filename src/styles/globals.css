@@ -5,3 +5,9 @@
 .bg {
   background-color: #0e0000;
 }
+
+.scene {
+  /* DVH necessary for Safari mobile to avoid multiple scrollbars */
+  height: 100dvh;
+  height: 100vh;
+}

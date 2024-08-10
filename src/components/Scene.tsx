@@ -20,7 +20,7 @@ const Scene = () => {
   );
 
   return (
-    <div className="relative h-screen w-screen overflow-hidden">
+    <div className="scene relative w-screen overflow-hidden">
       <Canvas ref={canvasRef} camera={{ position: [0, 0, 35] }} className="h-screen w-screen">
         {/* <OrbitControls /> */}
         <Lighting />
