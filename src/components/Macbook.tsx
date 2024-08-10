@@ -48,7 +48,7 @@ const Macbook: React.FC<MacbookProps> = (props) => {
 
       return () => clearInterval(intervalId);
     },
-    [data, data.length, isShowAbout]
+    [data, data.length, initialVideoSource, isShowAbout]
   );
 
   useFrame(() => {
