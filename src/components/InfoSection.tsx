@@ -48,7 +48,6 @@ const InfoSectionContent: React.FC<InfoSectionProps> = (props) => {
 
       <Drawer
         onOpenChange={(isOpen) => {
-          console.log("here");
           setIsDrawerOpen(isOpen);
           isShowAboutCallback(isOpen);
         }}
