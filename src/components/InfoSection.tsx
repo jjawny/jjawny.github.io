@@ -20,7 +20,7 @@ interface InfoSectionProps {
 const InfoSection: React.FC<InfoSectionProps> = (props) => {
   return (
     <div className="grid h-[80vh] w-screen items-end justify-center">
-      <div className="flex w-[50vw] min-w-[fit-content] flex-col items-center justify-center justify-items-center space-y-1">
+      <div className="flex w-[50vw] min-w-[fit-content] flex-col items-center justify-center justify-items-center space-y-1 justify-self-center">
         <InfoSectionContent isShowAboutCallback={props.isShowAboutCallback} />
       </div>
     </div>
