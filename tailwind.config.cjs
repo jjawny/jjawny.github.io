@@ -10,6 +10,9 @@ const config = {
       fontFamily: {
         geistmono: ["GeistMono", ...defaultTheme.fontFamily.mono],
         monument: ["MonumentExtended", "GeistMono", ...defaultTheme.fontFamily.mono],
+        ps1: ["ps1", "GeistMono", ...defaultTheme.fontFamily.mono],
+        ps2: ["ps2", "GeistMono", ...defaultTheme.fontFamily.mono],
+        ps3: ["ps3", "GeistMono", ...defaultTheme.fontFamily.mono],
       },
       animation: {
         fadeIn: "fadeIn 0.25s ease-in forwards",
@@ -43,7 +46,19 @@ const config = {
           },
           {
             fontFamily: "MonumentExtended",
-            src: `url('/fonts/MonumentExtended.otf') format('opentype')`
+            src: `url('/fonts/MonumentExtended.otf') format('opentype')`,
+          },
+          {
+            fontFamily: "ps1",
+            src: `url('/fonts/ps1.ttf') format('truetype')`,
+          },
+          {
+            fontFamily: "ps2",
+            src: `url('/fonts/ps2.ttf') format('truetype')`,
+          },
+          {
+            fontFamily: "ps3",
+            src: `url('/fonts/ps3.ttf') format('truetype')`,
           },
         ],
       });
