@@ -12,7 +12,7 @@ const HeroSection = () => {
       <main className="grid h-screen w-screen items-center justify-center">
         <div
           ref={heroSectionRef}
-          className={`flex flex-col items-center justify-center justify-items-center
+          className={`flex h-[10vh] flex-col items-center justify-center justify-items-center
             ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
           `}
         >
