@@ -41,14 +41,14 @@ const InfoSectionContent: React.FC<InfoSectionProps> = (props) => {
       ref={infoSectionContentRef}
       className={`flex w-full select-text flex-col whitespace-nowrap pb-[10vh] text-center font-monument tracking-tight text-white
         ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
-        ${isDrawerOpen ? "pointer-events-none !opacity-25" : ""}
+        ${isDrawerOpen ? "pointer-events-none !opacity-25 blur" : ""}
       `}
+      style={{ transition: "filter 0.5s ease" }}
     >
       <p className="self-start text-[3.5vw] sm:text-[3vw]">Hey! I&rsquo;m…</p>
 
       <Drawer
         onOpenChange={(isOpen) => {
-          console.log("here");
           setIsDrawerOpen(isOpen);
           isShowAboutCallback(isOpen);
         }}
