@@ -1,17 +1,17 @@
-import { useRef, useState } from "react";
-import { useIsInView } from "~/hooks/useIsInView";
-import Socials from "~/components/Socials";
 import Image from "next/image";
 import Link from "next/link";
+import { useRef, useState } from "react";
+import Socials from "~/components/Socials";
 import {
   Drawer,
-  DrawerTitle,
-  DrawerHeader,
-  DrawerFooter,
-  DrawerTrigger,
   DrawerContent,
   DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
 } from "~/components/ui/Drawer";
+import { useIsInView } from "~/hooks/useIsInView";
 
 interface InfoSectionProps {
   isShowAboutCallback: (isShowAbout: boolean) => void;
@@ -79,12 +79,15 @@ const InfoSectionContent: React.FC<InfoSectionProps> = (props) => {
           <DrawerHeader>
             <DrawerTitle className="font-monument text-2xl">WHO AM I ?</DrawerTitle>
             <DrawerDescription className="py-5 font-geistmono">
-              I&apos;m a {BoldText("Full Stack Software Developer")} currently working for Queensland Government on a
-              portfolio of enterprise apps.
-              <br />
-              <br />
-              As someone who {BoldText("thrives")} on mastering their stack, finding solutions to complex problems, and
-              sharing knowledge, I believe I can bring {BoldText("value")} to any team.
+              <ul className="space-y-3">
+                <li>I&apos;m a Full Stack Software Developer</li>
+                <li>I love the web, UX, DX, and getting $h1t done</li>
+                <li>I&apos;m currently working for my state government on a portfolio of enterprise apps</li>
+                <li>
+                  As someone who {BoldText("thrives")} on mastering their stack, building long-term solutions, and
+                  sharing knowledge, I believe I can bring {BoldText("value")} to any team
+                </li>
+              </ul>
             </DrawerDescription>
           </DrawerHeader>
           <DrawerFooter></DrawerFooter>
