@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import React, { useState } from "react";
 import Socials from "~/components/Socials";
 import {
   Drawer,
@@ -11,7 +11,6 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "~/components/ui/Drawer";
-import { useIsInView } from "~/hooks/useIsInView";
 
 interface InfoSectionProps {
   isShowAboutCallback: (isShowAbout: boolean) => void;
@@ -31,82 +30,99 @@ const InfoSection: React.FC<InfoSectionProps> = (props) => {
 // SOLUTION: Extract content (that relies on the hook) another level deeper into the tree...
 const InfoSectionContent: React.FC<InfoSectionProps> = (props) => {
   const { isShowAboutCallback } = props;
-  const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
-  const infoSectionContentRef = useRef<HTMLHeadingElement>(null);
-  const isInView = useIsInView(infoSectionContentRef);
-  const BoldText = (text: string) => <span className="font-extrabold">{text}</span>;
+  const [isBlurry, setIsBlurry] = useState<boolean>(false);
 
   return (
     <div
-      ref={infoSectionContentRef}
-      className={`z-50 flex w-full select-text flex-col whitespace-nowrap pb-[10vh] text-center font-monument tracking-tight text-white
-        ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
-        ${isDrawerOpen ? "pointer-events-none !opacity-25 blur" : ""}
+      className={`
+        transition-filter z-50 flex w-full select-text flex-col whitespace-nowrap text-center font-monument tracking-tight text-white duration-300 ease-in-out 
+        ${isBlurry && "pointer-events-none !opacity-25 blur"}
       `}
-      style={{ transition: "filter 0.5s ease" }}
     >
-      <p className="self-start text-[3.5vw] sm:text-[3vw]">Hey! I&rsquo;m…</p>
-
-      <Drawer
-        onOpenChange={(isOpen) => {
-          setIsDrawerOpen(isOpen);
-          isShowAboutCallback(isOpen);
-        }}
-      >
-        <DrawerTrigger
-          className={`text-white transition-all duration-100 ease-in-out 
-            ${isInView ? "animate-fadeIn" : "animate-fadeOut"}  
-          `}
-        >
-          <h2 className="relative self-end px-[2vw] text-[5.5vw] font-extrabold duration-150 hover:scale-105 sm:text-[4.75vw]">
-            Johnny Madigan
-            <div
-              className="duration-200 hover:scale-125"
-              style={{ width: "5vw", height: "5vw", position: "absolute", right: 0, bottom: 0 }}
-            >
-              {/* TODO: revise dynamic size (see current NextJS recommendation), then apply to social icons */}
-              <Image
-                src={"/images/click.gif"}
-                alt="Click to learn more about me!"
-                fill
-                sizes="5vw"
-                style={{ rotate: "-30deg", objectFit: "cover", height: "" }}
-              />
-            </div>
-          </h2>
-        </DrawerTrigger>
-        <DrawerContent className="bottom-[-50px] z-50 !select-text px-2 pb-[50px] text-white">
-          <DrawerHeader>
-            <DrawerTitle className="font-monument text-2xl">WHO AM I ?</DrawerTitle>
-            <DrawerDescription className="py-5 font-default">
-              <span className="block space-y-3">
-                <span className="block">
-                  I&apos;m a <strong>Full Stack Software Developer</strong>.
-                </span>
-                <span className="block">I love the web, UX, DX, and getting $h1t done.</span>
-                <span className="block">
-                  I&apos;m currently working for my state government on a portfolio of enterprise apps.
-                </span>
-                <span className="block">
-                  As someone who <strong>thrives</strong> on mastering their stack, building <strong>long-term</strong>{" "}
-                  solutions, and <strong>sharing</strong> knowledge, I believe I can bring <strong>value</strong> to any{" "}
-                  team.
-                </span>
-              </span>
-            </DrawerDescription>
-          </DrawerHeader>
-          <DrawerFooter></DrawerFooter>
-        </DrawerContent>
-      </Drawer>
-      <p className="text-[3vw] sm:text-[2.5vw]">Full Stack Software Developer</p>
-      <p className="self-end pr-4 text-[1.75vw] sm:text-[1.75vw]">
-        <Link target="_blank" href="https://skfb.ly/MWtY">
-          <i className="underline">MacBook</i>
-        </Link>{" "}
-        by chrisgreig <span className="text-[1.25vw] sm:text-[1vw]">(CC BY)</span>
-      </p>
+      <Hello />
+      <Name toggleIsBlurry={setIsBlurry} />
+      <Title />
+      <Attribution />
       <Socials />
     </div>
+  );
+};
+
+const Hello: React.FC = () => {
+  return <p className="hello self-start">Hey! I&rsquo;m…</p>;
+};
+
+type NameProps = {
+  toggleIsBlurry: (isBlurry: boolean) => void;
+};
+
+const Name: React.FC<NameProps> = (props) => {
+  const { toggleIsBlurry } = props;
+  // macbook video mesh ctx goes here
+  const handleDrawerOpenSideEffects = (isOpen: boolean) => {
+    toggleIsBlurry(isOpen);
+  };
+
+  return (
+    <Drawer onOpenChange={handleDrawerOpenSideEffects}>
+      <DrawerTrigger>
+        <h2 className="name relative px-[2vw] font-extrabold duration-150 hover:scale-105">
+          Johnny Madigan
+          <div
+            className="duration-200 hover:scale-125"
+            style={{ width: "5vw", height: "5vw", position: "absolute", right: 0, bottom: 0 }}
+          >
+            {/* TODO: revise dynamic size (see current NextJS recommendation), then apply to social icons */}
+            <Image
+              src={"/images/click.gif"}
+              alt="Click to learn more about me!"
+              fill
+              sizes="5vw"
+              className="select-none"
+              style={{ rotate: "-30deg", objectFit: "cover", height: "" }}
+            />
+          </div>
+        </h2>
+      </DrawerTrigger>
+      <DrawerContent className="bottom-[-50px] z-50 !select-text px-2 pb-[50px] text-white">
+        <DrawerHeader>
+          <DrawerTitle className="font-monument text-2xl">WHO AM I ?</DrawerTitle>
+          <DrawerDescription className="py-5 font-default">
+            <span className="block space-y-3">
+              <span className="block">
+                I&apos;m a <strong>Full Stack Software Developer</strong>.
+              </span>
+              <span className="block">I love the web, UX, DX, and getting $h1t done.</span>
+              <span className="block">
+                I&apos;m currently working for my state government on a portfolio of enterprise apps.
+              </span>
+              <span className="block">
+                As someone who <strong>thrives</strong> on mastering their stack, building <strong>long-term</strong>{" "}
+                solutions, and <strong>sharing</strong> knowledge, I believe I can bring <strong>value</strong> to any{" "}
+                team.
+              </span>
+            </span>
+          </DrawerDescription>
+        </DrawerHeader>
+        <DrawerFooter></DrawerFooter>
+      </DrawerContent>
+    </Drawer>
+  );
+};
+
+const Title: React.FC = () => {
+  return <p className="title">Full Stack Software Developer</p>;
+};
+
+const Attribution: React.FC = () => {
+  return (
+    <p className="attribution self-end pr-16">
+      <Link target="_blank" href="https://skfb.ly/MWtY">
+        <i className="underline">MacBook</i>
+      </Link>{" "}
+      {/* CC Attribution (CC BY 4.0) */}
+      by chrisgreig
+    </p>
   );
 };
 
