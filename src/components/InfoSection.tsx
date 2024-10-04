@@ -78,16 +78,21 @@ const InfoSectionContent: React.FC<InfoSectionProps> = (props) => {
         <DrawerContent className="bottom-[-50px] z-50 !select-text px-2 pb-[50px] text-white">
           <DrawerHeader>
             <DrawerTitle className="font-monument text-2xl">WHO AM I ?</DrawerTitle>
-            <DrawerDescription className="py-5 font-geistmono">
-              <ul className="space-y-3">
-                <li>I&apos;m a Full Stack Software Developer</li>
-                <li>I love the web, UX, DX, and getting $h1t done</li>
-                <li>I&apos;m currently working for my state government on a portfolio of enterprise apps</li>
-                <li>
-                  As someone who {BoldText("thrives")} on mastering their stack, building long-term solutions, and
-                  sharing knowledge, I believe I can bring {BoldText("value")} to any team
-                </li>
-              </ul>
+            <DrawerDescription className="py-5 font-default">
+              <span className="block space-y-3">
+                <span className="block">
+                  I&apos;m a <strong>Full Stack Software Developer</strong>.
+                </span>
+                <span className="block">I love the web, UX, DX, and getting $h1t done.</span>
+                <span className="block">
+                  I&apos;m currently working for my state government on a portfolio of enterprise apps.
+                </span>
+                <span className="block">
+                  As someone who <strong>thrives</strong> on mastering their stack, building <strong>long-term</strong>{" "}
+                  solutions, and <strong>sharing</strong> knowledge, I believe I can bring <strong>value</strong> to any{" "}
+                  team.
+                </span>
+              </span>
             </DrawerDescription>
           </DrawerHeader>
           <DrawerFooter></DrawerFooter>
