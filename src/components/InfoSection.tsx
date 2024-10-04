@@ -39,7 +39,7 @@ const InfoSectionContent: React.FC<InfoSectionProps> = (props) => {
   return (
     <div
       ref={infoSectionContentRef}
-      className={`flex w-full select-text flex-col whitespace-nowrap pb-[10vh] text-center font-monument tracking-tight text-white
+      className={`z-50 flex w-full select-text flex-col whitespace-nowrap pb-[10vh] text-center font-monument tracking-tight text-white
         ${isInView ? "animate-fadeIn" : "animate-fadeOut"}
         ${isDrawerOpen ? "pointer-events-none !opacity-25 blur" : ""}
       `}
