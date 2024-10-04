@@ -35,7 +35,50 @@ html {
   filter: blur(5px);
 }
 
-/* Bundle CSS related to this feature */
+/* Bundle CSS related to dynamic font size feature in info card */
+:root {
+  --font-size-name: 6vw;
+  --font-size-hello: calc(var(--font-size-name) * 0.33);
+  --font-size-title: calc(var(--font-size-name) * 0.5);
+  --font-size-attribution: calc(var(--font-size-name) * 0.2);
+  --font-scale-for-medium: 0.6;
+}
+
+.hello {
+  font-size: var(--font-size-hello);
+}
+
+.name {
+  font-size: var(--font-size-name);
+}
+
+.title {
+  font-size: var(--font-size-title);
+}
+
+.attribution {
+  font-size: var(--font-size-attribution);
+}
+
+@media (min-width: 768px) {
+  .hello {
+    font-size: calc(var(--font-size-hello) * var(--font-scale-for-medium));
+  }
+
+  .name {
+    font-size: calc(var(--font-size-name) * var(--font-scale-for-medium));
+  }
+
+  .title {
+    font-size: calc(var(--font-size-title) * var(--font-scale-for-medium));
+  }
+
+  .attribution {
+    font-size: calc(var(--font-size-attribution) * var(--font-scale-for-medium));
+  }
+}
+
+/* Bundle CSS related to sticky info card (within r3f) feature */
 /* 1. override r3f <Html> */
 .feature-for-sticky-content-inside-r3f-html-overrides {
   position: fixed !important;
