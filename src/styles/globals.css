@@ -2,14 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  /* 1 rem */
+  font-size: 16px;
+}
+
 .bg {
   background-color: #0e0000;
 }
 
 .scene {
-  height: 100vh; /* Standard fallback */
-  height: 100svh; /* Small viewport height */
-  height: 100dvh; /* Dynamic viewport height for modern browsers */
+  height: 100vh;
+  height: 100svh;
+  height: 100dvh;
 }
 
 ::-moz-selection {
