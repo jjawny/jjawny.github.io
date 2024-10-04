@@ -11,7 +11,7 @@ html {
   background-color: #0e0000;
 }
 
-.scene {
+.r3f-scene {
   height: 100vh;
   height: 100svh;
   height: 100dvh;
@@ -33,4 +33,23 @@ html {
   -o-filter: blur(5px);
   -ms-filter: blur(5px);
   filter: blur(5px);
+}
+
+/* Bundle CSS related to this feature */
+/* 1. override r3f <Html> */
+.feature-for-sticky-content-inside-r3f-html-overrides {
+  position: fixed !important;
+}
+
+/* 2. tall container to allow scroll */
+.feature-for-sticky-content-inside-r3f-container {
+  position: relative;
+  height: 200vh;
+}
+
+/* 3. content */
+.feature-for-sticky-content-inside-r3f-content {
+  position: sticky;
+  height: fit-content;
+  top: 0px;
 }
