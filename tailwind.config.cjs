@@ -8,11 +8,17 @@ const config = {
   theme: {
     extend: {
       fontFamily: {
-        geistmono: ["GeistMono", ...defaultTheme.fontFamily.mono],
-        monument: ["MonumentExtended", "GeistMono", ...defaultTheme.fontFamily.mono],
-        ps1: ["ps1", "GeistMono", ...defaultTheme.fontFamily.mono],
-        ps2: ["ps2", "GeistMono", ...defaultTheme.fontFamily.mono],
-        ps3: ["ps3", "GeistMono", ...defaultTheme.fontFamily.mono],
+        monument: ["MonumentExtended", "GeistMono", ...defaultTheme.fontFamily.sans],
+        default: [
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+          "Apple Color Emoji",
+          "Segoe UI Emoji",
+          "Segoe UI Symbol",
+          "Noto Color Emoji",
+          ...defaultTheme.fontFamily.sans,
+        ],
       },
       animation: {
         fadeIn: "fadeIn 0.25s ease-in forwards",
@@ -41,24 +47,8 @@ const config = {
       addBase({
         "@font-face": [
           {
-            fontFamily: "GeistMono",
-            src: `url('/fonts/GeistMono.woff2') format('woff2')`,
-          },
-          {
             fontFamily: "MonumentExtended",
             src: `url('/fonts/MonumentExtended.otf') format('opentype')`,
-          },
-          {
-            fontFamily: "ps1",
-            src: `url('/fonts/ps1.ttf') format('truetype')`,
-          },
-          {
-            fontFamily: "ps2",
-            src: `url('/fonts/ps2.ttf') format('truetype')`,
-          },
-          {
-            fontFamily: "ps3",
-            src: `url('/fonts/ps3.ttf') format('truetype')`,
           },
         ],
       });
