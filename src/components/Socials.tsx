@@ -3,27 +3,33 @@ import Link from "next/link";
 
 const Socials = () => {
   return (
-    <div className="flex w-full select-none flex-row justify-end space-x-4 py-3 invert filter">
+    <div className="flex w-[85%] select-none flex-row items-center justify-end space-x-4 py-3">
       <Link href={"https://github.com/johnnymadigan"}>
         <Image
-          src={"/images/github.png"}
-          alt="github"
+          src={"/images/github.svg"}
+          alt="view my github"
           height={24}
           width={24}
-          className="duration-200 hover:scale-125"
+          className="invert filter duration-200 hover:scale-105"
         />
       </Link>
-      <Link href={"https://www.linkedin.com/in/johnnymadigan"}>
+      <Link href={"https://www.linkedin.com/in/jjjony"}>
         <Image
-          src={"/images/linkedin.png"}
-          alt="linkedin"
+          src={"/images/linkedin.svg"}
+          alt="message me on linkedin"
           height={24}
           width={24}
-          className="duration-200 hover:scale-125"
+          className="invert filter duration-200 hover:scale-105"
         />
       </Link>
-      <Link href={"mailto:johnny.madigan@icloud.com"}>
-        <Image src={"/images/email.png"} alt="email" height={24} width={24} className="duration-200 hover:scale-125" />
+      <Link href={"https://x.com/jjjjjjjony"}>
+        <Image
+          src={"/images/twitter.svg"}
+          alt="message me on x (twitter)"
+          height={18}
+          width={18}
+          className="duration-200 hover:scale-105"
+        />
       </Link>
     </div>
   );
