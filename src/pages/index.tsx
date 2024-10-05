@@ -31,7 +31,7 @@ const Home: NextPage = () => {
         {/* x (twitter) */}
         <meta name="twitter:title" content="johnnymadigan" />
         <meta name="twitter:description" content="Who is Johnny Madigan?" />
-        <meta name="twitter:image" content="/favicon.ico" />
+        <meta name="twitter:image" content="https://johnnymadigan.github.io/favicon.ico" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:creator" content="@jjjjjjjony" />
         <meta name="twitter:site" content="@jjjjjjjony" />
