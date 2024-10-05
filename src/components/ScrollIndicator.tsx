@@ -7,7 +7,10 @@ const ScrollIndicator = () => {
   const isHide = !sceneState.isShowScrollIndicator;
   const { isDone: isMockDelayDone } = useMockDelay();
 
-  if (!isMockDelayDone || (isMockDelayDone && isHide)) return <></>;
+  if (!isMockDelayDone || (isMockDelayDone && isHide)) {
+    // See size of blur behind in globals.css
+    return <div className="h-[1px] w-[1px]"></div>;
+  }
 
   return (
     <div
