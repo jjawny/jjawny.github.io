@@ -10,10 +10,12 @@ Notes:
 */
 type SceneAtomType = {
   isShowPersonalScreen: boolean;
+  isShowScrollIndicator: boolean;
 };
 
 const initialValues: SceneAtomType = {
   isShowPersonalScreen: false,
+  isShowScrollIndicator: true,
 };
 
 const sceneAtom = atom<SceneAtomType>(initialValues);
@@ -24,7 +26,10 @@ const useSceneContext = () => {
   const toggleIsShowPersonalScreen = (isShow: boolean) => {
     setSceneState((curr) => ({ ...curr, isShowPersonalScreen: isShow }));
   };
-  return { sceneState, toggleIsShowPersonalScreen };
+  const toggleIsShowScrollIndicator = (isShow: boolean) => {
+    setSceneState((curr) => ({ ...curr, isShowScrollIndicator: isShow }));
+  };
+  return { sceneState, toggleIsShowPersonalScreen, toggleIsShowScrollIndicator };
 };
 
 export { useSceneContext };

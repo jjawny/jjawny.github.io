@@ -4,13 +4,19 @@ import React, { useEffect, useRef, useState } from "react";
 import { Group } from "three";
 import MacbookKeyboard from "~/components/Macbook.Keyboard";
 import MacbookScreen from "~/components/Macbook.Screen";
-import { DEFAULT_VIDEO_SOURCE, MACBOOK_Z_MAX, MACBOOK_Z_TRAVEL_RATE, PROJECTS_SOURCE } from "~/constants/defaults";
+import {
+  DEFAULT_VIDEO_SOURCE,
+  MACBOOK_Z_MAX,
+  MACBOOK_Z_TRAVEL_RATE,
+  PROJECTS_SOURCE,
+  SCROLL_INDICATOR_THRESHOLD,
+} from "~/constants/defaults";
 import useMouseCoords from "~/hooks/useMouseCoords";
 import { useSceneContext } from "~/stores/sceneAtom";
 import { ProjectType } from "~/types/project.type";
 
 const Macbook: React.FC = () => {
-  const { sceneState } = useSceneContext();
+  const { sceneState, toggleIsShowScrollIndicator } = useSceneContext();
   const initialVideoSource = `/videos/${DEFAULT_VIDEO_SOURCE}`;
   const [videoSource, setVideoSource] = useState<string>(initialVideoSource);
   const [data, setData] = useState<ProjectType[]>([]);
@@ -19,6 +25,7 @@ const Macbook: React.FC = () => {
   const mouseCoords = useMouseCoords();
   const scroll = useScroll();
 
+  // TODO: extract to custom hook
   useEffect(function loadData() {
     fetch(PROJECTS_SOURCE)
       .then((res) => res.json())
@@ -56,6 +63,10 @@ const Macbook: React.FC = () => {
       groupRef.current.rotation.y += 0.04 * (targetRotationY - groupRef.current.rotation.y);
 
       // Animate zoom on scroll
+      console.log("here");
+      if (sceneState.isShowScrollIndicator && scroll.offset > SCROLL_INDICATOR_THRESHOLD) {
+        toggleIsShowScrollIndicator(false);
+      }
       const newZ = scroll.offset * MACBOOK_Z_TRAVEL_RATE;
       groupRef.current.position.z = newZ > MACBOOK_Z_MAX ? MACBOOK_Z_MAX : scroll.offset * MACBOOK_Z_TRAVEL_RATE;
     }

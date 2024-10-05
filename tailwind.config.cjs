@@ -20,11 +20,11 @@ const config = {
           ...defaultTheme.fontFamily.sans,
         ],
       },
-      // animation: {
-      //   fadeIn: "fadeIn var(--duration, 0.25s) ease-in forwards",
-      //   fadeOut: "fadeOut var(--duration, 0.25s) ease-in forwards",
-      //   zoomIn: "zoomIn var(--duration, 0.25s) ease-in forwards",
-      // },
+      animation: {
+        fadeIn: "fadeIn var(--duration, 0.25s) ease-in forwards",
+        fadeOut: "fadeOut var(--duration, 0.25s) ease-in forwards",
+        zoomIn: "zoomIn var(--duration, 0.25s) ease-in forwards",
+      },
       keyframes: {
         fadeIn: {
           "0%": { opacity: 0 },

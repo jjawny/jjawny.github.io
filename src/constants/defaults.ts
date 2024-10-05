@@ -1,5 +1,6 @@
 export const DEFAULT_VIDEO_SOURCE = "me.mp4";
 export const PROJECTS_SOURCE = "/data/projects.json";
+export const SCROLL_INDICATOR_THRESHOLD = 0.1;
 
 // MODEL MOVEMENT
 export const DOTS_CIRCLE_SPEED = 0.06;
