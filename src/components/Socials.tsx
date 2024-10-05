@@ -4,7 +4,7 @@ import Link from "next/link";
 const Socials = () => {
   return (
     <div className="flex select-none flex-row items-center justify-center space-x-4 py-3">
-      <Link href={"https://github.com/johnnymadigan"}>
+      <Link href={"https://github.com/jjawny"}>
         <Image
           src={"/images/github.svg"}
           alt="view johnny madigan's github"
