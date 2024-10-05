@@ -58,7 +58,7 @@ const Name: React.FC<NameProps> = (props) => {
   return (
     <Drawer onOpenChange={handleDrawerOpenSideEffects}>
       <DrawerTrigger>
-        <h2 className="name relative px-[2vw] font-extrabold duration-150 hover:scale-105">
+        <h1 className="name relative px-[2vw] font-extrabold duration-150 hover:scale-105">
           Johnny Madigan
           <div
             className="duration-200 hover:scale-125"
@@ -67,14 +67,14 @@ const Name: React.FC<NameProps> = (props) => {
             {/* TODO: revise dynamic size (see current NextJS recommendation), then apply to social icons */}
             <Image
               src={"/images/click.gif"}
-              alt="Click to learn more about me!"
+              alt="click to learn more about my career as a full stack software/web engineer/developer"
               fill
               sizes="5vw"
               className="select-none"
               style={{ rotate: "-30deg", objectFit: "cover", height: "" }}
             />
           </div>
-        </h2>
+        </h1>
       </DrawerTrigger>
       <DrawerContent className="bottom-[-50px] z-50 !select-text px-2 pb-[50px] text-white">
         <DrawerHeader>
@@ -103,7 +103,7 @@ const Name: React.FC<NameProps> = (props) => {
 };
 
 const Title: React.FC = () => {
-  return <p className="title">Full Stack Software Developer</p>;
+  return <h2 className="title">Full Stack Software Developer</h2>;
 };
 
 const Attribution: React.FC = () => {
