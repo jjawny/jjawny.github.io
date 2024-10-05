@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Socials = () => {
   return (
-    <div className="flex w-[85%] select-none flex-row items-center justify-end space-x-4 py-3">
+    <div className="flex select-none flex-row items-center justify-center space-x-4 py-3">
       <Link href={"https://github.com/johnnymadigan"}>
         <Image
           src={"/images/github.svg"}

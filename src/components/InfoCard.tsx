@@ -30,8 +30,12 @@ const InfoCard: React.FC = () => {
             <Name toggleIsBlurry={setIsBlurry} />
             <Title />
           </main>
-          <Attribution />
-          <Socials />
+          <div className="flex w-[85%] justify-end pl-[15%]">
+            <div className="flex flex-col">
+              <Attribution />
+              <Socials />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -64,14 +68,12 @@ const Name: React.FC<NameProps> = (props) => {
             className="duration-200 hover:scale-125"
             style={{ width: "5vw", height: "5vw", position: "absolute", right: 0, bottom: 0 }}
           >
-            {/* TODO: revise dynamic size (see current NextJS recommendation), then apply to social icons */}
             <Image
               src={"/images/click.gif"}
               alt="click to learn more about my career as a full stack software/web engineer/developer"
               fill
               sizes="5vw"
-              className="select-none"
-              style={{ rotate: "-30deg", objectFit: "cover", height: "" }}
+              style={{ rotate: "-30deg", objectFit: "cover", userSelect: "none" }}
             />
           </div>
         </h1>
@@ -108,7 +110,7 @@ const Title: React.FC = () => {
 
 const Attribution: React.FC = () => {
   return (
-    <p className="attribution self-end pr-16">
+    <p className="attribution">
       <Link target="_blank" href="https://skfb.ly/MWtY">
         <i className="underline">MacBook</i>
       </Link>{" "}
