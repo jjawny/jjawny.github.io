@@ -1,7 +1,7 @@
-import Footer from "~/components/Footer";
-import Scene from "~/components/Scene";
 import { type NextPage } from "next";
 import Head from "next/head";
+import Footer from "~/components/Footer";
+import Scene from "~/components/Scene";
 
 const Home: NextPage = () => {
   return (
