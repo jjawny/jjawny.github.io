@@ -37,7 +37,7 @@ html {
   background-color: rgb(0, 0, 0); /* for the 1x1 in the center */
   align-self: center;
   border-radius: 50%;
-  box-shadow: 10px -10px 50px 60px rgb(0, 0, 0);
+  box-shadow: 10px -25px 50px 60px rgb(0, 0, 0);
 }
 
 .blur {
