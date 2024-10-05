@@ -30,7 +30,7 @@ const InfoCard: React.FC = () => {
             <Name toggleIsBlurry={setIsBlurry} />
             <Title />
           </main>
-          <div className="flex w-[85%] justify-end pl-[15%]">
+          <div className="flex w-[85%] animate-[fadeIn_800ms_ease-in_forwards] justify-end pl-[15%]">
             <div className="flex flex-col">
               <Attribution />
               <Socials />
@@ -43,7 +43,7 @@ const InfoCard: React.FC = () => {
 };
 
 const Hello: React.FC = () => {
-  return <p className="hello self-start">Hey! I&rsquo;m…</p>;
+  return <p className="hello animate-[fadeIn_200ms_ease-in_forwards] self-start">Hey! I&rsquo;m…</p>;
 };
 
 type NameProps = {
@@ -62,7 +62,7 @@ const Name: React.FC<NameProps> = (props) => {
   return (
     <Drawer onOpenChange={handleDrawerOpenSideEffects}>
       <DrawerTrigger>
-        <h1 className="name relative px-[2vw] font-extrabold duration-150 hover:scale-105">
+        <h1 className="name relative animate-[fadeIn_400ms_ease-in_forwards] px-[2vw] font-extrabold duration-150 hover:scale-105">
           Johnny Madigan
           <div
             className="duration-200 hover:scale-125"
@@ -105,7 +105,7 @@ const Name: React.FC<NameProps> = (props) => {
 };
 
 const Title: React.FC = () => {
-  return <h2 className="title">Full Stack Software Developer</h2>;
+  return <h2 className="title animate-[fadeIn_600ms_ease-in_forwards]">Full Stack Software Developer</h2>;
 };
 
 const Attribution: React.FC = () => {
