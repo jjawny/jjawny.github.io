@@ -42,6 +42,7 @@ const InfoCardName: React.FC<NameProps> = (props) => {
   };
 
   const AboutMeFragment = () => {
+    // TODO: add stack icons to first line trailing (fade away?)
     return (
       <span className="block space-y-3">
         <span className="block">
