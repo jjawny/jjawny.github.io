@@ -20,7 +20,7 @@ const Scene = () => {
     <div className="r3f-scene">
       <Canvas
         camera={{ position: [0, 0, 35] }}
-        resize={{ scroll: true, debounce: { scroll: 50, resize: 100 } }}
+        resize={{ scroll: true, debounce: { scroll: 50, resize: 50 } }}
         className="h-screen w-screen"
       >
         {isAllowOrbitControls && <OrbitControls />}
