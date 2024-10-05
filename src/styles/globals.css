@@ -15,6 +15,10 @@ html {
   height: 100vh;
   height: 100svh;
   height: 100dvh;
+
+  width: 100vw;
+  width: 100svw;
+  width: 100dvw;
 }
 
 ::-moz-selection {
