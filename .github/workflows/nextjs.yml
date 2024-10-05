@@ -29,6 +29,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Set environment variable
+        run: |
+          echo "NEXT_PUBLIC_BUILD_NUMBER=${{ github.run_number }}" >> $GITHUB_ENV
+          echo "NEXT_PUBLIC_NODE_ENV=production" >> $GITHUB_ENV
       - name: Checkout
         uses: actions/checkout@v3
       - name: Detect package manager
