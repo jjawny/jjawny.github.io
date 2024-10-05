@@ -23,11 +23,13 @@ const InfoCard: React.FC = () => {
           className={`
             transition-filter z-50 flex w-full select-text flex-col whitespace-nowrap text-center font-monument tracking-tight text-white duration-300 ease-in-out 
             ${isBlurry && "pointer-events-none !opacity-25 blur"}
-          `}
+            `}
         >
           <Hello />
-          <Name toggleIsBlurry={setIsBlurry} />
-          <Title />
+          <main>
+            <Name toggleIsBlurry={setIsBlurry} />
+            <Title />
+          </main>
           <Attribution />
           <Socials />
         </div>
