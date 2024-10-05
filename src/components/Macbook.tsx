@@ -1,20 +1,16 @@
+import { useScroll } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
 import React, { useEffect, useRef, useState } from "react";
-import { MACBOOK_Z_TRAVEL_RATE, MACBOOK_Z_MAX, PROJECTS_SOURCE, DEFAULT_VIDEO_SOURCE } from "~/constants/defaults";
+import { Group } from "three";
 import MacbookKeyboard from "~/components/Macbook.Keyboard";
 import MacbookScreen from "~/components/Macbook.Screen";
+import { DEFAULT_VIDEO_SOURCE, MACBOOK_Z_MAX, MACBOOK_Z_TRAVEL_RATE, PROJECTS_SOURCE } from "~/constants/defaults";
 import useMouseCoords from "~/hooks/useMouseCoords";
+import { useSceneContext } from "~/stores/sceneAtom";
 import { ProjectType } from "~/types/project.type";
-import { useFrame } from "@react-three/fiber";
-import { useScroll } from "@react-three/drei";
-import _debounce from "lodash/debounce";
-import { Group } from "three";
 
-interface MacbookProps {
-  isShowAbout?: boolean;
-}
-
-const Macbook: React.FC<MacbookProps> = (props) => {
-  const { isShowAbout = false } = props;
+const Macbook: React.FC = () => {
+  const { sceneState } = useSceneContext();
   const initialVideoSource = `/videos/${DEFAULT_VIDEO_SOURCE}`;
   const [videoSource, setVideoSource] = useState<string>(initialVideoSource);
   const [data, setData] = useState<ProjectType[]>([]);
@@ -31,7 +27,7 @@ const Macbook: React.FC<MacbookProps> = (props) => {
 
   useEffect(
     function changeVideoSource() {
-      if (isShowAbout) {
+      if (sceneState.isShowPersonalScreen) {
         setVideoSource(initialVideoSource);
         return;
       }
@@ -48,7 +44,7 @@ const Macbook: React.FC<MacbookProps> = (props) => {
 
       return () => clearInterval(intervalId);
     },
-    [data, data.length, initialVideoSource, isShowAbout]
+    [data, data.length, initialVideoSource, sceneState.isShowPersonalScreen]
   );
 
   useFrame(() => {
