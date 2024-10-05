@@ -44,7 +44,7 @@ const InfoCardName: React.FC<NameProps> = (props) => {
   const AboutMeFragment = () => {
     // TODO: add stack icons to first line trailing (fade away?)
     return (
-      <span className="block space-y-3">
+      <span className="block space-y-3 py-6 font-default text-base">
         <span className="block">
           I&apos;m a <strong>Full Stack Software Developer</strong>.
         </span>
@@ -72,7 +72,7 @@ const InfoCardName: React.FC<NameProps> = (props) => {
         <DrawerContent className="bottom-[-50px] z-50 !select-text px-2 pb-[50px] text-white">
           <DrawerHeader>
             <DrawerTitle className="font-monument text-2xl">WHO AM I ?</DrawerTitle>
-            <DrawerDescription className="py-5 font-default">
+            <DrawerDescription>
               <AboutMeFragment />
             </DrawerDescription>
           </DrawerHeader>

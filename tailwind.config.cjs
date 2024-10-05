@@ -8,7 +8,7 @@ const config = {
   theme: {
     extend: {
       fontFamily: {
-        monument: ["MonumentExtended", "GeistMono", ...defaultTheme.fontFamily.sans],
+        monument: ["MonumentExtended", "Arial Black", "Impact", ...defaultTheme.fontFamily.sans],
         default: [
           "ui-sans-serif",
           "system-ui",
