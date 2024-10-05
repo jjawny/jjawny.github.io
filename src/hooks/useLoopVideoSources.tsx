@@ -36,7 +36,7 @@ const useLoopVideoSources = () => {
 
       return () => clearInterval(intervalId);
     },
-    [data, data.length, initialVideoSource, sceneState.isShowPersonalScreen]
+    [data, data.length, sceneState.isShowPersonalScreen]
   );
 
   return { videoSource };
