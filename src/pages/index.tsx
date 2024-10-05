@@ -23,18 +23,18 @@ const Home: NextPage = () => {
         {/* open graph */}
         <meta property="og:title" content="johnnymadigan" />
         <meta property="og:description" content="Who is Johnny Madigan?" />
-        <meta property="og:image" content="/favicon.ico" />
+        <meta property="og:image" content="https://jjawny.github.io/favicon.ico" />
         <meta property="og:image:alt" content="johnnymadigan" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://johnnymadigan.github.io" />
+        <meta property="og:url" content="https://jjawny.github.io" />
 
         {/* x (twitter) */}
         <meta name="twitter:title" content="johnnymadigan" />
         <meta name="twitter:description" content="Who is Johnny Madigan?" />
-        <meta name="twitter:image" content="/favicon.ico" />
+        <meta name="twitter:image" content="https://jjawny.github.io/favicon.ico" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:creator" content="@jjjjjjjony" />
-        <meta name="twitter:site" content="@jjjjjjjony" />
+        <meta name="twitter:creator" content="@jjjawny" />
+        <meta name="twitter:site" content="@jjjawny" />
 
         {/* See background colour in globals.css */}
         <meta name="theme-color" content="#0e0000" />
