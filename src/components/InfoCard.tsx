@@ -1,32 +1,11 @@
-import Image from "next/image";
 import React, { useState } from "react";
 import Socials from "~/components/Socials";
-import { useSceneContext } from "~/stores/sceneAtom";
 import InfoCardAttribution from "./InfoCard.Attribution";
 import InfoCardName from "./InfoCard.Name";
+import ScrollIndicator from "./ScrollIndicator";
 
 const InfoCard: React.FC = () => {
-  const { sceneState } = useSceneContext();
   const [isBlurry, setIsBlurry] = useState<boolean>(false);
-
-  // add delay here hook here
-  const isScrollIndicatorReady = false;
-
-  const ScrollIndicatorFragment = () => {
-    const isHide = !sceneState.isShowScrollIndicator;
-
-    return (
-      <div className={`${isHide ? "animate-fadeOut" : "animate-[fadeIn_200ms_ease-in_forwards]"}`}>
-        <Image
-          src={"/images/mouse.svg"}
-          alt="scroll or swipe to see something cool..."
-          height={50}
-          width={50}
-          className="absolute -top-1/4 left-[46%] animate-bounce grayscale invert filter"
-        />
-      </div>
-    );
-  };
 
   const IntroductionFragment = () => {
     return <p className="hello animate-[fadeIn_200ms_ease-in_forwards] self-start">Hey! I&rsquo;m…</p>;
@@ -56,7 +35,7 @@ const InfoCard: React.FC = () => {
             ${isBlurry && "pointer-events-none !opacity-25 blur"}
             `}
         >
-          <ScrollIndicatorFragment />
+          <ScrollIndicator />
           <IntroductionFragment />
           <InfoCardName toggleIsBlurry={setIsBlurry} />
           <TitleFragment />
