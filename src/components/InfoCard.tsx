@@ -21,10 +21,17 @@ const InfoCard: React.FC = () => {
       <div className="feature-for-sticky-content-inside-r3f-content justify-self-center">
         <div
           className={`
-            transition-filter z-50 flex w-full select-text flex-col whitespace-nowrap text-center font-monument tracking-tight text-white duration-300 ease-in-out 
+            transition-filter relative z-50 flex w-full select-text flex-col whitespace-nowrap text-center font-monument tracking-tight text-white duration-300 ease-in-out 
             ${isBlurry && "pointer-events-none !opacity-25 blur"}
             `}
         >
+          <Image
+            src={"/images/mouse.svg"}
+            alt="scroll or swipe to see something cool..."
+            height={50}
+            width={50}
+            className="absolute -top-1/4 left-[46%] animate-bounce grayscale invert filter"
+          />
           <Hello />
           <main>
             <Name toggleIsBlurry={setIsBlurry} />
