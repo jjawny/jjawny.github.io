@@ -47,8 +47,9 @@ const Models: React.FC = () => {
   );
 };
 const R3fHtml: React.FC = () => {
+  // Gotcha: 'zIndexRange' prop required to allow drawer to be interactive [drag, select, ...]
   return (
-    <Html fullscreen className="feature-for-sticky-content-inside-r3f-html-overrides">
+    <Html fullscreen zIndexRange={[1, 1000]} className="feature-for-sticky-content-inside-r3f-html-overrides">
       <InfoCard />
     </Html>
   );
