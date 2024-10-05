@@ -63,7 +63,6 @@ const Macbook: React.FC = () => {
       groupRef.current.rotation.y += 0.04 * (targetRotationY - groupRef.current.rotation.y);
 
       // Animate zoom on scroll
-      console.log("here");
       if (sceneState.isShowScrollIndicator && scroll.offset > SCROLL_INDICATOR_THRESHOLD) {
         toggleIsShowScrollIndicator(false);
       }
