@@ -18,5 +18,19 @@ const config = {
     locales: ["en"],
     defaultLocale: "en",
   },
+
+  async headers() {
+    return [
+      {
+        source: "/videos/(.*)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=3600, immutable", // Cache for 1 hour
+          },
+        ],
+      },
+    ];
+  },
 };
 export default config;
