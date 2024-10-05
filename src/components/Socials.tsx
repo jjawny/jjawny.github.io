@@ -13,7 +13,7 @@ const Socials = () => {
           className="invert filter duration-200 hover:scale-105"
         />
       </Link>
-      <Link href={"https://www.linkedin.com/in/jjjony"}>
+      <Link href={"https://www.linkedin.com/in/jawny"}>
         <Image
           src={"/images/linkedin.svg"}
           alt="message johnny madigan on linkedin"
@@ -22,7 +22,7 @@ const Socials = () => {
           className="invert filter duration-200 hover:scale-105"
         />
       </Link>
-      <Link href={"https://x.com/jjjjjjjony"}>
+      <Link href={"https://x.com/jjjawny"}>
         <Image
           src={"/images/twitter.svg"}
           alt="message johnny madigan on x (twitter)"

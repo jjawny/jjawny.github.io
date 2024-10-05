@@ -33,8 +33,8 @@ const Home: NextPage = () => {
         <meta name="twitter:description" content="Who is Johnny Madigan?" />
         <meta name="twitter:image" content="https://johnnymadigan.github.io/favicon.ico" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:creator" content="@jjjjjjjony" />
-        <meta name="twitter:site" content="@jjjjjjjony" />
+        <meta name="twitter:creator" content="@jjjawny" />
+        <meta name="twitter:site" content="@jjjawny" />
 
         {/* See background colour in globals.css */}
         <meta name="theme-color" content="#0e0000" />
