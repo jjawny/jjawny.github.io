@@ -48,10 +48,7 @@ const Models: React.FC = () => {
 };
 const R3fHtml: React.FC = () => {
   return (
-    //* NOTE: 'zIndexRange' prop required so all z-index css applied inside works (otherwise does nothing) */}
-    //* (resolves bug where shadcn drawer content cannot be interacted with after resize) */}
-    <Html fullscreen zIndexRange={[1, 1000]} className="feature-for-sticky-content-inside-r3f-html-overrides">
-      {/* <HeroSection /> */}
+    <Html fullscreen className="feature-for-sticky-content-inside-r3f-html-overrides">
       <InfoCard />
     </Html>
   );
