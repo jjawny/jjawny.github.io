@@ -23,7 +23,7 @@ const Home: NextPage = () => {
         {/* open graph */}
         <meta property="og:title" content="johnnymadigan" />
         <meta property="og:description" content="Who is Johnny Madigan?" />
-        <meta property="og:image" content="/favicon.ico" />
+        <meta property="og:image" content="https://johnnymadigan.github.io/favicon.ico" />
         <meta property="og:image:alt" content="johnnymadigan" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://johnnymadigan.github.io" />
