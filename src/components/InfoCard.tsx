@@ -12,38 +12,25 @@ import {
   DrawerTrigger,
 } from "~/components/ui/Drawer";
 
-interface InfoSectionProps {
-  isShowAboutCallback: (isShowAbout: boolean) => void;
-}
-
-const InfoSection: React.FC<InfoSectionProps> = (props) => {
-  return (
-    <div className="feature-for-sticky-content-inside-r3f-container grid">
-      <div className="feature-for-sticky-content-inside-r3f-content justify-self-center">
-        <InfoSectionContent isShowAboutCallback={props.isShowAboutCallback} />
-      </div>
-    </div>
-  );
-};
-
-// ISSUE: R3F's custom render tree stops 'useIsInView' (intersection observer hook) from triggering ∴ component never intersects
-// SOLUTION: Extract content (that relies on the hook) another level deeper into the tree...
-const InfoSectionContent: React.FC<InfoSectionProps> = (props) => {
-  const { isShowAboutCallback } = props;
+const InfoCard: React.FC = () => {
   const [isBlurry, setIsBlurry] = useState<boolean>(false);
 
   return (
-    <div
-      className={`
-        transition-filter z-50 flex w-full select-text flex-col whitespace-nowrap text-center font-monument tracking-tight text-white duration-300 ease-in-out 
-        ${isBlurry && "pointer-events-none !opacity-25 blur"}
-      `}
-    >
-      <Hello />
-      <Name toggleIsBlurry={setIsBlurry} />
-      <Title />
-      <Attribution />
-      <Socials />
+    <div className="feature-for-sticky-content-inside-r3f-container grid">
+      <div className="feature-for-sticky-content-inside-r3f-content justify-self-center">
+        <div
+          className={`
+            transition-filter z-50 flex w-full select-text flex-col whitespace-nowrap text-center font-monument tracking-tight text-white duration-300 ease-in-out 
+            ${isBlurry && "pointer-events-none !opacity-25 blur"}
+          `}
+        >
+          <Hello />
+          <Name toggleIsBlurry={setIsBlurry} />
+          <Title />
+          <Attribution />
+          <Socials />
+        </div>
+      </div>
     </div>
   );
 };
@@ -58,7 +45,7 @@ type NameProps = {
 
 const Name: React.FC<NameProps> = (props) => {
   const { toggleIsBlurry } = props;
-  // macbook video mesh ctx goes here
+  // TODO: macbook video mesh ctx goes here
   const handleDrawerOpenSideEffects = (isOpen: boolean) => {
     toggleIsBlurry(isOpen);
   };
@@ -126,4 +113,4 @@ const Attribution: React.FC = () => {
   );
 };
 
-export default InfoSection;
+export default InfoCard;
