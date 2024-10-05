@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
         <p className="text-[0.5rem]">
           {process.env.NEXT_PUBLIC_NODE_ENV || "johnny broke something don't look here 🤦"}
         </p>
-        <p className="text-[0.5rem]">build: {process.env.NEXT_PUBLIC_BUILD_NUMBER || "n/a"}</p>
+        <p className="text-[0.5rem]">build {process.env.NEXT_PUBLIC_BUILD_NUMBER || "n/a"}</p>
       </div>
     </footer>
   );

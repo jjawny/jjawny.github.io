@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useRef } from "react";
 import useMockDelay from "~/hooks/useMockDelay";
 import { useSceneContext } from "~/stores/sceneAtom";
 
@@ -6,10 +7,15 @@ const ScrollIndicator = () => {
   const { sceneState } = useSceneContext();
   const isHide = !sceneState.isShowScrollIndicator;
   const { isDone: isMockDelayDone } = useMockDelay();
+  const isOnScreenRef = useRef<boolean>(false);
 
-  if (!isMockDelayDone || (isMockDelayDone && isHide)) {
+  if (!isMockDelayDone || (isHide && !isOnScreenRef.current)) {
     // See size of blur behind in globals.css
     return <div className="h-[1px] w-[1px]"></div>;
+  }
+
+  if (!isOnScreenRef.current) {
+    isOnScreenRef.current = true;
   }
 
   return (
