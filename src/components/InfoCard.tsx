@@ -11,6 +11,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "~/components/ui/Drawer";
+import { useSceneContext } from "~/stores/sceneAtom";
 
 const InfoCard: React.FC = () => {
   const [isBlurry, setIsBlurry] = useState<boolean>(false);
@@ -44,10 +45,12 @@ type NameProps = {
 };
 
 const Name: React.FC<NameProps> = (props) => {
+  const { toggleIsShowPersonalScreen } = useSceneContext();
   const { toggleIsBlurry } = props;
-  // TODO: macbook video mesh ctx goes here
+
   const handleDrawerOpenSideEffects = (isOpen: boolean) => {
     toggleIsBlurry(isOpen);
+    toggleIsShowPersonalScreen(isOpen);
   };
 
   return (

@@ -1,14 +1,12 @@
 import { Html, OrbitControls, ScrollControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useCallback, useState } from "react";
+import { Suspense, useState } from "react";
 import DotsCircle from "~/components/DotsCircle";
 import InfoCard from "~/components/InfoCard";
 import Macbook from "~/components/Macbook";
 
 const Scene = () => {
   const [isAllowOrbitControls] = useState(false);
-  const [isShowAbout, setIsShowAbout] = useState<boolean>(false);
-  const isShowAboutCallback = useCallback((isShow: boolean) => setIsShowAbout(isShow), [setIsShowAbout]);
 
   const Lighting = () => (
     <>
@@ -43,7 +41,7 @@ const Models: React.FC = () => {
         <DotsCircle />
       </Suspense>
       <Suspense fallback={null}>
-        <Macbook isShowAbout={false} />
+        <Macbook />
       </Suspense>
     </>
   );
