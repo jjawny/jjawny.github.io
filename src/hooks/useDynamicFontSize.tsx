@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+// TODO: unused (referenced in hero, also unused), move to sandbox
 export const useDynamicFontSize = (initialSize = 33) => {
   const [fontSize, setFontSize] = useState(initialSize);
 

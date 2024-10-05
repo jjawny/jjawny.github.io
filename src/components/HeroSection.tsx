@@ -1,7 +1,8 @@
+import { useRef } from "react";
 import { useDynamicFontSize } from "~/hooks/useDynamicFontSize";
 import { useIsInView } from "~/hooks/useIsInView";
-import { useRef } from "react";
 
+// TODO: unused, move to sandbox
 const HeroSection = () => {
   const heroSectionRef = useRef(null);
   const isInView = useIsInView(heroSectionRef);

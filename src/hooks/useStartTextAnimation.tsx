@@ -1,10 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
-export const useStartTextAnimation = (
-  text: string,
-  speed: number = 0.3,
-  isPlayOnRender: boolean = false
-) => {
+// TODO: unused, move to sandbox
+export const useStartTextAnimation = (text: string, speed: number = 0.3, isPlayOnRender: boolean = false) => {
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const frameRef = useRef<number | null>(null);
   const [currentText, setCurrentText] = useState(text);
@@ -28,12 +25,9 @@ export const useStartTextAnimation = (
           if (letter.trim() === "") return " ";
 
           // the randomized letter
-          const randomLetter =
-            letters[Math.floor(Math.random() * letters.length)] ?? "$";
+          const randomLetter = letters[Math.floor(Math.random() * letters.length)] ?? "$";
           const isLowerCase = letter === letter.toLowerCase();
-          return isLowerCase
-            ? randomLetter.toLocaleLowerCase()
-            : randomLetter.toLocaleUpperCase();
+          return isLowerCase ? randomLetter.toLocaleLowerCase() : randomLetter.toLocaleUpperCase();
         })
         .join("");
 

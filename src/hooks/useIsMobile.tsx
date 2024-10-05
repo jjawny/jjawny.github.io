@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+// TODO: unused, move to sandbox
 export const useIsMobile = (maxWidth: number = 640) => {
   const [isMobile, setIsMobile] = useState(true);
 
