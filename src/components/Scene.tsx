@@ -1,16 +1,13 @@
-import React, { Suspense, useCallback, useRef, useState } from "react";
 import { Html, OrbitControls, ScrollControls } from "@react-three/drei";
-import InfoSection from "~/components/InfoSection";
-import HeroSection from "~/components/HeroSection";
-import DotsCircle from "~/components/DotsCircle";
 import { Canvas } from "@react-three/fiber";
+import { Suspense, useState } from "react";
+import DotsCircle from "~/components/DotsCircle";
+import InfoCard from "~/components/InfoCard";
 import Macbook from "~/components/Macbook";
-import _debounce from "lodash/debounce";
 
 const Scene = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [isShowAbout, setIsShowAbout] = useState<boolean>(false);
-  const isShowAboutCallback = useCallback((isShow: boolean) => setIsShowAbout(isShow), [setIsShowAbout]);
+  const [isAllowOrbitControls] = useState(false);
+
   const Lighting = () => (
     <>
       <ambientLight />
@@ -20,30 +17,41 @@ const Scene = () => {
   );
 
   return (
-    <div className="scene relative w-screen overflow-hidden">
-      <Canvas ref={canvasRef} camera={{ position: [0, 0, 35] }} className="h-screen w-screen">
-        {/* <OrbitControls /> */}
+    <div className="r3f-scene">
+      <Canvas
+        camera={{ position: [0, 0, 35] }}
+        resize={{ scroll: true, debounce: { scroll: 50, resize: 50 } }}
+        className="h-screen w-screen"
+      >
+        {isAllowOrbitControls && <OrbitControls />}
         <Lighting />
-
-        <ScrollControls pages={0.8}>
-          {/* MODELS */}
-          <Suspense fallback={null}>
-            <DotsCircle />
-          </Suspense>
-          <Suspense fallback={null}>
-            <Macbook isShowAbout={isShowAbout} />
-          </Suspense>
-
-          {/* HTML */}
-          {/* NOTE: zIndexRange prop required to allow setting z-index to items within */}
-          {/* (resolves bug where shadcn drawer content cannot be interacted with after resize) */}
-          <Html fullscreen zIndexRange={[1, 1000]}>
-            <HeroSection />
-            <InfoSection isShowAboutCallback={isShowAboutCallback} />
-          </Html>
+        <ScrollControls pages={1}>
+          <Models />
+          <R3fHtml />
         </ScrollControls>
       </Canvas>
     </div>
+  );
+};
+
+const Models: React.FC = () => {
+  return (
+    <>
+      <Suspense fallback={null}>
+        <DotsCircle />
+      </Suspense>
+      <Suspense fallback={null}>
+        <Macbook />
+      </Suspense>
+    </>
+  );
+};
+const R3fHtml: React.FC = () => {
+  // Gotcha: 'zIndexRange' prop required to allow drawer to be interactive [drag, select, ...]
+  return (
+    <Html fullscreen zIndexRange={[1, 1000]} className="feature-for-sticky-content-inside-r3f-html-overrides">
+      <InfoCard />
+    </Html>
   );
 };
 

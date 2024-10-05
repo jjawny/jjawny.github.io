@@ -1,11 +1,7 @@
 import { Vector3 } from "three";
+import { DEPTH, LEFT_COLOR, MAX_RADIUS, MIN_RADIUS, NUM_POINTS, RIGHT_COLOR } from "~/constants/defaults";
 
-const DEPTH = 10;
-const MIN_RADIUS = 1;
-const MAX_RADIUS = 12;
-const NUM_POINTS = 500;
-const LEFT_COLOR = "08b4f8";
-const RIGHT_COLOR = "0502d0";
+// Math is hard, credits: https://youtu.be/r9IU5eJhhGo
 
 const getGradientStop = (ratio: number) => {
   ratio = Math.max(0, Math.min(ratio, 1));

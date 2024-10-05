@@ -1,19 +1,43 @@
-import Footer from "~/components/Footer";
-import Scene from "~/components/Scene";
 import { type NextPage } from "next";
 import Head from "next/head";
+import Footer from "~/components/Footer";
+import Scene from "~/components/Scene";
 
 const Home: NextPage = () => {
   return (
     <>
       <Head>
         <title>johnnymadigan</title>
+        <meta charSet="utf-8"></meta>
+        <meta name="author" content="Johnny Madigan" />
+        <meta name="description" content="Who is Johnny Madigan?" />
+
+        {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="an introduction" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+
+        {/* open graph */}
         <meta property="og:title" content="johnnymadigan" />
-        <meta property="og:description" content="an introduction" />
+        <meta property="og:description" content="Who is Johnny Madigan?" />
         <meta property="og:image" content="/favicon.ico" />
-        <meta property="og:image:alt" content="j" />
+        <meta property="og:image:alt" content="johnnymadigan" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://johnnymadigan.github.io" />
+
+        {/* x (twitter) */}
+        <meta name="twitter:title" content="johnnymadigan" />
+        <meta name="twitter:description" content="Who is Johnny Madigan?" />
+        <meta name="twitter:image" content="/favicon.ico" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:creator" content="@jjjjjjjony" />
+        <meta name="twitter:site" content="@jjjjjjjony" />
+
+        {/* See background colour in globals.css */}
+        <meta name="theme-color" content="#0e0000" />
       </Head>
       <Scene />
       <Footer />

@@ -3,6 +3,8 @@
   Author: chrisgreig (https://sketchfab.com/chrisgreig)
   License: CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
   Source: https://sketchfab.com/3d-models/macbook-pro-13-inch-0afdcc7725ff4ab4b5ac972a773f16dc
+
+  Remixed and animated by: johnnymadigan
 */
 
 import { useGLTF } from "@react-three/drei";

@@ -4,12 +4,12 @@
   License: CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
   Source: https://sketchfab.com/3d-models/macbook-pro-13-inch-0afdcc7725ff4ab4b5ac972a773f16dc
 
-  Remixed and animated by: johnny madigan
+  Remixed and animated by: johnnymadigan
 */
 
-import { LinearFilter, VideoTexture, RGBAFormat, Mesh } from "three";
-import React, { useEffect, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
+import React, { useEffect, useRef } from "react";
+import { LinearFilter, RGBAFormat, VideoTexture } from "three";
 
 type MacbookScreenProps = {
   videoSource: string;
