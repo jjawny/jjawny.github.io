@@ -1,58 +1,20 @@
 import { useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Group } from "three";
 import MacbookKeyboard from "~/components/Macbook.Keyboard";
 import MacbookScreen from "~/components/Macbook.Screen";
-import {
-  DEFAULT_VIDEO_SOURCE,
-  MACBOOK_Z_MAX,
-  MACBOOK_Z_TRAVEL_RATE,
-  PROJECTS_SOURCE,
-  SCROLL_INDICATOR_THRESHOLD,
-} from "~/constants/defaults";
+import { MACBOOK_Z_MAX, MACBOOK_Z_TRAVEL_RATE, SCROLL_INDICATOR_THRESHOLD } from "~/constants/defaults";
+import useLoopVideoSources from "~/hooks/useLoopVideoSources";
 import useMouseCoords from "~/hooks/useMouseCoords";
 import { useSceneContext } from "~/stores/sceneAtom";
-import { ProjectType } from "~/types/project.type";
 
 const Macbook: React.FC = () => {
   const { sceneState, toggleIsShowScrollIndicator } = useSceneContext();
-  const initialVideoSource = `/videos/${DEFAULT_VIDEO_SOURCE}`;
-  const [videoSource, setVideoSource] = useState<string>(initialVideoSource);
-  const [data, setData] = useState<ProjectType[]>([]);
-  const [, setIdx] = useState<number>(-1);
+  const { videoSource } = useLoopVideoSources();
   const groupRef = useRef<Group>(null);
   const mouseCoords = useMouseCoords();
   const scroll = useScroll();
-
-  // TODO: extract to custom hook
-  useEffect(function loadData() {
-    fetch(PROJECTS_SOURCE)
-      .then((res) => res.json())
-      .then((data) => setData(data));
-  }, []);
-
-  useEffect(
-    function changeVideoSource() {
-      if (sceneState.isShowPersonalScreen) {
-        setVideoSource(initialVideoSource);
-        return;
-      }
-
-      const intervalId = setInterval(() => {
-        setIdx((prevIdx) => {
-          const nextIdx = (prevIdx + 1) % data.length;
-          const nextVideoSource = `/videos/${data[nextIdx]?.videoSource ?? DEFAULT_VIDEO_SOURCE}`;
-          console.debug(`Now playing video #${nextIdx + 1}`);
-          setVideoSource(nextVideoSource);
-          return nextIdx;
-        });
-      }, 5000);
-
-      return () => clearInterval(intervalId);
-    },
-    [data, data.length, initialVideoSource, sceneState.isShowPersonalScreen]
-  );
 
   useFrame(() => {
     if (groupRef.current) {
