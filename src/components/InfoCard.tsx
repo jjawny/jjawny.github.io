@@ -33,10 +33,8 @@ const InfoCard: React.FC = () => {
             className="absolute -top-1/4 left-[46%] animate-bounce grayscale invert filter"
           />
           <Hello />
-          <main>
-            <Name toggleIsBlurry={setIsBlurry} />
-            <Title />
-          </main>
+          <Name toggleIsBlurry={setIsBlurry} />
+          <Title />
           <div className="flex w-[85%] animate-[fadeIn_800ms_ease-in_forwards] justify-end pl-[15%]">
             <div className="flex flex-col">
               <Attribution />
@@ -67,47 +65,49 @@ const Name: React.FC<NameProps> = (props) => {
   };
 
   return (
-    <Drawer onOpenChange={handleDrawerOpenSideEffects}>
-      <DrawerTrigger>
-        <h1 className="name relative animate-[fadeIn_400ms_ease-in_forwards] px-[2vw] font-extrabold duration-150 hover:scale-105">
-          Johnny Madigan
-          <div
-            className="duration-200 hover:scale-125"
-            style={{ width: "5vw", height: "5vw", position: "absolute", right: 0, bottom: 0 }}
-          >
-            <Image
-              src={"/images/click.gif"}
-              alt="click to learn more about my career as a full stack software/web engineer/developer"
-              fill
-              sizes="5vw"
-              style={{ rotate: "-30deg", objectFit: "cover", userSelect: "none" }}
-            />
-          </div>
-        </h1>
-      </DrawerTrigger>
-      <DrawerContent className="bottom-[-50px] z-50 !select-text px-2 pb-[50px] text-white">
-        <DrawerHeader>
-          <DrawerTitle className="font-monument text-2xl">WHO AM I ?</DrawerTitle>
-          <DrawerDescription className="py-5 font-default">
-            <span className="block space-y-3">
-              <span className="block">
-                I&apos;m a <strong>Full Stack Software Developer</strong>.
+    <main>
+      <Drawer onOpenChange={handleDrawerOpenSideEffects}>
+        <DrawerTrigger>
+          <h1 className="name relative animate-[fadeIn_400ms_ease-in_forwards] px-[2vw] font-extrabold duration-150 hover:scale-105">
+            Johnny Madigan
+            <div
+              className="duration-200 hover:scale-125"
+              style={{ width: "5vw", height: "5vw", position: "absolute", right: 0, bottom: 0 }}
+            >
+              <Image
+                src={"/images/click.gif"}
+                alt="click to learn more about my career as a full stack software/web engineer/developer"
+                fill
+                sizes="5vw"
+                style={{ rotate: "-30deg", objectFit: "cover", userSelect: "none" }}
+              />
+            </div>
+          </h1>
+        </DrawerTrigger>
+        <DrawerContent className="bottom-[-50px] z-50 !select-text px-2 pb-[50px] text-white">
+          <DrawerHeader>
+            <DrawerTitle className="font-monument text-2xl">WHO AM I ?</DrawerTitle>
+            <DrawerDescription className="py-5 font-default">
+              <span className="block space-y-3">
+                <span className="block">
+                  I&apos;m a <strong>Full Stack Software Developer</strong>.
+                </span>
+                <span className="block">I love the web, UX, DX, and getting $h1t done.</span>
+                <span className="block">
+                  I&apos;m currently working for my state government on a portfolio of enterprise apps.
+                </span>
+                <span className="block">
+                  As someone who <strong>thrives</strong> on mastering their stack, building <strong>long-term</strong>{" "}
+                  solutions, and <strong>sharing</strong> knowledge, I believe I can bring <strong>value</strong> to any{" "}
+                  team.
+                </span>
               </span>
-              <span className="block">I love the web, UX, DX, and getting $h1t done.</span>
-              <span className="block">
-                I&apos;m currently working for my state government on a portfolio of enterprise apps.
-              </span>
-              <span className="block">
-                As someone who <strong>thrives</strong> on mastering their stack, building <strong>long-term</strong>{" "}
-                solutions, and <strong>sharing</strong> knowledge, I believe I can bring <strong>value</strong> to any{" "}
-                team.
-              </span>
-            </span>
-          </DrawerDescription>
-        </DrawerHeader>
-        <DrawerFooter></DrawerFooter>
-      </DrawerContent>
-    </Drawer>
+            </DrawerDescription>
+          </DrawerHeader>
+          <DrawerFooter></DrawerFooter>
+        </DrawerContent>
+      </Drawer>
+    </main>
   );
 };
 
