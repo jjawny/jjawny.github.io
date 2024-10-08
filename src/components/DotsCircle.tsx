@@ -1,15 +1,14 @@
-import { pointsInner, pointsOuter } from "../utils/three.utils";
 import { Sphere, useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import _debounce from "lodash/debounce";
+import { useRef } from "react";
 import { Group, Vector3 } from "three";
-import React, { useRef } from "react";
 import {
   DOTS_CIRCLE_SPEED,
   DOTS_CIRCLE_X_TRAVEL_RATE,
   DOTS_CIRCLE_Y_TRAVEL_RATE,
   DOTS_CIRCLE_Z_TRAVEL_RATE,
 } from "~/constants/defaults";
+import { pointsInner, pointsOuter } from "../utils/three.utils";
 
 const DotsCircle = () => {
   const ref = useRef<Group>(null);
