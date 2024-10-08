@@ -64,8 +64,8 @@ const InfoCardName: React.FC<NameProps> = (props) => {
     <main>
       <Drawer onOpenChange={handleDrawerOpenSideEffects}>
         <DrawerTrigger>
-          <h1 className="name relative animate-[fadeIn_400ms_ease-in_forwards] px-[2vw] font-extrabold duration-150 hover:scale-105">
-            Johnny Madigan
+          <h1 className="relative scale-x-[1.69] animate-[fadeIn_700ms_ease-in_forwards] px-[2vw] text-[4vw] font-extrabold">
+            Johnny
             <ClickIndicatorFragment />
           </h1>
         </DrawerTrigger>
