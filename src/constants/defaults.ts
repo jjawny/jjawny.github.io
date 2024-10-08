@@ -1,4 +1,4 @@
-export const DEFAULT_VIDEO_SOURCE = "me.mp4";
+export const DEFAULT_VIDEO_SOURCE = "for-short-only.mov";
 export const PROJECTS_SOURCE = "/data/projects.json";
 export const SCROLL_INDICATOR_THRESHOLD = 0.1;
 export const ANIMATION_THROTTLE_MS = 20;
