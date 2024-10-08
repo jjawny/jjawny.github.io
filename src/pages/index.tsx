@@ -1,6 +1,5 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import Footer from "~/components/Footer";
 import Scene from "~/components/Scene";
 
 const Home: NextPage = () => {
@@ -40,7 +39,6 @@ const Home: NextPage = () => {
         <meta name="theme-color" content="#0e0000" />
       </Head>
       <Scene />
-      <Footer />
     </>
   );
 };
