@@ -1,24 +1,22 @@
 import { useEffect, useState } from "react";
-import _debounce from "lodash/debounce";
-
-const ANIMATION_DEBOUNCE_MS = 0; // debouncing animation frames causes jittery movements, but option here when testing new animations and need to improve performance
+import { ANIMATION_THROTTLE_MS } from "~/constants/defaults";
+import { throttle } from "~/utils/no-lodash.utils";
 
 const useMouseCoords = () => {
   const [mouseCoords, setMouseCoords] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const debouncedHandleMouseMove = _debounce((event) => {
+    const handleMouseMove = throttle((event: MouseEvent) => {
       setMouseCoords({
         x: (event.clientX / window.innerWidth) * 2 - 1,
         y: -(event.clientY / window.innerHeight) * 2 + 1,
       });
-    }, ANIMATION_DEBOUNCE_MS);
+    }, ANIMATION_THROTTLE_MS);
 
-    window.addEventListener("mousemove", debouncedHandleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      window.removeEventListener("mousemove", debouncedHandleMouseMove);
-      debouncedHandleMouseMove.cancel();
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
