@@ -3,6 +3,7 @@ import Head from "next/head";
 import Footer from "~/components/Footer";
 import Scene from "~/components/Scene";
 
+// TODO: upgrade all npm packages
 const Home: NextPage = () => {
   return (
     <>
