@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useState } from "react";
 import Socials from "~/components/Socials";
 import useActivateEasterEgg from "~/hooks/useActivateEasterEgg";
@@ -28,9 +29,22 @@ const InfoCard: React.FC = () => {
     );
   };
 
+  const EasterEgg = () => {
+    return (
+      <Image
+        src={"/images/easter-egg-alien.gif"}
+        alt="you found the easter egg!"
+        height={80}
+        width={80}
+        className="absolute -top-[66px] left-0"
+      />
+    );
+  };
+
   return (
     <div className="feature-for-sticky-content-inside-r3f-container grid">
       <div className="feature-for-sticky-content-inside-r3f-content justify-self-center">
+        {isEasterEggActive && <EasterEgg />}
         <div
           className={`
               transition-filter relative z-50 flex w-full select-text flex-col whitespace-nowrap text-center font-monument tracking-tight text-white duration-300 ease-in-out 
