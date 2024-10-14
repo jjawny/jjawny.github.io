@@ -10,7 +10,7 @@ import useMouseCoords from "~/hooks/useMouseCoords";
 import { useSceneContext } from "~/stores/sceneAtom";
 
 const Macbook: React.FC = () => {
-  const { sceneState, toggleIsShowScrollIndicator } = useSceneContext();
+  const { state: sceneState, toggleIsShowScrollIndicator } = useSceneContext();
   const { videoSource } = useLoopVideoSources();
   const groupRef = useRef<Group>(null);
   const mouseCoords = useMouseCoords();
