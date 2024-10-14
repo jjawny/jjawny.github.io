@@ -35,6 +35,7 @@ const Socials = () => {
         />
       </Link>
       {isEasterEggActive && (
+        // TODO: add tooltip w tail "you found me!"
         <Image
           src={"/images/easter-egg-alien.gif"}
           alt="you found the easter egg!"
