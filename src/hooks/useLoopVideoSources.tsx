@@ -7,7 +7,7 @@ import { ProjectType } from "~/types/project.type";
 const initialVideoSource = `/videos/${DEFAULT_VIDEO_SOURCE}`;
 
 const useLoopVideoSources = () => {
-  const { sceneState } = useSceneContext();
+  const { state: sceneState } = useSceneContext();
   const [videoSource, setVideoSource] = useState<string>(initialVideoSource);
   const [data, setData] = useState<ProjectType[]>([]);
   const [, setIdx] = useState<number>(-1);
