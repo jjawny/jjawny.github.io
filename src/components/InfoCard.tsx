@@ -36,7 +36,7 @@ const InfoCard: React.FC = () => {
         alt="you found the easter egg!"
         height={80}
         width={80}
-        className="absolute -top-[66px] left-0"
+        className={`absolute -top-[40px] right-0  ${isBlurry && "!opacity-25 blur"}`}
       />
     );
   };
