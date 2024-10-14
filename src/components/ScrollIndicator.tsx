@@ -4,7 +4,7 @@ import useMockDelay from "~/hooks/useMockDelay";
 import { useSceneContext } from "~/stores/sceneAtom";
 
 const ScrollIndicator = () => {
-  const { sceneState } = useSceneContext();
+  const { state: sceneState } = useSceneContext();
   const isHide = !sceneState.isShowScrollIndicator;
   const { isDone: isMockDelayDone } = useMockDelay();
   const isOnScreenRef = useRef<boolean>(false);
@@ -20,7 +20,9 @@ const ScrollIndicator = () => {
 
   return (
     <div
-      className={`blur-behind select-none ${isHide ? "animate-fadeOut" : "animate-[fadeIn_400ms_ease-in_forwards]"}`}
+      className={`blur-blob-behind select-none ${
+        isHide ? "animate-fadeOut" : "animate-[fadeIn_400ms_ease-in_forwards]"
+      }`}
     >
       <Image
         src={"/images/mouse.svg"}
