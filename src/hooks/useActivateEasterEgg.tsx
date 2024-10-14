@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const useActivateEasterEgg = (activationThreshold: number) => {
-  const keyCountRef = useRef<number>(0); // don't trigger UI re-renders
+  const keyCountRef = useRef<number>(0);
   const [isActive, setIsActive] = useState<boolean>(false);
 
   const handleKeyDown = (e: KeyboardEvent) => {
