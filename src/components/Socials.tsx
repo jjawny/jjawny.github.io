@@ -40,7 +40,7 @@ const Socials = () => {
           alt="you found the easter egg!"
           height={30}
           width={30}
-          className="!ml-2 duration-200 hover:scale-105"
+          className="!ml-2 duration-200 hover:scale-110"
         />
       )}
     </div>
