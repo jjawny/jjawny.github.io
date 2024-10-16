@@ -3,8 +3,6 @@ import Link from "next/link";
 import useActivateEasterEgg from "~/hooks/useActivateEasterEgg";
 
 const Socials = () => {
-  const { isActive: isEasterEggActive } = useActivateEasterEgg(5);
-
   return (
     <div className="flex select-none flex-row items-center justify-center space-x-4 py-3">
       <Link href={"https://github.com/jjawny"}>
@@ -34,17 +32,25 @@ const Socials = () => {
           className="duration-200 hover:scale-105"
         />
       </Link>
-      {isEasterEggActive && (
-        // TODO: add tooltip w tail "you found me!"
-        <Image
-          src={"/images/easter-egg-alien.gif"}
-          alt="you found the easter egg!"
-          height={30}
-          width={30}
-          className="!ml-2 duration-200 hover:scale-110"
-        />
-      )}
+      <EasterEggImage />
     </div>
+  );
+};
+
+const EasterEggImage: React.FC = () => {
+  const { isActive: isEasterEggActive } = useActivateEasterEgg(5);
+
+  if (!isEasterEggActive) return <></>;
+
+  return (
+    // TODO: add tooltip w tail "you found me!"
+    <Image
+      src={"/images/easter-egg-alien.gif"}
+      alt="you found the easter egg!"
+      height={30}
+      width={30}
+      className="!ml-2 duration-200 hover:scale-110"
+    />
   );
 };
 
