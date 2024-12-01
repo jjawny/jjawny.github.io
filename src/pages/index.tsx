@@ -4,6 +4,7 @@ import Footer from "~/components/Footer";
 import Scene from "~/components/Scene";
 
 // TODO: upgrade all npm packages
+// TODO: convert to vite-app only, its a static site man
 const Home: NextPage = () => {
   return (
     <>
@@ -25,6 +26,8 @@ const Home: NextPage = () => {
         <meta property="og:title" content="johnnymadigan" />
         <meta property="og:description" content="Who is Johnny Madigan?" />
         <meta property="og:image" content="https://jjawny.github.io/favicon.ico" />
+        <meta property="og:image:width" content="48" />
+        <meta property="og:image:height" content="48" />
         <meta property="og:image:alt" content="johnnymadigan" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://jjawny.github.io" />
