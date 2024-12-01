@@ -5,6 +5,11 @@
     "desc": "A secure chat service, unlike the rest."
   },
   {
+    "name": "iOS18 Photos App Sucks",
+    "videoSource": "ios18-photos-app-sucks.mov",
+    "desc": "A consistent portal for your photos - no gotchas."
+  },
+  {
     "name": "Game of Life",
     "videoSource": "gol.mp4",
     "desc": "A zero-player, cellular automaton game with a wide-variety of options all from your terminal."
