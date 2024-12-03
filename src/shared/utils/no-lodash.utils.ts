@@ -1,7 +1,10 @@
-export function throttle<T extends (...args: any[]) => void>(func: T, timeWindow: number) {
-  var lastTime = 0;
+export function throttle<T extends (...args: unknown[]) => void>(
+  func: T,
+  timeWindow: number,
+) {
+  let lastTime = 0;
   return function (...args: Parameters<T>) {
-    var now = Date.now();
+    const now = Date.now();
     if (now - lastTime >= timeWindow) {
       func(...args);
       lastTime = now;
