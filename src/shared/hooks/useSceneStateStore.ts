@@ -10,7 +10,7 @@ type SceneStateStore = {
   setSceneState: <K extends keyof SceneState>(key: K, value: SceneState[K]) => void;
 };
 
-const initialSceneState = { isShowPersonalScreen: false, isShowScrollIndicator: false };
+const initialSceneState = { isShowPersonalScreen: false, isShowScrollIndicator: true };
 
 const useSceneStateStore = create<SceneStateStore>((set) => ({
   sceneState: initialSceneState,
