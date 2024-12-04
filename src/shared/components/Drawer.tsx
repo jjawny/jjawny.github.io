@@ -7,8 +7,12 @@ import { cn } from "~/shared/utils/classname.utils";
  *  - Modified slightly for this app
  *  - See https://ui.shadcn.com/docs/components/drawer
  */
-const Drawer = ({ shouldScaleBackground = true, ...props }: React.ComponentProps<typeof DrawerPrimitive.Root>) => (
-  <DrawerPrimitive.Root shouldScaleBackground={shouldScaleBackground} {...props} />
+const Drawer = ({
+  shouldScaleBackground = true,
+  autoFocus = true,
+  ...props
+}: React.ComponentProps<typeof DrawerPrimitive.Root>) => (
+  <DrawerPrimitive.Root shouldScaleBackground={shouldScaleBackground} autoFocus={autoFocus} {...props} />
 );
 
 Drawer.displayName = "Drawer";

@@ -17,7 +17,7 @@ type NameProps = {
 const InfoCardName: React.FC<NameProps> = (props) => {
   const { toggleIsShowPersonalScreen } = useManageIsShowPersonalScreen();
   const { toggleIsBlurry } = props;
-  const isDisableVaulDrawerScalingBackgroundCausingAccessibilityConsoleError = true;
+  const isFixA11yConsoleError = true; // Known issue, see https://github.com/emilkowalski/vaul/issues/517
 
   const handleDrawerOpenSideEffects = (isOpen: boolean) => {
     toggleIsBlurry(isOpen);
@@ -57,10 +57,7 @@ const InfoCardName: React.FC<NameProps> = (props) => {
 
   return (
     <main>
-      <Drawer
-        onOpenChange={handleDrawerOpenSideEffects}
-        shouldScaleBackground={!isDisableVaulDrawerScalingBackgroundCausingAccessibilityConsoleError}
-      >
+      <Drawer onOpenChange={handleDrawerOpenSideEffects} autoFocus={isFixA11yConsoleError}>
         <DrawerTrigger>
           <h1 className="name relative animate-[fadeIn_400ms_ease-in_forwards] px-[2vw] font-extrabold duration-150 hover:scale-105">
             Johnny Madigan
