@@ -17,6 +17,7 @@ type NameProps = {
 const InfoCardName: React.FC<NameProps> = (props) => {
   const { toggleIsShowPersonalScreen } = useManageIsShowPersonalScreen();
   const { toggleIsBlurry } = props;
+  const isDisableVaulDrawerScalingBackgroundCausingAccessibilityConsoleError = true;
 
   const handleDrawerOpenSideEffects = (isOpen: boolean) => {
     toggleIsBlurry(isOpen);
@@ -56,7 +57,10 @@ const InfoCardName: React.FC<NameProps> = (props) => {
 
   return (
     <main>
-      <Drawer onOpenChange={handleDrawerOpenSideEffects}>
+      <Drawer
+        onOpenChange={handleDrawerOpenSideEffects}
+        shouldScaleBackground={!isDisableVaulDrawerScalingBackgroundCausingAccessibilityConsoleError}
+      >
         <DrawerTrigger>
           <h1 className="name relative animate-[fadeIn_400ms_ease-in_forwards] px-[2vw] font-extrabold duration-150 hover:scale-105">
             Johnny Madigan
