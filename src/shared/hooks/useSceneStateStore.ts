@@ -12,7 +12,7 @@ type SceneStateStore = {
 
 const initialSceneState = { isShowPersonalScreen: false, isShowScrollIndicator: false };
 
-export const useSceneStateStore = create<SceneStateStore>((set) => ({
+const useSceneStateStore = create<SceneStateStore>((set) => ({
   sceneState: initialSceneState,
   setSceneState: (key, value) =>
     set((state) => {
@@ -20,3 +20,5 @@ export const useSceneStateStore = create<SceneStateStore>((set) => ({
       return { ...state, sceneState: nextData };
     }),
 }));
+
+export default useSceneStateStore;

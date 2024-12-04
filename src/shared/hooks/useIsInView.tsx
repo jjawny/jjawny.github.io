@@ -1,7 +1,7 @@
 import { RefObject, useEffect, useState } from "react";
 
 // TODO: Unused, move to mini nugget idea project thingy
-export const useIsInView = (ref: RefObject<Element>) => {
+const useIsInView = (ref: RefObject<Element>) => {
   const [isInView, setIsInView] = useState<boolean>(false);
   useEffect(() => {
     const el = ref.current;
@@ -17,3 +17,5 @@ export const useIsInView = (ref: RefObject<Element>) => {
   }, [ref]);
   return isInView;
 };
+
+export default useIsInView;

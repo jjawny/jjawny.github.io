@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { DEFAULT_VIDEO_SOURCE, PROJECTS_SOURCE } from "~/features/macbook/constants/macbook.constants";
 import { Project } from "~/features/macbook/types/Project";
-import { useSceneStateStore } from "~/shared/hooks/useSceneStateStore";
+import useSceneStateStore from "~/shared/hooks/useSceneStateStore";
 
 const initialVideoSource = `/videos/${DEFAULT_VIDEO_SOURCE}`;
 
