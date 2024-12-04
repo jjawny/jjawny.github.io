@@ -11,7 +11,7 @@ import {
 import { pointsInner, pointsOuter } from "~/features/dots/utils/dots.utils";
 
 // TODO: Resolve '[Violation] 'setTimeout' handler took XXms' (not a useFrame issue, but a rendering large number of dots issue, preload?)
-const DotsCircle = () => {
+const DotsCircle: React.FC = () => {
   const groupRef = useRef<Group>(null);
   const scroll = useScroll();
 

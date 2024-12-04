@@ -5,7 +5,7 @@ import DotsCircle from "~/features/dots/components/DotsCircle";
 // import InfoCard from "~/components/InfoCard";
 import Macbook from "~/features/macbook/components/Macbook";
 
-const Scene = () => {
+const Scene: React.FC = () => {
   const [isAllowOrbitControls] = useState(false);
 
   const Lighting = () => (
