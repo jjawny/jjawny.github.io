@@ -10,4 +10,6 @@ export default defineConfig({
       "~": path.resolve(__dirname, "./src"),
     },
   },
+  // Setup to enable deploying to GitHub Pages, see https://vite.dev/guide/static-deploy#github-pages
+  base: "/",
 });
