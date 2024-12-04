@@ -1,6 +1,3 @@
-export const SCROLL_INDICATOR_THRESHOLD = 0.1;
-export const ANIMATION_THROTTLE_MS = 20;
-
 // MODEL MOVEMENT
 export const DOTS_CIRCLE_SPEED = 0.06;
 export const DOTS_CIRCLE_X_TRAVEL_RATE = 3.3;
