@@ -1,7 +1,7 @@
 import { Html, OrbitControls, ScrollControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useState } from "react";
-// import DotsCircle from "~/components/DotsCircle";
+import DotsCircle from "~/features/dots/components/DotsCircle";
 // import InfoCard from "~/components/InfoCard";
 import Macbook from "~/features/macbook/components/Macbook";
 
@@ -40,9 +40,9 @@ const Scene = () => {
 const Models: React.FC = () => {
   return (
     <>
-      {/* <Suspense fallback={null}>
+      <Suspense fallback={null}>
         <DotsCircle />
-      </Suspense> */}
+      </Suspense>
       <Suspense fallback={null}>
         <Macbook />
       </Suspense>
