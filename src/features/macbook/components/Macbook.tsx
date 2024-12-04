@@ -11,7 +11,7 @@ import {
 } from "~/features/macbook/constants/macbook.constants";
 import useLoopVideoSources from "~/features/macbook/hooks/useLoopVideoSources";
 import useMouseCoords from "~/features/macbook/hooks/useMouseCoords";
-import { useManageScrollIndicator } from "~/shared/hooks/useManageScrollIndicator";
+import useManageScrollIndicator from "~/shared/hooks/useManageScrollIndicator";
 
 const Macbook: React.FC = () => {
   const { isShowScrollIndicator, toggleIsShowScrollIndicator } = useManageScrollIndicator();
