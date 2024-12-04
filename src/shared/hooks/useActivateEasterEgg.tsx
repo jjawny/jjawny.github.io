@@ -1,18 +1,21 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const useActivateEasterEgg = (activationThreshold: number) => {
   const keyCountRef = useRef<number>(0);
   const [isActive, setIsActive] = useState<boolean>(false);
 
-  const handleKeyDown = (e: KeyboardEvent) => {
-    if (e.key.toLowerCase() === "j") {
-      keyCountRef.current += 1;
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key.toLowerCase() === "j") {
+        keyCountRef.current += 1;
 
-      if (keyCountRef.current >= activationThreshold) {
-        setIsActive(true);
+        if (keyCountRef.current >= activationThreshold) {
+          setIsActive(true);
+        }
       }
-    }
-  };
+    },
+    [activationThreshold],
+  );
 
   useEffect(() => {
     if (!isActive) {
@@ -22,7 +25,7 @@ const useActivateEasterEgg = (activationThreshold: number) => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isActive]);
+  }, [isActive, handleKeyDown]);
 
   return { isActive };
 };
