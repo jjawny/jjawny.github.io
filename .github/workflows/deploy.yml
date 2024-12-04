@@ -28,6 +28,11 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      # Populate .env
+      - name: Set environment variable
+        run: |
+          echo "VITE_ENVIRONMENT=production" >> $GITHUB_ENV
+          echo "VITE_BUILD_NUMBER=${{ github.run_number }}" >> $GITHUB_ENV
       - name: Checkout
         uses: actions/checkout@v4
       - name: Set up Node
