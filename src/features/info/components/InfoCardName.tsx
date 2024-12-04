@@ -17,6 +17,7 @@ type NameProps = {
 const InfoCardName: React.FC<NameProps> = (props) => {
   const { toggleIsShowPersonalScreen } = useManageIsShowPersonalScreen();
   const { toggleIsBlurry } = props;
+
   const isFixA11yConsoleError = true; // Known issue, see https://github.com/emilkowalski/vaul/issues/517
 
   const handleDrawerOpenSideEffects = (isOpen: boolean) => {
