@@ -17,3 +17,13 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.r3f-scene {
+  height: 100vh;
+  height: 100svh;
+  height: 100dvh;
+
+  width: 100vw;
+  width: 100svw;
+  width: 100dvw;
+}
