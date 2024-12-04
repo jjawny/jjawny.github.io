@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { DEFAULT_VIDEO_SOURCE, PROJECTS_SOURCE } from "~/features/macbook/constants/macbook.constants";
 import { Project } from "~/features/macbook/types/Project";
-import useSceneStateStore from "~/shared/hooks/useSceneStateStore";
+import useManageIsShowPersonalScreen from "~/shared/hooks/useManageIsShowPersonalScreen";
 
 const initialVideoSource = `/videos/${DEFAULT_VIDEO_SOURCE}`;
 
 const useLoopVideoSources = () => {
-  const isShowPersonalScreen = useSceneStateStore((state) => state.sceneState.isShowPersonalScreen);
+  const { isShowPersonalScreen } = useManageIsShowPersonalScreen();
   const [videoSource, setVideoSource] = useState<string>(initialVideoSource);
   const [data, setData] = useState<Project[]>([]);
   const [, setIdx] = useState<number>(-1);
