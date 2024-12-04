@@ -1,9 +1,9 @@
 import { Html, OrbitControls, ScrollControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 // import DotsCircle from "~/components/DotsCircle";
 // import InfoCard from "~/components/InfoCard";
-// import Macbook from "~/components/Macbook";
+import Macbook from "~/features/macbook/components/Macbook";
 
 const Scene = () => {
   const [isAllowOrbitControls] = useState(false);
@@ -29,7 +29,7 @@ const Scene = () => {
           <Html>
             <p>hey</p>
           </Html>
-          {/* <Models /> */}
+          <Models />
           {/* <R3fHtml /> */}
         </ScrollControls>
       </Canvas>
@@ -37,18 +37,18 @@ const Scene = () => {
   );
 };
 
-// const Models: React.FC = () => {
-//   return (
-//     <>
-//       <Suspense fallback={null}>
-//         <DotsCircle />
-//       </Suspense>
-//       <Suspense fallback={null}>
-//         <Macbook />
-//       </Suspense>
-//     </>
-//   );
-// };
+const Models: React.FC = () => {
+  return (
+    <>
+      {/* <Suspense fallback={null}>
+        <DotsCircle />
+      </Suspense> */}
+      <Suspense fallback={null}>
+        <Macbook />
+      </Suspense>
+    </>
+  );
+};
 // const R3fHtml: React.FC = () => {
 //   // Gotcha: 'zIndexRange' prop required to allow drawer to be interactive [drag, select, ...]
 //   return (
