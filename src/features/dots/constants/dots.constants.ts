@@ -1,4 +1,4 @@
-// MODEL MOVEMENT
+// MOVEMENT
 export const DOTS_CIRCLE_SPEED = 0.06;
 export const DOTS_CIRCLE_X_TRAVEL_RATE = 3.3;
 export const DOTS_CIRCLE_Y_TRAVEL_RATE = 9.4;
