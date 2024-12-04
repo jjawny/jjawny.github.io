@@ -1,11 +1,11 @@
-<p align="center">
-  <img src="public/images/preview.png" alt="banner with my name" style="max-width:100%;">
-  <br/>
-  <strong>V7</strong>: Video controls coming soon...
-</p>
+# _[jjawny.github.io](https://jjawny.github.io/)_
 
-<p align="center">
-  Current Lighthouse stats:
-  <br/>
-  <img src="public/images/lighthouse.png" alt="banner with my name" style="max-width:100%;">
-</p>
+If your internet is that bad, here's a preview:
+
+<img src="public/readme/preview.png" alt="banner with my name" style="max-width:100%;">
+
+- Bootstrapped w `npm create vite@latest your-app-name -- --template react-ts`
+- How to setup? `npm i` (last using Node v20.10.0)
+- How to run? `npm run dev`
+
+\- Johnny
