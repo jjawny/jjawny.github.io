@@ -2,7 +2,7 @@ import { Html, OrbitControls, ScrollControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useState } from "react";
 import DotsCircle from "~/features/dots/components/DotsCircle";
-// import InfoCard from "~/components/InfoCard";
+import InfoCard from "~/features/info/components/InfoCard";
 import Macbook from "~/features/macbook/components/Macbook";
 
 const Scene: React.FC = () => {
@@ -26,11 +26,8 @@ const Scene: React.FC = () => {
         {isAllowOrbitControls && <OrbitControls />}
         <Lighting />
         <ScrollControls pages={1}>
-          <Html>
-            <p>hey</p>
-          </Html>
           <Models />
-          {/* <R3fHtml /> */}
+          <R3fHtml />
         </ScrollControls>
       </Canvas>
     </div>
@@ -49,13 +46,14 @@ const Models: React.FC = () => {
     </>
   );
 };
-// const R3fHtml: React.FC = () => {
-//   // Gotcha: 'zIndexRange' prop required to allow drawer to be interactive [drag, select, ...]
-//   return (
-//     <Html fullscreen zIndexRange={[1, 1000]} className="feature-for-sticky-content-inside-r3f-html-overrides">
-//       <InfoCard />
-//     </Html>
-//   );
-// };
+
+const R3fHtml: React.FC = () => {
+  // Gotcha: 'zIndexRange' prop required to allow drawer to be interactive [drag, select, ...]
+  return (
+    <Html fullscreen zIndexRange={[1, 1000]} className="feature-for-sticky-content-inside-r3f-html-overrides">
+      <InfoCard />
+    </Html>
+  );
+};
 
 export default Scene;
