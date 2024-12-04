@@ -18,6 +18,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+::-moz-selection {
+  color: black;
+  background: white;
+}
+
+::selection {
+  color: black;
+  background: white;
+}
+
 .r3f-scene {
   height: 100vh;
   height: 100svh;
