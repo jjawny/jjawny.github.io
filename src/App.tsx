@@ -1,11 +1,10 @@
-import { useState } from "react";
-import Footer from "./features/footer/components/Footer";
+import Footer from "~/features/footer/components/Footer";
+import Scene from "~/features/r3f/components/Scene";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
+      <Scene />
       <Footer />
     </>
   );
