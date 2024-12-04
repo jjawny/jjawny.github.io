@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
         <p className="text-[0.5rem]">
           {import.meta.env.VITE_ENVIRONMENT || "johnny broke something don't look here 🤦"}
         </p>
-        <p className="text-[0.5rem]">build {import.meta.env.NEXT_PUBLIC_BUILD_NUMBER || "n/a"}</p>
+        <p className="text-[0.5rem]">build {import.meta.env.VITE_BUILD_NUMBER || "n/a"}</p>
       </div>
     </footer>
   );
