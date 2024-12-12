@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import InfoCardAttribution from "~/features/info/components/InfoCardAttribution";
 import Socials from "~/features/info/components/Socials";
+import { cn } from "~/shared/utils/classname.utils";
 import InfoCardName from "./InfoCardName";
 import ScrollIndicator from "./ScrollIndicator";
 
@@ -30,7 +31,10 @@ const InfoCard: React.FC = () => {
     <div className="feature-for-sticky-content-inside-r3f-container grid">
       <div className="feature-for-sticky-content-inside-r3f-content justify-self-center">
         <div
-          className={`transition-filter relative z-50 flex w-full select-text flex-col whitespace-nowrap text-center font-syne tracking-tight text-white duration-300 ease-in-out ${isBlurry && "pointer-events-none !opacity-25 blur"} `}
+          className={cn(
+            `transition-filter relative z-50 flex w-full select-text flex-col whitespace-nowrap text-center font-syne tracking-tight text-white duration-300 ease-in-out`,
+            isBlurry && "pointer-events-none !opacity-25 blur",
+          )}
         >
           <ScrollIndicator />
           <IntroductionFragment />
