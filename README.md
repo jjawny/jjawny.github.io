@@ -1,4 +1,4 @@
-# _[jjawny.github.io](https://jjawny.github.io/)_
+# Personal Website
 
 If your internet is that bad, here's a preview:
 
@@ -7,5 +7,3 @@ If your internet is that bad, here's a preview:
 - Bootstrapped w `npm create vite@latest your-app-name -- --template react-ts`
 - How to setup? `npm i` (last using Node v20.10.0)
 - How to run? `npm run dev`
-
-\- Johnny
