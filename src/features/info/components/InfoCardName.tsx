@@ -43,15 +43,15 @@ const InfoCardName: React.FC<NameProps> = (props) => {
 
   const AboutMeFragment = () => {
     return (
-      <span className="font-default block py-6 text-base leading-loose">
+      <span className="block py-6 font-default text-base leading-loose">
         I&apos;m a <strong>Full Stack Software Developer</strong>.
         <br />
         I love the web, UX, DX, and getting $h1t done.
         <br />
-        I&apos;m currently working for my state government on a portfolio of enterprise apps.
+        I&apos;m currently working for my state government on a portfolio of enterprise web apps.
         <br />
-        As someone who <strong>thrives</strong> on mastering their stack, building <strong>long-term</strong> solutions,
-        and <strong>sharing</strong> knowledge, I believe I can bring <strong>value</strong> to any team.
+        As someone who enjoys building long-term solutions and sharing knowledge, I believe I can bring{" "}
+        <strong>value</strong> to any team.
       </span>
     );
   };
