@@ -1,4 +1,4 @@
-# my wwwebsite
+# My wwwebsite
 
 <img src="public/readme/preview.png" alt="banner with my name" style="max-width:100%;">
 
