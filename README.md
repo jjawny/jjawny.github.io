@@ -4,3 +4,7 @@
 
 - How to setup? `npm i` (last using Node v20.10.0)
 - How to run? `npm run dev`
+
+###### TODO:
+
+- Add DigiWorlds and BlueBird to projects JSON
