@@ -23,11 +23,10 @@
     "name": "Undertale Musicbox",
     "videoSource": "undertale-musicbox.mp4",
     "desc": "An Arduino device that plays and adjusts a relaxing tune."
+  },
+  {
+    "name": "Cube Solver",
+    "videoSource": "cube-solver.mp4",
+    "desc": "A graph theory project on finding the minimum number of moves to solve a Rubik's Pocket cube."
   }
-  // TODO: delete all associated video files, replace w [digi worlds]
-  // {
-  //   "name": "Cube Solver",
-  //   "videoSource": "cube-solver.mp4",
-  //   "desc": "A graph theory project on finding the minimum number of moves to solve a Rubik's Pocket cube."
-  // }
 ]
