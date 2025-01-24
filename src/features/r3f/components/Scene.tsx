@@ -5,7 +5,7 @@ import DotsCircle from "~/features/dots/components/DotsCircle";
 import InfoCard from "~/features/info/components/InfoCard";
 import Macbook from "~/features/macbook/components/Macbook";
 
-const Scene: React.FC = () => {
+export default function Scene() {
   const [isAllowOrbitControls] = useState(false);
 
   const Lighting = () => (
@@ -32,7 +32,7 @@ const Scene: React.FC = () => {
       </Canvas>
     </div>
   );
-};
+}
 
 const Models: React.FC = () => {
   return (
@@ -55,5 +55,3 @@ const R3fHtml: React.FC = () => {
     </Html>
   );
 };
-
-export default Scene;

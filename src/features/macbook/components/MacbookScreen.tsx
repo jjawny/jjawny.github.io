@@ -8,14 +8,12 @@
 */
 
 import { useGLTF } from "@react-three/drei";
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { LinearFilter, RGBAFormat, VideoTexture } from "three";
 
-type MacbookScreenProps = {
-  videoSource: string;
-};
+export default function MacbookScreen(props: { videoSource: string }) {
+  const { videoSource } = props;
 
-const MacbookScreen: React.FC<MacbookScreenProps> = ({ videoSource }) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { nodes, materials } = useGLTF("/models/macbook.glb") as any;
 
@@ -109,8 +107,6 @@ const MacbookScreen: React.FC<MacbookScreenProps> = ({ videoSource }) => {
       />
     </group>
   );
-};
+}
 
 useGLTF.preload("/models/macbook.glb");
-
-export default MacbookScreen;

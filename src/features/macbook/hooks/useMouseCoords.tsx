@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { ANIMATION_THROTTLE_MS } from "~/features/macbook/constants/macbook.constants";
-import { throttle } from "~/shared/utils/no-lodash.utils";
+import { ANIMATION_THROTTLE_MS } from "~/features/macbook/constants/macbook";
+import { throttle } from "~/features/shared/helpers/no-lodash";
 
 const useMouseCoords = () => {
   const [mouseCoords, setMouseCoords] = useState({ x: 0, y: 0 });

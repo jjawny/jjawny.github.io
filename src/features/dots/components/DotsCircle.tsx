@@ -7,11 +7,11 @@ import {
   DOTS_CIRCLE_X_TRAVEL_RATE,
   DOTS_CIRCLE_Y_TRAVEL_RATE,
   DOTS_CIRCLE_Z_TRAVEL_RATE,
-} from "~/features/dots/constants/dots.constants";
-import { pointsInner, pointsOuter } from "~/features/dots/utils/dots.utils";
+} from "~/features/dots/constants/dots";
+import { pointsInner, pointsOuter } from "~/features/dots/helpers/dots";
 
 // TODO: Resolve '[Violation] 'setTimeout' handler took XXms' (not a useFrame issue, but a rendering large number of dots issue, preload?)
-const DotsCircle: React.FC = () => {
+export default function DotsCircle() {
   const groupRef = useRef<Group>(null);
   const scroll = useScroll();
 
@@ -39,7 +39,7 @@ const DotsCircle: React.FC = () => {
       ))}
     </group>
   );
-};
+}
 
 const Dot = memo(({ position, color }: { position: Vector3; color: string }) => {
   return (
@@ -48,5 +48,3 @@ const Dot = memo(({ position, color }: { position: Vector3; color: string }) => 
     </Sphere>
   );
 });
-
-export default DotsCircle;

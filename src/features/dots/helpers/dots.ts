@@ -1,12 +1,5 @@
 import { Vector3 } from "three";
-import {
-  DEPTH,
-  LEFT_COLOR,
-  MAX_RADIUS,
-  MIN_RADIUS,
-  NUM_POINTS,
-  RIGHT_COLOR,
-} from "~/features/dots/constants/dots.constants";
+import { DEPTH, LEFT_COLOR, MAX_RADIUS, MIN_RADIUS, NUM_POINTS, RIGHT_COLOR } from "~/features/dots/constants/dots";
 
 // Math is hard, credits: https://youtu.be/r9IU5eJhhGo
 

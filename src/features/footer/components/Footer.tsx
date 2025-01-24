@@ -1,10 +1,8 @@
-import React from "react";
-
-const Footer: React.FC = () => {
+export default function Footer() {
   const thisYear = new Date().getFullYear();
 
   return (
-    <footer className="pointer-events-none fixed bottom-0 left-0 z-50 flex w-full select-none items-center justify-between px-4 py-2 font-syne font-extrabold text-stone-700">
+    <footer className="font-syne pointer-events-none fixed bottom-0 left-0 z-50 flex w-full items-center justify-between px-4 py-2 font-extrabold text-stone-700 select-none">
       <p className="flex-1"></p>
       <p className="flex-1 text-center text-[0.75rem]">&copy; {thisYear} Johnny Madigan</p>
       <div className="flex flex-1 flex-col text-end">
@@ -13,6 +11,4 @@ const Footer: React.FC = () => {
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

@@ -1,19 +1,15 @@
 import { useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { Group } from "three";
 import MacbookKeyboard from "~/features/macbook/components/MacbookKeyboard";
 import MacbookScreen from "~/features/macbook/components/MacbookScreen";
-import {
-  MACBOOK_Z_MAX,
-  MACBOOK_Z_TRAVEL_RATE,
-  SCROLL_INDICATOR_THRESHOLD,
-} from "~/features/macbook/constants/macbook.constants";
+import { MACBOOK_Z_MAX, MACBOOK_Z_TRAVEL_RATE, SCROLL_INDICATOR_THRESHOLD } from "~/features/macbook/constants/macbook";
 import useLoopVideoSources from "~/features/macbook/hooks/useLoopVideoSources";
 import useMouseCoords from "~/features/macbook/hooks/useMouseCoords";
-import useManageScrollIndicator from "~/shared/hooks/useManageScrollIndicator";
+import useManageScrollIndicator from "~/features/shared/hooks/useManageScrollIndicator";
 
-const Macbook: React.FC = () => {
+export default function Macbook() {
   const { isShowScrollIndicator, toggleIsShowScrollIndicator } = useManageScrollIndicator();
   const { videoSource } = useLoopVideoSources();
   const groupRef = useRef<Group>(null);
@@ -49,6 +45,4 @@ const Macbook: React.FC = () => {
       <MacbookKeyboard />
     </group>
   );
-};
-
-export default Macbook;
+}

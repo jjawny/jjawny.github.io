@@ -1,8 +1,8 @@
 import { useRef } from "react";
-import useManageScrollIndicator from "~/shared/hooks/useManageScrollIndicator";
-import useMockDelay from "~/shared/hooks/useMockDelay";
+import useManageScrollIndicator from "~/features/shared/hooks/useManageScrollIndicator";
+import useMockDelay from "~/features/shared/hooks/useMockDelay";
 
-const ScrollIndicator = () => {
+export default function ScrollIndicator() {
   const { isShowScrollIndicator } = useManageScrollIndicator();
   const { isDone: isMockDelayDone } = useMockDelay();
   const isOnScreenRef = useRef<boolean>(false);
@@ -20,7 +20,7 @@ const ScrollIndicator = () => {
   return (
     <div
       className={`blur-blob-behind select-none ${
-        isHide ? "animate-fadeOut" : "animate-[fadeIn_400ms_ease-in_forwards]"
+        isHide ? "animate-fade-out" : "animate-[fade-in_400ms_ease-in_forwards]"
       }`}
     >
       <img
@@ -32,6 +32,4 @@ const ScrollIndicator = () => {
       />
     </div>
   );
-};
-
-export default ScrollIndicator;
+}

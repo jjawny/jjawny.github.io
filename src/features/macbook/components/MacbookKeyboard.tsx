@@ -9,7 +9,7 @@
 
 import { useGLTF } from "@react-three/drei";
 
-const MacbookKeyboard = () => {
+export default function MacbookKeyboard() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { nodes, materials } = useGLTF("/models/macbook.glb") as any;
 
@@ -1606,8 +1606,6 @@ const MacbookKeyboard = () => {
       />
     </>
   );
-};
+}
 
 useGLTF.preload("/models/macbook.glb");
-
-export default MacbookKeyboard;
