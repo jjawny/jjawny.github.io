@@ -1,4 +1,4 @@
-import useSceneStateStore from "~/shared/hooks/useSceneStateStore";
+import useSceneStateStore from "~/features/shared/hooks/useSceneStateStore";
 
 const useManageScrollIndicator = () => {
   const isShowScrollIndicator = useSceneStateStore((state) => state.sceneState.isShowScrollIndicator);
