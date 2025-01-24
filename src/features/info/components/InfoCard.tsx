@@ -1,7 +1,7 @@
 import { useState } from "react";
 import InfoCardAttribution from "~/features/info/components/InfoCardAttribution";
-import Socials from "~/features/info/components/Socials";
 import { cn } from "~/features/shared/helpers/cn";
+import Socials from "~/features/socials/components/Socials";
 import InfoCardName from "./InfoCardName";
 import ScrollIndicator from "./ScrollIndicator";
 
