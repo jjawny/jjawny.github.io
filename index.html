@@ -33,7 +33,6 @@
 
     <!-- match background color in index.css > :root -->
     <meta name="theme-color" content="#0e0000" />
-    <!-- ...rest of <scripts> go beneath react-scan -->
     <script type="module">
       console.log("here", import.meta.env.MODE);
       if (import.meta.env.MODE === "development") {
@@ -41,6 +40,7 @@
         script.src = "https://unpkg.com/react-scan/dist/auto.global.js";
         document.head.appendChild(script);
       }
+      // ...rest of scripts go beneat react-scan
     </script>
   </head>
   <body>
