@@ -1,6 +1,11 @@
-const InfoCardAttribution: React.FC = () => {
+import { ClassValue } from "clsx";
+import { cn } from "~/features/shared/helpers/cn";
+
+export default function InfoCardAttribution(props: { className?: ClassValue }) {
+  const { className } = props;
+
   return (
-    <p className="attribution">
+    <p className={cn(className, "attribution")}>
       <a target="_blank" rel="noopener noreferrer" href="https://skfb.ly/MWtY" className="underline">
         <i>MacBook</i>
       </a>{" "}
@@ -8,6 +13,4 @@ const InfoCardAttribution: React.FC = () => {
       by chrisgreig
     </p>
   );
-};
-
-export default InfoCardAttribution;
+}

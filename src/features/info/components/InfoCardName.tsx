@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Drawer,
   DrawerContent,
@@ -7,16 +6,12 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "~/shared/components/Drawer";
-import useManageIsShowPersonalScreen from "~/shared/hooks/useManageIsShowPersonalScreen";
+} from "~/features/shared/components/Drawer";
+import useManageIsShowPersonalScreen from "~/features/shared/hooks/useManageIsShowPersonalScreen";
 
-type NameProps = {
-  toggleIsBlurry: (isBlurry: boolean) => void;
-};
-
-const InfoCardName: React.FC<NameProps> = (props) => {
-  const { toggleIsShowPersonalScreen } = useManageIsShowPersonalScreen();
+export default function InfoCardName(props: { toggleIsBlurry: (isBlurry: boolean) => void }) {
   const { toggleIsBlurry } = props;
+  const { toggleIsShowPersonalScreen } = useManageIsShowPersonalScreen();
 
   const isFixA11yConsoleError = true; // Known issue, see https://github.com/emilkowalski/vaul/issues/517
 
@@ -28,7 +23,7 @@ const InfoCardName: React.FC<NameProps> = (props) => {
   const ClickIndicatorFragment = () => {
     return (
       <div
-        className="absolute bottom-0 right-[2px] duration-200 hover:scale-125"
+        className="absolute right-[2px] bottom-0 duration-200 hover:scale-125"
         style={{ width: "5vw", height: "5vw" }}
       >
         <img
@@ -43,7 +38,7 @@ const InfoCardName: React.FC<NameProps> = (props) => {
 
   const AboutMeFragment = () => {
     return (
-      <span className="block py-6 font-default text-base leading-loose">
+      <span className="font-default block py-6 text-base leading-loose">
         I&apos;m a <strong>Full Stack Software Developer</strong>.
         <br />
         I love the web, UX, DX, and getting $h1t done.
@@ -59,15 +54,15 @@ const InfoCardName: React.FC<NameProps> = (props) => {
   return (
     <main>
       <Drawer onOpenChange={handleDrawerOpenSideEffects} autoFocus={isFixA11yConsoleError}>
-        <DrawerTrigger>
-          <h1 className="name relative animate-[fadeIn_400ms_ease-in_forwards] px-[2vw] font-extrabold duration-150 hover:scale-105">
+        <DrawerTrigger className="cursor-pointer">
+          <h1 className="name relative animate-[fade-in_400ms_ease-in_forwards] px-[2vw] font-extrabold duration-150 hover:scale-105">
             Johnny Madigan
             <ClickIndicatorFragment />
           </h1>
         </DrawerTrigger>
-        <DrawerContent className="bottom-[-50px] z-50 !select-text px-2 pb-[50px] text-white">
+        <DrawerContent className="bottom-[-50px] z-50 px-2 pb-[50px] text-white select-text!">
           <DrawerHeader>
-            <DrawerTitle className="select-none font-syne text-2xl">WHO AM I ?</DrawerTitle>
+            <DrawerTitle className="font-syne text-2xl select-none">WHO AM I ?</DrawerTitle>
             <DrawerDescription>
               <AboutMeFragment />
             </DrawerDescription>
@@ -77,6 +72,4 @@ const InfoCardName: React.FC<NameProps> = (props) => {
       </Drawer>
     </main>
   );
-};
-
-export default InfoCardName;
+}

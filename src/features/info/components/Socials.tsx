@@ -1,8 +1,12 @@
-import useActivateEasterEgg from "~/shared/hooks/useActivateEasterEgg";
+import { ClassValue } from "clsx";
+import { cn } from "~/features/shared/helpers/cn";
+import useActivateEasterEgg from "~/features/shared/hooks/useActivateEasterEgg";
 
-const Socials = () => {
+export default function Socials(props: { className?: ClassValue }) {
+  const { className } = props;
+
   return (
-    <div className="flex select-none flex-row items-center justify-center space-x-4 py-3">
+    <div className={cn(className, "flex flex-row items-center justify-center space-x-4 py-3 select-none")}>
       <a href="https://github.com/jjawny" target="_blank" rel="noopener noreferrer">
         <img
           src="/images/github.svg"
@@ -33,7 +37,7 @@ const Socials = () => {
       <EasterEggImage />
     </div>
   );
-};
+}
 
 const EasterEggImage: React.FC = () => {
   const { isActive: isEasterEggActive } = useActivateEasterEgg(5);
@@ -47,9 +51,7 @@ const EasterEggImage: React.FC = () => {
       alt="you found the easter egg!"
       height={30}
       width={30}
-      className="!ml-2 duration-200 hover:scale-110"
+      className="ml-2! duration-200 hover:scale-110"
     />
   );
 };
-
-export default Socials;
