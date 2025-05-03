@@ -10,7 +10,7 @@ import {
 } from "~/features/dots/constants/dots";
 import { pointsInner, pointsOuter } from "~/features/dots/helpers/dots";
 
-// TODO: Resolve '[Violation] 'setTimeout' handler took XXms' (not a useFrame issue, but a rendering large number of dots issue, preload?)
+// TODO: Resolve "[Violation] 'setTimeout' handler took Xms" (not a useFrame issue, but a rendering large number of dots issue, preload?)
 export default function DotsCircle() {
   const groupRef = useRef<Group>(null);
   const scroll = useScroll();

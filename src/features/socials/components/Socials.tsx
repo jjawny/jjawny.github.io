@@ -35,7 +35,7 @@ export default function Socials(props: { className?: ClassValue }) {
   return (
     <div className={cn(className, "flex flex-row items-center justify-center space-x-4 py-3 select-none")}>
       {SOCIALS.map((s) => (
-        <a href={s.url} target="_blank" rel="noopener noreferrer">
+        <a key={s.url} href={s.url} target="_blank" rel="noopener noreferrer">
           <img
             src={s.imageUrl}
             alt={s.imageAltText}
@@ -57,7 +57,6 @@ const EasterEggImage: React.FC = () => {
   if (!isEasterEggActive) return <></>;
 
   return (
-    // TODO: add tooltip w tail "you found me!"
     <img
       src="/images/easter-egg-alien.gif"
       alt="you found the easter egg!"
