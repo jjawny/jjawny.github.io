@@ -1,19 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@800&display=swap");
 
-/*
-_____________      __
-\__    ___/  \    /  \
-  |    |  \   \/\/   /
-  |    |   \        /
-  |____|    \__/\  /
-                 \/
-*/
-
-/*
-  Auto-gen by TW migration tool from v3 -> v4
-  `npx @tailwindcss/upgrade@next`
-*/
-
 @import "tailwindcss";
 
 @theme {
@@ -52,14 +38,6 @@ _____________      __
   }
 }
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
   *,
   ::after,
@@ -70,14 +48,7 @@ _____________      __
   }
 }
 
-/*
-   _____ ____________________
-  /  _  \\______   \______   \
- /  /_\  \|     ___/|     ___/
-/    |    \    |    |    |
-\____|__  /____|    |____|
-      \/
-*/
+/* ========== APP STYLES ========== */
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
