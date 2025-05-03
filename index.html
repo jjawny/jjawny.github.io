@@ -31,16 +31,18 @@
     <meta name="twitter:creator" content="@jjjjjjjony" />
     <meta name="twitter:site" content="@jjjjjjjony" />
 
-    <!-- match background color in index.css > :root -->
+    <!-- Match background color in index.css > :root -->
     <meta name="theme-color" content="#0e0000" />
+
+    <!-- Place all other scripts below React Scan -->
     <script type="module">
-      console.log("here", import.meta.env.MODE);
-      if (import.meta.env.MODE === "development") {
+      const isDevelopment = import.meta.env.MODE === "development";
+      if (isDevelopment) {
+        console.log("Launching React Scan");
         const script = document.createElement("script");
         script.src = "https://unpkg.com/react-scan/dist/auto.global.js";
         document.head.appendChild(script);
       }
-      // ...rest of scripts go beneat react-scan
     </script>
   </head>
   <body>
