@@ -1,0 +1,28 @@
+.r3f-scene {
+  height: 100vh;
+  height: 100svh;
+  height: 100dvh;
+
+  width: 100vw;
+  width: 100svw;
+  width: 100dvw;
+}
+
+/* Bundle CSS related to the sticky info card (within r3f) feature */
+/* 1. override r3f <Html> */
+.feature-for-sticky-content-inside-r3f-html-overrides {
+  position: fixed !important;
+}
+
+/* 2. tall container to allow scroll */
+.feature-for-sticky-content-inside-r3f-container {
+  position: relative;
+  height: 200vh;
+}
+
+/* 3. content */
+.feature-for-sticky-content-inside-r3f-content {
+  position: sticky;
+  height: fit-content;
+  top: 0px;
+}
