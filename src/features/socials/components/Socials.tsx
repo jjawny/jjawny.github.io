@@ -5,9 +5,9 @@ import { Social } from "../types/Social";
 
 const SOCIALS: Social[] = [
   {
-    url: "https://github.com/jjjjony",
+    url: "https://github.com/jjawny",
     imageUrl: "/images/github.svg",
-    imageAltText: "view johnny madigan's github",
+    imageAltText: "view Johnny Madigan's github",
     className: "invert filter",
     width: 24,
     height: 24,
@@ -15,17 +15,10 @@ const SOCIALS: Social[] = [
   {
     url: "https://www.linkedin.com/in/jawny",
     imageUrl: "/images/linkedin.svg",
-    imageAltText: "message johnny madigan on linkedin",
+    imageAltText: "message Johnny Madigan on linkedin",
     className: "invert filter",
     width: 24,
     height: 24,
-  },
-  {
-    url: "https://x.com/jjjjjjjony",
-    imageUrl: "/images/twitter.svg",
-    imageAltText: "message johnny madigan on x (twitter)",
-    width: 18,
-    height: 18,
   },
 ];
 
