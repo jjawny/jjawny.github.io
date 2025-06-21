@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { DEFAULT_VIDEO_SOURCE, PROJECTS_SOURCE } from "~/features/macbook/constants/macbook";
 import { Project } from "~/features/macbook/types/Project";
-import useManageIsShowPersonalScreen from "~/features/shared/hooks/useManageIsShowPersonalScreen";
+import { useManageIsShowPersonalScreen } from "~/features/shared/hooks/useManageIsShowPersonalScreen";
 
 const initialVideoSource = `/videos/${DEFAULT_VIDEO_SOURCE}`;
 

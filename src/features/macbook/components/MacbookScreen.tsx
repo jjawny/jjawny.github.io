@@ -11,9 +11,7 @@ import { useGLTF } from "@react-three/drei";
 import { useEffect, useRef } from "react";
 import { LinearFilter, RGBAFormat, VideoTexture } from "three";
 
-export default function MacbookScreen(props: { videoSource: string }) {
-  const { videoSource } = props;
-
+export default function MacbookScreen({ videoSource }: { videoSource: string }) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { nodes, materials } = useGLTF("/models/macbook.glb") as any;
 

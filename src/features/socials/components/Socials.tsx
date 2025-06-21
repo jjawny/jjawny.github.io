@@ -1,4 +1,3 @@
-import { ClassValue } from "clsx";
 import { cn } from "~/features/shared/helpers/cn";
 import useActivateEasterEgg from "~/features/shared/hooks/useActivateEasterEgg";
 import { Social } from "../types/Social";
@@ -22,29 +21,33 @@ const SOCIALS: Social[] = [
   },
 ];
 
-export default function Socials(props: { className?: ClassValue }) {
-  const { className } = props;
-
+export default function Socials({ className }: { className?: string }) {
   return (
-    <div className={cn(className, "flex flex-row items-center justify-center space-x-4 py-3 select-none")}>
-      {SOCIALS.map((s) => (
-        <a key={s.url} href={s.url} target="_blank" rel="noopener noreferrer">
-          <img
-            src={s.imageUrl}
-            alt={s.imageAltText}
-            height={s.width}
-            width={s.height}
-            className={cn(s.className, "duration-200 hover:scale-105")}
-          />
-        </a>
-      ))}
+    <div
+      className={cn("flex w-[80%] animate-[fade-in_1000ms_ease-in_forwards] justify-end", "-rotate-x-20 transform-3d")}
+    >
+      <div className="flex flex-col">
+        <div className={cn(className, "flex flex-row items-center justify-center space-x-4 py-3 select-none")}>
+          {SOCIALS.map((s) => (
+            <a key={s.url} href={s.url} target="_blank" rel="noopener noreferrer">
+              <img
+                src={s.imageUrl}
+                alt={s.imageAltText}
+                height={s.width}
+                width={s.height}
+                className={cn(s.className, "duration-200 hover:scale-105")}
+              />
+            </a>
+          ))}
 
-      <EasterEggImage />
+          <EasterEggImage />
+        </div>
+      </div>
     </div>
   );
 }
 
-const EasterEggImage: React.FC = () => {
+function EasterEggImage() {
   const { isActive: isEasterEggActive } = useActivateEasterEgg(5);
 
   if (!isEasterEggActive) return <></>;
@@ -58,4 +61,4 @@ const EasterEggImage: React.FC = () => {
       className="ml-2! duration-200 hover:scale-110"
     />
   );
-};
+}
