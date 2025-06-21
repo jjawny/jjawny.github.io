@@ -7,7 +7,7 @@
     "Noto Color Emoji";
 
   --animate-fade-in: fade-in var(--duration, 0.25s) ease-in forwards;
-  --animate-fade-out: fade-out var(--duration, 0.25s) ease-in forwards;
+  --animate-fade-out: fade-out var(--duration, 0.25s) ease-out forwards;
   --animate-zoom-in: zoom-in var(--duration, 0.25s) ease-in forwards;
 
   @keyframes fade-in {

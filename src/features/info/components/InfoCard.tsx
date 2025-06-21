@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 import InfoCardAttribution from "~/features/info/components/InfoCardAttribution";
 import { cn } from "~/features/shared/helpers/cn";
 import Socials from "~/features/socials/components/Socials";
@@ -8,44 +8,44 @@ import InfoCardTitle from "./InfoCardTitle";
 import ScrollIndicator from "./ScrollIndicator";
 
 export default function InfoCard({ isShowSurroundingContent = false }: { isShowSurroundingContent?: boolean }) {
-  const [isBlurry, setIsBlurry] = useState<boolean>(false);
-
-  const FadingContainer = ({ children }: { children: ReactNode }) => {
-    return (
-      <span
-        className={cn(
-          isShowSurroundingContent
-            ? "animate-[fade-in_400ms_ease-in_forwards]"
-            : "animate-[fade-out_400ms_ease-out_forwards]",
-        )}
-      >
-        {children}
-      </span>
-    );
-  };
-
   return (
     <div className="feature-for-sticky-content-inside-r3f-container grid">
       <div className="feature-for-sticky-content-inside-r3f-content justify-self-center">
         <div
           className={cn(
-            `transition-filter font-syne relative z-50 flex w-full flex-col text-center tracking-tight whitespace-nowrap text-white duration-300 ease-in-out select-text`,
-            isBlurry && "pointer-events-none opacity-25! blur-sm",
+            "relative",
+            "z-50 flex w-full flex-col text-center select-text",
+            "transition-filter duration-300 ease-in-out",
+            "font-syne tracking-tight whitespace-nowrap text-white",
             "perspective-dramatic",
           )}
         >
-          <FadingContainer>
+          <FadingContainer isShowContent={isShowSurroundingContent}>
             <InfoCardIntroduction />
           </FadingContainer>
           <ScrollIndicator />
           <InfoCardName />
-          <FadingContainer>
+          <FadingContainer isShowContent={isShowSurroundingContent}>
             <InfoCardTitle />
             <InfoCardAttribution />
             <Socials />
           </FadingContainer>
         </div>
       </div>
+    </div>
+  );
+}
+
+function FadingContainer({ children, isShowContent = false }: { children: ReactNode; isShowContent?: boolean }) {
+  return (
+    <div
+      className={cn(
+        "flex flex-col",
+        "transition-opacity duration-400 ease-in-out",
+        isShowContent ? "opacity-100" : "opacity-0",
+      )}
+    >
+      {children}
     </div>
   );
 }
