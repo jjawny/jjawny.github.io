@@ -1,6 +1,8 @@
-export default function ClickIndicator() {
+import { cn } from "~/features/shared/helpers/cn";
+
+export default function ClickIndicator({ className }: { className?: string }) {
   return (
-    <div className="absolute right-[2px] bottom-0 duration-200 hover:scale-125" style={{ width: "5vw", height: "5vw" }}>
+    <div className={cn(className)}>
       <img
         src={"/images/click.gif"}
         alt="click to learn more about my career as a full stack software/web engineer/developer"
