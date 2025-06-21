@@ -23,9 +23,7 @@ const SOCIALS: Social[] = [
 
 export default function Socials({ className }: { className?: string }) {
   return (
-    <div
-      className={cn("flex w-[80%] animate-[fade-in_1000ms_ease-in_forwards] justify-end", "-rotate-x-20 transform-3d")}
-    >
+    <div className={cn("flex w-[80%] animate-[fade-in_1000ms_ease-in_forwards] justify-end")}>
       <div className="flex flex-col">
         <div className={cn(className, "flex flex-row items-center justify-center space-x-4 py-3 select-none")}>
           {SOCIALS.map((s) => (
