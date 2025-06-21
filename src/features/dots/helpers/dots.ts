@@ -1,5 +1,12 @@
 import { Vector3 } from "three";
-import { DEPTH, LEFT_COLOR, MAX_RADIUS, MIN_RADIUS, NUM_POINTS, RIGHT_COLOR } from "~/features/dots/constants/dots";
+import {
+  DEPTH,
+  LEFT_HEX_COLOR,
+  MAX_RADIUS,
+  MIN_RADIUS,
+  NUM_POINTS,
+  RIGHT_HEX_COLOR,
+} from "~/features/dots/constants/dots";
 
 // Math is hard, credits: https://youtu.be/r9IU5eJhhGo
 
@@ -8,8 +15,8 @@ const getGradientStop = (ratio: number) => {
 
   const getValues = (color: string) => color.match(/.{1,2}/g)?.map((oct) => parseInt(oct, 16)) || [];
 
-  const c0Values = getValues(LEFT_COLOR);
-  const c1Values = getValues(RIGHT_COLOR);
+  const c0Values = getValues(LEFT_HEX_COLOR);
+  const c1Values = getValues(RIGHT_HEX_COLOR);
 
   const ci = c0Values.map((c0, i) => Math.min(Math.round(c0 * (1 - ratio) + (c1Values[i] || 0) * ratio), 255));
 
