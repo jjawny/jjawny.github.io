@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { cn } from "~/features/shared/helpers/cn";
 import useManageScrollIndicator from "~/features/shared/hooks/useManageScrollIndicator";
 import useMockDelay from "~/features/shared/hooks/useMockDelay";
 
@@ -9,8 +10,7 @@ export default function ScrollIndicator() {
   const isHide = !isShowScrollIndicator;
 
   if (!isMockDelayDone || (isHide && !isOnScreenRef.current)) {
-    // Tweak size of blur behind in .css
-    return <div className="h-[1px] w-[1px]"></div>;
+    return null;
   }
 
   if (!isOnScreenRef.current) {
@@ -19,9 +19,10 @@ export default function ScrollIndicator() {
 
   return (
     <div
-      className={`blur-blob-behind select-none ${
-        isHide ? "animate-fade-out" : "animate-[fade-in_400ms_ease-in_forwards]"
-      }`}
+      className={cn(
+        "blur-blob-behind select-none",
+        isHide ? "animate-fade-out" : "animate-[fade-in_400ms_ease-in_forwards]",
+      )}
     >
       <img
         src={"/images/mouse.svg"}

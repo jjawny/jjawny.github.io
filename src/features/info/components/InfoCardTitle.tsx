@@ -1,5 +1,3 @@
-import { cn } from "~/features/shared/helpers/cn";
-
 export default function TitleFragment() {
-  return <h2 className={cn(`title animate-[fade-in_1000ms_ease-in_forwards]`)}>Full Stack Software Developer</h2>;
+  return <h2 className="title animate-[fade-in_500ms_ease-in_forwards]">Full Stack Software Developer</h2>;
 }
