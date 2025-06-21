@@ -1,53 +1,26 @@
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import InfoCardAttribution from "~/features/info/components/InfoCardAttribution";
 import { cn } from "~/features/shared/helpers/cn";
 import Socials from "~/features/socials/components/Socials";
+import InfoCardIntroduction from "./InfoCardIntroduction";
 import InfoCardName from "./InfoCardName";
+import InfoCardTitle from "./InfoCardTitle";
 import ScrollIndicator from "./ScrollIndicator";
 
-export default function InfoCard() {
+export default function InfoCard({ isShowSurroundingContent = false }: { isShowSurroundingContent?: boolean }) {
   const [isBlurry, setIsBlurry] = useState<boolean>(false);
 
-  const IntroductionFragment = () => {
+  const FadingContainer = ({ children }: { children: ReactNode }) => {
     return (
-      <p className={cn(`hello animate-[fade-in_200ms_ease-in_forwards] self-start`, "rotate-x-10 transform-3d")}>
-        Hey! I&rsquo;m…
-      </p>
-    );
-  };
-
-  const TitleFragment = () => {
-    return (
-      <h2 className={cn(`title animate-[fade-in_600ms_ease-in_forwards]`, "-rotate-x-10 transform-3d")}>
-        Full Stack Software Developer
-      </h2>
-    );
-  };
-
-  const AttributionFragment = () => {
-    return (
-      <div
-        className={cn("flex w-[85%] animate-[fade-in_800ms_ease-in_forwards] justify-end", "-rotate-x-10 transform-3d")}
-      >
-        <div className="flex flex-col">
-          <InfoCardAttribution />
-        </div>
-      </div>
-    );
-  };
-
-  const SocialsFragment = () => {
-    return (
-      <div
+      <span
         className={cn(
-          "flex w-[80%] animate-[fade-in_1000ms_ease-in_forwards] justify-end",
-          "-rotate-x-20 transform-3d",
+          isShowSurroundingContent
+            ? "animate-[fade-in_400ms_ease-in_forwards]"
+            : "animate-[fade-out_400ms_ease-out_forwards]",
         )}
       >
-        <div className="flex flex-col">
-          <Socials />
-        </div>
-      </div>
+        {children}
+      </span>
     );
   };
 
@@ -61,12 +34,16 @@ export default function InfoCard() {
             "perspective-dramatic",
           )}
         >
+          <FadingContainer>
+            <InfoCardIntroduction />
+          </FadingContainer>
           <ScrollIndicator />
-          <IntroductionFragment />
-          <InfoCardName toggleIsBlurry={setIsBlurry} />
-          <TitleFragment />
-          <AttributionFragment />
-          <SocialsFragment />
+          <InfoCardName />
+          <FadingContainer>
+            <InfoCardTitle />
+            <InfoCardAttribution />
+            <Socials />
+          </FadingContainer>
         </div>
       </div>
     </div>
