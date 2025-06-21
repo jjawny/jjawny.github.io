@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import InfoCardAttribution from "~/features/info/components/InfoCardAttribution";
 import { cn } from "~/features/shared/helpers/cn";
 import Socials from "~/features/socials/components/Socials";
@@ -37,15 +37,29 @@ export default function InfoCard({ isShowSurroundingContent = false }: { isShowS
 }
 
 function FadingContainer({ children, isShowContent = false }: { children: ReactNode; isShowContent?: boolean }) {
+  const [isVisible, setIsVisible] = useState(isShowContent);
+  const [keyToTriggerReRenders, setKeyToTriggerReRenders] = useState<number>(0);
+
+  const triggerReRenders = () => {
+    setKeyToTriggerReRenders((prev) => (prev === 0 ? 1 : 0));
+  };
+
+  useEffect(() => {
+    if (isShowContent) {
+      triggerReRenders(); // When visible, immediately show and trigger animations (if any inside children)
+      setIsVisible(true);
+    }
+
+    if (!isShowContent) {
+      setIsVisible(false);
+    }
+  }, [isShowContent]);
+
   return (
-    <div
-      className={cn(
-        "flex flex-col",
-        "transition-opacity duration-400 ease-in-out",
-        isShowContent ? "opacity-100" : "opacity-0",
-      )}
-    >
-      {children}
+    <div className={cn(isVisible ? "opacity-100" : "opacity-0", "transition-opacity duration-200 ease-in-out")}>
+      <div className="flex flex-col" key={keyToTriggerReRenders}>
+        {children}
+      </div>
     </div>
   );
 }
