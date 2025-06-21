@@ -50,24 +50,28 @@ function Models() {
 }
 
 function R3fHtml() {
-  const { scrollProgress, isScrolledIntoCustomWindow } = useTrackScrollProgress();
+  const { scrollWindows } = useTrackScrollProgress({
+    customWindow: { min: 0.8, max: 1.0 },
+    personalScreenWindow: { min: 0.99, max: 1.0 },
+  });
   const { isShowPersonalScreen, toggleIsShowPersonalScreen } = useManageIsShowPersonalScreen();
 
   useEffect(
     function showPersonalScreen() {
-      if (scrollProgress >= 0.99 && !isShowPersonalScreen) {
+      const isInPersonalWindow = scrollWindows.personalScreenWindow?.isScrollInside;
+      if (isInPersonalWindow && !isShowPersonalScreen) {
         toggleIsShowPersonalScreen(true);
-      } else if (scrollProgress < 0.99 && isShowPersonalScreen) {
+      } else if (!isInPersonalWindow && isShowPersonalScreen) {
         toggleIsShowPersonalScreen(false);
       }
     },
-    [scrollProgress],
+    [scrollWindows.personalScreenWindow?.isScrollInside, isShowPersonalScreen, toggleIsShowPersonalScreen],
   );
 
   // Gotcha: 'zIndexRange' prop required to allow drawer to be interactive [drag, select, ...]
   return (
     <Html fullscreen zIndexRange={[1, 1000]} className="feature-for-sticky-content-inside-r3f-html-overrides">
-      <InfoCard isShowSurroundingContent={isScrolledIntoCustomWindow} />
+      <InfoCard isShowSurroundingContent={scrollWindows.customWindow?.isScrollInside} />
     </Html>
   );
 }
