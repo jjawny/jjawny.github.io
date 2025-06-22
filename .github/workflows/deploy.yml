@@ -29,12 +29,12 @@ jobs:
       run:
         working-directory: ${{ env.APP_DIR }}
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
       - name: Populate .env
         run: |
           echo "VITE_ENVIRONMENT=production" >> $GITHUB_ENV
           echo "VITE_BUILD_NUMBER=${{ github.run_number }}" >> $GITHUB_ENV
-      - name: Checkout code
-        uses: actions/checkout@v4
       - name: Install Node
         uses: actions/setup-node@v4
         with:
