@@ -1,4 +1,4 @@
-<img src="public/readme/preview.png" alt="banner with my name" style="max-width:100%;">
+<img src="public/readme/preview.png" alt="website preview" style="max-width:100%;">
 
 1. assuming you have **asdf** installed
 2. `cp .env.example .env` and populate
