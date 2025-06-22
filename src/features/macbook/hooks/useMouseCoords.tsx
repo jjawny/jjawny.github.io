@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ANIMATION_THROTTLE_MS } from "~/features/macbook/constants/macbook";
 import { throttle } from "~/features/shared/helpers/no-lodash";
 
-const useMouseCoords = () => {
+export default function useMouseCoords() {
   const [mouseCoords, setMouseCoords] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -21,6 +21,4 @@ const useMouseCoords = () => {
   }, []);
 
   return mouseCoords;
-};
-
-export default useMouseCoords;
+}

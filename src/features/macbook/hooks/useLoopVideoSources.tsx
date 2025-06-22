@@ -5,7 +5,7 @@ import { useManageIsShowPersonalScreen } from "~/features/shared/hooks/useManage
 
 const initialVideoSource = `/videos/${DEFAULT_VIDEO_SOURCE}`;
 
-const useLoopVideoSources = () => {
+export default function useLoopVideoSources() {
   const { isShowPersonalScreen } = useManageIsShowPersonalScreen();
   const [videoSource, setVideoSource] = useState<string>(initialVideoSource);
   const [data, setData] = useState<Project[]>([]);
@@ -39,6 +39,4 @@ const useLoopVideoSources = () => {
   );
 
   return { videoSource };
-};
-
-export default useLoopVideoSources;
+}

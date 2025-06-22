@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useMockDelay = (delay = 2500) => {
+export default function useMockDelay(delay = 2500) {
   const [isDone, setIsDone] = useState(false);
 
   useEffect(() => {
@@ -12,6 +12,4 @@ const useMockDelay = (delay = 2500) => {
   }, [delay]);
 
   return { isDone };
-};
-
-export default useMockDelay;
+}

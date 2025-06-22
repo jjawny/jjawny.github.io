@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
-const useActivateEasterEgg = (activationThreshold: number) => {
+export default function useActivateEasterEgg(activationThreshold: number) {
   const keyCountRef = useRef<number>(0);
   const [isActive, setIsActive] = useState<boolean>(false);
 
@@ -28,6 +28,4 @@ const useActivateEasterEgg = (activationThreshold: number) => {
   }, [isActive, handleKeyDown]);
 
   return { isActive };
-};
-
-export default useActivateEasterEgg;
+}
