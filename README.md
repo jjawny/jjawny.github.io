@@ -1,4 +1,4 @@
-<img src="public/readme/preview.png" alt="website preview" style="max-width:100%;">
+<img src="website/public/readme/preview.png" alt="website preview" style="max-width:100%;">
 
 1. assuming you have **asdf** installed
 2. `cp .env.example .env` and populate
