@@ -6,7 +6,7 @@ on:
     branches: ["main"]
   workflow_dispatch:
 
-# Set the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
+# Set the permissions to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
@@ -23,6 +23,11 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    env:
+      APP_DIR: ./website
+    defaults:
+      run:
+        working-directory: ${{ env.APP_DIR }}
     steps:
       - name: Populate .env
         run: |
@@ -35,6 +40,7 @@ jobs:
         with:
           node-version: 20
           cache: "npm"
+          cache-dependency-path: "${{ env.APP_DIR }}/package-lock.json"
       - name: Install dependencies
         run: npm ci
       - name: Build
@@ -44,7 +50,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "./dist"
+          path: "${{ env.APP_DIR }}/dist"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
