@@ -6,7 +6,7 @@ export default function InfoCardDescription() {
   return (
     <>
       <span className={cn(sharedStyles)}>
-        I&apos;m a <strong>Full Stack Software Developer</strong>
+        I&apos;m a <strong>Full Stack Software Engineer</strong>
       </span>
       <span className={cn(sharedStyles)}>
         I&apos;m <strong>experienced</strong> in translating complex business requirements into technical solutions,
