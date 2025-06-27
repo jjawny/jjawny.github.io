@@ -1,11 +1,16 @@
-import Footer from "~/features/footer/components/Footer";
-import Scene from "~/features/r3f/components/Scene";
+import { createRouter, RouterProvider } from "@tanstack/react-router";
+
+import { routeTree } from "./routeTree.gen";
+
+const router = createRouter({ routeTree });
+
+// Type-safety gains for the router
+declare module "@tanstack/react-router" {
+  interface Register {
+    router: typeof router;
+  }
+}
 
 export default function App() {
-  return (
-    <>
-      <Scene />
-      <Footer />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
