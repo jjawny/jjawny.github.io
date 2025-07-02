@@ -6,8 +6,8 @@ export default function Footer() {
       <p className="flex-1"></p>
       <p className="flex-1 text-center text-[0.75rem]">&copy; {thisYear}</p>
       <div className="flex flex-1 flex-col text-end">
-        <p className="text-[0.5rem]">{import.meta.env.VITE_ENVIRONMENT || "Environment: n/a"}</p>
-        <p className="text-[0.5rem]">v{import.meta.env.VITE_BUILD_NUMBER || "n/a"}</p>
+        <p className="text-[0.5rem]">{import.meta.env.MODE}</p>
+        <p className="text-[0.5rem]">v{import.meta.env.VITE_BUILD_NUMBER || "0"}</p>
       </div>
     </footer>
   );
