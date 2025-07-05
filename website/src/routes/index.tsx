@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <ThemeProvider fallbackTheme="light">
+    <ThemeProvider>
       <Scene />
       <Footer />
     </ThemeProvider>

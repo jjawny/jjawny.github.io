@@ -12,7 +12,7 @@ export const Route = createFileRoute("/a11y")({
 
 function A11y() {
   return (
-    <ThemeProvider fallbackTheme="light">
+    <ThemeProvider initialTheme="light">
       <div className="grid min-h-screen place-content-center">
         <div className="flex flex-col text-center">
           <InfoCardIntroduction />
