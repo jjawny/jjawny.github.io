@@ -6,6 +6,7 @@ import InfoCard from "~/features/info/components/InfoCard";
 import useTrackScrollProgress from "~/features/info/hooks/useTrackScrollProgress";
 import Macbook from "~/features/macbook/components/Macbook";
 import { useManageIsShowPersonalScreen } from "~/features/shared/hooks/useManageIsShowPersonalScreen";
+import { ThemeProvider } from "~/features/theme/hooks/useThemeContext";
 
 export default function Scene() {
   const [isAllowOrbitControls] = useState(false);
@@ -71,7 +72,13 @@ function R3fHtml() {
   // Gotcha: 'zIndexRange' prop required to allow drawer to be interactive [drag, select, ...]
   return (
     <Html fullscreen zIndexRange={[1, 1000]} className="feature-for-sticky-content-inside-r3f-html-overrides">
-      <InfoCard isShowSurroundingContent={scrollWindows.customWindow?.isScrollInside} />
+      {/*
+        Start wrapping contexts here  if inner components require access
+        Why?  R3F <HTML> renders through React Portals (outside this current vDOM tree node)
+      */}
+      <ThemeProvider>
+        <InfoCard isShowSurroundingContent={scrollWindows.customWindow?.isScrollInside} />
+      </ThemeProvider>
     </Html>
   );
 }
