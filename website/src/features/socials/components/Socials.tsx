@@ -1,7 +1,8 @@
 import ClickIndicator from "~/features/info/components/ClickIndicator";
 import { cn } from "~/features/shared/helpers/cn";
-import useActivateEasterEgg from "~/features/shared/hooks/useActivateEasterEgg";
+import { useTheme } from "~/features/shared/hooks/useTheme";
 import { Social } from "../types/Social";
+import EasterEgg from "./EasterEgg";
 
 const SOCIALS: Social[] = [
   {
@@ -23,6 +24,8 @@ const SOCIALS: Social[] = [
 ];
 
 export default function Socials({ className }: { className?: string }) {
+  const { theme } = useTheme();
+
   return (
     <>
       <div className={cn("flex w-[80%] animate-[fade-in_1000ms_ease-in_forwards] justify-end")}>
@@ -33,7 +36,13 @@ export default function Socials({ className }: { className?: string }) {
 
               return (
                 <div key={s.url} className="relative">
-                  <a href={s.url} key={s.url} className="relative" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={s.url}
+                    key={s.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={cn("relative", theme === "light" && "invert")}
+                  >
                     <img
                       src={s.imageUrl}
                       alt={s.imageAltText}
@@ -49,25 +58,7 @@ export default function Socials({ className }: { className?: string }) {
           </div>
         </div>
       </div>
-      <EasterEggImage />
+      <EasterEgg />
     </>
-  );
-}
-
-function EasterEggImage() {
-  const { isActive: isEasterEggActive } = useActivateEasterEgg(5);
-
-  if (!isEasterEggActive) return <></>;
-
-  return (
-    <div className={cn("flex w-[77%] animate-[fade-in_200ms_ease-in_forwards] justify-end")}>
-      <img
-        src="/images/easter-egg-alien.gif"
-        alt="you found the easter egg!"
-        height={30}
-        width={30}
-        className="duration-200 hover:scale-110"
-      />
-    </div>
   );
 }

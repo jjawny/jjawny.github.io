@@ -1,8 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
 import InfoCardAttribution from "~/features/info/components/InfoCardAttribution";
 import InfoCardIntroduction from "~/features/info/components/InfoCardIntroduction";
 import InfoCardName from "~/features/info/components/InfoCardName";
 import InfoCardTitle from "~/features/info/components/InfoCardTitle";
+import { useTheme } from "~/features/shared/hooks/useTheme";
 import Socials from "~/features/socials/components/Socials";
 
 export const Route = createFileRoute("/a11y")({
@@ -10,6 +12,12 @@ export const Route = createFileRoute("/a11y")({
 });
 
 function A11y() {
+  const { applyTheme } = useTheme();
+
+  useEffect(() => {
+    applyTheme("light");
+  }, []);
+
   return (
     <div className="grid min-h-screen place-content-center">
       <div className="flex flex-col text-center">
