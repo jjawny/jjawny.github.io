@@ -1,5 +1,6 @@
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 import { useHandleGitHubPagesRoutes } from "~/features/shared/hooks/useHandleGitHubPagesRoutes";
+import { useSyncMetaColor } from "~/features/shared/hooks/useSyncMetaColor";
 import { routeTree } from "./routeTree.gen";
 
 export const router = createRouter({ routeTree });
@@ -13,6 +14,7 @@ declare module "@tanstack/react-router" {
 
 export default function App() {
   useHandleGitHubPagesRoutes();
+  useSyncMetaColor();
 
   return <RouterProvider router={router} />;
 }
