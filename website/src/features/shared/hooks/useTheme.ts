@@ -1,21 +1,27 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 type Theme = "light" | "dark";
 
 export const useTheme = () => {
   const [theme, setTheme] = useState<Theme>("light");
 
-  const applyTheme = (theme: Theme) => {
-    document.documentElement.setAttribute("theme", theme);
-    setTheme(theme);
-  };
-
-  useEffect(function readThemeOnMount() {
-    const theme = document.documentElement.getAttribute("theme");
-    if (theme && isTheme(theme)) {
+  const applyTheme = useCallback(
+    (theme: Theme) => {
+      document.documentElement.setAttribute("theme", theme);
       setTheme(theme);
-    }
-  }, []);
+    },
+    [setTheme],
+  );
+
+  useEffect(
+    function readThemeOnMount() {
+      const theme = document.documentElement.getAttribute("theme");
+      if (theme && isTheme(theme)) {
+        setTheme(theme);
+      }
+    },
+    [applyTheme],
+  );
 
   return { theme, applyTheme };
 };
