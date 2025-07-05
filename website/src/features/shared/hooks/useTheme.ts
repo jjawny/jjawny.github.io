@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 type Theme = "light" | "dark";
 
 export const useTheme = () => {
-  const [theme, setTheme] = useState<Theme | undefined>();
+  const [theme, setTheme] = useState<Theme>("light");
 
   const applyTheme = (theme: Theme) => {
     document.documentElement.setAttribute("theme", theme);

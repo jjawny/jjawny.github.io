@@ -41,7 +41,7 @@ export default function Socials({ className }: { className?: string }) {
                     key={s.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={cn("relative", theme === "light" && "invert")}
+                    className={cn(isLastSocial && "relative", theme === "light" && "invert")}
                   >
                     <img
                       src={s.imageUrl}
