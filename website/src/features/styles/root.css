@@ -5,8 +5,11 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: dark;
-  background-color: #0e0000;
+  color-scheme: dark light;
+
+  /* Dark mode by default */
+  --text-color: #ffffff;
+  --background-color: #000000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,12 +17,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+[theme="light"] {
+  --text-color: #000000;
+  --background-color: #ffffff;
+}
+
+html,
+body,
+#root {
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
 ::-moz-selection {
-  color: black;
-  background: white;
+  color: var(--background-color);
+  background: var(--text-color);
 }
 
 ::selection {
-  color: black;
-  background: white;
+  color: var(--background-color);
+  background: var(--text-color);
 }
