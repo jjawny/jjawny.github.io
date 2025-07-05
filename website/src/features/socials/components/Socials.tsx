@@ -1,6 +1,6 @@
 import ClickIndicator from "~/features/info/components/ClickIndicator";
 import { cn } from "~/features/shared/helpers/cn";
-import { useTheme } from "~/features/shared/hooks/useTheme";
+import { useThemeContext } from "~/features/theme/hooks/useThemeContext";
 import { Social } from "../types/Social";
 import EasterEgg from "./EasterEgg";
 
@@ -24,7 +24,7 @@ const SOCIALS: Social[] = [
 ];
 
 export default function Socials({ className }: { className?: string }) {
-  const { theme } = useTheme();
+  const { theme } = useThemeContext();
 
   return (
     <>
