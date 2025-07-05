@@ -1,19 +1,37 @@
 <!doctype html>
 <html>
   <head>
+    <title>Johnny Madigan</title>
+
     <meta charset="utf-8" />
-    <title>Redirecting...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Johnny Madigan" />
+    <meta name="description" content="Who is Johnny Madigan?" />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+
     <script>
-      // Store the intended path and redirect to index.html
+      // Hosting on GH Pages = static files only
+      // This means GH will always serve 404.html as this is a SPA not a multi-page app
+      // Because we love SPAs (and in-case we migrate to another infra), use this workaround
+      // GH pages x TanStack Router workaround:
+      //  - Override GH Pages' 404.html
+      //  - This script loads the main site again but w extra query params
+      //  - A custom hook reads these params and navigates to the correct route using JS
+
+      // For example /a11y will redirect to "...github.io/?redirect=%2Fa11y"
       const path = window.location.pathname;
       const search = window.location.search;
       const baseUrl = window.location.origin + "/";
-
-      // Redirect to index.html with the path as a query parameter
       window.location.replace(baseUrl + "?redirect=" + encodeURIComponent(path + search));
     </script>
   </head>
   <body>
-    <p>TODO: spinner?...</p>
+    <p>Loading...</p>
   </body>
 </html>
